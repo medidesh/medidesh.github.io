@@ -1,262 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <title>Medidesh — We’re Coming Soon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Medidesh is launching soon. Pharmacy POS, batch & expiry tracking, and nearby medicine search for Bangladesh."
-    />
+    <meta name="description"
+        content="Medidesh is launching soon. Pharmacy POS, batch & expiry tracking, and nearby medicine search for Bangladesh." />
     <meta property="og:title" content="Medidesh — We’re Coming Soon" />
-    <meta
-      property="og:description"
-      content="Pharmacy POS, batch & expiry tracking, and nearby medicine search for Bangladesh."
-    />
+    <meta property="og:description"
+        content="Pharmacy POS, batch & expiry tracking, and nearby medicine search for Bangladesh." />
     <meta property="og:type" content="website" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles/css/styles.css" />
     <style>
-      .header {
-        padding: 16px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-        overflow: visible;
-      }
-
-      .brand {
-        flex-shrink: 0;
-        max-width: 60%;
-      }
-
-      .logo {
-        width: clamp(32px, 8vw, 36px);
-        height: clamp(32px, 8vw, 36px);
-        font-size: clamp(16px, 4vw, 18px);
-      }
-
-      .tag {
-        flex-shrink: 0;
-        max-width: 40%;
-        text-align: right;
-      }
-
-      @media (max-width: 480px) {
         .header {
-          padding: 12px 16px;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            overflow: visible;
         }
 
         .brand {
-          max-width: 50%;
+            flex-shrink: 0;
+            max-width: 60%;
         }
 
         .logo {
-          width: 32px;
-          height: 32px;
-          font-size: 16px;
+            width: clamp(32px, 8vw, 36px);
+            height: clamp(32px, 8vw, 36px);
+            font-size: clamp(16px, 4vw, 18px);
         }
 
         .tag {
-          max-width: 45%;
-          font-size: clamp(10px, 2.5vw, 11px);
-          padding: 5px 8px;
-        }
-      }
-
-      @media (max-width: 360px) {
-        .header {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          gap: 8px;
+            flex-shrink: 0;
+            max-width: 40%;
+            text-align: right;
         }
 
-        .brand,
-        .tag {
-          max-width: 100%;
+        @media (max-width: 480px) {
+            .header {
+                padding: 12px 16px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .brand {
+                max-width: 50%;
+            }
+
+            .logo {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+
+            .tag {
+                max-width: 45%;
+                font-size: clamp(10px, 2.5vw, 11px);
+                padding: 5px 8px;
+            }
         }
-      }
+
+        @media (max-width: 360px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 8px;
+            }
+
+            .brand,
+            .tag {
+                max-width: 100%;
+            }
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="container">
-      <div class="header">
-        <a class="brand" href="#">
-          <div class="logo">M</div>
-          <h1>Medidesh</h1>
-        </a>
-        <div class="tag">We’re almost ready</div>
-      </div>
-      <div class="main">
-        <section class="hero" aria-labelledby="heroTitle">
-          <span class="kicker">Launching Soon</span>
-          <h2 id="heroTitle" class="title">
-            Modern Pharmacy & Medicine Finder
-          </h2>
-          <p class="subtitle">
-            Manage batches and expiry, track sales, and help people find
-            medicines nearby. Built for Bangladesh, designed to be fast.
-          </p>
-          <div class="cta">
-            <button class="btn" id="notifyBtn">Notify Me</button>
-            <button class="btn sec" id="demoBtn">View Preview</button>
-          </div>
-          <div class="countdown" aria-label="Countdown">
-            <div class="cell"><strong id="d">00</strong><span>Days</span></div>
-            <div class="cell"><strong id="h">00</strong><span>Hours</span></div>
-            <div class="cell">
-              <strong id="m">00</strong><span>Minutes</span>
-            </div>
-            <div class="cell">
-              <strong id="s">00</strong><span>Seconds</span>
-            </div>
-          </div>
-        </section>
-        <aside class="panel" aria-labelledby="panelTitle">
-          <h3 id="panelTitle">Get an early invite</h3>
-          <div class="field">
-            <input
-              id="email"
-              class="input"
-              type="email"
-              placeholder="you@example.com"
-              inputmode="email"
-              autocomplete="email"
-              aria-label="Email"
-            />
-            <button id="join" class="btn">Join</button>
-          </div>
-          <p class="note">
-            No spam. We’ll only email launch details and early access perks.
-          </p>
-          <div class="grid">
-            <div class="badge">POS & Invoices</div>
-            <div class="badge">Batch & Expiry</div>
-            <div class="badge">Nearby Search</div>
-            <div class="badge">Inventory Management</div>
-            <div class="badge">Sales Tracking</div>
-            <div class="badge">Expiry Alerts</div>
-            <div class="badge">User Profiles</div>
-            <div class="badge">Reporting & Analytics</div>
-          </div>
-        </aside>
-      </div>
-      <div class="footer">
-        <div>© <span id="year"></span> Medidesh</div>
-        <div class="links">
-          <a class="a" href="#" id="x">Twitter</a>
-          <a class="a" href="#" id="ig">Instagram</a>
-          <a class="a" href="#" id="mail">Email</a>
+        <div class="header">
+            <a class="brand" href="#">
+                <div class="logo">M</div>
+                <h1>Medidesh</h1>
+            </a>
+            <div class="tag">We’re almost ready</div>
         </div>
-      </div>
+        <div class="main">
+            <section class="hero" aria-labelledby="heroTitle">
+                <span class="kicker">Launching Soon</span>
+                <h2 id="heroTitle" class="title">
+                    Modern Pharmacy & Medicine Finder
+                </h2>
+                <p class="subtitle">
+                    Manage batches and expiry, track sales, and help people find
+                    medicines nearby. Built for Bangladesh, designed to be fast.
+                </p>
+                <div class="cta">
+                    <button class="btn" id="notifyBtn">Notify Me</button>
+                    <button class="btn sec" id="demoBtn">View Preview</button>
+                </div>
+                <div class="countdown" aria-label="Countdown">
+                    <div class="cell"><strong id="d">00</strong><span>Days</span></div>
+                    <div class="cell"><strong id="h">00</strong><span>Hours</span></div>
+                    <div class="cell">
+                        <strong id="m">00</strong><span>Minutes</span>
+                    </div>
+                    <div class="cell">
+                        <strong id="s">00</strong><span>Seconds</span>
+                    </div>
+                </div>
+            </section>
+            <aside class="panel" aria-labelledby="panelTitle">
+                <h3 id="panelTitle">Get an early invite</h3>
+                <div class="field">
+                    <input id="email" class="input" type="email" placeholder="you@example.com" inputmode="email"
+                        autocomplete="email" aria-label="Email" />
+                    <button id="join" class="btn">Join</button>
+                </div>
+                <p class="note">
+                    No spam. We’ll only email launch details and early access perks.
+                </p>
+                <div class="grid">
+                    <div class="badge">POS & Invoices</div>
+                    <div class="badge">Batch & Expiry</div>
+                    <div class="badge">Nearby Search</div>
+                    <div class="badge">Inventory Management</div>
+                    <div class="badge">Sales Tracking</div>
+                    <div class="badge">Expiry Alerts</div>
+                    <div class="badge">User Profiles</div>
+                    <div class="badge">Reporting & Analytics</div>
+                </div>
+            </aside>
+        </div>
+        <div class="footer">
+            <div>© <span id="year"></span> Medidesh</div>
+            <div class="links">
+                <a class="a" href="#" id="x">Twitter</a>
+                <a class="a" href="#" id="ig">Instagram</a>
+                <a class="a" href="#" id="mail">Email</a>
+            </div>
+        </div>
     </div>
     <div class="toast" id="toast">Subscribed. We’ll keep you posted.</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.min.js"></script>
     <script>
-      const d = document;
-      const byId = (id) => d.getElementById(id);
-      const dEl = byId("d"),
-        hEl = byId("h"),
-        mEl = byId("m"),
-        sEl = byId("s");
-      const target = new Date(Date.now() + 45 * 24 * 60 * 60 * 1000);
-      function pad(n) {
-        return n.toString().padStart(2, "0");
-      }
-      function tick() {
-        const now = new Date();
-        const diff = Math.max(0, target - now);
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const mins = Math.floor((diff / (1000 * 60)) % 60);
-        const secs = Math.floor((diff / 1000) % 60);
-        dEl.textContent = pad(days);
-        hEl.textContent = pad(hours);
-        mEl.textContent = pad(mins);
-        sEl.textContent = pad(secs);
-      }
-      setInterval(tick, 1000);
-      tick();
-      byId("year").textContent = new Date().getFullYear();
-      const toast = byId("toast");
-      function showToast(msg) {
-        toast.textContent = msg;
-        toast.classList.add("show");
-        setTimeout(() => toast.classList.remove("show"), 2200);
-      }
-      let db;
-      async function initDb() {
-        const SQL = await initSqlJs({
-          locateFile: () =>
-            "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.wasm",
-        });
-        const savedDb = localStorage.getItem("medidesh_db");
-        db = savedDb
-          ? new SQL.Database(new Uint8Array(JSON.parse(savedDb)))
-          : new SQL.Database();
-        db.run(`
+        const d = document;
+        const byId = (id) => d.getElementById(id);
+        const dEl = byId("d"),
+            hEl = byId("h"),
+            mEl = byId("m"),
+            sEl = byId("s");
+        const target = new Date(Date.now() + 45 * 24 * 60 * 60 * 1000);
+        function pad(n) {
+            return n.toString().padStart(2, "0");
+        }
+        function tick() {
+            const now = new Date();
+            const diff = Math.max(0, target - now);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const mins = Math.floor((diff / (1000 * 60)) % 60);
+            const secs = Math.floor((diff / 1000) % 60);
+            dEl.textContent = pad(days);
+            hEl.textContent = pad(hours);
+            mEl.textContent = pad(mins);
+            sEl.textContent = pad(secs);
+        }
+        setInterval(tick, 1000);
+        tick();
+        byId("year").textContent = new Date().getFullYear();
+        const toast = byId("toast");
+        function showToast(msg) {
+            toast.textContent = msg;
+            toast.classList.add("show");
+            setTimeout(() => toast.classList.remove("show"), 2200);
+        }
+        let db;
+        async function initDb() {
+            const SQL = await initSqlJs({
+                locateFile: () =>
+                    "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.wasm",
+            });
+            const savedDb = localStorage.getItem("medidesh_db");
+            db = savedDb
+                ? new SQL.Database(new Uint8Array(JSON.parse(savedDb)))
+                : new SQL.Database();
+            db.run(`
           CREATE TABLE IF NOT EXISTS waitlist (
             email TEXT PRIMARY KEY,
             created_at TEXT
           );
         `);
-      }
-      function saveDb() {
-        const data = db.export();
-        localStorage.setItem("medidesh_db", JSON.stringify([...data]));
-      }
-      const emailInput = byId("email");
-      const joinBtn = byId("join");
-      const notifyBtn = byId("notifyBtn");
-      const demoBtn = byId("demoBtn");
-      initDb().then(() => {
-        notifyBtn.addEventListener("click", () => {
-          emailInput.focus();
+        }
+        function saveDb() {
+            const data = db.export();
+            localStorage.setItem("medidesh_db", JSON.stringify([...data]));
+        }
+        const emailInput = byId("email");
+        const joinBtn = byId("join");
+        const notifyBtn = byId("notifyBtn");
+        const demoBtn = byId("demoBtn");
+        initDb().then(() => {
+            notifyBtn.addEventListener("click", () => {
+                emailInput.focus();
+            });
+            demoBtn.addEventListener("click", () => {
+                showToast("Preview coming soon");
+            });
+            joinBtn.addEventListener("click", () => {
+                const v = (emailInput.value || "").trim().toLowerCase();
+                const ok = /^\S+@\S+\.\S+$/.test(v);
+                if (!ok) {
+                    emailInput.focus();
+                    emailInput.select();
+                    showToast("Enter a valid email");
+                    return;
+                }
+                try {
+                    db.run(
+                        "INSERT INTO waitlist (email, created_at) VALUES (?, ?)",
+                        [v, new Date().toISOString()]
+                    );
+                    saveDb();
+                    emailInput.value = "";
+                    showToast("Subscribed. We’ll keep you posted.");
+                } catch (e) {
+                    if (e.message.includes("UNIQUE constraint failed")) {
+                        showToast("Email already subscribed");
+                    } else {
+                        showToast("Error saving email");
+                    }
+                }
+            });
+            d.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" && d.activeElement === emailInput) {
+                    joinBtn.click();
+                }
+            });
         });
-        demoBtn.addEventListener("click", () => {
-          showToast("Preview coming soon");
-        });
-        joinBtn.addEventListener("click", () => {
-          const v = (emailInput.value || "").trim().toLowerCase();
-          const ok = /^\S+@\S+\.\S+$/.test(v);
-          if (!ok) {
-            emailInput.focus();
-            emailInput.select();
-            showToast("Enter a valid email");
-            return;
-          }
-          try {
-            db.run(
-              "INSERT INTO waitlist (email, created_at) VALUES (?, ?)",
-              [v, new Date().toISOString()]
-            );
-            saveDb();
-            emailInput.value = "";
-            showToast("Subscribed. We’ll keep you posted.");
-          } catch (e) {
-            if (e.message.includes("UNIQUE constraint failed")) {
-              showToast("Email already subscribed");
-            } else {
-              showToast("Error saving email");
-            }
-          }
-        });
-        d.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" && d.activeElement === emailInput) {
-            joinBtn.click();
-          }
-        });
-      });
     </script>
-  </body>
+</body>
+
 </html>

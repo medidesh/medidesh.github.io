@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Medidesh – Pharmacy & Medicine Finder for Bangladesh</title>
+    <meta
+      name="description"
+      content="POS, batch/expiry, nearby search, analytics."
+    />
+    <meta
+      property="og:title"
+      content="Medidesh – Pharmacy & Medicine Finder for Bangladesh"
+    />
+    <meta
+      property="og:description"
+      content="POS, batch/expiry, nearby search, analytics."
+    />
+    <meta property="og:type" content="website" />
+    <style>
+      @font-face {
+        font-family: "MedideshSans";
+        src: url("MedideshSans-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "MedideshSans";
+        src: url("MedideshSans-SemiBold.woff2") format("woff2");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      :root {
+        --primary: #0a3d62;
+        --accent: #2ecc71;
+        --surface: #ffffff;
+        --text: #0e1116;
+        --muted: #f4f6f8;
+        --radius: 14px;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        --transition: 0.2s ease;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+      body {
+        font-family: "MedideshSans", system-ui, -apple-system, Segoe UI, Roboto,
+          Noto Sans, sans-serif;
+        color: var(--text);
+        background: var(--surface);
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 44px;
+        line-height: 52px;
+        font-weight: 600;
+        margin: 0 0 16px;
+      }
+      h2 {
+        font-size: 28px;
+        line-height: 36px;
+        font-weight: 600;
+        margin: 0 0 24px;
+      }
+      h3 {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+        margin: 0 0 16px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 26px;
+        margin: 0 0 16px;
+      }
+      a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      button,
+      a[role="button"] {
+        font-family: inherit;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        border-radius: var(--radius);
+        transition: var(--transition);
+        cursor: pointer;
+        padding: 16px 24px;
+        display: inline-block;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: var(--surface);
+        border: none;
+        box-shadow: var(--shadow);
+      }
+      .btn-primary:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 16px rgba(46, 204, 113, 0.2);
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+        padding: 14px 22px;
+      }
+      .btn-secondary:hover {
+        background: var(--primary);
+        color: var(--surface);
+      }
+      .card {
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 24px;
+        transition: var(--transition);
+      }
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      }
+      .chip {
+        background: var(--muted);
+        border-radius: 999px;
+        padding: 4px 12px;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      section {
+        padding: 64px 16px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      header nav {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        z-index: 10;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      nav .logo {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--primary);
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li a {
+        padding: 8px 16px;
+      }
+      @media (max-width: 767px) {
+        nav {
+          flex-direction: column;
+          gap: 16px;
+        }
+        nav ul {
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+        text-align: center;
+      }
+      .hero .content {
+        max-width: 800px;
+      }
+      .hero .badges {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .hero .ctas {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .hero .mockup {
+        width: 100%;
+        max-width: 300px;
+        height: 600px;
+        background: #eee;
+        border-radius: 32px;
+        border: 8px solid #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero .mockup svg {
+        width: 80%;
+        height: 80%;
+      }
+      @media (min-width: 768px) {
+        .hero {
+          flex-direction: row;
+          text-align: left;
+        }
+        .hero .content,
+        .hero .mockup {
+          flex: 1;
+        }
+      }
+      .problem .cards,
+      .solution .cards {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 768px) {
+        .problem .cards,
+        .solution .cards {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .features {
+        display: grid;
+        gap: 48px;
+      }
+      .features .section {
+        display: grid;
+        gap: 24px;
+      }
+      .features ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: 16px;
+      }
+      .features li {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      @media (min-width: 768px) {
+        .features {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .timeline ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        position: relative;
+      }
+      .timeline ol:before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--muted);
+      }
+      .timeline li {
+        display: flex;
+        gap: 16px;
+      }
+      .timeline .step {
+        width: 40px;
+        height: 40px;
+        background: var(--accent);
+        color: var(--surface);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+      }
+      .timeline .content {
+        flex: 1;
+      }
+      @media (min-width: 768px) {
+        .timeline ol {
+          flex-direction: row;
+          gap: 0;
+        }
+        .timeline ol:before {
+          left: 0;
+          right: 0;
+          top: 20px;
+          height: 2px;
+          width: auto;
+        }
+        .timeline li {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          flex: 1;
+        }
+        .timeline .step {
+          margin-bottom: 16px;
+        }
+      }
+      .screens .grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr;
+      }
+      .screens .item {
+        text-align: center;
+      }
+      .screens .placeholder {
+        width: 100%;
+        height: 400px;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius);
+      }
+      @media (min-width: 768px) {
+        .screens .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .screens .grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .pricing .toggle {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 32px;
+        background: var(--muted);
+        border-radius: var(--radius);
+        padding: 4px;
+        width: max-content;
+        margin: 0 auto;
+      }
+      .pricing .toggle button {
+        background: transparent;
+        border: none;
+        padding: 12px 24px;
+        cursor: pointer;
+        transition: var(--transition);
+        font-weight: 600;
+      }
+      .pricing .toggle button.active {
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        border-radius: var(--radius);
+      }
+      .pricing .plans {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr;
+      }
+      .pricing .plan {
+        text-align: center;
+      }
+      .pricing .price {
+        font-size: 32px;
+        font-weight: 600;
+      }
+      .pricing ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+        max-width: 300px;
+        margin: 16px auto;
+      }
+      .pricing li {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      @media (min-width: 768px) {
+        .pricing .plans {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .testimonials .grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 768px) {
+        .testimonials .grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .faq details {
+        margin-bottom: 16px;
+        border-bottom: 1px solid var(--muted);
+      }
+      .faq summary {
+        font-weight: 600;
+        cursor: pointer;
+        list-style: none;
+        padding: 16px 0;
+      }
+      .faq details[open] summary {
+        padding-bottom: 0;
+      }
+      .contact form {
+        display: grid;
+        gap: 16px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .contact input,
+      .contact textarea {
+        padding: 12px;
+        border: 1px solid var(--muted);
+        border-radius: var(--radius);
+        font-family: inherit;
+      }
+      .contact button {
+        width: max-content;
+      }
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+      }
+      .footer-links {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .cta {
+        text-align: center;
+        padding: 64px 16px;
+        background: var(--muted);
+      }
+      .cta .ctas {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .toast {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        background: var(--accent);
+        color: var(--surface);
+        padding: 12px 24px;
+        border-radius: var(--radius);
+        opacity: 0;
+        transition: 0.3s ease;
+        transform: translateY(20px);
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.6s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .fade-in {
+          transition: none;
+        }
+      }
+      :focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Main navigation">
+        <div class="logo">Medidesh</div>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#screens">Screens</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero fade-in">
+        <div class="content">
+          <h1>Modern Pharmacy & Medicine Finder for Bangladesh</h1>
+          <p>
+            Manage stock by batch and expiry, track sales, and let customers
+            find medicines nearby—fast.
+          </p>
+          <div class="badges">
+            <div class="chip">✓ Pharmacy POS</div>
+            <div class="chip">✓ Batch & Expiry</div>
+            <div class="chip">✓ Nearby Search</div>
+          </div>
+          <div class="ctas">
+            <a href="#" class="btn-primary" role="button">Get Started</a>
+            <a href="#" class="btn-secondary" role="button">View Demo</a>
+          </div>
+        </div>
+        <div class="mockup">
+          <svg viewBox="0 0 300 600">
+            <rect width="300" height="600" fill="#eee" rx="30" />
+            <text
+              x="150"
+              y="300"
+              text-anchor="middle"
+              fill="#aaa"
+              font-size="24"
+            >
+              Phone Mockup
+            </text>
+          </svg>
+        </div>
+      </section>
+      <section class="problem fade-in">
+        <h2>Problems We Solve</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Stockouts & Expired Wastage</h3>
+            <p>Hard to track batches leads to lost sales and waste.</p>
+          </div>
+          <div class="card">
+            <h3>Slow Customer Discovery</h3>
+            <p>People can’t quickly find medicine availability nearby.</p>
+          </div>
+          <div class="card">
+            <h3>Manual & Fragmented</h3>
+            <p>
+              Purchases, sales, suppliers, and reports live in separate silos.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="solution fade-in">
+        <h2>Our Solution</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Unified Flow</h3>
+            <p>
+              Purchase → Stock (Batches) → Sell (POS) with automatic updates.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Smart Finder</h3>
+            <p>
+              Customers request and locate medicines in nearby verified
+              pharmacies.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Analytics & Alerts</h3>
+            <p>Low stock and expiry reminders with quick actions.</p>
+          </div>
+        </div>
+      </section>
+      <section id="features" class="features fade-in">
+        <div class="section">
+          <h2>For Pharmacies</h2>
+          <ul>
+            <li>Batch & Expiry Management</li>
+            <li>POS with discount and invoice</li>
+            <li>Supplier & Purchase tracking</li>
+            <li>Stock adjustments with audit</li>
+            <li>Low stock and expiry alerts</li>
+            <li>Role-based access (Owner/Manager/Staff)</li>
+            <li>Offline-first caching</li>
+            <li>Simple exports (PDF/CSV)</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h2>For Customers</h2>
+          <ul>
+            <li>Search nearby pharmacies</li>
+            <li>Request a medicine</li>
+            <li>Get availability updates</li>
+            <li>Optional profile for saved searches</li>
+          </ul>
+        </div>
+      </section>
+      <section id="how-it-works" class="timeline fade-in">
+        <h2>How It Works</h2>
+        <ol>
+          <li>
+            <div class="step">1</div>
+            <div class="content">
+              <h3>Purchase</h3>
+              <p>Record purchases by supplier, invoice, and batch.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step">2</div>
+            <div class="content">
+              <h3>Stock</h3>
+              <p>Batches updated with strips/units, prices, expiry.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step">3</div>
+            <div class="content">
+              <h3>Sell</h3>
+              <p>POS subtracts from FIFO batches automatically.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step">4</div>
+            <div class="content">
+              <h3>Requests</h3>
+              <p>Customers request; pharmacies accept or counter.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step">5</div>
+            <div class="content">
+              <h3>Alerts</h3>
+              <p>Low stock & expiry reminders with actions.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step">6</div>
+            <div class="content">
+              <h3>Analytics</h3>
+              <p>Sales, margins, top SKUs, returns.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section id="screens" class="screens fade-in">
+        <h2>Screens</h2>
+        <div class="grid">
+          <div class="item">
+            <div class="placeholder">
+              <svg viewBox="0 0 300 200">
+                <rect width="300" height="200" fill="#eee" />
+                <text x="150" y="100" text-anchor="middle" fill="#aaa">
+                  Dashboard
+                </text>
+              </svg>
+            </div>
+            <p>
+              Dashboard: Today’s sales, low stock, soon-to-expire, quick actions
+            </p>
+          </div>
+          <div class="item">
+            <div class="placeholder">
+              <svg viewBox="0 0 300 200">
+                <rect width="300" height="200" fill="#eee" />
+                <text x="150" y="100" text-anchor="middle" fill="#aaa">
+                  Inventory
+                </text>
+              </svg>
+            </div>
+            <p>Inventory: Search, filters, batch drill-down, edit prices</p>
+          </div>
+          <div class="item">
+            <div class="placeholder">
+              <svg viewBox="0 0 300 200">
+                <rect width="300" height="200" fill="#eee" />
+                <text x="150" y="100" text-anchor="middle" fill="#aaa">
+                  POS
+                </text>
+              </svg>
+            </div>
+            <p>POS: Scan barcode, add items, discounts, total, invoice</p>
+          </div>
+          <div class="item">
+            <div class="placeholder">
+              <svg viewBox="0 0 300 200">
+                <rect width="300" height="200" fill="#eee" />
+                <text x="150" y="100" text-anchor="middle" fill="#aaa">
+                  Purchases
+                </text>
+              </svg>
+            </div>
+            <p>Purchases: Supplier, invoice, batches, payment status</p>
+          </div>
+          <div class="item">
+            <div class="placeholder">
+              <svg viewBox="0 0 300 200">
+                <rect width="300" height="200" fill="#eee" />
+                <text x="150" y="100" text-anchor="middle" fill="#aaa">
+                  Requests
+                </text>
+              </svg>
+            </div>
+            <p>Requests: Inbox, accept/counter, mark fulfilled</p>
+          </div>
+          <div class="item">
+            <div class="placeholder">
+              <svg viewBox="0 0 300 200">
+                <rect width="300" height="200" fill="#eee" />
+                <text x="150" y="100" text-anchor="middle" fill="#aaa">
+                  Analytics
+                </text>
+              </svg>
+            </div>
+            <p>Analytics: Sales, profit, top items, supplier performance</p>
+          </div>
+        </div>
+      </section>
+      <section id="pricing" class="pricing fade-in">
+        <h2>Pricing</h2>
+        <div class="toggle">
+          <button id="monthly" class="active">Monthly</button>
+          <button id="yearly">Yearly</button>
+        </div>
+        <div class="plans">
+          <div class="card plan">
+            <h3>Free</h3>
+            <p class="price">৳0 <span class="period">/mo</span></p>
+            <ul>
+              <li>1 user, 500 sales/month</li>
+              <li>1000 inventory items</li>
+              <li>basic POS</li>
+              <li>basic inventory</li>
+              <li>basic reports</li>
+            </ul>
+            <a href="#" class="btn-primary" role="button">Get Started</a>
+          </div>
+          <div class="card plan">
+            <h3>Starter</h3>
+            <p class="price" data-monthly="2000">
+              ৳2000 <span class="period">/mo</span>
+            </p>
+            <ul>
+              <li>3 users, 2 branches</li>
+              <li>3000 sales/month</li>
+              <li>demand trends</li>
+              <li>multi-user</li>
+              <li>backups</li>
+            </ul>
+            <a href="#" class="btn-primary" role="button">Get Started</a>
+          </div>
+          <div class="card plan">
+            <h3>Growth</h3>
+            <p class="price" data-monthly="5000">
+              ৳5000 <span class="period">/mo</span>
+            </p>
+            <ul>
+              <li>10 users, 5 branches</li>
+              <li>10000 sales/month</li>
+              <li>advanced analytics</li>
+              <li>priority support</li>
+            </ul>
+            <a href="#" class="btn-primary" role="button">Get Started</a>
+          </div>
+          <div class="card plan">
+            <h3>Business</h3>
+            <p class="price" data-monthly="12000">
+              ৳12000 <span class="period">/mo</span>
+            </p>
+            <ul>
+              <li>Unlimited users</li>
+              <li>multi-branch</li>
+              <li>API access</li>
+              <li>advanced forecasting</li>
+              <li>SLA support</li>
+            </ul>
+            <a href="#" class="btn-primary" role="button">Get Started</a>
+          </div>
+        </div>
+      </section>
+      <section class="testimonials fade-in">
+        <h2>What Our Users Say</h2>
+        <div class="grid">
+          <div class="card">
+            <p>“Reduced expired stock by 22% in 2 months.”</p>
+          </div>
+          <div class="card">
+            <p>“Finding medicines nearby boosted footfall.”</p>
+          </div>
+          <div class="card">
+            <p>“POS and batches made daily work simpler.”</p>
+          </div>
+        </div>
+      </section>
+      <section id="faqs" class="faq fade-in">
+        <h2>FAQs</h2>
+        <details>
+          <summary>Do you sell medicines?</summary>
+          <p>No. We enable discovery and management.</p>
+        </details>
+        <details>
+          <summary>Is it legal to show prices?</summary>
+          <p>We display pharmacy-defined prices; no online sale.</p>
+        </details>
+        <details>
+          <summary>Can staff use multiple devices?</summary>
+          <p>Yes, controlled by roles and plan.</p>
+        </details>
+        <details>
+          <summary>Works offline?</summary>
+          <p>Core flows cache and sync when online.</p>
+        </details>
+        <details>
+          <summary>Can customers request without signup?</summary>
+          <p>Yes, limited, with OTP or guest session.</p>
+        </details>
+      </section>
+      <section class="cta fade-in">
+        <h2>Ready to modernize your pharmacy?</h2>
+        <div class="ctas">
+          <a href="#" class="btn-primary" role="button">Get Started</a>
+          <a href="#" class="btn-secondary" role="button">Schedule a Demo</a>
+        </div>
+      </section>
+    </main>
+    <footer id="contact">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#screens">Screens</a>
+          <a href="#faqs">FAQs</a>
+        </div>
+        <form id="contact-form">
+          <input
+            type="text"
+            id="name"
+            placeholder="Name"
+            required
+            aria-label="Name"
+          />
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            required
+            aria-label="Email"
+          />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Phone"
+            required
+            aria-label="Phone"
+          />
+          <textarea
+            id="message"
+            placeholder="Message"
+            required
+            aria-label="Message"
+          ></textarea>
+          <button type="submit" class="btn-primary">Send</button>
+        </form>
+      </div>
+    </footer>
+    <div class="toast" id="toast">Message sent successfully!</div>
+    <script>
+      const sections = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      sections.forEach((section) => observer.observe(section));
+      const monthlyBtn = document.getElementById("monthly");
+      const yearlyBtn = document.getElementById("yearly");
+      const prices = document.querySelectorAll(".price");
+      const periods = document.querySelectorAll(".period");
+      const togglePeriod = localStorage.getItem("pricing-period") || "monthly";
+      function updatePricing(period) {
+        prices.forEach((price) => {
+          const monthlyPrice = price.dataset.monthly;
+          if (period === "yearly") {
+            const yearlyPrice = Math.round(monthlyPrice * 12 * 0.85);
+            price.innerHTML = `৳${yearlyPrice} <span class="period">/yr</span>`;
+          } else {
+            price.innerHTML = `৳${monthlyPrice} <span class="period">/mo</span>`;
+          }
+        });
+        if (period === "monthly") {
+          monthlyBtn.classList.add("active");
+          yearlyBtn.classList.remove("active");
+        } else {
+          yearlyBtn.classList.add("active");
+          monthlyBtn.classList.remove("active");
+        }
+        localStorage.setItem("pricing-period", period);
+      }
+      updatePricing(togglePeriod);
+      monthlyBtn.addEventListener("click", () => updatePricing("monthly"));
+      yearlyBtn.addEventListener("click", () => updatePricing("yearly"));
+      const form = document.getElementById("contact-form");
+      const toast = document.getElementById("toast");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const message = document.getElementById("message").value.trim();
+        if (name && email.includes("@") && phone && message) {
+          toast.classList.add("show");
+          setTimeout(() => {
+            toast.classList.remove("show");
+          }, 3000);
+          form.reset();
+        }
+      });
+    </script>
+  </body>
+</html>

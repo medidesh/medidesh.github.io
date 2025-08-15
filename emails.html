@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Medidesh — Waitlist Emails</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="View all emails subscribed to the Medidesh waitlist."
+    />
+    <meta property="og:title" content="Medidesh — Waitlist Emails" />
+    <meta
+      property="og:description"
+      content="View all emails subscribed to the Medidesh waitlist."
+    />
+    <meta property="og:type" content="website" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/css/styles.css" />
+    <style>
+      .table-container {
+        padding: 20px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: var(--radius);
+        margin: 20px;
+      }
+
+      .email-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: clamp(14px, 4vw, 16px);
+        color: var(--text);
+      }
+
+      .email-table th,
+      .email-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .email-table th {
+        background: rgba(255, 255, 255, 0.06);
+        font-weight: 700;
+      }
+
+      .email-table td {
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .no-data {
+        text-align: center;
+        padding: 20px;
+        color: var(--text-dim);
+        font-size: clamp(14px, 4vw, 16px);
+      }
+
+      .back-btn {
+        display: inline-block;
+        margin: 20px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: var(--primary);
+        color: #08130d;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: clamp(14px, 4vw, 15px);
+        box-shadow: 0 8px 20px var(--ring);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .back-btn:active {
+        transform: scale(0.98);
+      }
+
+      @media (max-width: 480px) {
+        .table-container {
+          padding: 16px;
+          margin: 12px;
+        }
+
+        .email-table th,
+        .email-table td {
+          padding: 8px;
+          font-size: clamp(12px, 3.5vw, 14px);
+        }
+
+        .back-btn {
+          margin: 12px;
+          padding: 10px 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <a class="brand" href="index.html">
+          <div class="logo">M</div>
+          <h1>Medidesh</h1>
+        </a>
+        <div class="tag">Waitlist Emails</div>
+      </div>
+      <div class="table-container">
+        <h2>Subscribed Emails</h2>
+        <table class="email-table" aria-label="Waitlist Emails">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Subscribed On</th>
+            </tr>
+          </thead>
+          <tbody id="emailList"></tbody>
+        </table>
+        <p id="noData" class="no-data" style="display: none;">
+          No emails subscribed yet.
+        </p>
+      </div>
+      <a href="index.html" class="back-btn">Back to Home</a>
+      <div class="footer">
+        <div>© <span id="year"></span> Medidesh</div>
+        <div class="links">
+          <a class="a" href="#" id="x">Twitter</a>
+          <a class="a" href="#" id="ig">Instagram</a>
+          <a class="a" href="#" id="mail">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="toast" id="toast">Loading emails...</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.min.js"></script>
+    <script>
+      const d = document;
+      const byId = (id) => d.getElementById(id);
+      const emailList = byId("emailList");
+      const noData = byId("noData");
+      const toast = byId("toast");
+
+      byId("year").textContent = new Date().getFullYear();
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2200);
+      }
+
+      async function initDb() {
+        const SQL = await initSqlJs({
+          locateFile: () =>
+            "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.wasm",
+        });
+        const savedDb = localStorage.getItem("medidesh_db");
+        const db = savedDb
+          ? new SQL.Database(new Uint8Array(JSON.parse(savedDb)))
+          : new SQL.Database();
+        return db;
+      }
+
+      function displayEmails(db) {
+        const result = db.exec("SELECT email, created_at FROM waitlist");
+        emailList.innerHTML = "";
+        if (result.length === 0 || result[0].values.length === 0) {
+          noData.style.display = "block";
+          return;
+        }
+        noData.style.display = "none";
+        result[0].values.forEach(([email, created_at]) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${email}</td>
+            <td>${new Date(created_at).toLocaleString()}</td>
+          `;
+          emailList.appendChild(row);
+        });
+      }
+
+      initDb().then((db) => {
+        displayEmails(db);
+        showToast("Emails loaded successfully.");
+      }).catch((e) => {
+        showToast("Error loading emails.");
+        console.error(e);
+      });
+    </script>
+  </body>
+</html>

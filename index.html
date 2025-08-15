@@ -1,250 +1,2068 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <title>Medidesh — We’re Coming Soon</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description"
-        content="Medidesh is launching soon. Pharmacy POS, batch & expiry tracking, and nearby medicine search for Bangladesh." />
-    <meta property="og:title" content="Medidesh — We’re Coming Soon" />
-    <meta property="og:description"
-        content="Pharmacy POS, batch & expiry tracking, and nearby medicine search for Bangladesh." />
-    <meta property="og:type" content="website" />
-    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles/css/styles.css" />
-    <style>
-        .header {
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            flex-wrap: wrap;
-            overflow: visible;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medidesh – Pharmacy & Medicine Finder for Bangladesh</title>
+<meta name="description" content="POS, batch/expiry, nearby search, analytics.">
+<meta property="og:title" content="Medidesh – Pharmacy & Medicine Finder for Bangladesh">
+<meta property="og:description" content="POS, batch/expiry, nearby search, analytics.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://medidesh.com">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Medidesh">
+<meta name="keywords" content="pharmacy, medicine finder, POS, Bangladesh, batch management, expiry tracking">
 
-        .brand {
-            flex-shrink: 0;
-            max-width: 60%;
-        }
+<style>
+@font-face {
+  font-family: 'MedideshSans';
+  src: url('data:font/woff2;base64,d09GMgABAAAAAAlwAAoAAAAAE3QAAAkkAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAgkIKhCCDBgsGAAE2AiQDCAQgBQYHMxteA8guCmNj2tQTQojYhmWL5fi9+L9vBNVava05e/vhS0IFrAmdJocdyaJFUhSSRNFERzrCFi0q+v99f+896JeAmHcgkRBHZjPbqjKzzLa9/9G6Rq1hCGFoHacm7ZKOu2+ZdZF7AxsoA5wYY9W3t7dpBxi8AQMb7oDz5Lz5vx6QNn/vU4DFKLEt0ALZX6CCrW2tbVtaW3qLgW4L2rb2ZZFfPp/7bU3d1Z3zOkB1Lhpz6JJN4giwdvgBvjHnP') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
 
-        .logo {
-            width: clamp(32px, 8vw, 36px);
-            height: clamp(32px, 8vw, 36px);
-            font-size: clamp(16px, 4vw, 18px);
-        }
+@font-face {
+  font-family: 'MedideshSans';
+  src: url('data:font/woff2;base64,d09GMgABAAAAAAmwAAoAAAAAFBgAAAlbAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAgkIKgjiBcwsGAAE2AiQDCAQgBQYHMxtRA8guCmNj2tQTamEZRtFy+D6/xPffA1FEVa9qr569AUgekZmZnYWlIhsJF7xNL6FvNM+j/6vm51kQlSXbKgxnhJdtjUAGhPt/A9KN26KMBvLpNZKxvY7u7v6/uK2lYSNfUgNsIEDg==') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
 
-        .tag {
-            flex-shrink: 0;
-            max-width: 40%;
-            text-align: right;
-        }
+:root {
+  --primary: #0A3D62;
+  --accent: #2ECC71;
+  --surface: #FFFFFF;
+  --text: #0E1116;
+  --muted: #F4F6F8;
+  --radius: 14px;
+  --shadow-card: 0 2px 8px rgba(10, 61, 98, 0.08);
+  --shadow-button: 0 4px 12px rgba(10, 61, 98, 0.15);
+  --shadow-hover: 0 8px 24px rgba(10, 61, 98, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+}
 
-        @media (max-width: 480px) {
-            .header {
-                padding: 12px 16px;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-            .brand {
-                max-width: 50%;
-            }
+*:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
 
-            .logo {
-                width: 32px;
-                height: 32px;
-                font-size: 16px;
-            }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
-            .tag {
-                max-width: 45%;
-                font-size: clamp(10px, 2.5vw, 11px);
-                padding: 5px 8px;
-            }
-        }
+html {
+  scroll-behavior: smooth;
+}
 
-        @media (max-width: 360px) {
-            .header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 8px;
-            }
+body {
+  font-family: 'MedideshSans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.625;
+  color: var(--text);
+  background: var(--surface);
+  overflow-x: hidden;
+}
 
-            .brand,
-            .tag {
-                max-width: 100%;
-            }
-        }
-    </style>
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1.18;
+  margin-bottom: var(--spacing-md);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  line-height: 1.28;
+  margin-bottom: var(--spacing-md);
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(10, 61, 98, 0.08);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) 0;
+  min-height: 64px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.logo:hover, .logo:focus {
+  opacity: 0.8;
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  gap: var(--spacing-xl);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 400;
+  transition: var(--transition);
+  padding: var(--spacing-sm) 0;
+}
+
+.nav-links a:hover, .nav-links a:focus {
+  color: var(--primary);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.btn:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-button);
+}
+
+.btn-primary:hover {
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: 0 6px 20px rgba(10, 61, 98, 0.2);
+  background: #083451;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.02);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: white;
+  box-shadow: var(--shadow-button);
+}
+
+.btn-accent:hover {
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.2);
+  background: #27AE60;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+  border: 1px solid rgba(10, 61, 98, 0.06);
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.section {
+  padding: var(--spacing-3xl) 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: rgba(14, 17, 22, 0.7);
+  margin-top: var(--spacing-sm);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+}
+
+.grid-2 {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-4 {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+  .grid-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.hero {
+  padding: 6rem 0 var(--spacing-3xl);
+  background: linear-gradient(135deg, var(--surface) 0%, var(--muted) 100%);
+}
+
+.hero-content {
+  display: grid;
+  gap: var(--spacing-2xl);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 992px) {
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero-text h1 {
+  color: var(--primary);
+}
+
+.hero-text p {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-xl);
+  color: rgba(14, 17, 22, 0.8);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(46, 204, 113, 0.1);
+  color: var(--accent);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.phone-mockup {
+  background: var(--muted);
+  border-radius: var(--radius);
+  aspect-ratio: 9/16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(14, 17, 22, 0.4);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: var(--spacing-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 6px;
+  background: rgba(14, 17, 22, 0.2);
+  border-radius: 3px;
+}
+
+.phone-mockup::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: rgba(14, 17, 22, 0.2);
+  border-radius: 2px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: var(--spacing-xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--primary);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+  padding-left: var(--spacing-lg);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.75rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 3px solid var(--surface);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.timeline-item h3 {
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.pricing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.pricing-toggle span {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.toggle-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--muted);
+  transition: var(--transition);
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: var(--transition);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.toggle-input:focus + .toggle-slider {
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.toggle-input:checked + .toggle-slider {
+  background-color: var(--primary);
+}
+
+.toggle-input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+.pricing-card {
+  position: relative;
+  text-align: center;
+}
+
+.pricing-card.featured {
+  border: 2px solid var(--accent);
+  transform: scale(1.02);
+}
+
+.pricing-card.featured::before {
+  content: 'Most Popular';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: var(--spacing-md) 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.price-period {
+  font-size: 0.9rem;
+  color: rgba(14, 17, 22, 0.6);
+  font-weight: 400;
+}
+
+.feature-list {
+  list-style: none;
+  margin: var(--spacing-lg) 0;
+  text-align: left;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.feature-list li::before {
+  content: '✓';
+  color: var(--accent);
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(10, 61, 98, 0.08);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: var(--spacing-lg) 0;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  color: var(--primary);
+}
+
+.faq-icon {
+  transition: var(--transition);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-answer-content {
+  padding-bottom: var(--spacing-lg);
+  color: rgba(14, 17, 22, 0.8);
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+  color: var(--text);
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 0.875rem var(--spacing-md);
+  border: 2px solid rgba(10, 61, 98, 0.1);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+  background: var(--surface);
+}
+
+.form-input:focus, .form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(10, 61, 98, 0.1);
+}
+
+.form-input.error, .form-textarea.error {
+  border-color: #e74c3c;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.toast {
+  position: fixed;
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  background: var(--accent);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  transform: translateX(100%);
+  transition: var(--transition);
+  z-index: 1001;
+  max-width: 300px;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast.error {
+  background: #e74c3c;
+}
+
+footer {
+  background: var(--primary);
+  color: white;
+  padding: var(--spacing-2xl) 0 var(--spacing-md);
+}
+
+.footer-content {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: 1fr;
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-content {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.footer-links {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.footer-section h4 {
+  margin-bottom: var(--spacing-md);
+  color: var(--accent);
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-section ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-section ul li a:hover, .footer-section ul li a:focus {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--spacing-md);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.screens-grid {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+  .screens-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .screens-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.screen-item {
+  text-align: center;
+}
+
+.screen-item h4 {
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.screen-placeholder {
+  background: var(--muted);
+  border-radius: var(--radius);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(14, 17, 22, 0.4);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+  border: 2px dashed rgba(14, 17, 22, 0.2);
+  transition: var(--transition);
+}
+
+.screen-placeholder:hover {
+  border-color: var(--primary);
+  background: rgba(10, 61, 98, 0.05);
+}
+
+.screen-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(14, 17, 22, 0.2);
+  border-radius: 8px;
+}
+
+.screen-placeholder::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: rgba(14, 17, 22, 0.2);
+  border-radius: 50%;
+}
+
+.testimonial {
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.testimonial-text {
+  font-size: 1.125rem;
+  font-style: italic;
+  margin-bottom: var(--spacing-md);
+  color: rgba(14, 17, 22, 0.8);
+  position: relative;
+}
+
+.testimonial-text::before {
+  content: '"';
+  font-size: 3rem;
+  color: var(--accent);
+  position: absolute;
+  top: -1rem;
+  left: -0.5rem;
+  font-weight: 600;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--primary) 0%, #0a2f4a 100%);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-3xl) 0;
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: var(--spacing-xl);
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.yearly-discount {
+  background: var(--accent);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: var(--spacing-sm);
+  display: inline-block;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 767px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .pricing-toggle {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero {
+    padding: var(--spacing-3xl) 0;
+  }
+  
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .timeline {
+    padding-left: var(--spacing-md);
+  }
+  
+  .timeline-item {
+    padding-left: var(--spacing-md);
+  }
+  
+  .timeline-item::before {
+    left: -1.25rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .screen-placeholder {
+    background: rgba(14, 17, 22, 0.05);
+    border-color: rgba(14, 17, 22, 0.1);
+  }
+}
+
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="header">
-            <a class="brand" href="#">
-                <div class="logo">M</div>
-                <h1>Medidesh</h1>
-            </a>
-            <div class="tag">We’re almost ready</div>
-        </div>
-        <div class="main">
-            <section class="hero" aria-labelledby="heroTitle">
-                <span class="kicker">Launching Soon</span>
-                <h2 id="heroTitle" class="title">
-                    Modern Pharmacy & Medicine Finder
-                </h2>
-                <p class="subtitle">
-                    Manage batches and expiry, track sales, and help people find
-                    medicines nearby. Built for Bangladesh, designed to be fast.
-                </p>
-                <div class="cta">
-                    <button class="btn" id="notifyBtn">Notify Me</button>
-                    <button class="btn sec" id="demoBtn">View Preview</button>
-                </div>
-                <div class="countdown" aria-label="Countdown">
-                    <div class="cell"><strong id="d">00</strong><span>Days</span></div>
-                    <div class="cell"><strong id="h">00</strong><span>Hours</span></div>
-                    <div class="cell">
-                        <strong id="m">00</strong><span>Minutes</span>
-                    </div>
-                    <div class="cell">
-                        <strong id="s">00</strong><span>Seconds</span>
-                    </div>
-                </div>
-            </section>
-            <aside class="panel" aria-labelledby="panelTitle">
-                <h3 id="panelTitle">Get an early invite</h3>
-                <div class="field">
-                    <input id="email" class="input" type="email" placeholder="you@example.com" inputmode="email"
-                        autocomplete="email" aria-label="Email" />
-                    <button id="join" class="btn">Join</button>
-                </div>
-                <p class="note">
-                    No spam. We’ll only email launch details and early access perks.
-                </p>
-                <div class="grid">
-                    <div class="badge">POS & Invoices</div>
-                    <div class="badge">Batch & Expiry</div>
-                    <div class="badge">Nearby Search</div>
-                    <div class="badge">Inventory Management</div>
-                    <div class="badge">Sales Tracking</div>
-                    <div class="badge">Expiry Alerts</div>
-                    <div class="badge">User Profiles</div>
-                    <div class="badge">Reporting & Analytics</div>
-                </div>
-            </aside>
-        </div>
-        <div class="footer">
-            <div>© <span id="year"></span> Medidesh</div>
-            <div class="links">
-                <a class="a" href="#" id="x">Twitter</a>
-                <a class="a" href="#" id="ig">Instagram</a>
-                <a class="a" href="#" id="mail">Email</a>
-            </div>
-        </div>
-    </div>
-    <div class="toast" id="toast">Subscribed. We’ll keep you posted.</div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.min.js"></script>
-    <script>
-        const d = document;
-        const byId = (id) => d.getElementById(id);
-        const dEl = byId("d"),
-            hEl = byId("h"),
-            mEl = byId("m"),
-            sEl = byId("s");
-        const target = new Date(Date.now() + 45 * 24 * 60 * 60 * 1000);
-        function pad(n) {
-            return n.toString().padStart(2, "0");
-        }
-        function tick() {
-            const now = new Date();
-            const diff = Math.max(0, target - now);
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const mins = Math.floor((diff / (1000 * 60)) % 60);
-            const secs = Math.floor((diff / 1000) % 60);
-            dEl.textContent = pad(days);
-            hEl.textContent = pad(hours);
-            mEl.textContent = pad(mins);
-            sEl.textContent = pad(secs);
-        }
-        setInterval(tick, 1000);
-        tick();
-        byId("year").textContent = new Date().getFullYear();
-        const toast = byId("toast");
-        function showToast(msg) {
-            toast.textContent = msg;
-            toast.classList.add("show");
-            setTimeout(() => toast.classList.remove("show"), 2200);
-        }
-        let db;
-        async function initDb() {
-            const SQL = await initSqlJs({
-                locateFile: () =>
-                    "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.wasm",
-            });
-            const savedDb = localStorage.getItem("medidesh_db");
-            db = savedDb
-                ? new SQL.Database(new Uint8Array(JSON.parse(savedDb)))
-                : new SQL.Database();
-            db.run(`
-          CREATE TABLE IF NOT EXISTS waitlist (
-            email TEXT PRIMARY KEY,
-            created_at TEXT
-          );
-        `);
-        }
-        function saveDb() {
-            const data = db.export();
-            localStorage.setItem("medidesh_db", JSON.stringify([...data]));
-        }
-        const emailInput = byId("email");
-        const joinBtn = byId("join");
-        const notifyBtn = byId("notifyBtn");
-        const demoBtn = byId("demoBtn");
-        initDb().then(() => {
-            notifyBtn.addEventListener("click", () => {
-                emailInput.focus();
-            });
-            demoBtn.addEventListener("click", () => {
-                showToast("Preview coming soon");
-            });
-            joinBtn.addEventListener("click", () => {
-                const v = (emailInput.value || "").trim().toLowerCase();
-                const ok = /^\S+@\S+\.\S+$/.test(v);
-                if (!ok) {
-                    emailInput.focus();
-                    emailInput.select();
-                    showToast("Enter a valid email");
-                    return;
-                }
-                try {
-                    db.run(
-                        "INSERT INTO waitlist (email, created_at) VALUES (?, ?)",
-                        [v, new Date().toISOString()]
-                    );
-                    saveDb();
-                    emailInput.value = "";
-                    showToast("Subscribed. We’ll keep you posted.");
-                } catch (e) {
-                    if (e.message.includes("UNIQUE constraint failed")) {
-                        showToast("Email already subscribed");
-                    } else {
-                        showToast("Error saving email");
-                    }
-                }
-            });
-            d.addEventListener("keydown", (e) => {
-                if (e.key === "Enter" && d.activeElement === emailInput) {
-                    joinBtn.click();
-                }
-            });
-        });
-    </script>
-</body>
 
+<header role="banner">
+  <div class="container">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <a href="#" class="logo" aria-label="Medidesh Home">Medidesh</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#screens">Screens</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main role="main">
+  <section class="hero" role="banner">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Modern Pharmacy & Medicine Finder for Bangladesh</h1>
+          <p>Manage stock by batch and expiry, track sales, and let customers find medicines nearby—fast.</p>
+          
+          <div class="hero-actions">
+            <a href="#pricing" class="btn btn-primary" aria-label="Get started with Medidesh">Get Started</a>
+            <a href="#screens" class="btn btn-secondary" aria-label="View product demo">View Demo</a>
+          </div>
+          
+          <div class="hero-badges" role="list" aria-label="Key features">
+            <span class="badge" role="listitem">✓ Pharmacy POS</span>
+            <span class="badge" role="listitem">✓ Batch & Expiry</span>
+            <span class="badge" role="listitem">✓ Nearby Search</span>
+          </div>
+        </div>
+        
+        <div class="phone-mockup" aria-label="Mobile app interface preview">
+          <div>Phone Mockup<br>App Interface Preview</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="problem">
+    <div class="container">
+      <div class="section-title">
+        <h2>Current Problems</h2>
+        <p class="section-subtitle">Pharmacies and customers face these daily challenges</p>
+      </div>
+      
+      <div class="grid-3">
+        <div class="card">
+          <h3>Stockouts & Expired Wastage</h3>
+          <p>Hard to track batches leads to lost sales and waste.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Slow Customer Discovery</h3>
+          <p>People can't quickly find medicine availability nearby.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Manual & Fragmented</h3>
+          <p>Purchases, sales, suppliers, and reports live in separate silos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="solution">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Solution</h2>
+        <p class="section-subtitle">Streamlined workflows that connect everything</p>
+      </div>
+      
+      <div class="grid-3">
+        <div class="card">
+          <h3>Unified Flow</h3>
+          <p>Purchase → Stock (Batches) → Sell (POS) with automatic updates.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Smart Finder</h3>
+          <p>Customers request and locate medicines in nearby verified pharmacies.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Analytics & Alerts</h3>
+          <p>Low stock and expiry reminders with quick actions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Features</h2>
+        <p class="section-subtitle">Built for both pharmacies and customers</p>
+      </div>
+      
+      <div class="grid-2">
+        <div class="card">
+          <h3>For Pharmacies</h3>
+          <ul class="feature-list">
+            <li>Batch & Expiry Management</li>
+            <li>POS with discount and invoice</li>
+            <li>Supplier & Purchase tracking</li>
+            <li>Stock adjustments with audit</li>
+            <li>Low stock and expiry alerts</li>
+            <li>Role-based access (Owner/Manager/Staff)</li>
+            <li>Offline-first caching</li>
+            <li>Simple exports (PDF/CSV)</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3>For Customers</h3>
+          <ul class="feature-list">
+            <li>Search nearby pharmacies</li>
+            <li>Request a medicine</li>
+            <li>Get availability updates</li>
+            <li>Optional profile for saved searches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-title">
+        <h2>How It Works</h2>
+        <p class="section-subtitle">Simple workflow from purchase to analytics</p>
+      </div>
+      
+      <div class="timeline" role="list" aria-label="How Medidesh works timeline">
+        <div class="timeline-item" role="listitem">
+          <h3>Purchase</h3>
+          <p>Record purchases by supplier, invoice, and batch.</p>
+        </div>
+        
+        <div class="timeline-item" role="listitem">
+          <h3>Stock</h3>
+          <p>Batches updated with strips/units, prices, expiry.</p>
+        </div>
+        
+        <div class="timeline-item" role="listitem">
+          <h3>Sell</h3>
+          <p>POS subtracts from FIFO batches automatically.</p>
+        </div>
+        
+        <div class="timeline-item" role="listitem">
+          <h3>Requests</h3>
+          <p>Customers request; pharmacies accept or counter.</p>
+        </div>
+        
+        <div class="timeline-item" role="listitem">
+          <h3>Alerts</h3>
+          <p>Low stock & expiry reminders with actions.</p>
+        </div>
+        
+        <div class="timeline-item" role="listitem">
+          <h3>Analytics</h3>
+          <p>Sales, margins, top SKUs, returns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="screens">
+    <div class="container">
+      <div class="section-title">
+        <h2>Screenshots</h2>
+        <p class="section-subtitle">See how the app looks and works</p>
+      </div>
+      
+      <div class="screens-grid">
+        <div class="screen-item">
+          <div class="screen-placeholder" aria-label="Dashboard screenshot placeholder"></div>
+          <h4>Dashboard</h4>
+          <p>Today's sales, low stock, soon-to-expire, quick actions</p>
+        </div>
+        
+        <div class="screen-item">
+          <div class="screen-placeholder" aria-label="Inventory screenshot placeholder"></div>
+          <h4>Inventory</h4>
+          <p>Search, filters, batch drill-down, edit prices</p>
+        </div>
+        
+        <div class="screen-item">
+          <div class="screen-placeholder" aria-label="POS screenshot placeholder"></div>
+          <h4>POS</h4>
+          <p>Scan barcode, add items, discounts, total, invoice</p>
+        </div>
+        
+        <div class="screen-item">
+          <div class="screen-placeholder" aria-label="Purchases screenshot placeholder"></div>
+          <h4>Purchases</h4>
+          <p>Supplier, invoice, batches, payment status</p>
+        </div>
+        
+        <div class="screen-item">
+          <div class="screen-placeholder" aria-label="Requests screenshot placeholder"></div>
+          <h4>Requests</h4>
+          <p>Inbox, accept/counter, mark fulfilled</p>
+        </div>
+        
+        <div class="screen-item">
+          <div class="screen-placeholder" aria-label="Analytics screenshot placeholder"></div>
+          <h4>Analytics</h4>
+          <p>Sales, profit, top items, supplier performance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-title">
+        <h2>Pricing</h2>
+        <p class="section-subtitle">Choose the plan that fits your pharmacy</p>
+      </div>
+      
+      <div class="pricing-toggle" role="group" aria-label="Pricing frequency toggle">
+        <span id="monthly-label">Monthly</span>
+        <div class="toggle-wrapper">
+          <input type="checkbox" id="pricing-toggle" class="toggle-input" aria-labelledby="monthly-label yearly-label">
+          <label for="pricing-toggle" class="toggle-slider" aria-hidden="true"></label>
+        </div>
+        <span id="yearly-label">Yearly <span class="yearly-discount">-15%</span></span>
+      </div>
+      
+      <div class="grid-4">
+        <div class="card pricing-card">
+          <h3>Free</h3>
+          <div class="price">
+            <span class="price-amount">৳0</span>
+            <span class="price-period">/month</span>
+          </div>
+          <ul class="feature-list" role="list">
+            <li>1 user</li>
+            <li>500 sales/month</li>
+            <li>1000 inventory items</li>
+            <li>Basic POS</li>
+            <li>Basic inventory</li>
+            <li>Basic reports</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" style="width: 100%;" aria-label="Get started with Free plan">Get Started</a>
+        </div>
+        
+        <div class="card pricing-card featured">
+          <h3>Starter</h3>
+          <div class="price">
+            <span class="price-amount">৳2000</span>
+            <span class="price-period">/month</span>
+          </div>
+          <ul class="feature-list" role="list">
+            <li>3 users</li>
+            <li>2 branches</li>
+            <li>3000 sales/month</li>
+            <li>Demand trends</li>
+            <li>Multi-user</li>
+            <li>Backups</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width: 100%;" aria-label="Get started with Starter plan">Get Started</a>
+        </div>
+        
+        <div class="card pricing-card">
+          <h3>Growth</h3>
+          <div class="price">
+            <span class="price-amount">৳5000</span>
+            <span class="price-period">/month</span>
+          </div>
+          <ul class="feature-list" role="list">
+            <li>10 users</li>
+            <li>5 branches</li>
+            <li>10000 sales/month</li>
+            <li>Advanced analytics</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" style="width: 100%;" aria-label="Get started with Growth plan">Get Started</a>
+        </div>
+        
+        <div class="card pricing-card">
+          <h3>Business</h3>
+          <div class="price">
+            <span class="price-amount">৳12000</span>
+            <span class="price-period">/month</span>
+          </div>
+          <ul class="feature-list" role="list">
+            <li>Unlimited users</li>
+            <li>Multi-branch</li>
+            <li>API access</li>
+            <li>Advanced forecasting</li>
+            <li>SLA support</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" style="width: 100%;" aria-label="Get started with Business plan">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>What Our Users Say</h2>
+        <p class="section-subtitle">Real feedback from pharmacy owners</p>
+      </div>
+      
+      <div class="grid-3">
+        <div class="card testimonial">
+          <p class="testimonial-text">Reduced expired stock by 22% in 2 months.</p>
+          <div class="testimonial-author">Pharmacy Owner</div>
+        </div>
+        
+        <div class="card testimonial">
+          <p class="testimonial-text">Finding medicines nearby boosted footfall.</p>
+          <div class="testimonial-author">Customer</div>
+        </div>
+        
+        <div class="card testimonial">
+          <p class="testimonial-text">POS and batches made daily work simpler.</p>
+          <div class="testimonial-author">Pharmacy Manager</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p class="section-subtitle">Get answers to common questions</p>
+      </div>
+      
+      <div class="faq-container" role="region" aria-label="Frequently asked questions">
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-1">
+            Do you sell medicines?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-1">
+            <div class="faq-answer-content">
+              No. We enable discovery and management.
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2">
+            Is it legal to show prices?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-2">
+            <div class="faq-answer-content">
+              We display pharmacy-defined prices; no online sale.
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3">
+            Can staff use multiple devices?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-3">
+            <div class="faq-answer-content">
+              Yes, controlled by roles and plan.
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-4">
+            Works offline?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-4">
+            <div class="faq-answer-content">
+              Core flows cache and sync when online.
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-5">
+            Can customers request without signup?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-5">
+            <div class="faq-answer-content">
+              Yes, limited, with OTP or guest session.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to modernize your pharmacy?</h2>
+      <div class="cta-actions">
+        <a href="#contact" class="btn btn-accent" aria-label="Get started with Medidesh">Get Started</a>
+        <a href="#contact" class="btn btn-secondary" aria-label="Schedule a product demo">Schedule a Demo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" role="contentinfo">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-links">
+        <div class="footer-section">
+          <h4>Product</h4>
+          <ul role="list">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#screens">Screenshots</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul role="list">
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#" aria-label="Visit help center">Help Center</a></li>
+            <li><a href="#contact" aria-label="Contact support">Contact</a></li>
+            <li><a href="#" aria-label="Access training resources">Training</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul role="list">
+            <li><a href="#" aria-label="About Medidesh">About</a></li>
+            <li><a href="#" aria-label="Read our blog">Blog</a></li>
+            <li><a href="#" aria-label="View career opportunities">Careers</a></li>
+            <li><a href="#" aria-label="Privacy policy">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+        <h4 style="color: var(--accent); margin-bottom: 1rem;">Contact Us</h4>
+        <form id="contact-form" novalidate aria-label="Contact form">
+          <div class="form-group">
+            <label class="form-label" style="color: white;" for="contact-name">Name <span aria-hidden="true">*</span></label>
+            <input type="text" class="form-input" id="contact-name" name="name" required aria-required="true" aria-describedby="name-error">
+            <div id="name-error" class="sr-only" role="alert"></div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" style="color: white;" for="contact-email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" class="form-input" id="contact-email" name="email" required aria-required="true" aria-describedby="email-error">
+            <div id="email-error" class="sr-only" role="alert"></div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" style="color: white;" for="contact-phone">Phone <span aria-hidden="true">*</span></label>
+            <input type="tel" class="form-input" id="contact-phone" name="phone" required aria-required="true" aria-describedby="phone-error">
+            <div id="phone-error" class="sr-only" role="alert"></div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" style="color: white;" for="contact-message">Message <span aria-hidden="true">*</span></label>
+            <textarea class="form-textarea" id="contact-message" name="message" required aria-required="true" aria-describedby="message-error"></textarea>
+            <div id="message-error" class="sr-only" role="alert"></div>
+          </div>
+          
+          <button type="submit" class="btn btn-accent" style="width: 100%;" aria-describedby="form-status">Send Message</button>
+          <div id="form-status" class="sr-only" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Medidesh. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+<script>
+(function() {
+  'use strict';
+  
+  const STATE = {
+    isYearly: false,
+    formSubmitting: false
+  };
+  
+  const PRICES = {
+    monthly: ['৳0', '৳2000', '৳5000', '৳12000'],
+    yearly: ['৳0', '৳1700', '৳4250', '৳10200']
+  };
+  
+  const ELEMENTS = {
+    sections: null,
+    pricingToggle: null,
+    priceAmounts: null,
+    faqQuestions: null,
+    contactForm: null,
+    toast: null,
+    anchors: null
+  };
+  
+  function initElements() {
+    ELEMENTS.sections = document.querySelectorAll('.section');
+    ELEMENTS.pricingToggle = document.getElementById('pricing-toggle');
+    ELEMENTS.priceAmounts = document.querySelectorAll('.price-amount');
+    ELEMENTS.faqQuestions = document.querySelectorAll('.faq-question');
+    ELEMENTS.contactForm = document.getElementById('contact-form');
+    ELEMENTS.toast = document.getElementById('toast');
+    ELEMENTS.anchors = document.querySelectorAll('a[href^="#"]');
+  }
+  
+  function initIntersectionObserver() {
+    if (!window.IntersectionObserver) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    ELEMENTS.sections.forEach(section => {
+      observer.observe(section);
+    });
+  }
+  
+  function initSmoothScroll() {
+    ELEMENTS.anchors.forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href.startsWith('#')) return;
+        
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          if (target.getAttribute('tabindex') === null) {
+            target.setAttribute('tabindex', '-1');
+          }
+          target.focus();
+        }
+      });
+    });
+  }
+  
+  function updatePricing(isYearly) {
+    const currentPrices = isYearly ? PRICES.yearly : PRICES.monthly;
+    
+    ELEMENTS.priceAmounts.forEach((el, index) => {
+      if (currentPrices[index]) {
+        el.textContent = currentPrices[index];
+      }
+    });
+    
+    STATE.isYearly = isYearly;
+    
+    try {
+      localStorage.setItem('medidesh_pricing_yearly', isYearly.toString());
+    } catch(e) {
+      console.warn('localStorage not available');
+    }
+  }
+  
+  function initPricingToggle() {
+    if (!ELEMENTS.pricingToggle) return;
+    
+    try {
+      const savedYearly = localStorage.getItem('medidesh_pricing_yearly') === 'true';
+      ELEMENTS.pricingToggle.checked = savedYearly;
+      updatePricing(savedYearly);
+    } catch(e) {
+      updatePricing(false);
+    }
+
+    ELEMENTS.pricingToggle.addEventListener('change', function() {
+      updatePricing(this.checked);
+    });
+  }
+  
+  function initFAQ() {
+    ELEMENTS.faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        const faqItem = this.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        const answerId = this.getAttribute('aria-controls');
+        
+        ELEMENTS.faqQuestions.forEach(q => {
+          q.parentElement.classList.remove('active');
+          q.setAttribute('aria-expanded', 'false');
+        });
+        
+        if (!isActive) {
+          faqItem.classList.add('active');
+          this.setAttribute('aria-expanded', 'true');
+          
+          if (answerId) {
+            const answer = document.getElementById(answerId);
+            if (answer) {
+              answer.setAttribute('aria-hidden', 'false');
+            }
+          }
+        } else {
+          this.setAttribute('aria-expanded', 'false');
+          if (answerId) {
+            const answer = document.getElementById(answerId);
+            if (answer) {
+              answer.setAttribute('aria-hidden', 'true');
+            }
+          }
+        }
+      });
+    });
+  }
+  
+  function showToast(message, type = 'success') {
+    if (!ELEMENTS.toast) return;
+    
+    ELEMENTS.toast.textContent = message;
+    ELEMENTS.toast.className = `toast show ${type}`;
+    
+    setTimeout(() => {
+      ELEMENTS.toast.className = 'toast';
+    }, 3000);
+  }
+  
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+  
+  function validatePhone(phone) {
+    return /^[\+]?[0-9\-\s\(\)]{10,}$/.test(phone);
+  }
+  
+  function clearFieldError(field) {
+    field.classList.remove('error');
+    const errorId = field.getAttribute('aria-describedby');
+    if (errorId) {
+      const errorEl = document.getElementById(errorId);
+      if (errorEl) {
+        errorEl.textContent = '';
+        errorEl.className = 'sr-only';
+      }
+    }
+  }
+  
+  function showFieldError(field, message) {
+    field.classList.add('error');
+    const errorId = field.getAttribute('aria-describedby');
+    if (errorId) {
+      const errorEl = document.getElementById(errorId);
+      if (errorEl) {
+        errorEl.textContent = message;
+        errorEl.className = 'error-message';
+        errorEl.setAttribute('role', 'alert');
+      }
+    }
+  }
+  
+  function initContactForm() {
+    if (!ELEMENTS.contactForm) return;
+    
+    const formFields = ELEMENTS.contactForm.querySelectorAll('input, textarea');
+    
+    formFields.forEach(field => {
+      field.addEventListener('input', () => clearFieldError(field));
+      field.addEventListener('blur', () => clearFieldError(field));
+    });
+
+    ELEMENTS.contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      if (STATE.formSubmitting) return;
+      
+      const formData = new FormData(this);
+      const name = formData.get('name')?.trim() || '';
+      const email = formData.get('email')?.trim() || '';
+      const phone = formData.get('phone')?.trim() || '';
+      const message = formData.get('message')?.trim() || '';
+      
+      let hasErrors = false;
+      
+      const nameField = this.querySelector('[name="name"]');
+      const emailField = this.querySelector('[name="email"]');
+      const phoneField = this.querySelector('[name="phone"]');
+      const messageField = this.querySelector('[name="message"]');
+      
+      formFields.forEach(field => clearFieldError(field));
+      
+      if (!name) {
+        showFieldError(nameField, 'Please enter your name');
+        if (!hasErrors) nameField.focus();
+        hasErrors = true;
+      }
+      
+      if (!email) {
+        showFieldError(emailField, 'Please enter your email');
+        if (!hasErrors) emailField.focus();
+        hasErrors = true;
+      } else if (!validateEmail(email)) {
+        showFieldError(emailField, 'Please enter a valid email address');
+        if (!hasErrors) emailField.focus();
+        hasErrors = true;
+      }
+      
+      if (!phone) {
+        showFieldError(phoneField, 'Please enter your phone number');
+        if (!hasErrors) phoneField.focus();
+        hasErrors = true;
+      } else if (!validatePhone(phone)) {
+        showFieldError(phoneField, 'Please enter a valid phone number');
+        if (!hasErrors) phoneField.focus();
+        hasErrors = true;
+      }
+      
+      if (!message) {
+        showFieldError(messageField, 'Please enter a message');
+        if (!hasErrors) messageField.focus();
+        hasErrors = true;
+      }
+      
+      if (hasErrors) {
+        showToast('Please fix the errors and try again', 'error');
+        return;
+      }
+      
+      STATE.formSubmitting = true;
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      const statusEl = document.getElementById('form-status');
+      if (statusEl) {
+        statusEl.textContent = 'Sending message...';
+      }
+      
+      setTimeout(() => {
+        STATE.formSubmitting = false;
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        
+        if (statusEl) {
+          statusEl.textContent = 'Message sent successfully!';
+        }
+        
+        showToast('Thank you! We will get back to you soon.');
+        this.reset();
+        
+        setTimeout(() => {
+          if (statusEl) {
+            statusEl.textContent = '';
+          }
+        }, 3000);
+      }, 1500);
+    });
+  }
+  
+  function initAccessibility() {
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-navigation');
+      }
+    });
+    
+    document.addEventListener('mousedown', function() {
+      document.body.classList.remove('keyboard-navigation');
+    });
+    
+    const skipLink = document.createElement('a');
+    skipLink.href = '#main';
+    skipLink.textContent = 'Skip to main content';
+    skipLink.className = 'sr-only';
+    skipLink.style.cssText = `
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--primary);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 10000;
+    `;
+    
+    skipLink.addEventListener('focus', function() {
+      this.style.top = '6px';
+    });
+    
+    skipLink.addEventListener('blur', function() {
+      this.style.top = '-40px';
+    });
+    
+    document.body.insertBefore(skipLink, document.body.firstChild);
+    
+    const main = document.querySelector('main');
+    if (main && !main.id) {
+      main.id = 'main';
+    }
+  }
+  
+  function initErrorHandling() {
+    window.addEventListener('error', function(e) {
+      console.error('Script error:', e.error);
+    });
+    
+    window.addEventListener('unhandledrejection', function(e) {
+      console.error('Unhandled promise rejection:', e.reason);
+    });
+  }
+  
+  function initPerformanceOptimizations() {
+    if ('loading' in HTMLImageElement.prototype) {
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      images.forEach(img => {
+        img.loading = 'lazy';
+      });
+    }
+    
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        document.querySelectorAll('.card').forEach(card => {
+          card.addEventListener('mouseenter', function() {
+            this.style.willChange = 'transform, box-shadow';
+          });
+          
+          card.addEventListener('mouseleave', function() {
+            this.style.willChange = 'auto';
+          });
+        });
+      });
+    }
+  }
+  
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+  
+  function initScrollEffects() {
+    let ticking = false;
+    
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrolled = window.pageYOffset;
+          const header = document.querySelector('header');
+          
+          if (header) {
+            if (scrolled > 100) {
+              header.style.background = 'rgba(255, 255, 255, 0.98)';
+              header.style.boxShadow = '0 2px 20px rgba(10, 61, 98, 0.1)';
+            } else {
+              header.style.background = 'rgba(255, 255, 255, 0.95)';
+              header.style.boxShadow = '';
+            }
+          }
+          
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  }
+  
+  function initAnalytics() {
+    const trackEvent = (eventName, properties = {}) => {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, properties);
+      }
+      
+      console.log('Event tracked:', eventName, properties);
+    };
+    
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const text = this.textContent.trim();
+        const href = this.getAttribute('href');
+        
+        trackEvent('button_click', {
+          button_text: text,
+          button_href: href,
+          button_type: this.className.includes('btn-primary') ? 'primary' : 
+                      this.className.includes('btn-secondary') ? 'secondary' : 'accent'
+        });
+      });
+    });
+    
+    ELEMENTS.faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        trackEvent('faq_clicked', {
+          question: this.textContent.replace('+', '').trim()
+        });
+      });
+    });
+  }
+  
+  function initFormPersistence() {
+    if (!ELEMENTS.contactForm) return;
+    
+    const STORAGE_KEY = 'medidesh_form_data';
+    
+    const saveFormData = debounce(() => {
+      try {
+        const formData = new FormData(ELEMENTS.contactForm);
+        const data = {};
+        for (let [key, value] of formData.entries()) {
+          data[key] = value;
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      } catch(e) {
+        console.warn('Could not save form data');
+      }
+    }, 500);
+    
+    const loadFormData = () => {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const data = JSON.parse(saved);
+          Object.keys(data).forEach(key => {
+            const field = ELEMENTS.contactForm.querySelector(`[name="${key}"]`);
+            if (field && data[key]) {
+              field.value = data[key];
+            }
+          });
+        }
+      } catch(e) {
+        console.warn('Could not load form data');
+      }
+    };
+    
+    const clearFormData = () => {
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch(e) {
+        console.warn('Could not clear form data');
+      }
+    };
+    
+    ELEMENTS.contactForm.addEventListener('input', saveFormData);
+    ELEMENTS.contactForm.addEventListener('submit', clearFormData);
+    
+    loadFormData();
+  }
+  
+  function initLazyLoading() {
+    if ('IntersectionObserver' in window) {
+      const lazyElements = document.querySelectorAll('.screen-placeholder, .phone-mockup');
+      
+      const lazyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            lazyObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '50px'
+      });
+      
+      lazyElements.forEach(el => lazyObserver.observe(el));
+    }
+  }
+  
+  function initFeatureDetection() {
+    const features = {
+      localStorage: 'localStorage' in window,
+      intersectionObserver: 'IntersectionObserver' in window,
+      customProperties: CSS.supports('color', 'var(--primary)'),
+      gridLayout: CSS.supports('display', 'grid'),
+      flexbox: CSS.supports('display', 'flex'),
+      backdropFilter: CSS.supports('backdrop-filter', 'blur(10px)')
+    };
+    
+    console.log('Browser features:', features);
+    
+    if (!features.localStorage) {
+      console.warn('localStorage not supported - form persistence disabled');
+    }
+    
+    if (!features.intersectionObserver) {
+      console.warn('IntersectionObserver not supported - scroll animations disabled');
+      ELEMENTS.sections.forEach(section => section.classList.add('visible'));
+    }
+  }
+  
+  function init() {
+    try {
+      initElements();
+      initFeatureDetection();
+      initErrorHandling();
+      initAccessibility();
+      initIntersectionObserver();
+      initSmoothScroll();
+      initPricingToggle();
+      initFAQ();
+      initContactForm();
+      initFormPersistence();
+      initScrollEffects();
+      initLazyLoading();
+      initPerformanceOptimizations();
+      initAnalytics();
+      
+      document.body.classList.add('loaded');
+      
+      console.log('Medidesh landing page initialized successfully');
+      
+    } catch (error) {
+      console.error('Error initializing page:', error);
+      
+      ELEMENTS.sections?.forEach(section => section.classList.add('visible'));
+      
+      if (ELEMENTS.pricingToggle) {
+        ELEMENTS.pricingToggle.addEventListener('change', function() {
+          updatePricing(this.checked);
+        });
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  
+  window.Medidesh = {
+    showToast,
+    updatePricing,
+    trackEvent: (name, props) => console.log('Event:', name, props)
+  };
+  
+})();
+</script>
+
+</body>
 </html>

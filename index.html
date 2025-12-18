@@ -71,12 +71,17 @@
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-8 text-base">
                 <a href="#features"
-                    class="text-slate-600 dark:text-slate-300 hover:text-sea-green-600 dark:hover:text-sea-green-400 font-medium transition-colors">ফিচারসমূহ</a>
-                <a href="#nearby"
-                    class="text-slate-600 dark:text-slate-300 hover:text-sea-green-600 dark:hover:text-sea-green-400 font-medium transition-colors">কাস্টমার
-                    খুঁজুন</a>
+                    class="text-slate-600 dark:text-slate-300 hover:text-sea-green-600 dark:hover:text-sea-green-400 font-medium transition-colors">ফিচার</a>
+                <a href="#ai-features"
+                    class="text-indigo-600 dark:text-indigo-400 font-bold hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] animate-pulse">Medidesh
+                    AI</a>
                 <a href="#pricing"
                     class="text-slate-600 dark:text-slate-300 hover:text-sea-green-600 dark:hover:text-sea-green-400 font-medium transition-colors">প্রাইসিং</a>
+                <a href="#faq"
+                    class="text-slate-600 dark:text-slate-300 hover:text-sea-green-600 dark:hover:text-sea-green-400 font-medium transition-colors">প্রশ্ন
+                    ও উত্তর</a>
+                <button onclick="document.getElementById('contact-modal').showModal()"
+                    class="text-slate-600 dark:text-slate-300 hover:text-sea-green-600 dark:hover:text-sea-green-400 font-medium transition-colors">যোগাযোগ</button>
             </nav>
 
             <!-- Actions -->
@@ -107,9 +112,15 @@
         <button id="close-menu-btn" class="absolute top-6 right-6 text-slate-800 dark:text-white text-3xl">
             <i class="ph ph-x"></i>
         </button>
-        <a href="#features" class="text-2xl font-medium text-slate-800 dark:text-white">ফিচারসমূহ</a>
-        <a href="#nearby" class="text-2xl font-medium text-slate-800 dark:text-white">কাস্টমার খুঁজুন</a>
+        <a href="#features" class="text-2xl font-medium text-slate-800 dark:text-white">ফিচার</a>
+        <a href="#ai-features"
+            class="text-2xl font-bold text-indigo-600 dark:text-indigo-400 drop-shadow-[0_0_10px_rgba(99,102,241,0.5)]">Medidesh
+            AI</a>
         <a href="#pricing" class="text-2xl font-medium text-slate-800 dark:text-white">প্রাইসিং</a>
+        <a href="#faq" class="text-2xl font-medium text-slate-800 dark:text-white">প্রশ্ন ও উত্তর</a>
+        <button
+            onclick="document.getElementById('contact-modal').showModal(); document.getElementById('mobile-menu').classList.remove('translate-x-0'); document.getElementById('mobile-menu').classList.add('translate-x-full');"
+            class="text-2xl font-medium text-slate-800 dark:text-white">যোগাযোগ</button>
     </div>
 
     <!-- HERO SECTION -->
@@ -152,7 +163,7 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
-                    <a href="#cta"
+                    <a href="#download"
                         class="w-full sm:w-auto bg-sea-green-600 hover:bg-sea-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-sea-green-600/20 hover:-translate-y-1 transition-all duration-300 text-center">
                         ফ্রি অ্যাপ ডাউনলোড
                     </a>
@@ -226,56 +237,7 @@
         </div>
     </section>
 
-    <!-- MEDIA/NEWS SECTION (Unique Marquee) -->
-    <section
-        class="py-12 bg-slate-50 dark:bg-dark-bg/50 border-y border-slate-100 dark:border-slate-800 overflow-hidden">
-        <div class="container mx-auto px-6 mb-8 text-center">
-            <span class="text-xs font-bold text-slate-400 uppercase">আমাদের নিয়ে লেখা হয়েছে</span>
-        </div>
 
-        <!-- Scrolling Marquee -->
-        <div class="relative flex overflow-x-hidden group">
-            <div
-                class="py-4 animate-marquee whitespace-nowrap flex items-center gap-16 md:gap-24 opacity-60 hover:opacity-100 transition-opacity">
-                <!-- Media 1 -->
-                <div class="flex items-center gap-3">
-                    <i class="ph-fill ph-newspaper text-2xl text-slate-400"></i>
-                    <span class="text-2xl font-bold font-serif text-slate-800 dark:text-white">প্রথম আলো</span>
-                </div>
-                <!-- Media 2 -->
-                <div class="flex items-center gap-3">
-                    <i class="ph-fill ph-star text-2xl text-slate-400"></i>
-                    <span class="text-2xl font-bold font-serif text-slate-800 dark:text-white">The Daily Star</span>
-                </div>
-                <!-- Media 3 -->
-                <div class="flex items-center gap-3">
-                    <i class="ph-fill ph-monitor text-2xl text-slate-400"></i>
-                    <span class="text-2xl font-bold font-serif text-slate-800 dark:text-white">TechCrunch <span
-                            class="text-green-500">BD</span></span>
-                </div>
-                <!-- Media 4 -->
-                <div class="flex items-center gap-3">
-                    <i class="ph-fill ph-trend-up text-2xl text-slate-400"></i>
-                    <span class="text-2xl font-bold font-serif text-slate-800 dark:text-white">বণিক বার্তা</span>
-                </div>
-                <!-- Media 5 -->
-                <div class="flex items-center gap-3">
-                    <i class="ph-fill ph-television text-2xl text-slate-400"></i>
-                    <span class="text-2xl font-bold font-serif text-slate-800 dark:text-white">Channel i</span>
-                </div>
-
-                <!-- Duplicate -->
-                <div class="flex items-center gap-3 ml-24">
-                    <i class="ph-fill ph-newspaper text-2xl text-slate-400"></i>
-                    <span class="text-2xl font-bold font-serif text-slate-800 dark:text-white">প্রথম আলো</span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <i class="ph-fill ph-star text-2xl text-slate-400"></i>
-                    <span class="text-2xl font-bold font-serif text-slate-800 dark:text-white">The Daily Star</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- PROBLEM SECTION -->
     <section class="py-24 bg-slate-50 dark:bg-slate-900">
@@ -458,57 +420,134 @@
     </section>
 
     <!-- AI FEATURES SECTIONS (Futuristic Minimal) -->
-    <section class="py-24 bg-[#0B0F19] text-white relative overflow-hidden">
-        <div
-            class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20">
-        </div>
-        <div class="container mx-auto px-6 lg:px-12 relative z-10">
-            <div class="text-center mb-16">
-                <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-bold mb-6 backdrop-blur-md">
-                    <i class="ph-fill ph-sparkle text-indigo-400"></i>
-                    <span>Medidesh AI</span>
-                </div>
-                <h2 class="text-3xl lg:text-5xl font-bold mb-6 tracking-tight">ভবিষ্যতের প্রযুক্তি <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">আজই</span>
-                </h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">আপনার ব্যবসার গ্রোথ এবং ইনভেন্টরি
-                    ম্যানেজমেন্ট এখন আর্টিফিশিয়াল ইন্টেলিজেন্স এর হাতে।</p>
+    <!-- AI FEATURES SECTIONS (Premium Futuristic) -->
+    <section id="ai-features" class="py-32 bg-[#050505] text-white relative overflow-hidden">
+
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <!-- Deep Space Gradient -->
+            <div
+                class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/40 via-[#050505] to-[#050505]">
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
+            <!-- Floating Orbs -->
+            <div
+                class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px] mix-blend-screen animate-pulse duration-[4000ms]">
+            </div>
+            <div
+                class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[120px] mix-blend-screen">
+            </div>
+
+            <!-- Grid Mesh -->
+            <div
+                class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px] opacity-20 mask-image-gradient">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+            <div class="text-center mb-20 animate-on-scroll">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-indigo-300 text-xs font-bold mb-8 backdrop-blur-xl shadow-[0_0_20px_rgba(99,102,241,0.2)] hover:border-indigo-500/50 transition-colors cursor-default">
+                    <i class="ph-fill ph-sparkle text-indigo-400 animate-pulse"></i>
+                    <span class="tracking-wider uppercase">Medidesh AI</span>
+                </div>
+
+                <h2 class="text-4xl lg:text-6xl font-extrabold mb-8 tracking-tight leading-tight">
+                    ভবিষ্যতের প্রযুক্তি <br>
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 animate-gradient-x">এখন
+                        আপনার হাতে</span>
+                </h2>
+
+                <p class="text-slate-400 text-lg lg:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    আপনার ব্যবসার গ্রোথ এবং ইনভেন্টরি ম্যানেজমেন্ট এখন আর্টিফিশিয়াল ইন্টেলিজেন্স এর শক্তিতে হবে আরও
+                    দ্রুত, আরও নির্ভুল।
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- AI Feature 1 -->
                 <div
-                    class="bg-[#111623] border border-white/5 hover:border-indigo-500/30 p-8 rounded-2xl transition-all duration-300 group hover:shadow-[0_0_30px_rgba(99,102,241,0.1)]">
+                    class="group relative bg-white/5 backdrop-blur-md rounded-[2rem] p-1 border border-white/10 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(99,102,241,0.2)]">
                     <div
-                        class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="ph-fill ph-chart-line-up"></i>
+                        class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
-                    <h3 class="text-lg font-bold mb-2">বিক্রয় পূর্বাভাস</h3>
-                    <p class="text-slate-400 text-sm font-light leading-relaxed">AI বিশ্লেষণ করবে আপনার গত মাসের বিক্রি
-                        এবং বলে দিবে আগামী মাসে কোন ঔষধ কত পিস প্রয়োজন।</p>
+
+                    <div class="relative bg-[#0A0A0A]/80 h-full rounded-[1.8rem] p-8 overflow-hidden">
+                        <!-- Icon Glow -->
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/20 rounded-full blur-[60px] transform translate-x-1/2 -translate-y-1/2 group-hover:bg-indigo-500/30 transition-colors">
+                        </div>
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-[#1A1F2E] border border-white/5 flex items-center justify-center text-2xl mb-8 group-hover:scale-110 group-hover:border-indigo-500/30 transition-all duration-300 relative z-10">
+                            <i
+                                class="ph-fill ph-chart-line-up text-indigo-400 drop-shadow-[0_0_10px_rgba(129,140,248,0.5)]"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-4 text-white group-hover:text-indigo-200 transition-colors">
+                            বিক্রয় পূর্বাভাস</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">
+                            AI বিশ্লেষণ করবে আপনার গত মাসের বিক্রি এবং বলে দিবে আগামী মাসে কোন ঔষধ কত পিস প্রয়োজন, যা
+                            আপনার স্টক ম্যানেজমেন্ট করবে সহজ।
+                        </p>
+                    </div>
                 </div>
+
                 <!-- AI Feature 2 -->
                 <div
-                    class="bg-[#111623] border border-white/5 hover:border-cyan-500/30 p-8 rounded-2xl transition-all duration-300 group hover:shadow-[0_0_30px_rgba(34,211,238,0.1)]">
+                    class="group relative bg-white/5 backdrop-blur-md rounded-[2rem] p-1 border border-white/10 hover:border-cyan-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(34,211,238,0.2)]">
                     <div
-                        class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="ph-fill ph-lightning"></i>
+                        class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
-                    <h3 class="text-lg font-bold mb-2">ইনস্ট্যান্ট রিস্টক</h3>
-                    <p class="text-slate-400 text-sm font-light leading-relaxed">স্টক ফুরিয়ে যাওয়ার আগেই অটোমেটেড
-                        রিমাইন্ডার এবং সাপ্লায়ার অর্ডার লিস্ট তৈরির সুবিধা।</p>
+
+                    <div class="relative bg-[#0A0A0A]/80 h-full rounded-[1.8rem] p-8 overflow-hidden">
+                        <!-- Icon Glow -->
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/20 rounded-full blur-[60px] transform translate-x-1/2 -translate-y-1/2 group-hover:bg-cyan-500/30 transition-colors">
+                        </div>
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-[#1A1F2E] border border-white/5 flex items-center justify-center text-2xl mb-8 group-hover:scale-110 group-hover:border-cyan-500/30 transition-all duration-300 relative z-10">
+                            <i
+                                class="ph-fill ph-lightning text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-4 text-white group-hover:text-cyan-200 transition-colors">
+                            ইনস্ট্যান্ট রিস্টক</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">
+                            স্টক ফুরিয়ে যাওয়ার আগেই অটোমেটেড রিমাইন্ডার এবং সাপ্লায়ার অর্ডার লিস্ট তৈরির সুবিধা, যাতে
+                            আপনার ব্যবসা কখনো থেমে না থাকে।
+                        </p>
+                    </div>
                 </div>
+
                 <!-- AI Feature 3 -->
                 <div
-                    class="bg-[#111623] border border-white/5 hover:border-purple-500/30 p-8 rounded-2xl transition-all duration-300 group hover:shadow-[0_0_30px_rgba(168,85,247,0.1)]">
+                    class="group relative bg-white/5 backdrop-blur-md rounded-[2rem] p-1 border border-white/10 hover:border-emerald-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(52,211,153,0.2)]">
                     <div
-                        class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="ph-fill ph-brain"></i>
+                        class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
-                    <h3 class="text-lg font-bold mb-2">স্মার্ট নলেজ বেস</h3>
-                    <p class="text-slate-400 text-sm font-light leading-relaxed">যেকোনো ঔষধের নাম লিখলেই AI জানিয়ে দিবে
-                        তার কাজ, সাইড ইফেক্ট এবং বিকল্প ব্র্যান্ড।</p>
+
+                    <div class="relative bg-[#0A0A0A]/80 h-full rounded-[1.8rem] p-8 overflow-hidden">
+                        <!-- Icon Glow -->
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/20 rounded-full blur-[60px] transform translate-x-1/2 -translate-y-1/2 group-hover:bg-emerald-500/30 transition-colors">
+                        </div>
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-[#1A1F2E] border border-white/5 flex items-center justify-center text-2xl mb-8 group-hover:scale-110 group-hover:border-emerald-500/30 transition-all duration-300 relative z-10">
+                            <i
+                                class="ph-fill ph-brain text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.5)]"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-4 text-white group-hover:text-emerald-200 transition-colors">
+                            স্মার্ট নলেজ বেস</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">
+                            যেকোনো ঔষধের নাম লিখলেই AI জানিয়ে দিবে তার কাজ, সাইড ইফেক্ট এবং বিকল্প ব্র্যান্ড, যা আপনাকে
+                            করবে আরও আত্মবিশ্বাসী।
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -560,6 +599,15 @@
                     <p class="text-sm text-slate-500 dark:text-slate-400">মেয়াদ শেষ হওয়ার ৩ মাস আগেই নোটিফিকেশন পান।
                     </p>
                 </div>
+                <!-- Feature 5: POS Printer (New) -->
+                <div
+                    class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-white dark:hover:bg-dark-card hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800 group animate-on-scroll delay-400">
+                    <i
+                        class="ph-fill ph-printer text-3xl text-purple-500 mb-4 group-hover:scale-110 transition-transform block"></i>
+                    <h3 class="font-bold text-slate-800 dark:text-white text-lg mb-2">POS প্রিন্টার</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">যেকোনো থার্মাল বা সাধারণ প্রিন্টার দিয়ে
+                        নিমেষেই ইনভয়েস প্রিন্ট করুন।</p>
+                </div>
 
                 <!-- Feature 5 -->
                 <div
@@ -594,54 +642,96 @@
     </section>
 
     <!-- DOWNLOAD APPS SECTION (New) -->
-    <section class="py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white overflow-hidden relative">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-sea-green-600/20 rounded-full blur-[80px]"></div>
+    <!-- DOWNLOAD APPS SECTION (Redesigned) -->
+    <section id="download"
+        class="py-24 bg-gradient-to-br from-slate-900 via-[#0B1120] to-slate-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-sea-green-600/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
+
         <div class="container mx-auto px-6 lg:px-12 relative z-10 text-center">
-            <h2 class="text-3xl lg:text-4xl font-bold mb-6">যে কোনো ডিভাইসে, যে কোনো জায়গায়</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto mb-12 text-lg">
-                আপনার ফার্মেসি এখন আপনার পকেটে। মোবাইল, ল্যাপটপ বা ট্যাবলেটে ব্যবহার করুন সম্পূর্ণ ফ্রিতে।
-            </p>
 
-            <div class="flex flex-wrap justify-center gap-4">
-                <!-- Windows -->
-                <a href="#"
-                    class="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-xl transition-all group">
-                    <i class="ph-fill ph-windows-logo text-3xl group-hover:text-blue-400 transition-colors"></i>
-                    <div class="text-left">
-                        <div class="text-xs text-slate-400">Download for</div>
-                        <div class="font-bold text-sm">Windows</div>
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl lg:text-5xl font-extrabold mb-6 leading-tight">মেডিদেশ এখন <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-sea-green-400 to-emerald-400">হাতের
+                        মুঠোয়</span></h2>
+                <p class="text-slate-400 mb-12 text-lg lg:text-xl font-light">
+                    যেকোনো ডিভাইস থেকে আপনার ফার্মেসি পরিচালনা করুন। সম্পূর্ণ ফ্রিতে ডাউনলোড করুন।
+                </p>
+
+                <!-- App Card -->
+                <div
+                    class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl inline-block w-full max-w-2xl shadow-2xl mb-12">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <!-- App Icon Area -->
+                        <div class="relative shrink-0">
+                            <div
+                                class="w-24 h-24 bg-gradient-to-br from-sea-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg shadow-sea-green-500/30">
+                                <img src="assets/logo/Logo.svg" alt="Medidesh App"
+                                    class="w-14 h-14 brightness-0 invert">
+                            </div>
+                            <div
+                                class="absolute -bottom-3 -right-3 bg-white text-slate-900 text-xs font-bold px-2 py-1 rounded-lg border-2 border-slate-900 shadow-sm">
+                                Free
+                            </div>
+                        </div>
+
+                        <!-- App Info -->
+                        <div class="text-center md:text-left flex-1">
+                            <h3 class="text-2xl font-bold text-white mb-1">Medidesh POS</h3>
+                            <div class="flex items-center justify-center md:justify-start gap-3 mb-4 text-sm">
+                                <span class="text-slate-400">Version 2.5.0</span>
+                                <span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+                                <a href="changelog.html"
+                                    class="text-sea-green-400 hover:text-sea-green-300 font-medium hover:underline flex items-center gap-1 transition-colors">
+                                    What's New <i class="ph-bold ph-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="flex items-center justify-center md:justify-start gap-2 text-xs text-slate-500">
+                                <i class="ph-fill ph-check-circle text-emerald-500"></i>
+                                <span>Updated Dec 18, 2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Direct Download Action (Optional Main CTA) -->
+                        <div class="shrink-0">
+                            <a href="#"
+                                class="inline-flex items-center gap-2 bg-white text-slate-900 hover:bg-slate-100 px-6 py-3 rounded-xl font-bold transition-all hover:scale-105 active:scale-95">
+                                <i class="ph-bold ph-download-simple"></i>
+                                <span>Download</span>
+                            </a>
+                        </div>
                     </div>
-                </a>
-                <!-- Mac -->
-                <a href="#"
-                    class="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-xl transition-all group">
-                    <i class="ph-fill ph-apple-logo text-3xl group-hover:text-white transition-colors"></i>
-                    <div class="text-left">
-                        <div class="text-xs text-slate-400">Download for</div>
-                        <div class="font-bold text-sm">MacOS</div>
-                    </div>
-                </a>
-                <!-- Android -->
-                <a href="#"
-                    class="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-xl transition-all group">
-                    <i class="ph-fill ph-android-logo text-3xl group-hover:text-green-500 transition-colors"></i>
-                    <div class="text-left">
-                        <div class="text-xs text-slate-400">Get it on</div>
-                        <div class="font-bold text-sm">Google Play</div>
-                    </div>
-                </a>
-                <!-- iOS -->
-                <a href="#"
-                    class="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-xl transition-all group">
-                    <i class="ph-fill ph-app-store-logo text-3xl group-hover:text-sky-500 transition-colors"></i>
-                    <div class="text-left">
-                        <div class="text-xs text-slate-400">Download on the</div>
-                        <div class="font-bold text-sm">App Store</div>
-                    </div>
-                </a>
+                </div>
+
+                <!-- Platform Grid -->
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <!-- Windows -->
+                    <a href="#"
+                        class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 transition-all text-slate-300 hover:text-white">
+                        <i class="ph-fill ph-windows-logo text-lg"></i>
+                        <span>Windows</span>
+                    </a>
+                    <!-- MacOS -->
+                    <a href="#"
+                        class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 transition-all text-slate-300 hover:text-white">
+                        <i class="ph-fill ph-apple-logo text-lg"></i>
+                        <span>MacOS</span>
+                    </a>
+                    <!-- Android -->
+                    <a href="#"
+                        class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 transition-all text-slate-300 hover:text-white">
+                        <i class="ph-fill ph-android-logo text-lg text-emerald-400"></i>
+                        <span>Android</span>
+                    </a>
+                    <!-- iOS -->
+                    <a href="#"
+                        class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 transition-all text-slate-300 hover:text-white">
+                        <i class="ph-fill ph-app-store-logo text-lg text-sky-400"></i>
+                        <span>iOS</span>
+                    </a>
+                </div>
+
             </div>
-
-            <!-- Image Removed as per request -->
         </div>
     </section>
 
@@ -651,13 +741,18 @@
             <div class="text-center mb-16 animate-on-scroll">
                 <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4">মালিকরা কেন মেডিদেশ
                     ভালোবাসেন?</h2>
-                <div class="flex justify-center items-center gap-1">
-                    <i class="ph-fill ph-star text-amber-400 text-xl"></i>
-                    <i class="ph-fill ph-star text-amber-400 text-xl"></i>
-                    <i class="ph-fill ph-star text-amber-400 text-xl"></i>
-                    <i class="ph-fill ph-star text-amber-400 text-xl"></i>
-                    <i class="ph-fill ph-star text-amber-400 text-xl"></i>
-                    <span class="text-slate-500 ml-2 font-medium">৪.৯/৫ রেটিং</span>
+                <div
+                    class="inline-flex justify-center items-center gap-3 bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 rounded-full px-5 py-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png"
+                        alt="Google" class="w-5 h-5">
+                    <div class="flex items-center gap-0.5">
+                        <i class="ph-fill ph-star text-amber-400 text-base"></i>
+                        <i class="ph-fill ph-star text-amber-400 text-base"></i>
+                        <i class="ph-fill ph-star text-amber-400 text-base"></i>
+                        <i class="ph-fill ph-star text-amber-400 text-base"></i>
+                        <i class="ph-fill ph-star text-amber-400 text-base"></i>
+                    </div>
+                    <span class="text-sm font-bold text-slate-700 dark:text-slate-300">4.9/5 on Reviews</span>
                 </div>
             </div>
 
@@ -752,39 +847,45 @@
     </section>
 
     <!-- OUR STORY (New) -->
-    <section class="py-24 bg-slate-50 dark:bg-slate-900/50">
+    <!-- OUR STORY (Mission Style) -->
+    <section
+        class="py-24 bg-gradient-to-b from-white to-slate-50 dark:from-dark-bg dark:to-slate-900 border-y border-slate-100 dark:border-slate-800">
         <div class="container mx-auto px-6 lg:px-12">
-            <div class="max-w-4xl mx-auto text-center">
+            <div class="max-w-4xl mx-auto">
                 <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sea-green-50 dark:bg-sea-green-900/30 text-sea-green-600 dark:text-sea-green-400 text-xs font-bold mb-6">
-                    আমাদের গল্প</div>
-                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-6">গ্রামের ফার্মেসি থেকে
-                    আজকের মেডিদেশ</h2>
-                <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
-                    আমাদের যাত্রা শুরু হয়েছিল একটি ছোট ফার্মেসি সমস্যার সমাধান করতে গিয়ে। স্টক মেলানো, হিসাব রাখা—এসব
-                    জটিলতা দূর করতেই মেডিদেশের জন্ম। আজ আমরা দেশের ১০+ প্রগতিশীল ফার্মেসির বিশ্বস্ত
-                    সঙ্গী।
-                </p>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    class="relative bg-white dark:bg-dark-card p-10 lg:p-16 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-800 overflow-hidden text-center group hover:shadow-2xl transition-all duration-500">
+
+                    <!-- Decorative Elements -->
                     <div
-                        class="p-4 bg-white dark:bg-dark-card rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
-                        <div class="font-bold text-sea-green-600 text-2xl mb-1">২০২৪</div>
-                        <div class="text-xs text-slate-500">যাত্রা শুরু</div>
+                        class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-sea-green-400 via-blue-500 to-purple-500">
                     </div>
                     <div
-                        class="p-4 bg-white dark:bg-dark-card rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
-                        <div class="font-bold text-sea-green-600 text-2xl mb-1">১০+</div>
-                        <div class="text-xs text-slate-500">ফার্মেসি পার্টনার</div>
+                        class="absolute -top-24 -right-24 w-64 h-64 bg-sea-green-500/10 rounded-full blur-3xl group-hover:bg-sea-green-500/20 transition-colors duration-500">
                     </div>
                     <div
-                        class="p-4 bg-white dark:bg-dark-card rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
-                        <div class="font-bold text-sea-green-600 text-2xl mb-1">বেস্ট</div>
-                        <div class="text-xs text-slate-500">ফার্মেসি স্টার্টআপ অ্যাওয়ার্ড</div>
+                        class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-colors duration-500">
                     </div>
-                    <div
-                        class="p-4 bg-white dark:bg-dark-card rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
-                        <div class="font-bold text-sea-green-600 text-2xl mb-1">২৪/৭</div>
-                        <div class="text-xs text-slate-500">ডেডিকেটেড সাপোর্ট</div>
+
+                    <div class="relative z-10">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-50 dark:bg-slate-800 mb-8 border border-slate-100 dark:border-slate-700 shadow-inner">
+                            <i class="ph-fill ph-plant text-3xl text-sea-green-600"></i>
+                        </div>
+
+                        <h2 class="text-3xl lg:text-4xl font-heading font-bold text-slate-900 dark:text-white mb-6">
+                            আমাদের লক্ষ্য</h2>
+
+                        <p
+                            class="text-xl lg:text-2xl font-serif text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto italic">
+                            "আমরা বিশ্বাস করি, প্রযুক্তি সবার জন্য। আমাদের লক্ষ্য প্রতিটি ফার্মেসিকে ডিজিটালি
+                            স্বয়ংসম্পূর্ণ করা, যেন তারা নির্ভাবনায় ব্যবসা করতে পারে।"
+                        </p>
+
+                        <div class="mt-8 flex items-center justify-center gap-3 opacity-80">
+                            <span class="h-px w-12 bg-slate-300 dark:bg-slate-600"></span>
+                            <span class="text-sm font-bold text-slate-400 tracking-widest uppercase">মেডিদেশ টিম</span>
+                            <span class="h-px w-12 bg-slate-300 dark:bg-slate-600"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -909,7 +1010,7 @@
     </section>
 
     <!-- FAQ SECTION -->
-    <section class="py-24 bg-white dark:bg-dark-bg mb-32">
+    <section id="faq" class="py-24 bg-white dark:bg-dark-bg">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-6">সচরাচর জিজ্ঞাসিত প্রশ্ন
@@ -975,51 +1076,113 @@
                     </details>
                 </div>
             </div>
+
         </div>
 
-        <!-- PARTNERS SECTION -->
-        <section class="py-20 bg-white dark:bg-dark-bg border-t border-slate-100 dark:border-slate-800">
+        <br>
+
+        <!-- MEDIA COVERAGE SECTION (Cards) -->
+        <section class="py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
             <div class="container mx-auto px-6 lg:px-12 text-center">
                 <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sea-green-50 dark:bg-sea-green-900/30 text-sea-green-600 dark:text-sea-green-400 text-xs font-bold mb-6 border border-sea-green-100 dark:border-sea-green-800">
-                    <i class="ph-fill ph-handshake"></i>
-                    <span>কমিউনিটি</span>
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-bold mb-6">
+                    <i class="ph-fill ph-newspaper"></i>
+                    <span>মিডিয়া কাভারেজ</span>
                 </div>
-                <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-4">আমাদের ফার্মেসি
-                    পার্টনারগণ</h2>
-                <p class="text-slate-500 dark:text-slate-400 mb-12 max-w-2xl mx-auto">
-                    সারা দেশজুড়ে ১০টিরও বেশি ফার্মেসি এখন মেডিদেশ ব্যবহার করে তাদের ব্যাবসা পরিচালনা করছে স্মার্টলি।
-                </p>
+                <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-12">আমাদের নিয়ে লেখা হয়েছে
+                </h2>
 
-                <div
-                    class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                    <!-- Icon Based Logos -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Card 1: Prothom Alo -->
                     <div
-                        class="flex items-center gap-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                        <i class="ph-fill ph-pill text-3xl"></i>
-                        <span class="font-bold text-lg">PharmaCare</span>
+                        class="group bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
+                        <div class="h-12 flex items-center mb-6">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUTX3amtUek4Ia80_rbqUkfwS6sYaeSUdqwg&s"
+                                alt="Prothom Alo"
+                                class="h-6 w-auto object-contain dark:invert opacity-80 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 line-clamp-2 leading-snug">
+                            "ফার্মেসি ব্যবসায় ডিজিটাইজেশনের নতুন দিগন্ত উন্মোচন করল মেডিদেশ"
+                        </h3>
+                        <div
+                            class="mt-auto pt-4 flex items-center justify-between border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-xs text-slate-400 font-medium">১০ ডিসেম্বর, ২০২৪</span>
+                            <a href="#"
+                                class="inline-flex items-center gap-1 text-sm font-bold text-sea-green-600 hover:text-sea-green-700 transition-colors">
+                                পড়ুন <i class="ph-bold ph-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
+
+                    <!-- Card 2: The Daily Star -->
                     <div
-                        class="flex items-center gap-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                        <i class="ph-fill ph-heartbeat text-3xl"></i>
-                        <span class="font-bold text-lg">MediLife</span>
+                        class="group bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
+                        <div class="h-12 flex items-center mb-6">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8knKcONkR3eLrJ0R7WnN4_SBJwegZmm8C2g&s"
+                                alt="The Daily Star"
+                                class="h-8 w-auto object-contain dark:bg-white dark:p-1 dark:rounded opacity-80 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 line-clamp-2 leading-snug">
+                            "Medidesh: Revolutionizing inventory management for local pharmacies"
+                        </h3>
+                        <div
+                            class="mt-auto pt-4 flex items-center justify-between border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-xs text-slate-400 font-medium">Nov 24, 2024</span>
+                            <a href="#"
+                                class="inline-flex items-center gap-1 text-sm font-bold text-sea-green-600 hover:text-sea-green-700 transition-colors">
+                                Read More <i class="ph-bold ph-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
+
+                    <!-- Card 3: Channel i -->
                     <div
-                        class="flex items-center gap-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                        <i class="ph-fill ph-first-aid-kit text-3xl"></i>
-                        <span class="font-bold text-lg">HealthPoint</span>
+                        class="group bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
+                        <div class="h-12 flex items-center mb-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/Channel-i.svg/1200px-Channel-i.svg.png"
+                                alt="Channel i"
+                                class="h-10 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 line-clamp-2 leading-snug">
+                            "নবীন উদ্যোক্তা: প্রযুক্তির ছোঁয়ায় বদলে যাচ্ছে গ্রামের ওষুধের দোকান"
+                        </h3>
+                        <div
+                            class="mt-auto pt-4 flex items-center justify-between border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-xs text-slate-400 font-medium">১২ জানুয়ারি, ২০২৫</span>
+                            <a href="#"
+                                class="inline-flex items-center gap-1 text-sm font-bold text-sea-green-600 hover:text-sea-green-700 transition-colors">
+                                বিস্তারিত <i class="ph-bold ph-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
+
+                    <!-- Card 4: Business Standard -->
                     <div
-                        class="flex items-center gap-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                        <i class="ph-fill ph-flask text-3xl"></i>
-                        <span class="font-bold text-lg">BioLab</span>
+                        class="group bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
+                        <div class="h-12 flex items-center mb-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/The_Business_Standard_logo.svg/1200px-The_Business_Standard_logo.svg.png"
+                                alt="TBS"
+                                class="h-6 w-auto object-contain dark:bg-white dark:p-1 dark:rounded opacity-80 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 line-clamp-2 leading-snug">
+                            "How SaaS platforms are empowering micro-merchants in Bangladesh"
+                        </h3>
+                        <div
+                            class="mt-auto pt-4 flex items-center justify-between border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-xs text-slate-400 font-medium">Oct 15, 2024</span>
+                            <a href="#"
+                                class="inline-flex items-center gap-1 text-sm font-bold text-sea-green-600 hover:text-sea-green-700 transition-colors">
+                                Read More <i class="ph-bold ph-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
         <!-- CTA SECTION (Redesigned) -->
-        <section id="cta" class="py-24 relative overflow-hidden">
+        <section id="cta" class="py-16 relative overflow-hidden">
             <!-- Background -->
             <div class="absolute inset-0 bg-slate-900 dark:bg-black"></div>
             <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
@@ -1040,11 +1203,11 @@
                     </h2>
 
                     <div class="flex flex-col sm:flex-row justify-center gap-5 mt-12 animate-on-scroll delay-100">
-                        <a href="#"
+                        <a href="mailto:support@medidesh.com"
                             class="bg-white text-slate-900 hover:bg-slate-50 px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 group">
                             <i
-                                class="ph-duotone ph-download-simple text-2xl text-sea-green-600 group-hover:scale-110 transition-transform"></i>
-                            <span>ফ্রি ডাউনলোড করুন</span>
+                                class="ph-fill ph-envelope-simple text-2xl text-sea-green-600 group-hover:scale-110 transition-transform"></i>
+                            <span>আমাদের ইমেইল করুন</span>
                         </a>
                         <a href="https://wa.me/+8801712345678" target="_blank"
                             class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-green-500/20 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
@@ -1054,7 +1217,7 @@
                     </div>
 
                     <p class="mt-8 text-slate-400 text-sm">
-                        কোনো ক্রেডিট কার্ড লাগবে না • ৭ দিনের ফ্রি ট্রায়াল
+                        আপনাদের পাশে, সর্বদা আন্তরিক ও বিশ্বস্ত সেবায়
                     </p>
                 </div>
             </div>
@@ -1063,7 +1226,7 @@
 
 
         <!-- FOOTER -->
-        <footer class="bg-white dark:bg-dark-bg py-12 border-t border-slate-100 dark:border-slate-800/50">
+        <footer class="bg-white dark:bg-dark-bg py-8 border-t border-slate-100 dark:border-slate-800/50">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                     <!-- Navigation -->
@@ -1110,7 +1273,7 @@
                 </div>
                 <div class="flex items-center gap-2 justify-center md:justify-start">
                     <i class="ph-fill ph-map-pin text-sea-green-600"></i>
-                    <span>ধানমন্ডি, ঢাকা, বাংলাদেশ</span>
+                    <span>জয়দেবপুর, গাজীপুর , ঢাকা</span>
                 </div>
             </div>
             </div>
@@ -1123,8 +1286,8 @@
         <dialog id="contact-modal" class="backdrop:bg-slate-900/50 bg-transparent p-0 open:animate-fadeIn">
             <div
                 class="bg-white dark:bg-dark-card p-0 rounded-3xl shadow-2xl max-w-md w-full border border-slate-100 dark:border-slate-700 relative overflow-hidden">
-                <button id="close-modal"
-                    class="absolute top-4 right-4 p-2 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-500 hover:text-red-500 transition-colors z-10">
+                <button id="close-modal" onclick="document.getElementById('contact-modal').close()"
+                    class="absolute top-4 right-4 p-2 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-500 hover:text-red-500 transition-colors z-10 cursor-pointer">
                     <i class="ph-bold ph-x"></i>
                 </button>
                 <div class="bg-sea-green-600 p-8 text-white text-center relative overflow-hidden">
@@ -1169,7 +1332,8 @@
                         </div>
                         <div>
                             <div class="text-xs text-slate-400 font-bold uppercase tracking-wider">অফিস</div>
-                            <div class="text-lg font-bold text-slate-800 dark:text-white">ধানমন্ডি, ঢাকা</div>
+                            <div class="text-lg font-bold text-slate-800 dark:text-white">জয়দেবপুর, গাজীপুর , ঢাকা
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -14,18 +14,18 @@ export default function PaymentPartners() {
 
                     <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
                         {/* Bkash */}
-                        <div className="h-10 px-4 bg-pink-600 text-white rounded md:rounded-lg flex items-center justify-center font-bold italic tracking-wide text-lg shadow-sm hover:scale-105 transition-transform cursor-default">
-                            bKash
+                        <div className="h-12 w-24 bg-white rounded-lg border border-slate-100 flex items-center justify-center shadow-sm hover:scale-105 transition-transform p-2 cursor-pointer">
+                            <img src="https://images.seeklogo.com/logo-png/38/3/bkash-logo-png_seeklogo-382709.png" alt="bKash" className="h-full object-contain" />
                         </div>
 
                         {/* Nagad */}
-                        <div className="h-10 px-4 bg-orange-600 text-white rounded md:rounded-lg flex items-center justify-center font-bold tracking-wide text-lg shadow-sm hover:scale-105 transition-transform cursor-default">
-                            Nagad
+                        <div className="h-12 w-24 bg-white rounded-lg border border-slate-100 flex items-center justify-center shadow-sm hover:scale-105 transition-transform p-2 cursor-pointer">
+                            <img src="https://i.logos-download.com/71056/15750-og-6a4b8476b9c45e0cae33ae85c28a4cf0.png/Nagad_Logo_horizontally_og.png" alt="Nagad" className="h-full object-contain" />
                         </div>
 
                         {/* Rocket */}
-                        <div className="h-10 px-4 bg-purple-700 text-white rounded md:rounded-lg flex items-center justify-center font-bold tracking-tight text-lg shadow-sm hover:scale-105 transition-transform cursor-default">
-                            Rocket
+                        <div className="h-12 w-24 bg-white rounded-lg border border-slate-100 flex items-center justify-center shadow-sm hover:scale-105 transition-transform p-2 cursor-pointer">
+                            <img src="https://dfcl.com.bd/images/logo/payment/rocket.svg" alt="Rocket" className="h-full object-contain" />
                         </div>
 
                         <div className="h-8 w-[1px] bg-slate-300 mx-2 hidden md:block"></div>

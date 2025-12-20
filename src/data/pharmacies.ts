@@ -50,7 +50,7 @@ export const pharmacies: PharmacyData[] = [
         owner: {
             name: "হাজী মো: আব্দুল করিম",
             role: "স্বত্বাধিকারী",
-            image: "https://img.freepik.com/free-photo/elderly-man-looking-camera_23-2148045667.jpg",
+            image: "https://live.staticflickr.com/3490/3828302680_fcbbf25618_b.jpg",
             bio: "আমাদের লক্ষ্য শুধুই ব্যবসা নয়, বরং মানুষের সেবা করা। ৩ দশক ধরে বনশ্রীবাসীর সেবায় নিয়োজিত।",
         },
         landmark: "বনশ্রী কেন্দ্রীয় মসজিদের পাশে",

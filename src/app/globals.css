@@ -39,3 +39,34 @@ html {
 .text-balance {
   text-wrap: balance;
 }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 155, 134, 0.2), 0 0 10px rgba(0, 155, 134, 0.1); }
+  50% { box-shadow: 0 0 20px rgba(0, 155, 134, 0.4), 0 0 30px rgba(0, 155, 134, 0.2); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow-primary {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.mask-linear-fade {
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}

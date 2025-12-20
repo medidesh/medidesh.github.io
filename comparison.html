@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison - Medidesh</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="comparison.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sea-green': { 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#2E8B57', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+                        'dark-bg': '#0f172a',
+                        'dark-card': '#1e293b',
+                    },
+                    fontFamily: { sans: ['Hind Siliguri', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-slate-50 dark:bg-dark-bg text-slate-600 dark:text-slate-300 font-sans transition-colors duration-300">
+
+    <!-- Abstract Backgrounds -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300 glass dark:border-slate-800">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center py-4">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/logo/Logo.svg" alt="Medidesh Logo"
+                    class="w-10 h-10 group-hover:scale-105 transition-transform duration-300">
+                <span class="text-2xl font-bold font-heading text-slate-800 dark:text-white">Medidesh</span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <button id="lang-toggle"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-sea-green-500 transition-colors shadow-sm">
+                    <i class="ph ph-translate text-lg text-sea-green-600 dark:text-sea-green-400"></i>
+                    <span id="lang-text" class="text-sm font-bold text-slate-700 dark:text-slate-200">বাংলা</span>
+                </button>
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+                    <i class="ph ph-moon dark:hidden text-xl"></i>
+                    <i class="ph ph-sun hidden dark:block text-xl"></i>
+                </button>
+                <a href="index.html"
+                    class="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-sea-green-600 dark:hover:text-sea-green-400 font-medium transition-colors">
+                    <i class="ph-bold ph-arrow-left"></i> <span data-en="Back to Home" data-bn="হোমে ফিরে যান">Back to
+                        Home</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-24 px-6 lg:px-12">
+        <div class="container mx-auto max-w-4xl space-y-24">
+
+            <!-- Intro / Title -->
+            <section class="text-center animate-on-scroll">
+                <span
+                    class="inline-block py-1.5 px-4 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 font-bold text-sm mb-6 shadow-sm"
+                    data-en="Comparison / Vision" data-bn="তুলনা / ভিশন">Comparison / Vision</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+                    <span data-en="Why Medidesh?" data-bn="কেন মেডিদেশ?">Why Medidesh?</span>
+                </h1>
+                <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+                    data-en="A detailed look at the problem, the solution, and the future of pharmacy management."
+                    data-bn="সমস্যা, সমাধান এবং ফার্মেসি ম্যানেজমেন্টের ভবিষ্যত সম্পর্কে বিস্তারিত দেখুন।">A detailed
+                    look at the problem, the solution, and the future of pharmacy management.</p>
+            </section>
+
+            <!-- 1. Problem -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">1</span>
+                    <span data-en="PROBLEM" data-bn="সমস্যা">PROBLEM</span>
+                </h2>
+                <p class="mb-4 text-lg"
+                    data-en="The pharmacy sector is one of the most critical parts of healthcare, yet it remains digitally underserved."
+                    data-bn="ফার্মেসি খাত স্বাস্থ্যসেবার অন্যতম গুরুত্বপূর্ণ অংশ, তবুও এটি ডিজিটালি অনেক পিছিয়ে আছে।">
+                    The pharmacy sector is one of the most critical parts of healthcare, yet it remains digitally
+                    underserved.</p>
+                <ul class="space-y-2 list-disc pl-5 text-slate-600 dark:text-slate-400">
+                    <li data-en="Manual or semi-digital inventory management"
+                        data-bn="ম্যানুয়াল বা আধা-ডিজিটাল ইনভেন্টরি ম্যানেজমেন্ট">Manual or semi-digital inventory
+                        management</li>
+                    <li data-en="Poor expiry and batch tracking" data-bn="দুর্বল মেয়াদ এবং ব্যাচ ট্র্যাকিং">Poor expiry
+                        and batch tracking</li>
+                    <li data-en="High risk of expired medicine circulation"
+                        data-bn="মেয়াদোত্তীর্ণ ঔষধ বিক্রির উচ্চ ঝুঁকি">High risk of expired medicine circulation</li>
+                    <li data-en="Slow billing due to counter-based POS dependency"
+                        data-bn="কাউন্টার-ভিত্তিক ধীরগতির বিলিং ব্যবস্থা">Slow billing due to counter-based POS
+                        dependency</li>
+                </ul>
+            </section>
+
+            <!-- 2. Market Opportunity -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">2</span>
+                    <span data-en="MARKET OPPORTUNITY" data-bn="বাজারের সুযোগ">MARKET OPPORTUNITY</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                    <div>
+                        <div class="text-4xl big-stat mb-2">4M+</div>
+                        <div class="text-sm font-medium" data-en="Pharmacies Worldwide" data-bn="বিশ্বজুড়ে ফার্মেসি">
+                            Pharmacies Worldwide</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl big-stat mb-2">150K+</div>
+                        <div class="text-sm font-medium" data-en="Retail Pharmacies in BD"
+                            data-bn="বাংলাদেশে খুচরা ফার্মেসি">Retail Pharmacies in BD</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Existing Solutions Fail -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">3</span>
+                    <span data-en="EXISTING SOLUTIONS FAIL" data-bn="বর্তমান সমাধানের ব্যর্থতা">EXISTING SOLUTIONS
+                        FAIL</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 dark:bg-red-900/10 p-4 rounded-xl">
+                        <h4 class="font-bold text-red-600 mb-2" data-en="Generic POS" data-bn="সাধারণ POS">Generic POS
+                        </h4>
+                        <p class="text-sm" data-en="Retail-first, no batch/expiry intelligence."
+                            data-bn="রিটেইল-ভিত্তিক, ব্যাচ/মেয়াদ ট্র্যাকিং নেই।">Retail-first, no batch/expiry
+                            intelligence.</p>
+                    </div>
+                    <div class="bg-red-50 dark:bg-red-900/10 p-4 rounded-xl">
+                        <h4 class="font-bold text-red-600 mb-2" data-en="Enterprise Systems"
+                            data-bn="এন্টারপ্রাইজ সিস্টেম">Enterprise Systems</h4>
+                        <p class="text-sm" data-en="Expensive, complex, hardware-heavy."
+                            data-bn="ব্যয়বহুল, জটিল এবং ভারী হার্ডওয়্যার নির্ভর।">Expensive, complex, hardware-heavy.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4 & 5. Solution & Features -->
+            <section
+                class="glass-card animate-on-scroll bg-gradient-to-br from-white to-sea-green-50 dark:from-dark-card dark:to-sea-green-900/10">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">4-5</span>
+                    <span data-en="SOLUTION & FEATURES" data-bn="সমাধান ও বৈশিষ্ট্য">SOLUTION & FEATURES</span>
+                </h2>
+                <p class="text-lg mb-6"
+                    data-en="Medidesh is a cloud-based pharmacy OS focusing on Speed, Simplicity, and Pharmacy-First Logic."
+                    data-bn="মেডিদেশ একটি ক্লাউড-ভিত্তিক ফার্মেসি ওএস যা গতি, সরলতা এবং ফার্মেসি-ফার্স্ট যুক্তির উপর জোর দেয়।">
+                    Medidesh is a cloud-based pharmacy OS focusing on Speed, Simplicity, and Pharmacy-First Logic.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm font-medium">
+                    <span class="bg-white/50 dark:bg-black/20 p-2 rounded" data-en="Sales & billing"
+                        data-bn="সেলস ও বিলিং">Sales & billing</span>
+                    <span class="bg-white/50 dark:bg-black/20 p-2 rounded" data-en="Inventory management"
+                        data-bn="ইনভেন্টরি ম্যানেজমেন্ট">Inventory management</span>
+                    <span class="bg-white/50 dark:bg-black/20 p-2 rounded" data-en="Expiry monitoring"
+                        data-bn="মেয়াদ মনিটরিং">Expiry monitoring</span>
+                    <span class="bg-white/50 dark:bg-black/20 p-2 rounded" data-en="Multi-staff access"
+                        data-bn="মাল্টি-স্টাফ অ্যাক্সেস">Multi-staff access</span>
+                    <span class="bg-white/50 dark:bg-black/20 p-2 rounded" data-en="Reporting & analytics"
+                        data-bn="রিপোর্টিং ও অ্যানালিটিক্স">Reporting & analytics</span>
+                </div>
+            </section>
+
+            <!-- 6. Operational Advantage (The Comparison) -->
+            <section class="animate-on-scroll py-8">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-8 text-center"
+                    data-en="6. OPERATIONAL ADVANTAGE" data-bn="৬. অপারেশনাল সুবিধা">6. OPERATIONAL ADVANTAGE</h2>
+                <div class="grid md:grid-cols-2 gap-8 relative items-center">
+                    <!-- VS Badge -->
+                    <div class="vs-badge-container hidden md:block">
+                        <div class="vs-badge">VS</div>
+                    </div>
+
+                    <!-- Traditional -->
+                    <div class="glass-card p-8 rounded-3xl border-l-4 border-l-red-500">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2" data-en="Traditional POS"
+                            data-bn="প্রথাগত POS">Traditional POS</h3>
+                        <p class="text-red-500 text-sm mb-4">Manual • Slow</p>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i class="ph-fill ph-x-circle text-red-500 mt-1"></i>
+                                <span data-en="1–2 counters max" data-bn="সর্বোচ্চ ১-২টি কাউন্টার">1–2 counters
+                                    max</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ph-fill ph-x-circle text-red-500 mt-1"></i>
+                                <span data-en="Bottlenecks during peak" data-bn="ব্যস্ত সময়ে জটলা">Bottlenecks during
+                                    peak</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ph-fill ph-x-circle text-red-500 mt-1"></i>
+                                <span data-en="Hardware dependency" data-bn="হার্ডওয়্যার নির্ভর">Hardware
+                                    dependency</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Medidesh -->
+                    <div
+                        class="glass-card p-8 rounded-3xl border-l-4 border-l-sea-green-500 bg-sea-green-50/50 dark:bg-sea-green-900/10">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2" data-en="Medidesh"
+                            data-bn="মেডিদেশ">Medidesh</h3>
+                        <p class="text-sea-green-600 dark:text-sea-green-400 text-sm mb-4">Cloud • Fast</p>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i class="ph-fill ph-check-circle text-sea-green-500 mt-1"></i>
+                                <span data-en="Mobile + Desktop" data-bn="মোবাইল + ডেস্কটপ">Mobile + Desktop</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ph-fill ph-check-circle text-sea-green-500 mt-1"></i>
+                                <span data-en="Multiple staff at once" data-bn="একসাথে একাধিক কর্মী">Multiple staff at
+                                    once</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ph-fill ph-check-circle text-sea-green-500 mt-1"></i>
+                                <span data-en="Faster throughput" data-bn="দ্রুত সেবা">Faster throughput</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Compliance -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">7</span>
+                    <span data-en="COMPLIANCE" data-bn="কমপ্লায়েন্স">COMPLIANCE</span>
+                </h2>
+                <p class="text-sm mb-4" data-en="Enforces structured workflows:"
+                    data-bn="সুশৃঙ্খল কর্মপ্রবাহ নিশ্চিত করে:">Enforces structured workflows:</p>
+                <div class="flex flex-wrap gap-2 text-sm font-medium">
+                    <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full"
+                        data-en="Mandatory return reasons" data-bn="রিটার্নের কারণ">Mandatory return reasons</span>
+                    <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full" data-en="Batch traceability"
+                        data-bn="ব্যাচ ট্রেসেবিলিটি">Batch traceability</span>
+                    <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full" data-en="Audit-friendly records"
+                        data-bn="অডিট রেকর্ড">Audit-friendly records</span>
+                </div>
+            </section>
+
+            <!-- 8-16. Remaining Sections (Summarized for Flow) -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 8 & 12 Technology & Defensibility -->
+                <section class="glass-card animate-on-scroll">
+                    <h2 class="text-lg font-bold mb-4" data-en="Tech & Defensibility" data-bn="প্রযুক্তি ও সুরক্ষা">Tech
+                        & Defensibility</h2>
+                    <ul class="list-disc pl-5 text-sm space-y-2">
+                        <li data-en="Cloud-native & Offline-tolerant" data-bn="ক্লাউড-নেটিভ ও অফলাইন-সহনশীল">
+                            Cloud-native & Offline-tolerant</li>
+                        <li data-en="Scalable architecture" data-bn="স্কেলেবল আর্কিটেকচার">Scalable architecture</li>
+                        <li data-en="Operational lock-in via inventory history" data-bn="ইনভেন্টরি ইতিহাস">Operational
+                            lock-in via inventory history</li>
+                    </ul>
+                </section>
+
+                <!-- 9 AI Ready -->
+                <section class="glass-card animate-on-scroll border border-indigo-200 dark:border-indigo-900">
+                    <h2 class="text-lg font-bold mb-4" data-en="9. AI-Ready Platform" data-bn="৯. AI-রেডি প্ল্যাটফর্ম">
+                        9. AI-Ready Platform</h2>
+                    <div class="space-y-2">
+                        <div class="roadmap-item" data-en="Expiry Prediction" data-bn="মেয়াদ পূর্বাভাস">Expiry
+                            Prediction</div>
+                        <div class="roadmap-item" data-en="Smart Reordering" data-bn="স্মার্ট রি-অর্ডার">Smart
+                            Reordering</div>
+                        <div class="roadmap-item" data-en="Demand Forecasting" data-bn="চাহিদা পূর্বাভাস">Demand
+                            Forecasting</div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 15. Vision -->
+            <section class="glass-card animate-on-scroll bg-slate-900 text-white text-center py-12">
+                <h2 class="text-xl font-bold opacity-60 mb-6" data-en="15. VISION" data-bn="১৫. আমাদের ভিশন">15. VISION
+                </h2>
+                <blockquote class="text-xl md:text-2xl font-light italic leading-relaxed max-w-3xl mx-auto">
+                    "<span data-en="To become the operating system for pharmacy businesses in emerging markets."
+                        data-bn="উদীয়মান বাজারের ফার্মেসি ব্যবসার অপারেটিং সিস্টেম হয়ে ওঠা।">To become the operating
+                        system for pharmacy businesses in emerging markets.</span>"
+                </blockquote>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 dark:bg-[#0B1120] py-12 border-t border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-500 dark:text-slate-500 text-sm">
+                &copy; 2025 Medidesh. All rights reserved. <br>
+                <a href="index.html" class="hover:text-sea-green-600">Home</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // --- Translation Logic ---
+        const langToggle = document.getElementById('lang-toggle');
+        const langText = document.getElementById('lang-text');
+        let currentLang = localStorage.getItem('lang') || 'en';
+
+        function updateLanguage() {
+            const elements = document.querySelectorAll('[data-en]');
+
+            elements.forEach(el => {
+                if (currentLang === 'bn') {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        if (el.hasAttribute('placeholder')) el.placeholder = el.getAttribute('data-bn');
+                    } else {
+                        // Safe check for simple text replacement
+                        el.textContent = el.getAttribute('data-bn');
+                    }
+                } else {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        if (el.hasAttribute('placeholder')) el.placeholder = el.getAttribute('data-en');
+                    } else {
+                        el.textContent = el.getAttribute('data-en');
+                    }
+                }
+            });
+
+            langText.textContent = currentLang === 'bn' ? 'English' : 'বাংলা';
+            localStorage.setItem('lang', currentLang);
+            document.documentElement.lang = currentLang;
+        }
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'bn' ? 'en' : 'bn';
+            updateLanguage();
+        });
+
+        updateLanguage();
+
+        // --- Theme Toggle ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+        });
+
+        // --- Intersection Observer for Animations ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+    </script>
+</body>
+
+</html>

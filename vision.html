@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision & Mission - Medidesh</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="vision.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sea-green': { 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#2E8B57', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+                        'dark-bg': '#0f172a',
+                        'dark-card': '#1e293b',
+                    },
+                    fontFamily: { sans: ['Hind Siliguri', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body
+    class="bg-slate-50 dark:bg-dark-bg text-slate-600 dark:text-slate-300 font-sans transition-colors duration-300 relative">
+
+    <!-- Abstract Backgrounds -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300 glass dark:border-slate-800">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center py-4">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/logo/Logo.svg" alt="Medidesh Logo"
+                    class="w-10 h-10 group-hover:scale-105 transition-transform duration-300">
+                <span class="text-2xl font-bold font-heading text-slate-800 dark:text-white">Medidesh</span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <button id="lang-toggle"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-sea-green-500 transition-colors shadow-sm">
+                    <i class="ph ph-translate text-lg text-sea-green-600 dark:text-sea-green-400"></i>
+                    <span id="lang-text" class="text-sm font-bold text-slate-700 dark:text-slate-200">বাংলা</span>
+                </button>
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+                    <i class="ph ph-moon dark:hidden text-xl"></i>
+                    <i class="ph ph-sun hidden dark:block text-xl"></i>
+                </button>
+                <a href="index.html"
+                    class="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-sea-green-600 dark:hover:text-sea-green-400 font-medium transition-colors">
+                    <i class="ph-bold ph-arrow-left"></i> <span data-en="Back to Home" data-bn="হোমে ফিরে যান">Back to
+                        Home</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="pt-32 pb-24 px-6 lg:px-12">
+        <div class="container mx-auto max-w-4xl space-y-24">
+
+            <!-- Title Section -->
+            <section class="text-center animate-on-scroll">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-sea-green-50 dark:bg-sea-green-900/30 text-sea-green-600 dark:text-sea-green-400 text-sm font-bold mb-6 tracking-wide uppercase"
+                    data-en="Vision Paper" data-bn="ভিশন পেপার">Vision Paper</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+                    <span data-en="Pharmacy Operating System for" data-bn="ফার্মেসি অপারেটিং সিস্টেম">Pharmacy Operating
+                        System for</span> <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-sea-green-500 to-emerald-400"
+                        data-en="Emerging Markets" data-bn="উদীয়মান বাজারের জন্য">Emerging Markets</span>
+                </h1>
+            </section>
+
+            <!-- 1. Problem -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">1</span>
+                    <span data-en="PROBLEM" data-bn="সমস্যা">PROBLEM</span>
+                </h2>
+                <p class="mb-4 text-lg"
+                    data-en="The pharmacy sector is one of the most critical parts of healthcare, yet it remains digitally underserved."
+                    data-bn="ফার্মেসি খাত স্বাস্থ্যসেবার অন্যতম গুরুত্বপূর্ণ অংশ, তবুও এটি ডিজিটালি অনেক পিছিয়ে আছে।">
+                    The pharmacy sector is one of the most critical parts of healthcare, yet it remains digitally
+                    underserved.</p>
+                <p class="mb-4 font-semibold" data-en="Key issues observed across emerging markets:"
+                    data-bn="উদীয়মান বাজারগুলোতে দেখা প্রধান সমস্যাগুলো:">Key issues observed across emerging markets:
+                </p>
+                <ul class="space-y-2 list-disc pl-5 text-slate-600 dark:text-slate-400">
+                    <li data-en="Manual or semi-digital inventory management"
+                        data-bn="ম্যানুয়াল বা আধা-ডিজিটাল ইনভেন্টরি ম্যানেজমেন্ট">Manual or semi-digital inventory
+                        management</li>
+                    <li data-en="Poor expiry and batch tracking" data-bn="দুর্বল মেয়াদ এবং ব্যাচ ট্র্যাকিং">Poor expiry
+                        and batch tracking</li>
+                    <li data-en="High risk of expired medicine circulation"
+                        data-bn="মেয়াদোত্তীর্ণ ঔষধ বিক্রির উচ্চ ঝুঁকি">High risk of expired medicine circulation</li>
+                    <li data-en="Slow billing due to counter-based POS dependency"
+                        data-bn="কাউন্টার-ভিত্তিক ধীরগতির বিলিং ব্যবস্থা">Slow billing due to counter-based POS
+                        dependency</li>
+                    <li data-en="No real-time visibility across staff or branches"
+                        data-bn="স্টাফ বা শাখাগুলোর উপর রিয়েল-টাইম নজরদারির অভাব">No real-time visibility across staff
+                        or branches</li>
+                    <li data-en="Generic retail POS systems that ignore pharmacy-specific workflows"
+                        data-bn="সাধারণ রিটেইল সফটওয়্যার যা ফার্মেসির বিশেষ প্রয়োজন মেটায় না">Generic retail POS
+                        systems that ignore pharmacy-specific workflows</li>
+                </ul>
+                <p class="mt-6 text-sm italic border-l-4 border-red-400 pl-4 py-1"
+                    data-en="Despite being a regulated, high-volume industry, most pharmacies operate without proper software infrastructure."
+                    data-bn="নিয়ন্ত্রিত এবং বিশাল ভলিউমের শিল্প হওয়া সত্ত্বেও, অধিকাংশ ফার্মেসি সঠিক সফটওয়্যার কাঠামোর বাইরে কাজ করছে।">
+                    Despite being a regulated, high-volume industry, most pharmacies operate without proper software
+                    infrastructure.</p>
+            </section>
+
+            <!-- 2. Market Opportunity -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">2</span>
+                    <span data-en="MARKET OPPORTUNITY" data-bn="বাজারের সুযোগ">MARKET OPPORTUNITY</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                    <div>
+                        <h3 class="font-bold text-sea-green-600 mb-2" data-en="Global" data-bn="গ্লোবাল">Global</h3>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li data-en="Over 4 million pharmacies worldwide"
+                                data-bn="বিশ্বজুড়ে ৪০ লক্ষেরও বেশি ফার্মেসি">Over 4 million pharmacies worldwide</li>
+                            <li data-en="Majority are small to mid-sized independent pharmacies"
+                                data-bn="অধিকাংশই ছোট থেকে মাঝারি আকারের স্বতন্ত্র ফার্মেসি">Majority are small to
+                                mid-sized independent pharmacies</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sea-green-600 mb-2" data-en="Bangladesh" data-bn="বাংলাদেশ">Bangladesh
+                        </h3>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li data-en="Estimated 150,000+ retail pharmacies"
+                                data-bn="আনুমানিক ১,৫০,০০০+ খুচরা ফার্মেসি">Estimated 150,000+ retail pharmacies</li>
+                            <li data-en="Extremely low penetration of modern pharmacy software"
+                                data-bn="আধুনিক সফটওয়্যার ব্যবহারের হার অত্যন্ত কম">Extremely low penetration of modern
+                                pharmacy software</li>
+                            <li data-en="High daily transaction volume" data-bn="দৈনিক লেনদেনের বিশাল ভলিউম">High daily
+                                transaction volume</li>
+                            <li data-en="Growing pressure for compliance and efficiency"
+                                data-bn="কমপ্লায়েন্স এবং দক্ষতার জন্য ক্রমবর্ধমান চাপ">Growing pressure for compliance
+                                and efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-center font-medium text-slate-800 dark:text-white"
+                    data-en="This represents a large, fragmented, and under-digitized market with strong long-term demand."
+                    data-bn="এটি একটি বিশাল, বিচ্ছিন্ন এবং কম-ডিজিটাইজড বাজার যার দীর্ঘমেয়াদী চাহিদা রয়েছে।">This
+                    represents a large, fragmented, and under-digitized market with strong long-term demand.</p>
+            </section>
+
+            <!-- 3. Existing Solutions Fail -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">3</span>
+                    <span data-en="EXISTING SOLUTIONS FAIL" data-bn="বর্তমান সমাধানের ব্যর্থতা">EXISTING SOLUTIONS
+                        FAIL</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 dark:bg-red-900/10 p-4 rounded-xl">
+                        <h4 class="font-bold text-red-600 mb-2" data-en="1) Generic POS Systems"
+                            data-bn="১) সাধারণ POS সিস্টেম">1) Generic POS Systems</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li data-en="Retail-first, not pharmacy-first"
+                                data-bn="রিটেইল-ফার্স্ট, ফার্মেসি-ফার্স্ট নয়">Retail-first, not pharmacy-first</li>
+                            <li data-en="No batch or expiry intelligence"
+                                data-bn="ব্যাচ বা মেয়াদের কোন বুদ্ধিমত্তা নেই">No batch or expiry intelligence</li>
+                            <li data-en="Counter-limited operations" data-bn="কাউন্টার-সীমাবদ্ধ অপারেশন">Counter-limited
+                                operations</li>
+                            <li data-en="Minimal compliance support" data-bn="ন্যূনতম কমপ্লায়েন্স সাপোর্ট">Minimal
+                                compliance support</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 dark:bg-red-900/10 p-4 rounded-xl">
+                        <h4 class="font-bold text-red-600 mb-2" data-en="2) Enterprise Pharmacy Systems"
+                            data-bn="২) এন্টারপ্রাইজ সিস্টেম">2) Enterprise Pharmacy Systems</h4>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li data-en="Expensive" data-bn="ব্যয়বহুল">Expensive</li>
+                            <li data-en="Complex to operate" data-bn="পরিচালনা করা জটিল">Complex to operate</li>
+                            <li data-en="Poor adoption by small pharmacies" data-bn="ছোট ফার্মেসির জন্য অনুপযুক্ত">Poor
+                                adoption by small pharmacies</li>
+                            <li data-en="Hardware and training heavy" data-bn="ভারী হার্ডওয়্যার ও প্রশিক্ষণের প্রয়োজন">
+                                Hardware and training heavy</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="mt-4 text-center font-bold"
+                    data-en="There is a clear gap between affordability, usability, and pharmacy-specific needs."
+                    data-bn="সাশ্রয়ী মূল্য, ব্যবহারযোগ্যতা এবং ফার্মেসির বিশেষ চাহিদার মধ্যে একটি স্পষ্ট ব্যবধান রয়েছে।">
+                    There is a clear gap between affordability, usability, and pharmacy-specific needs.</p>
+            </section>
+
+            <!-- 4. Solution Medidesh -->
+            <section
+                class="glass-card animate-on-scroll bg-gradient-to-br from-white to-sea-green-50 dark:from-dark-card dark:to-sea-green-900/10">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">4</span>
+                    <span data-en="SOLUTION — MEDIDESH" data-bn="সমাধান — মেডিদেশ">SOLUTION — MEDIDESH</span>
+                </h2>
+                <p class="text-lg mb-6"
+                    data-en="Medidesh is a cloud-based pharmacy operating system built specifically for pharmacies in emerging markets."
+                    data-bn="মেডিদেশ একটি ক্লাউড-ভিত্তিক ফার্মেসি অপারেটিং সিস্টেম যা বিশেষ করে উদীয়মান বাজারের জন্য তৈরি।">
+                    Medidesh is a cloud-based pharmacy operating system built specifically for pharmacies in emerging
+                    markets.</p>
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <p class="mb-4"
+                            data-en="It replaces traditional counter-based POS with a flexible, multi-device workflow that allows multiple staff to operate simultaneously from mobile or desktop."
+                            data-bn="এটি প্রথাগত কাউন্টার-ভিত্তিক পিওএসকে প্রতিস্থাপন করে একটি নমনীয়, মাল্টি-ডিভাইস ওয়ার্কফ্লো দিয়ে, যা একাধিক কর্মীকে মোবাইল বা ডেস্কটপ থেকে একসাথে কাজ করতে দেয়।">
+                            It replaces traditional counter-based POS with a flexible, multi-device workflow that allows
+                            multiple staff to operate simultaneously from mobile or desktop.</p>
+                    </div>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <span
+                        class="px-3 py-1 bg-sea-green-100 dark:bg-sea-green-900/30 text-sea-green-700 dark:text-sea-green-400 rounded-lg font-bold"
+                        data-en="Speed" data-bn="গতি">Speed</span>
+                    <span
+                        class="px-3 py-1 bg-sea-green-100 dark:bg-sea-green-900/30 text-sea-green-700 dark:text-sea-green-400 rounded-lg font-bold"
+                        data-en="Simplicity" data-bn="সরলতা">Simplicity</span>
+                    <span
+                        class="px-3 py-1 bg-sea-green-100 dark:bg-sea-green-900/30 text-sea-green-700 dark:text-sea-green-400 rounded-lg font-bold"
+                        data-en="Pharmacy-first logic" data-bn="ফার্মেসি-ফার্স্ট লজিক">Pharmacy-first logic</span>
+                    <span
+                        class="px-3 py-1 bg-sea-green-100 dark:bg-sea-green-900/30 text-sea-green-700 dark:text-sea-green-400 rounded-lg font-bold"
+                        data-en="Scalability" data-bn="স্কেলেবিলিটি">Scalability</span>
+                </div>
+            </section>
+
+            <!-- 5. Core Features -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">5</span>
+                    <span data-en="CORE FEATURES" data-bn="মূল বৈশিষ্ট্য">CORE FEATURES</span>
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-sea-green-500"></i>
+                        <span data-en="Sales & billing" data-bn="সেলস ও বিলিং">Sales & billing</span>
+                    </div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-sea-green-500"></i>
+                        <span data-en="Inventory management" data-bn="ইনভেন্টরি ম্যানেজমেন্ট">Inventory
+                            management</span>
+                    </div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-sea-green-500"></i>
+                        <span data-en="Batch-level tracking" data-bn="ব্যাচ ট্র্যাকিং">Batch-level tracking</span>
+                    </div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-sea-green-500"></i>
+                        <span data-en="Expiry monitoring" data-bn="মেয়াদ মনিটরিং">Expiry monitoring</span>
+                    </div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-sea-green-500"></i>
+                        <span data-en="Purchase & supplier" data-bn="ক্রয় ও সরবরাহকারী">Purchase & supplier</span>
+                    </div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-sea-green-500"></i>
+                        <span data-en="Returns (partial & full)" data-bn="ইটার্নস">Returns (partial & full)</span>
+                    </div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-sea-green-500"></i>
+                        <span data-en="Multi-staff access" data-bn="মাল্টি-স্টাফ অ্যাক্সেস">Multi-staff access</span>
+                    </div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-sea-green-500"></i>
+                        <span data-en="Role-based control" data-bn="রোল-বেসড কন্ট্রোল">Role-based control</span>
+                    </div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-sea-green-500"></i>
+                        <span data-en="Reporting & analytics" data-bn="রিপোর্টিং ও অ্যানালিটিক্স">Reporting &
+                            analytics</span>
+                    </div>
+                </div>
+                <p class="mt-6 text-center text-sm text-slate-500"
+                    data-en="All flows are designed around real pharmacy operations, not generic retail behavior."
+                    data-bn="সমস্ত ফ্লো সাধারণ রিটেইলের পরিবর্তে আসল ফার্মেসি অপারেশনের উপর ভিত্তি করে ডিজাইন করা হয়েছে।">
+                    All flows are designed around real pharmacy operations, not generic retail behavior.</p>
+            </section>
+
+            <!-- 6. Operational Advantage -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">6</span>
+                    <span data-en="OPERATIONAL ADVANTAGE" data-bn="অপারেশনাল সুবিধা">OPERATIONAL ADVANTAGE</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="border-l-4 border-slate-300 pl-4">
+                        <h4 class="font-bold text-slate-600 dark:text-slate-400 mb-2" data-en="Traditional POS"
+                            data-bn="প্রথাগত POS">Traditional POS</h4>
+                        <ul class="text-sm space-y-1 text-slate-500">
+                            <li data-en="1–2 counters" data-bn="১-২টি কাউন্টার">1–2 counters</li>
+                            <li data-en="Bottlenecks during peak hours" data-bn="ব্যস্ত সময়ে ভিড় ও বিলম্ব">Bottlenecks
+                                during peak hours</li>
+                            <li data-en="Hardware dependency" data-bn="হার্ডওয়্যার নির্ভরতা">Hardware dependency</li>
+                        </ul>
+                    </div>
+                    <div class="border-l-4 border-sea-green-500 pl-4">
+                        <h4 class="font-bold text-sea-green-600 mb-2" data-en="Medidesh" data-bn="মেডিদেশ">Medidesh</h4>
+                        <ul class="text-sm space-y-1 text-slate-800 dark:text-slate-300">
+                            <li data-en="Mobile + desktop based" data-bn="মোবাইল + ডেস্কটপ ভিত্তিক">Mobile + desktop
+                                based</li>
+                            <li data-en="Multiple staff can sell simultaneously"
+                                data-bn="একাধিক কর্মী একসাথে বিক্রি করতে পারে">Multiple staff can sell simultaneously
+                            </li>
+                            <li data-en="No counter limitation" data-bn="কাউন্টারের কোন সীমাবদ্ধতা নেই">No counter
+                                limitation</li>
+                            <li data-en="Faster throughput" data-bn="দ্রুত সেবা প্রদান">Faster throughput</li>
+                            <li data-en="Better staff utilization" data-bn="কর্মীদের সঠিক ব্যবহার">Better staff
+                                utilization</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="mt-4 font-bold text-center text-sea-green-600"
+                    data-en="This directly increases revenue efficiency for pharmacies."
+                    data-bn="এটি সরাসরি ফার্মেসির আয়ের দক্ষতা বৃদ্ধি করে।">This directly increases revenue efficiency
+                    for pharmacies.</p>
+            </section>
+
+            <!-- 7. Compliance -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">7</span>
+                    <span data-en="COMPLIANCE & TRACEABILITY" data-bn="কমপ্লায়েন্স ও ট্রেসেবিলিটি">COMPLIANCE &
+                        TRACEABILITY</span>
+                </h2>
+                <div class="flex flex-col md:flex-row gap-6 items-center">
+                    <div class="flex-1">
+                        <p class="mb-4" data-en="Medidesh enforces structured workflows:"
+                            data-bn="মেডিদেশ সুশৃঙ্খল কর্মপ্রবাহ নিশ্চিত করে:">Medidesh enforces structured workflows:
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li data-en="Sales-linked returns" data-bn="বিক্রয়ের সাথে সংযুক্ত রিটার্ন">Sales-linked
+                                returns</li>
+                            <li data-en="Mandatory reason for returns" data-bn="রিটার্নের বাধ্যতামূলক কারণ">Mandatory
+                                reason for returns</li>
+                            <li data-en="Automatic stock reconciliation" data-bn="স্বয়ংক্রিয় স্টক সমন্বয়">Automatic
+                                stock reconciliation</li>
+                            <li data-en="Batch and expiry traceability" data-bn="ব্যাচ এবং মেয়াদ ট্রেসেবিলিটি">Batch
+                                and expiry traceability</li>
+                            <li data-en="Audit-friendly records" data-bn="অডিট-বান্ধব রেকর্ড">Audit-friendly records
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <i class="ph-duotone ph-shield-check text-6xl text-indigo-500"></i>
+                    </div>
+                </div>
+                <p class="mt-6 text-center text-sm font-medium"
+                    data-en="This reduces errors, fraud, and regulatory risk."
+                    data-bn="এটি ভুল, জালিয়াতি এবং আইনি ঝুঁকি কমায়।">This reduces errors, fraud, and regulatory risk.
+                </p>
+            </section>
+
+            <!-- 8. Tech Foundation -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">8</span>
+                    <span data-en="TECHNOLOGY FOUNDATION" data-bn="প্রযুক্তিগত ভিত্তি">TECHNOLOGY FOUNDATION</span>
+                </h2>
+                <ul class="flex flex-wrap gap-4 justify-center">
+                    <li class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full" data-en="Cloud-native backend"
+                        data-bn="ক্লাউড-নেটিভ ব্যাকএন্ড">Cloud-native backend</li>
+                    <li class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full"
+                        data-en="Offline-tolerant workflows" data-bn="অফলাইন-সহনশীল">Offline-tolerant workflows</li>
+                    <li class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full" data-en="Secure authentication"
+                        data-bn="নিরাপদ অথেনটিকেশন">Secure authentication</li>
+                    <li class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full" data-en="Scalable architecture"
+                        data-bn="স্কেলেবল আর্কিটেকচার">Scalable architecture</li>
+                    <li class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full"
+                        data-en="Designed for high transaction volume" data-bn="উচ্চ লেনদেন ভলিউমের জন্য তৈরি">Designed
+                        for high transaction volume</li>
+                </ul>
+                <p class="mt-6 text-center text-slate-500"
+                    data-en="Built to support thousands of pharmacies and millions of daily records without linear cost increase."
+                    data-bn="হাজার হাজার ফার্মেসি এবং লক্ষ লক্ষ দৈনিক রেকর্ড সাপোর্ট করার জন্য তৈরি।">Built to support
+                    thousands of pharmacies and millions of daily records without linear cost increase.</p>
+            </section>
+
+            <!-- 9. AI Ready -->
+            <section class="glass-card animate-on-scroll border border-indigo-200 dark:border-indigo-900">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">9</span>
+                    <span data-en="AI-READY PLATFORM" data-bn="AI-রেডি প্ল্যাটফর্ম">AI-READY PLATFORM</span>
+                </h2>
+                <p class="mb-4" data-en="Medidesh is designed to evolve beyond operations."
+                    data-bn="মেডিদেশ অপারেশনের বাইরেও বিবর্তিত হতে ডিজাইন করা হয়েছে।">Medidesh is designed to evolve
+                    beyond operations.</p>
+                <p class="mb-4 font-bold" data-en="Future intelligence layer includes:"
+                    data-bn="ভবিষ্যতের ইন্টেলিজেন্স লেয়ারে থাকছে:">Future intelligence layer includes:</p>
+                <div class="space-y-3">
+                    <div class="p-3 bg-white dark:bg-black/20 rounded-lg border border-slate-100 dark:border-white/5"
+                        data-en="Expiry risk prediction" data-bn="মেয়াদ ঝুঁকি পূর্বাভাস">Expiry risk prediction</div>
+                    <div class="p-3 bg-white dark:bg-black/20 rounded-lg border border-slate-100 dark:border-white/5"
+                        data-en="Smart reorder suggestions" data-bn="স্মার্ট রি-অর্ডার পরামর্শ">Smart reorder
+                        suggestions</div>
+                    <div class="p-3 bg-white dark:bg-black/20 rounded-lg border border-slate-100 dark:border-white/5"
+                        data-en="Slow-moving stock detection" data-bn="ধীর গতির স্টক সনাক্তকরণ">Slow-moving stock
+                        detection</div>
+                    <div class="p-3 bg-white dark:bg-black/20 rounded-lg border border-slate-100 dark:border-white/5"
+                        data-en="Demand forecasting" data-bn="চাহিদা পূর্বাভাস">Demand forecasting</div>
+                    <div class="p-3 bg-white dark:bg-black/20 rounded-lg border border-slate-100 dark:border-white/5"
+                        data-en="Business performance insights" data-bn="ব্যবসায়িক পারফরম্যান্স ইনসাইটস">Business
+                        performance insights</div>
+                </div>
+                <p class="mt-6 text-right font-bold text-indigo-600 dark:text-indigo-400"
+                    data-en="Long-term goal: operational system → intelligence system."
+                    data-bn="দীর্ঘমেয়াদী লক্ষ্য: অপারেশনাল সিস্টেম → ইন্টেলিজেন্স সিস্টেম।">Long-term goal: operational
+                    system → intelligence system.</p>
+            </section>
+
+            <!-- 10. Business Model -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">10</span>
+                    <span data-en="BUSINESS MODEL" data-bn="বিজনেস মডেল">BUSINESS MODEL</span>
+                </h2>
+                <div class="text-center">
+                    <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-4"
+                        data-en="SaaS-based subscription model" data-bn="SaaS-ভিত্তিক সাবস্ক্রিপশন মডেল">SaaS-based
+                        subscription model</h3>
+                    <div class="grid md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
+                        <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-xl">
+                            <strong class="block mb-2" data-en="Free Plan" data-bn="ফ্রি প্ল্যান">Free Plan</strong>
+                            <p class="text-sm" data-en="For entry-level adoption" data-bn="প্রাথমিক ব্যবহারের জন্য">For
+                                entry-level adoption</p>
+                        </div>
+                        <div class="bg-sea-green-50 dark:bg-sea-green-900/20 p-4 rounded-xl">
+                            <strong class="block mb-2" data-en="Paid Plans" data-bn="পেইড প্ল্যান">Paid Plans</strong>
+                            <p class="text-sm" data-en="Based on pharmacies, staff, and advanced features"
+                                data-bn="ফার্মেসি, কর্মী এবং অ্যাডভান্সড ফিচারের উপর ভিত্তি করে">Based on pharmacies,
+                                staff, and advanced features</p>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-sm"
+                        data-en="Predictable recurring revenue & High retention due to operational lock-in"
+                        data-bn="অনুমানযোগ্য পুনরাবৃত্ত আয় এবং অপারেশনাল লক-ইন এর কারণে উচ্চ রিটেনশন">Predictable
+                        recurring revenue & High retention due to operational lock-in</p>
+                </div>
+            </section>
+
+            <!-- 11. Investor Value -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">11</span>
+                    <span data-en="INVESTOR VALUE" data-bn="ইনভেস্টর ভ্যালু">INVESTOR VALUE</span>
+                </h2>
+                <ul class="grid md:grid-cols-2 gap-4">
+                    <li class="flex items-center gap-2"><i class="ph-bold ph-trend-up text-green-500"></i> <span
+                            data-en="Large untapped market" data-bn="বিশাল অব্যবহৃত বাজার">Large untapped market</span>
+                    </li>
+                    <li class="flex items-center gap-2"><i class="ph-bold ph-arrows-clockwise text-blue-500"></i> <span
+                            data-en="Recurring SaaS revenue" data-bn="SaaS রেভিনিউ মডেল">Recurring SaaS revenue</span>
+                    </li>
+                    <li class="flex items-center gap-2"><i class="ph-bold ph-coins text-yellow-500"></i> <span
+                            data-en="Low marginal cost" data-bn="কম প্রান্তিক খরচ">Low marginal cost</span></li>
+                    <li class="flex items-center gap-2"><i class="ph-bold ph-lock-key text-red-500"></i> <span
+                            data-en="High switching cost" data-bn="পরিবর্তন করা কঠিন">High switching cost once
+                            adopted</span></li>
+                </ul>
+                <div class="mt-6 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+                    <strong class="block mb-2 text-sm uppercase tracking-wide text-slate-500"
+                        data-en="Clear Expansion Paths" data-bn="সম্প্রসারণের পথ">Clear Expansion Paths</strong>
+                    <div class="flex gap-4 flex-wrap font-bold text-slate-800 dark:text-white">
+                        <span>AI</span> <span>•</span> <span>Data Services</span> <span>•</span> <span>Supplier
+                            Integration</span> <span>•</span> <span>Financial Services</span>
+                    </div>
+                </div>
+                <p class="mt-4 text-center italic"
+                    data-en="This is a long-term platform play, not a single-feature product."
+                    data-bn="এটি একটি দীর্ঘমেয়াদী প্ল্যাটফর্ম পরিকল্পনা, কোন একক ফিচার পণ্য নয়।">This is a long-term
+                    platform play, not a single-feature product.</p>
+            </section>
+
+            <!-- 12. Defensibility -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">12</span>
+                    <span data-en="DEFENSIBILITY" data-bn="ডিফেন্সিবিলিটি">DEFENSIBILITY</span>
+                </h2>
+                <ul class="space-y-3 list-disc pl-5">
+                    <li data-en="Pharmacy-specific workflows" data-bn="ফার্মেসি-কেন্দ্রিক কর্মপ্রবাহ">Pharmacy-specific
+                        workflows</li>
+                    <li data-en="Domain-driven data models" data-bn="ডোমেইন-চালিত ডেটা মডেল">Domain-driven data models
+                    </li>
+                    <li data-en="Operational lock-in via inventory history"
+                        data-bn="ইনভেন্টরি ইতিহাসের মাধ্যমে অপারেশনাল লক-ইন">Operational lock-in via inventory history
+                    </li>
+                    <li data-en="Localization advantage" data-bn="লোকালাইজেশন সুবিধা">Localization advantage</li>
+                    <li data-en="Intelligence layer increases moat over time"
+                        data-bn="ইন্টেলিজেন্স লেয়ার সময়ের সাথে সাথে ব্যবধান বাড়ায়">Intelligence layer increases moat
+                        over time</li>
+                </ul>
+            </section>
+
+            <!-- 13. Growth Strategy -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">13</span>
+                    <span data-en="GROWTH STRATEGY" data-bn="গ্রোথ স্ট্র্যাটেজি">GROWTH STRATEGY</span>
+                </h2>
+                <div class="space-y-4 relative pl-8 border-l-2 border-slate-200 dark:border-slate-700">
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[39px] top-0 w-5 h-5 rounded-full bg-sea-green-500 border-4 border-white dark:border-dark-bg"></span>
+                        <h4 class="font-bold" data-en="Free plan to accelerate adoption"
+                            data-bn="ব্যবহার বাড়াতে ফ্রি প্ল্যান">Free plan to accelerate adoption</h4>
+                    </div>
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[39px] top-0 w-5 h-5 rounded-full bg-sea-green-500 border-4 border-white dark:border-dark-bg"></span>
+                        <h4 class="font-bold" data-en="Upsell via staff, branches, analytics"
+                            data-bn="স্টাফ, শাখা, এনালিটিক্স এর মাধ্যমে আপসেল">Upsell via staff, branches, analytics
+                        </h4>
+                    </div>
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[39px] top-0 w-5 h-5 rounded-full bg-sea-green-500 border-4 border-white dark:border-dark-bg"></span>
+                        <h4 class="font-bold" data-en="Distributor and supplier partnerships"
+                            data-bn="ডিস্ট্রিবিউটর ও সাপ্লায়ার পার্টনারশিপ">Distributor and supplier partnerships</h4>
+                    </div>
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[39px] top-0 w-5 h-5 rounded-full bg-sea-green-500 border-4 border-white dark:border-dark-bg"></span>
+                        <h4 class="font-bold" data-en="Regional expansion across emerging markets"
+                            data-bn="উদীয়মান বাজারে আঞ্চলিক সম্প্রসারণ">Regional expansion across emerging markets</h4>
+                    </div>
+                    <div class="relative">
+                        <span
+                            class="absolute -left-[39px] top-0 w-5 h-5 rounded-full bg-indigo-500 border-4 border-white dark:border-dark-bg"></span>
+                        <h4 class="font-bold text-indigo-600 dark:text-indigo-400"
+                            data-en="Gradual transition to intelligence-driven services"
+                            data-bn="বুদ্ধিমত্তা-চালিত সেবায় ধীর রূপান্তর">Gradual transition to intelligence-driven
+                            services</h4>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 14. Why Now -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">14</span>
+                    <span data-en="WHY NOW" data-bn="এখনই কেন">WHY NOW</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl bg-orange-50 dark:bg-orange-900/10">
+                        <p class="font-bold" data-en="Increasing operational pressure" data-bn="অপারেশনাল চাপ বৃদ্ধি">
+                            Increasing operational pressure</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/10">
+                        <p class="font-bold" data-en="Rising medicine costs" data-bn="ঔষধের দাম বৃদ্ধি">Rising medicine
+                            costs</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/10">
+                        <p class="font-bold" data-en="Smartphones widely adopted" data-bn="স্মার্টফোনের ব্যাপক ব্যবহার">
+                            Smartphones widely adopted</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-purple-50 dark:bg-purple-900/10">
+                        <p class="font-bold" data-en="Cloud infrastructure affordable"
+                            data-bn="সাশ্রয়ী ক্লাউড ব্যবস্থা">Cloud infrastructure affordable</p>
+                    </div>
+                </div>
+                <p class="mt-6 text-center font-bold"
+                    data-en="The timing aligns with both market readiness and technological feasibility."
+                    data-bn="সময়টি বাজারের প্রস্তুতি এবং প্রযুক্তিগত সম্ভাব্যতা উভয়ের সাথে সামঞ্জস্যপূর্ণ।">The timing
+                    aligns with both market readiness and technological feasibility.</p>
+            </section>
+
+            <!-- 15. Vision -->
+            <section class="glass-card animate-on-scroll bg-slate-900 text-white text-center py-16">
+                <h2 class="text-2xl font-bold opacity-60 mb-8" data-en="OUR VISION" data-bn="আমাদের ভিশন">OUR VISION
+                </h2>
+                <blockquote class="text-2xl md:text-3xl font-light italic leading-relaxed max-w-3xl mx-auto mb-8">
+                    "<span data-en="To become the operating system for pharmacy businesses in emerging markets."
+                        data-bn="উদীয়মান বাজারের ফার্মেসি ব্যবসার অপারেটিং সিস্টেম হয়ে ওঠা।">To become the operating
+                        system for pharmacy businesses in emerging markets.</span>"
+                </blockquote>
+                <p class="text-sea-green-400 font-bold"
+                    data-en="Not just managing sales — but enabling smarter, safer, and more efficient healthcare distribution."
+                    data-bn="শুধুমাত্র বিক্রয় ব্যবস্থাপনা নয় — বরং স্বাস্থ্যসেবা বিতরণকে আরও স্মার্ট, নিরাপদ এবং দক্ষ করে তোলা।">
+                    Not just managing sales — but enabling smarter, safer, and more efficient healthcare distribution.
+                </p>
+            </section>
+
+            <!-- 16. Funding Intent -->
+            <section class="glass-card animate-on-scroll">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-sm text-slate-500">16</span>
+                    <span data-en="FUNDING INTENT" data-bn="ফান্ডিং ইনটেন্ট">FUNDING INTENT</span>
+                </h2>
+                <p class="mb-4 text-center text-lg font-bold" data-en="Seeking investment to:"
+                    data-bn="বিনিয়োগ প্রয়োজন:">Seeking investment to:</p>
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <span class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-full"
+                        data-en="Strengthen product foundation" data-bn="পণ্যের ভিত্তি মজবুত করা">Strengthen product
+                        foundation</span>
+                    <span class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-full"
+                        data-en="Scale infrastructure" data-bn="ইনফ্রাস্ট্রাকচার স্কেল করা">Scale infrastructure</span>
+                    <span class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-full"
+                        data-en="Accelerate onboarding" data-bn="অনবোর্ডিং দ্রুত করা">Accelerate onboarding</span>
+                    <span class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-full"
+                        data-en="Build intelligence layer" data-bn="ইন্টেলিজেন্স লেয়ার তৈরি">Build intelligence
+                        layer</span>
+                    <span class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-full"
+                        data-en="Expand market reach" data-bn="বাজার সম্প্রসারণ">Expand market reach</span>
+                </div>
+                <div class="bg-indigo-600 text-white p-6 rounded-xl text-center shadow-lg shadow-indigo-500/30">
+                    <p class="font-bold text-lg"
+                        data-en="Medidesh is positioned as a scalable, defensible, and impact-driven healthcare technology platform."
+                        data-bn="মেডিদেশ একটি স্কেলেবল, ডিফেন্সিবল এবং ইমপ্যাক্ট-ড্রিভেন হেলথকেয়ার টেকনোলজি প্ল্যাটফর্ম হিসেবে প্রতিষ্ঠিত।">
+                        Medidesh is positioned as a scalable, defensible, and impact-driven healthcare technology
+                        platform.</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 dark:bg-[#0B1120] py-12 border-t border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-500 dark:text-slate-500 text-sm">
+                &copy; 2025 Medidesh. All rights reserved. <br>
+                <a href="index.html" class="hover:text-sea-green-600">Home</a> |
+                <a href="comparison.html" class="hover:text-sea-green-600">Why Us</a> |
+                <a href="vision.html" class="hover:text-sea-green-600 font-bold">Vision</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // --- Translation Logic ---
+        const langToggle = document.getElementById('lang-toggle');
+        const langText = document.getElementById('lang-text');
+        let currentLang = localStorage.getItem('lang') || 'en';
+
+        function updateLanguage() {
+            const elements = document.querySelectorAll('[data-en]');
+
+            elements.forEach(el => {
+                if (currentLang === 'bn') {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        if (el.hasAttribute('placeholder')) el.placeholder = el.getAttribute('data-bn');
+                    } else {
+                        // Safe check for simple text replacement
+                        el.textContent = el.getAttribute('data-bn');
+                    }
+                } else {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        if (el.hasAttribute('placeholder')) el.placeholder = el.getAttribute('data-en');
+                    } else {
+                        el.textContent = el.getAttribute('data-en');
+                    }
+                }
+            });
+
+            langText.textContent = currentLang === 'bn' ? 'English' : 'বাংলা';
+            localStorage.setItem('lang', currentLang);
+            document.documentElement.lang = currentLang;
+        }
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'bn' ? 'en' : 'bn';
+            updateLanguage();
+        });
+
+        // Initialize Language
+        updateLanguage();
+
+        // --- Theme Toggle ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+        });
+
+        // --- Intersection Observer for Animations ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+    </script>
+</body>
+
+</html>

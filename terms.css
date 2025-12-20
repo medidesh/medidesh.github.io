@@ -1,0 +1,25 @@
+/* Specific styles for Terms and Conditions page */
+.terms-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1e293b; /* slate-800 */
+}
+
+.dark .terms-content h2 {
+    color: #f8fafc; /* slate-50 */
+}
+
+.terms-content p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+}
+
+.terms-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.terms-content li {
+    margin-bottom: 0.5rem;
+}

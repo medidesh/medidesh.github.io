@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - Medidesh</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="terms.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sea-green': { 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#2E8B57', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+                        'dark-bg': '#0f172a',
+                        'dark-card': '#1e293b',
+                    },
+                    fontFamily: { sans: ['Hind Siliguri', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-slate-50 dark:bg-dark-bg text-slate-600 dark:text-slate-300 font-sans transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300 glass dark:border-slate-800">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center py-4">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/logo/Logo.svg" alt="Medidesh Logo"
+                    class="w-10 h-10 group-hover:scale-105 transition-transform duration-300">
+                <span class="text-2xl font-bold font-heading text-slate-800 dark:text-white">Medidesh</span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+                    <i class="ph ph-moon dark:hidden text-xl"></i>
+                    <i class="ph ph-sun hidden dark:block text-xl"></i>
+                </button>
+                <a href="index.html"
+                    class="text-slate-600 dark:text-slate-300 hover:text-sea-green-600 dark:hover:text-sea-green-400 font-medium transition-colors flex items-center gap-2">
+                    <i class="ph-bold ph-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="pt-32 pb-20 container mx-auto px-6 lg:px-12 max-w-4xl">
+        <div
+            class="bg-white dark:bg-dark-card p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">TERMS AND CONDITIONS</h1>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-12">Last updated December 17, 2025</p>
+
+            <div class="terms-content space-y-8 text-slate-700 dark:text-slate-300">
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">1. AGREEMENT TO TERMS</h2>
+                    <p>These Terms and Conditions constitute a legally binding agreement made between you, whether
+                        personally or on behalf of an entity (“you”) and Medidesh Private Limited ("Company," "we,"
+                        "us," or "our"), concerning your access to and use of the Medidesh mobile application and
+                        related services (collectively, the "Services").</p>
+                    <p>We are registered in Bangladesh and have our registered office at 229 West Shewrapara Wasa Road,
+                        Mirpur, Dhaka 1216.</p>
+                    <p>By accessing the Services, you confirm that you have read, understood, and agreed to be bound by
+                        all of these Terms and Conditions. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS AND CONDITIONS,
+                        THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE
+                        IMMEDIATELY.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">2. INTELLECTUAL PROPERTY RIGHTS
+                    </h2>
+                    <p>Unless otherwise indicated, the Services are our proprietary property and all source code,
+                        databases, functionality, software, website designs, audio, video, text, photographs, and
+                        graphics on the Services (collectively, the “Content”) and the trademarks, service marks, and
+                        logos contained therein (the “Marks”) are owned or controlled by us or licensed to us, and are
+                        protected by copyright and trademark laws.</p>
+                    <p>The Content and the Marks are provided on the Services “AS IS” for your information and personal
+                        use only. Except as expressly provided in these Terms and Conditions, no part of the Services
+                        and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted,
+                        publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise
+                        exploited for any commercial purpose whatsoever, without our express prior written permission.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">3. USER REPRESENTATIONS</h2>
+                    <p>By using the Services, you represent and warrant that:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>All registration information you submit will be true, accurate, current, and complete.</li>
+                        <li>You will maintain the accuracy of such information and promptly update such registration
+                            information as necessary.</li>
+                        <li>You have the legal capacity and you agree to comply with these Terms and Conditions.</li>
+                        <li>You are not a minor in the jurisdiction in which you reside (you are at least 18 years of
+                            age).</li>
+                        <li>You will not access the Services through automated or non-human means, whether through a
+                            bot, script, or otherwise (except for the specific AI features provided by us).</li>
+                        <li>You will not use the Services for any illegal or unauthorized purpose.</li>
+                        <li>Your use of the Services will not violate any applicable law or regulation.</li>
+                    </ul>
+                    <p>If you provide any information that is untrue, inaccurate, not current, or incomplete, we have
+                        the right to suspend or terminate your account and refuse any and all current or future use of
+                        the Services.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">4. USER REGISTRATION AND SECURITY
+                    </h2>
+                    <p>You may be required to register with the Services. You agree to keep your password confidential
+                        and will be responsible for all use of your account and password. We reserve the right to
+                        remove, reclaim, or change a username you select if we determine, in our sole discretion, that
+                        such username is inappropriate, obscene, or otherwise objectionable.</p>
+                    <p>If you access the Services via social networking credentials (such as Facebook or X), you are
+                        bound by the terms and conditions of those respective platforms in addition to these Terms.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">5. PHARMACY MANAGEMENT SERVICES
+                    </h2>
+                    <p>The Services are designed to assist with pharmacy management, including but not limited to Point
+                        of Sale (POS), inventory management, expiry tracking, and business analytics.</p>
+                    <p><strong>Database Accuracy:</strong> While we strive to provide an accurate database of medicines
+                        (supporting DGDA approved lists), generically available drugs, and prices, we do not warrant
+                        that the product descriptions, prices, or other content available on the Services are accurate,
+                        complete, reliable, current, or error-free. It is your responsibility to verify pricing and
+                        stock details before completing sales.</p>
+                    <p><strong>Medical Disclaimer:</strong> The Services are for administrative and business management
+                        purposes only. Medidesh is not a medical provider. The "Search by Symptom" or other
+                        categorizations are for inventory organization and do not constitute medical advice, diagnosis,
+                        or treatment recommendations.</p>
+                    <p><strong>Data Sync:</strong> The Services may offer offline capabilities. You acknowledge that
+                        data entered offline must be synced with our servers when an internet connection is available.
+                        We are not liable for data loss caused by device failure prior to synchronization.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">6. FINANCIAL TOOLS (HALKHATA &
+                        BAKIR KHATA)</h2>
+                    <p>The Services include features for tracking sales ("Halkhata") and customer debts ("Bakir Khata").
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>You are solely responsible for the accuracy of the financial data entered into the system.
+                        </li>
+                        <li>We are not responsible for any disputes between you and your customers or suppliers
+                            regarding debts, payments, or inventory.</li>
+                        <li>Calculation tools provided (e.g., profit calculation, sales comparison) are estimates based
+                            on the data you provide.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">7. PURCHASES AND PAYMENT</h2>
+                    <p>We accept payments through SSLCOMMERZ. You agree to provide current, complete, and accurate
+                        purchase and account information for all purchases made via the Services. You further agree to
+                        promptly update account and payment information, including email address, payment method, and
+                        payment card expiration date, so that we can complete your transactions and contact you as
+                        needed.</p>
+                    <p>We reserve the right to refuse any order placed through the Services. We may, in our sole
+                        discretion, limit or cancel quantities purchased per person, per household, or per order.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">8. ARTIFICIAL INTELLIGENCE (AI)
+                        PRODUCTS</h2>
+                    <p>Our Services utilize artificial intelligence technologies (including providers such as Anthropic,
+                        Google Cloud AI, and OpenAI) for features such as AI bots, predictive analytics, and automation.
+                    </p>
+                    <p><strong>No Guarantees:</strong> AI outputs are probabilistic and may contain errors. You should
+                        independently verify any critical information generated by our AI tools.</p>
+                    <p><strong>Usage:</strong> You agree not to use the AI features to generate harmful, illegal, or
+                        unethical content.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">9. PROHIBITED ACTIVITIES</h2>
+                    <p>You may not access or use the Services for any purpose other than that for which we make the
+                        Services available. As a user of the Services, you agree not to:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Systematically retrieve data or other content from the Services to create or compile,
+                            directly or indirectly, a collection, compilation, database, or directory without written
+                            permission from us.</li>
+                        <li>Circumvent, disable, or otherwise interfere with security-related features of the Services.
+                        </li>
+                        <li>Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Services.</li>
+                        <li>Use the Services in a manner inconsistent with any applicable laws or regulations.</li>
+                        <li>Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other
+                            material that interferes with any party’s uninterrupted use and enjoyment of the Services.
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">10. PRIVACY POLICY</h2>
+                    <p>We care about data privacy and security. Please review our Privacy Policy. By using the Services,
+                        you agree to be bound by our Privacy Policy, which is incorporated into these Terms and
+                        Conditions. Please be advised the Services are hosted in Bangladesh.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">11. TERM AND TERMINATION</h2>
+                    <p>These Terms and Conditions shall remain in full force and effect while you use the Services.
+                        WITHOUT LIMITING ANY OTHER PROVISION OF THESE TERMS AND CONDITIONS, WE RESERVE THE RIGHT TO, IN
+                        OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SERVICES
+                        (INCLUDING BLOCKING CERTAIN IP ADDRESSES), TO ANY PERSON FOR ANY REASON OR FOR NO REASON.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">12. MODIFICATIONS AND
+                        INTERRUPTIONS</h2>
+                    <p>We reserve the right to change, modify, or remove the contents of the Services at any time or for
+                        any reason at our sole discretion without notice. We will not be liable to you or any third
+                        party for any modification, price change, suspension, or discontinuance of the Services.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">13. GOVERNING LAW</h2>
+                    <p>These Terms shall be governed by and defined following the laws of Bangladesh. Medidesh Private
+                        Limited and yourself irrevocably consent that the courts of Dhaka, Bangladesh shall have
+                        exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">14. LIMITATION OF LIABILITY</h2>
+                    <p>IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY
+                        FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES,
+                        INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE
+                        SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-4">15. CONTACT US</h2>
+                    <p>In order to resolve a complaint regarding the Services or to receive further information
+                        regarding use of the Services, please contact us at:</p>
+                    <address
+                        class="not-italic mt-4 p-6 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                        <strong>Medidesh Private Limited</strong><br>
+                        229 West Shewrapara Wasa Road<br>
+                        Mirpur, Dhaka 1216<br>
+                        Bangladesh<br><br>
+                        Email: <a href="mailto:info.support@medidesh.com"
+                            class="text-sea-green-600 hover:underline">info.support@medidesh.com</a>
+                    </address>
+                </section>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700 text-center">
+                <a href="index.html"
+                    class="inline-flex items-center gap-2 text-sea-green-600 hover:text-sea-green-700 font-bold transition-transform hover:-translate-x-1">
+                    <i class="ph-bold ph-arrow-left"></i> Return to Homepage
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+        class="bg-slate-50 dark:bg-[#0B1120] py-8 text-center text-sm text-slate-400 border-t border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto px-6">
+            &copy; 2025 Medidesh Private Limited. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -3,9 +3,17 @@
 import { useState } from "react";
 import { QrCode, CheckCircle, DeviceMobile, Receipt } from "@phosphor-icons/react/dist/ssr";
 
-export default function AppIntegration() {
+interface AppIntegrationProps {
+    slug?: string;
+}
+
+export default function AppIntegration({ slug }: AppIntegrationProps) {
     const [invoiceId, setInvoiceId] = useState("");
     const [verificationStatus, setVerificationStatus] = useState<"idle" | "success" | "error">("idle");
+
+    // Fallback slug for demo
+    const pharmacySlug = slug || "wellbeing";
+    const appUrl = `http://medidesh.com/${pharmacySlug}`;
 
     const handleVerify = () => {
         if (invoiceId.length > 3) {
@@ -38,15 +46,16 @@ export default function AppIntegration() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-6">
-                                <div className="bg-white p-2 rounded-xl shadow-md border border-slate-100">
-                                    {/* Placeholder QR Code - In prod use real QR */}
-                                    <QrCode size={120} className="text-slate-800" />
+                                <div className="bg-white p-2 rounded-xl shadow-md border border-slate-100 flex flex-col items-center">
+                                    {/* In a real scenario, generate a QR for 'appUrl' */}
+                                    <QrCode size={100} className="text-slate-800" />
+                                    <span className="text-[10px] text-slate-400 mt-1 font-mono">{pharmacySlug}</span>
                                 </div>
                                 <div className="text-center sm:text-left">
                                     <div className="text-sm font-bold text-slate-900 mb-2">স্ক্যান করে ডাউনলোড করুন</div>
-                                    <button className="px-6 py-2 bg-slate-900 text-white rounded-lg text-sm font-bold hover:bg-slate-800 transition-colors">
+                                    <a href="#" className="inline-block px-6 py-2 bg-slate-900 text-white rounded-lg text-sm font-bold hover:bg-slate-800 transition-colors">
                                         Download App
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

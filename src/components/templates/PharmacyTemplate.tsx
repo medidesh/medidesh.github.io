@@ -29,7 +29,7 @@ export default function PharmacyTemplate({ pharmacy }: PharmacyTemplateProps) {
 
             <HeroSection pharmacy={pharmacy} />
             <NoticeBoard notices={pharmacy.notices} />
-            <AppIntegration />
+            <AppIntegration slug={pharmacy.slug} />
             <EmergencyServices />
             <ProductCategories />
 

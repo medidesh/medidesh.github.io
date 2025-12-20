@@ -97,7 +97,7 @@ export default function ServicesGrid() {
                                 {service.desc}
                             </p>
                             <Link
-                                href="#"
+                                href="#categories"
                                 className={`${service.textColor} font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all`}
                             >
                                 আরও জানুন <ArrowRight weight="bold" />

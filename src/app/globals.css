@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-hind-siliguri), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-heading: var(--font-hind-siliguri), ui-sans-serif, system-ui, sans-serif;
+
+  --color-pharma-green-50: #f0fdf4;
+  --color-pharma-green-100: #dcfce7;
+  --color-pharma-green-200: #bbf7d0;
+  --color-pharma-green-300: #86efac;
+  --color-pharma-green-400: #4ade80;
+  --color-pharma-green-500: #22c55e;
+  --color-pharma-green-600: #009B86;
+  --color-pharma-green-700: #15803d;
+  --color-pharma-green-800: #166534;
+  --color-pharma-green-900: #14532d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --font-hind-siliguri: var(--font-hind-siliguri); /* Ensure variable is available */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* Utilities */
+.text-balance {
+  text-wrap: balance;
+}

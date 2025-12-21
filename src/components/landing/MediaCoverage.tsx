@@ -48,17 +48,17 @@ export default function MediaCoverage() {
                             />
                         </div>
                         <h3 className="text-lg font-bold text-slate-900 mb-4 line-clamp-2 leading-snug">
-                            "Medidesh: Revolutionizing inventory management for local pharmacies"
+                            "মেডিদেশ: স্থানীয় ফার্মেসী ইনভেন্টরি ম্যানেজমেন্টে বৈপ্লবিক পরিবর্তন"
                         </h3>
                         <div className="mt-auto pt-4 flex items-center justify-between border-t border-slate-100">
                             <span className="text-xs text-slate-400 font-medium">
-                                Nov 24, 2024
+                                ২৪ নভেম্বর, ২০২৪
                             </span>
                             <a
                                 href="#"
                                 className="inline-flex items-center gap-1 text-sm font-bold text-pharma-green-600 hover:text-pharma-green-700 transition-colors"
                             >
-                                Read More <ArrowRight weight="bold" />
+                                আরও পড়ুন <ArrowRight weight="bold" />
                             </a>
                         </div>
                     </div>
@@ -100,17 +100,17 @@ export default function MediaCoverage() {
                             />
                         </div>
                         <h3 className="text-lg font-bold text-slate-900 mb-4 line-clamp-2 leading-snug">
-                            "How SaaS platforms are empowering micro-merchants in Bangladesh"
+                            "কিভাবে সাস (SaaS) প্ল্যাটফর্মগুলো বাংলাদেশের ক্ষুদ্র ব্যবসায়ীদের ক্ষমতায়ন করছে"
                         </h3>
                         <div className="mt-auto pt-4 flex items-center justify-between border-t border-slate-100">
                             <span className="text-xs text-slate-400 font-medium">
-                                Oct 15, 2024
+                                ১৫ অক্টোবর, ২০২৪
                             </span>
                             <a
                                 href="#"
                                 className="inline-flex items-center gap-1 text-sm font-bold text-pharma-green-600 hover:text-pharma-green-700 transition-colors"
                             >
-                                Read More <ArrowRight weight="bold" />
+                                আরও পড়ুন <ArrowRight weight="bold" />
                             </a>
                         </div>
                     </div>

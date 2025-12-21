@@ -31,7 +31,7 @@ export default function PharmacyTemplate({ pharmacy }: PharmacyTemplateProps) {
             <NoticeBoard notices={pharmacy.notices} />
             <AppIntegration slug={pharmacy.slug} />
             <EmergencyServices />
-            <ProductCategories />
+            <ProductCategories pharmacy={pharmacy} />
 
             <ServicesGrid />
             <HealthTips />

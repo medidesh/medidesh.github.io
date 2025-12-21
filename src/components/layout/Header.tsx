@@ -13,13 +13,7 @@ export default function Header({ pharmacy }: HeaderProps) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    const [activeSection, setActiveSection] = useState("");
 
     const navLinks = [
         { name: "হোম", href: "#hero" },
@@ -28,6 +22,27 @@ export default function Header({ pharmacy }: HeaderProps) {
         { name: "অ্যাপ", href: "#app-integration" },
         { name: "যোগাযোগ", href: "#contact" },
     ];
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+
+            // Scroll spy logic
+            const sections = navLinks.map(link => link.href.substring(1));
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.top <= 300) {
+                        setActiveSection(section);
+                        break;
+                    }
+                }
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <header
@@ -65,10 +80,14 @@ export default function Header({ pharmacy }: HeaderProps) {
                         <a
                             key={index}
                             href={link.href}
-                            className="text-slate-600 font-bold hover:text-pharma-green-600 transition-colors relative group py-2 text-sm uppercase tracking-wide"
+                            className={`font-bold transition-all relative py-2 text-sm uppercase tracking-wide ${activeSection === link.href.substring(1)
+                                ? "text-pharma-green-600"
+                                : "text-slate-600 hover:text-pharma-green-600"
+                                }`}
                         >
                             {link.name}
-                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pharma-green-600 transition-all duration-300 group-hover:w-full"></span>
+                            <span className={`absolute bottom-0 left-0 h-0.5 bg-pharma-green-600 transition-all duration-300 ${activeSection === link.href.substring(1) ? "w-full" : "w-0"
+                                }`}></span>
                         </a>
                     ))}
                 </nav>

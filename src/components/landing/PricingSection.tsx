@@ -55,12 +55,6 @@ export default function PricingSection() {
                                 বেসিক রিপোর্ট
                             </li>
                         </ul>
-                        <a
-                            href="#"
-                            className="block w-full py-3 px-6 rounded-xl border border-slate-200 text-slate-900 font-bold text-center hover:bg-slate-50 transition-colors"
-                        >
-                            ফ্রি শুরু করুন
-                        </a>
                     </div>
 
                     {/* Teesta */}
@@ -87,12 +81,6 @@ export default function PricingSection() {
                                 ৬ মাসের রিপোর্ট
                             </li>
                         </ul>
-                        <a
-                            href="#"
-                            className="block w-full py-3 px-6 rounded-xl border border-slate-200 text-slate-900 font-bold text-center hover:bg-slate-50 transition-colors"
-                        >
-                            বেসিক কিনুন
-                        </a>
                     </div>
 
                     {/* Padma */}
@@ -128,12 +116,6 @@ export default function PricingSection() {
                                 প্রায়োরিটি সাপোর্ট
                             </li>
                         </ul>
-                        <a
-                            href="#"
-                            className="block w-full py-3 px-6 rounded-xl bg-white text-pharma-green-600 font-bold text-center hover:bg-slate-50 transition-colors shadow-lg"
-                        >
-                            প্রো কিনুন
-                        </a>
                     </div>
 
                     {/* Jamuna */}
@@ -162,12 +144,34 @@ export default function PricingSection() {
                                 ডেডিকেটেড ম্যানেজার
                             </li>
                         </ul>
-                        <a
-                            href="#"
-                            className="block w-full py-3 px-6 rounded-xl border border-slate-200 text-slate-900 font-bold text-center hover:bg-slate-50 transition-colors"
-                        >
-                            যোগাযোগ করুন
-                        </a>
+                    </div>
+
+                </div>
+
+                <div className="mt-20 max-w-4xl mx-auto">
+                    <div className="bg-slate-900 rounded-[3rem] p-8 lg:p-12 relative overflow-hidden group">
+                        {/* Decorative background elements */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-pharma-green-500/10 rounded-full blur-[80px] -mr-32 -mt-32"></div>
+                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] -ml-32 -mb-32"></div>
+
+                        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                            <div className="text-center lg:text-left">
+                                <h3 className="text-2xl lg:text-3xl font-black text-white mb-4">আপনার জন্য সঠিক প্ল্যানটি খুঁজে পাচ্ছেন না?</h3>
+                                <p className="text-slate-400 font-medium text-lg">
+                                    আমাদের বিশেষজ্ঞ টিমের সাথে কথা বলুন এবং আপনার ফার্মেসির জন্য সেরা সমাধানটি বেছে নিন।
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col items-center lg:items-end gap-4 shrink-0">
+                                <a
+                                    href="tel:+8801700000000"
+                                    className="inline-flex items-center gap-4 bg-pharma-green-600 hover:bg-pharma-green-500 text-white px-10 py-5 rounded-2xl font-black text-xl transition-all shadow-[0_20px_40px_-15px_rgba(0,155,134,0.3)] hover:-translate-y-1 active:scale-95"
+                                >
+                                    কল করুন: +৮৮০ ১৭০০০-০০০০০
+                                </a>
+                                <p className="text-slate-500 text-xs font-bold uppercase tracking-[0.2em]">Available Sat - Thu, 10 AM - 8 PM</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -36,7 +36,8 @@ export default function LandingFooter() {
 
                         <div className="flex items-center gap-4">
                             <a
-                                href="#"
+                                href="https://facebook.com/medidesh"
+                                target="_blank"
                                 className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300"
                             >
                                 <FacebookLogo size={20} weight="fill" />
@@ -188,13 +189,13 @@ export default function LandingFooter() {
                     <div>© {currentYear} মেডিদেশ। সর্বস্বত্ব সংরক্ষিত।</div>
 
                     <div className="flex items-center gap-6">
-                        <a href="#" className="hover:text-pharma-green-600 transition-colors">
+                        <Link href="/support" className="hover:text-pharma-green-600 transition-colors">
                             সাপোর্ট
-                        </a>
+                        </Link>
                         <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
-                        <a href="#" className="hover:text-pharma-green-600 transition-colors">
+                        <Link href="/help" className="hover:text-pharma-green-600 transition-colors">
                             হেল্প সেন্টার
-                        </a>
+                        </Link>
                         <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
                         <div className="flex items-center gap-1.5 text-slate-400">
                             <span>Made with</span>

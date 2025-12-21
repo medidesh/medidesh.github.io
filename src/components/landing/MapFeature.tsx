@@ -43,7 +43,7 @@ export default function MapFeature() {
                                     <MagnifyingGlass weight="bold" className="text-slate-400" />
                                     <div className="flex-1 overflow-hidden flex justify-center">
                                         <div className="text-slate-800 font-medium text-sm">
-                                            Napa Extra
+                                            নাপা এক্সট্রা
                                         </div>
                                     </div>
                                     <div className="bg-blue-600 text-white text-[10px] px-2 py-1 rounded-lg font-bold shadow-md shadow-blue-500/30">

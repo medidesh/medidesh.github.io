@@ -31,27 +31,27 @@ export default function DownloadSection() {
                                     />
                                 </div>
                                 <div className="absolute -bottom-3 -right-3 bg-white text-slate-900 text-xs font-bold px-2 py-1 rounded-lg border-2 border-slate-900 shadow-sm">
-                                    Free
+                                    ফ্রি
                                 </div>
                             </div>
 
                             <div className="text-center md:text-left flex-1">
                                 <h3 className="text-2xl font-bold text-white mb-1">
-                                    Medidesh POS
+                                    মেডিদেশ পজ (POS)
                                 </h3>
                                 <div className="flex items-center justify-center md:justify-start gap-3 mb-4 text-sm">
-                                    <span className="text-slate-400">Version 2.5.0</span>
+                                    <span className="text-slate-400">ভার্সন ২.৫.০</span>
                                     <span className="w-1 h-1 bg-slate-600 rounded-full"></span>
                                     <Link
                                         href="#"
                                         className="text-pharma-green-400 hover:text-pharma-green-300 font-medium hover:underline flex items-center gap-1 transition-colors"
                                     >
-                                        What's New <ArrowRight weight="bold" />
+                                        নতুন ফির্চাস <ArrowRight weight="bold" />
                                     </Link>
                                 </div>
                                 <div className="flex items-center justify-center md:justify-start gap-2 text-xs text-slate-500">
                                     <CheckCircle weight="fill" className="text-emerald-500" />
-                                    <span>Updated Dec 18, 2025</span>
+                                    <span>আপডেট: ১৮ ডিসেম্বর, ২০২৫</span>
                                 </div>
                             </div>
 
@@ -61,7 +61,7 @@ export default function DownloadSection() {
                                     className="inline-flex items-center gap-2 bg-white text-slate-900 hover:bg-slate-100 px-6 py-3 rounded-xl font-bold transition-all hover:scale-105 active:scale-95"
                                 >
                                     <DownloadSimple weight="bold" />
-                                    <span>Download</span>
+                                    <span>ডাউনলোড</span>
                                 </Link>
                             </div>
                         </div>

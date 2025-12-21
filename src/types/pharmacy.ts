@@ -1,3 +1,12 @@
+export interface PharmacyCategory {
+    name: string;
+    subtitle: string;
+    icon: string;
+    color: string;
+    bg: string;
+    border: string;
+}
+
 export interface PharmacyData {
     slug: string;
     name: string;
@@ -7,6 +16,8 @@ export interface PharmacyData {
     phone: string;
     email?: string;
     logo: string;
+    heroImage?: string;
+    licenseNo?: string;
     colors: {
         primary: string;
         secondary: string;
@@ -22,6 +33,8 @@ export interface PharmacyData {
         role: string;
         image: string;
         bio: string;
+        education?: string;
+        experience?: string;
     };
     landmark?: string;
     openTime?: string;
@@ -29,5 +42,6 @@ export interface PharmacyData {
     offDay?: string;
     lastUpdate?: string;
     notices?: string[];
+    categories?: PharmacyCategory[];
     returnPolicy?: string;
 }

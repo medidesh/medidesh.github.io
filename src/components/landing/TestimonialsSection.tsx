@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
                             ))}
                         </div>
                         <span className="text-sm font-bold text-slate-700">
-                            4.9/5 on Reviews
+                            ৪.৯/৫ গুগল রিভিউ
                         </span>
                     </div>
                 </div>

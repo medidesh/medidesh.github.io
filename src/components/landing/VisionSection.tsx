@@ -26,6 +26,21 @@ export default function VisionSection() {
                                 ব্যবসা করতে পারে।"
                             </p>
 
+                            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left border-t border-slate-100 pt-12">
+                                <div>
+                                    <h4 className="font-bold text-slate-800 mb-2">উদ্ভাবন</h4>
+                                    <p className="text-sm text-slate-500">আমরা আধুনিক প্রযুক্তি ব্যবহার করে জটিলতাকে সহজ করি।</p>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-slate-800 mb-2">নির্ভরযোগ্যতা</h4>
+                                    <p className="text-sm text-slate-500">আপনার তথ্য এবং ব্যবসার নিরাপত্তা আমাদের কাছে সবচেয়ে গুরুত্বপূর্ণ।</p>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-slate-800 mb-2">সাশ্রয়ী</h4>
+                                    <p className="text-sm text-slate-500">প্রতিটি ফার্মেসির ক্ষমতায়ন নিশ্চিত করতে আমরা সাশ্রয়ী সেবা দেই।</p>
+                                </div>
+                            </div>
+
                             <div className="mt-8 flex items-center justify-center gap-3 opacity-80">
                                 <span className="h-px w-12 bg-slate-300"></span>
                                 <span className="text-sm font-bold text-slate-400 tracking-widest uppercase">

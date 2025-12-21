@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { Hind_Siliguri } from "next/font/google";
+import { Hind_Siliguri, Orbitron } from "next/font/google";
 import "./globals.css";
 
 const hindSiliguri = Hind_Siliguri({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["bengali", "latin"],
   variable: "--font-hind-siliguri",
+});
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-orbitron",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="bn">
-      <body className={hindSiliguri.className}>{children}</body>
+      <body className={`${hindSiliguri.variable} ${orbitron.variable} ${hindSiliguri.className}`}>
+        {children}
+      </body>
     </html>
   );
 }

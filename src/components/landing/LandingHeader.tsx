@@ -15,7 +15,6 @@ export default function LandingHeader() {
     const navLinks = [
         { name: "ফিচার", href: "#features" },
         { name: "সমাধান", href: "#comparison" },
-        { name: "এআই", href: "#ai-features" },
         { name: "প্রাইসিং", href: "#pricing" },
         { name: "প্রশ্নোত্তর", href: "#faq" },
     ];
@@ -103,30 +102,6 @@ export default function LandingHeader() {
                             </a>
                         ))}
 
-                        {/* Medidesh AI Link */}
-                        <a
-                            href="#ai-features"
-                            className="text-indigo-600 font-bold hover:text-indigo-700 transition-colors animate-pulse"
-                        >
-                            Medidesh AI
-                        </a>
-
-                        {/* Demo Dropdown Trigger - Simple Link for now */}
-                        <div className="relative group">
-                            <button className="flex items-center gap-1 hover:text-pharma-green-600 transition-colors">
-                                <span>ডেমো</span>
-                                <CaretDown weight="bold" size={12} />
-                            </button>
-                            <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-xl rounded-xl overflow-hidden hidden group-hover:block transition-all transform origin-top-left">
-                                <Link href="/private/pos/wellbeing" className="block px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-bold text-slate-700 dark:text-slate-200">
-                                    Well-being Pharmacy
-                                </Link>
-                                <Link href="/private/pos/mababardouya" className="block px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-bold text-slate-700 dark:text-slate-200">
-                                    Ma Babar Douya
-                                </Link>
-                            </div>
-                        </div>
-
                         <button
                             onClick={() => setIsModalOpen(true)}
                             className="hover:text-pharma-green-600 transition-colors"
@@ -189,18 +164,6 @@ export default function LandingHeader() {
                             {link.name}
                         </a>
                     ))}
-                    <a
-                        href="#ai-features"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-2xl font-bold text-indigo-600 animate-pulse"
-                    >
-                        Medidesh AI
-                    </a>
-                    <div className="flex flex-col gap-4 text-center">
-                        <p className="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">লাইভ ডেমো দেখুন</p>
-                        <Link href="/private/pos/wellbeing" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-bold text-slate-800 dark:text-slate-200">Well-being Pharmacy</Link>
-                        <Link href="/private/pos/mababardouya" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-bold text-slate-800 dark:text-slate-200">Ma Babar Douya</Link>
-                    </div>
                     <button
                         onClick={() => {
                             setIsMobileMenuOpen(false);

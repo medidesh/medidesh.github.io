@@ -16,6 +16,16 @@ const orbitron = Orbitron({
 export const metadata: Metadata = {
   title: "Medidesh - Pharmacy Management Software",
   description: "Manage your pharmacy inventory, sales, and accounts with ease.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', type: 'image/png', sizes: '96x96' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
+  },
 };
 
 export default function RootLayout({

@@ -33,38 +33,38 @@ export default function MapFeature() {
                         </ul>
                     </div>
 
-                    <div className="relative order-2 flex justify-center">
-                        <div className="relative w-[300px] h-[600px] bg-slate-900 rounded-[3rem] p-3 shadow-2xl border-4 border-slate-800 ring-1 ring-slate-900/50">
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-slate-900 rounded-b-2xl z-30"></div>
+                    <div className="relative order-2 flex justify-center w-full">
+                        <div className="relative w-full max-w-[300px] h-[500px] lg:h-[600px] bg-slate-900 rounded-[2.5rem] p-3 shadow-2xl border-4 border-slate-800 ring-1 ring-slate-900/50 mx-auto">
+                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-xl z-30"></div>
 
-                            <div className="w-full h-full bg-slate-50 rounded-[2.5rem] overflow-hidden relative map-grid group">
+                            <div className="w-full h-full bg-slate-50 rounded-[2rem] overflow-hidden relative map-grid group">
                                 {/* Search Bar */}
-                                <div className="absolute top-12 left-4 right-4 bg-white p-3 rounded-xl shadow-lg border border-slate-100 z-20 flex items-center gap-3">
-                                    <MagnifyingGlass weight="bold" className="text-slate-400" />
+                                <div className="absolute top-10 left-3 right-3 bg-white p-2.5 rounded-xl shadow-lg border border-slate-100 z-20 flex items-center gap-2">
+                                    <MagnifyingGlass weight="bold" className="text-slate-400 text-sm" />
                                     <div className="flex-1 overflow-hidden flex justify-center">
-                                        <div className="text-slate-800 font-medium text-sm">
+                                        <div className="text-slate-800 font-medium text-xs truncate">
                                             নাপা এক্সট্রা
                                         </div>
                                     </div>
-                                    <div className="bg-blue-600 text-white text-[10px] px-2 py-1 rounded-lg font-bold shadow-md shadow-blue-500/30">
+                                    <div className="bg-blue-600 text-white text-[10px] px-2 py-1 rounded-md font-bold shadow-md shadow-blue-500/30">
                                         খুঁজুন
                                     </div>
                                 </div>
 
                                 {/* User Location */}
-                                <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10">
-                                    <span className="relative flex h-24 w-24 items-center justify-center">
+                                <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-10">
+                                    <span className="relative flex h-20 w-20 items-center justify-center">
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-20"></span>
-                                        <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white ring-4 ring-white shadow-xl">
-                                            <NavigationArrow weight="fill" className="text-xl" />
+                                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white ring-4 ring-white shadow-xl">
+                                            <NavigationArrow weight="fill" className="text-sm" />
                                         </div>
                                     </span>
                                 </div>
 
                                 {/* Pharmacy Pin 1 */}
-                                <div className="absolute top-32 left-4 bg-white p-2 rounded-xl shadow-xl border border-pharma-green-100 z-10 w-40 animate-[bounce_2s_infinite]">
+                                <div className="absolute top-28 left-4 bg-white p-2 rounded-lg shadow-xl border border-pharma-green-100 z-10 max-w-[140px] animate-[bounce_2s_infinite]">
                                     <div className="flex items-center gap-2">
-                                        <div className="w-6 h-6 rounded-lg bg-pharma-green-100 text-pharma-green-600 flex items-center justify-center shrink-0">
+                                        <div className="w-6 h-6 rounded-md bg-pharma-green-100 text-pharma-green-600 flex items-center justify-center shrink-0">
                                             <Storefront weight="fill" className="text-xs" />
                                         </div>
                                         <div>
@@ -76,7 +76,7 @@ export default function MapFeature() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-white transform rotate-45 border-r border-b border-pharma-green-100"></div>
+                                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white transform rotate-45 border-r border-b border-pharma-green-100"></div>
                                 </div>
                             </div>
                         </div>

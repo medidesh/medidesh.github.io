@@ -16,7 +16,7 @@ export default function PrivacyPage() {
 
                     <section className="mb-8">
                         <h2 className="text-2xl font-bold text-slate-800 mb-4">1. Data Controller</h2>
-                        <p>The entity responsible for the processing of your data is: <strong>Medidesh, Gazipur, Bangladesh, medidesh@info.com.bd</strong></p>
+                        <p>The entity responsible for the processing of your data is: <strong>Medidesh, Gazipur, Bangladesh, info.support@medidesh.com</strong></p>
                     </section>
 
                     <section className="mb-8">

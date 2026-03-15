@@ -118,7 +118,7 @@ export default function PricingSection() {
                 width="120" height="120"
                 aria-hidden="true"
             >
-                {[0,1,2,3,4].map(r => [0,1,2,3,4].map(c => (
+                {[0, 1, 2, 3, 4].map(r => [0, 1, 2, 3, 4].map(c => (
                     <circle key={`${r}-${c}`} cx={12 + c * 24} cy={12 + r * 24} r="2.5" fill="#2E8B57" />
                 )))}
             </svg>
@@ -128,23 +128,22 @@ export default function PricingSection() {
                 <div className="max-w-2xl mx-auto text-center mb-12">
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
                         <Tag size={13} weight="bold" />
-                       সহজ সাবস্ক্রিপশন
+                        সহজ সাবস্ক্রিপশন
                     </div>
                     <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
                         সাধ্যের মধ্যে সেরা প্যাকেজটি পছন্দ করুন ।
                     </h2>
-                        
+
                     {/* Billing toggle */}
                     <div className="inline-flex p-1 bg-white border border-slate-200 rounded shadow-sm">
                         {(["monthly", "6-month", "yearly"] as const).map((cycle) => (
                             <button
                                 key={cycle}
                                 onClick={() => setBillingCycle(cycle)}
-                                className={`px-5 py-2 rounded text-sm font-semibold transition-all ${
-                                    billingCycle === cycle
+                                className={`px-5 py-2 rounded text-sm font-semibold transition-all ${billingCycle === cycle
                                         ? "bg-medidesh-teal-500 text-white shadow-sm"
                                         : "text-slate-500 hover:text-slate-800"
-                                }`}
+                                    }`}
                             >
                                 {cycle === "monthly" ? "মাসিক" : cycle === "6-month" ? "৬ মাস" : "বার্ষিক"}
                             </button>
@@ -160,11 +159,10 @@ export default function PricingSection() {
                     {plans.map((plan, index) => (
                         <div
                             key={index}
-                            className={`relative flex flex-col rounded border transition-all duration-300 overflow-hidden ${
-                                plan.highlight
+                            className={`relative flex flex-col rounded border transition-all duration-300 overflow-hidden ${plan.highlight
                                     ? "bg-medidesh-teal-500 border-medidesh-teal-400 shadow-2xl shadow-medidesh-teal-300/30 md:-translate-y-2"
                                     : "bg-white border-slate-200 hover:border-medidesh-teal-200 hover:shadow-lg"
-                            }`}
+                                }`}
                         >
                             {plan.highlight && (
                                 <div className="bg-medidesh-teal-400/40 text-white text-xs font-black uppercase text-center py-2">
@@ -219,11 +217,10 @@ export default function PricingSection() {
                                         href="https://wa.me/+8801608844017"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`w-full py-3.5 rounded font-bold text-sm transition-all active:scale-[0.98] text-center block ${
-                                            plan.highlight
+                                        className={`w-full py-3.5 rounded font-bold text-sm transition-all active:scale-[0.98] text-center block ${plan.highlight
                                                 ? "bg-white text-medidesh-teal-600 hover:bg-slate-50 shadow-md"
                                                 : "bg-medidesh-teal-500 text-white hover:bg-medidesh-teal-600 shadow-sm"
-                                        }`}
+                                            }`}
                                     >
                                         {plan.cta}
                                     </a>
@@ -245,7 +242,7 @@ export default function PricingSection() {
                             className="shrink-0 inline-flex items-center gap-2.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-6 py-3 rounded font-bold text-sm transition-all shadow-sm hover:-translate-y-0.5"
                         >
                             <Phone weight="fill" size={16} />
-                            01608-844017
+                            +8801608-844017
                         </a>
                     </div>
                 </div>

@@ -10,7 +10,7 @@ const faqs = [
     },
     {
         q: "কাস্টমার সাপোর্ট কতক্ষণ পাওয়া যায়?",
-        a: "আমাদের বাংলাদেশি সাপোর্ট টিম শনি–বৃহস্পতি সকাল ১০টা থেকে রাত ৮টা পর্যন্ত সরাসরি সাড়া দেয়। WhatsApp ও ফোনে যোগাযোগ করতে পারবেন: 01608-844017। যমুনা প্ল্যানে প্রায়োরিটি সাপোর্ট পাওয়া যায়।",
+        a: "আমাদের বাংলাদেশি সাপোর্ট টিম শনি–বৃহস্পতি সকাল ১০টা থেকে রাত ৮টা পর্যন্ত সরাসরি সাড়া দেয়। WhatsApp ও ফোনে যোগাযোগ করতে পারবেন: +8801608-844017। যমুনা প্ল্যানে প্রায়োরিটি সাপোর্ট পাওয়া যায়।",
     },
     {
         q: "আমার ডেটা কতটা নিরাপদ?",
@@ -55,11 +55,10 @@ export default function FAQSection() {
                         {faqs.map((item, i) => (
                             <div
                                 key={i}
-                                className={`bg-white rounded border transition-all duration-200 overflow-hidden ${
-                                    openIndex === i
+                                className={`bg-white rounded border transition-all duration-200 overflow-hidden ${openIndex === i
                                         ? "border-medidesh-teal-200 shadow-sm"
                                         : "border-slate-100 hover:border-slate-200"
-                                }`}
+                                    }`}
                             >
                                 <button
                                     className="w-full flex justify-between items-center p-5 text-left"
@@ -69,11 +68,10 @@ export default function FAQSection() {
                                         {item.q}
                                     </span>
                                     <span
-                                        className={`shrink-0 w-7 h-7 rounded flex items-center justify-center transition-all duration-200 ${
-                                            openIndex === i
+                                        className={`shrink-0 w-7 h-7 rounded flex items-center justify-center transition-all duration-200 ${openIndex === i
                                                 ? "bg-medidesh-teal-500 text-white rotate-180"
                                                 : "bg-slate-100 text-slate-500"
-                                        }`}
+                                            }`}
                                     >
                                         <CaretDown size={14} weight="bold" />
                                     </span>

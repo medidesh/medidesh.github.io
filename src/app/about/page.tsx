@@ -360,7 +360,7 @@ export default function AboutPage() {
                         </div>
 
                         <p className="mt-8 text-medidesh-teal-100 text-sm">
-                            শনি–বৃহস্পতি, সকাল ১০টা – রাত ৮টা &nbsp;·&nbsp; 01608-844017
+                            শনি–বৃহস্পতি, সকাল ১০টা – রাত ৮টা &nbsp;·&nbsp; +8801608-844017
                         </p>
                     </div>
                 </div>

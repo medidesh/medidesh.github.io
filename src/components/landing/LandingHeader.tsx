@@ -73,11 +73,11 @@ export default function LandingHeader() {
             className={`fixed w-full z-[100] transition-all duration-300 ${
                 isScrolled
                     ? isDark
-                        ? "bg-slate-900 shadow-sm border-b border-slate-800 py-3"
-                        : "bg-white shadow-sm border-b border-slate-100 py-3"
+                        ? "bg-slate-900/80 backdrop-blur-md shadow-sm border-b border-slate-800 py-3"
+                        : "bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100 py-3"
                     : isDark
-                        ? "bg-slate-900 py-4"
-                        : "bg-white py-4"
+                        ? "bg-slate-900/40 backdrop-blur-sm py-4"
+                        : "bg-white/40 backdrop-blur-sm py-4 hover:bg-white/60 transition-colors"
             }`}
         >
             <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
@@ -138,8 +138,8 @@ export default function LandingHeader() {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 z-[110] flex flex-col px-6 py-8 md:hidden transition-transform duration-300 ${
-                    isDark ? "bg-slate-900" : "bg-white"
+                className={`fixed inset-0 z-[110] flex flex-col px-6 py-8 md:hidden transition-transform duration-300 backdrop-blur-xl ${
+                    isDark ? "bg-slate-900/95" : "bg-white/95"
                 } ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
             >
                 <div className="flex justify-between items-center mb-10">

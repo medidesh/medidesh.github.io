@@ -39,7 +39,7 @@ export default function CTASection() {
                             className="flex items-center gap-2 text-medidesh-teal-100 hover:text-white text-sm font-medium transition-colors"
                         >
                             <Phone weight="fill" size={16} />
-                            01608-844017
+                            +8801608-844017
                         </a>
                         <span className="w-1 h-1 bg-white/30 rounded-full hidden sm:block" />
                         <span className="text-medidesh-teal-100 text-sm">শনি–বৃহস্পতি, সকাল ১০টা – রাত ৮টা</span>

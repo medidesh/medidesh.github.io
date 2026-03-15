@@ -6,7 +6,7 @@ import {
     SparkleIcon,
     GooglePlayLogoIcon,
     WhatsappLogoIcon,
-    LinkedinLogo,
+    LinkedinLogoIcon,
 } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
@@ -47,8 +47,8 @@ const contributors = [
 
 const mentors = [
     { name: "James Tan", role: "Business Advisor", org: "CEO, Heyjom & Mantra", photo: "https://i.pravatar.cc/600?img=33", linkedin: "#" },
+    { name: "Abdus Sami", role: "Technology Advisor", org: "CEO, AppifyDevs", photo: "https://i.pravatar.cc/600?img=64", linkedin: "#" },
     { name: "Murugan Thangiah", role: "Academic Advisor", org: "Senior Lecturer, Taylor's University", photo: "https://i.pravatar.cc/600?img=60", linkedin: "#" },
-    { name: "Abdus Sami", role: "Technology Advisor", org: "CEO, AppifyDevs", photo: "https://i.pravatar.cc/600?img=7", linkedin: "#" },
     { name: "Prof. Dr. C. A. Vaithilingam", role: "Innovation Advisor", org: "Professor & Sustainability Catalyst", photo: "https://i.pravatar.cc/600?img=66", linkedin: "#" },
 ];
 
@@ -191,7 +191,7 @@ export default function AboutPage() {
                                                 className="text-white/80 hover:text-white transition-colors p-0.5"
                                                 aria-label={`${member.name} LinkedIn`}
                                             >
-                                                <LinkedinLogo size={22} weight="fill" />
+                                                <LinkedinLogoIcon size={22} weight="fill" />
                                             </a>
                                         )}
                                     </div>
@@ -233,7 +233,7 @@ export default function AboutPage() {
                                                     className="text-white/80 hover:text-white transition-colors p-0.5"
                                                     aria-label={`${person.name} LinkedIn`}
                                                 >
-                                                    <LinkedinLogo size={22} weight="fill" />
+                                                    <LinkedinLogoIcon size={22} weight="fill" />
                                                 </a>
                                             )}
                                         </div>
@@ -302,7 +302,7 @@ export default function AboutPage() {
                                                 className="text-white/80 hover:text-white transition-colors p-0.5"
                                                 aria-label={`${mentor.name} LinkedIn`}
                                             >
-                                                <LinkedinLogo size={22} weight="fill" />
+                                                <LinkedinLogoIcon size={22} weight="fill" />
                                             </a>
                                         )}
                                     </div>

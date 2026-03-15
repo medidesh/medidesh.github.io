@@ -9,6 +9,9 @@ import {
     ShieldCheck,
     ArrowRight,
     SparkleIcon,
+    RocketLaunch,
+    Headset,
+    CloudSlash,
 } from "@phosphor-icons/react/dist/ssr";
 
 const points = [
@@ -41,6 +44,24 @@ const points = [
         solution: "ব্যাংক-গ্রেড এনক্রিপশন ও প্রতিদিনের স্বয়ংক্রিয় ব্যাকআপে আপনার ব্যবসার ডেটা সর্বদা নিরাপদ।",
         icon: ShieldCheck,
         accent: "bg-emerald-50 text-emerald-600 border-emerald-100",
+    },
+    {
+        problem: "ইন্টারনেট বা সার্ভার ডাউন হওয়ার ভয়",
+        solution: "মেডিদেশ সর্বদা সচল—ইন্টারনেট না থাকলেও বা সার্ভার সমস্যায় আপনার সেলস ও বিলিং বন্ধ হবে না।",
+        icon: CloudSlash,
+        accent: "bg-red-50 text-red-600 border-red-100",
+    },
+    {
+        problem: "সফটওয়্যারের ধীরগতি ও হ্যাং হওয়া",
+        solution: "অত্যন্ত ফাস্ট ও অপ্টিমাইজড কোড, যা পুরনো মোবাইল বা কম দামী কম্পিউটারেও চলে সুপারফাস্ট।",
+        icon: RocketLaunch,
+        accent: "bg-orange-50 text-orange-600 border-orange-100",
+    },
+    {
+        problem: "সাপোর্টের অভাব ও কারিগরি সমস্যা",
+        solution: "যেকোনো প্রয়োজনে আমাদের দক্ষ সাপোর্ট টিম সরাসরি আপনার পাশে আছে। সমস্যা আপনার, সমাধান আমাদের।",
+        icon: Headset,
+        accent: "bg-cyan-50 text-cyan-600 border-cyan-100",
     },
 ];
 

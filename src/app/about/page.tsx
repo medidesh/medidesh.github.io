@@ -180,19 +180,18 @@ export default function AboutPage() {
                                     alt={member.name}
                                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                                 <div className="absolute bottom-0 left-0 right-0 p-4">
-                                    <div className="flex items-center justify-between gap-2">
+                                    <div className="flex items-center justify-between gap-3">
                                         <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{member.name}</h3>
                                         {member.linkedin && (
                                             <a
                                                 href={member.linkedin}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-white/80 hover:text-white transition-colors"
+                                                className="text-white/80 hover:text-white transition-colors p-0.5"
                                                 aria-label={`${member.name} LinkedIn`}
                                             >
-                                                <LinkedinLogo size={14} weight="fill" />
+                                                <LinkedinLogo size={18} weight="fill" />
                                             </a>
                                         )}
                                     </div>
@@ -224,17 +223,17 @@ export default function AboutPage() {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
                                     <div className="absolute bottom-0 left-0 right-0 p-3">
-                                        <div className="flex items-center justify-between gap-2">
+                                        <div className="flex items-center justify-between gap-3">
                                             <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{person.name}</h3>
                                             {person.linkedin && (
                                                 <a
                                                     href={person.linkedin}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="text-white/80 hover:text-white transition-colors"
+                                                    className="text-white/80 hover:text-white transition-colors p-0.5"
                                                     aria-label={`${person.name} LinkedIn`}
                                                 >
-                                                    <LinkedinLogo size={14} weight="fill" />
+                                                    <LinkedinLogo size={18} weight="fill" />
                                                 </a>
                                             )}
                                         </div>
@@ -293,17 +292,17 @@ export default function AboutPage() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
                                 {/* Info overlay at bottom */}
                                 <div className="absolute bottom-0 left-0 right-0 p-4">
-                                    <div className="flex items-center justify-between gap-2">
+                                    <div className="flex items-center justify-between gap-3">
                                         <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{mentor.name}</h3>
                                         {mentor.linkedin && (
                                             <a
                                                 href={mentor.linkedin}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-white/80 hover:text-white transition-colors"
+                                                className="text-white/80 hover:text-white transition-colors p-0.5"
                                                 aria-label={`${mentor.name} LinkedIn`}
                                             >
-                                                <LinkedinLogo size={14} weight="fill" />
+                                                <LinkedinLogo size={18} weight="fill" />
                                             </a>
                                         )}
                                     </div>

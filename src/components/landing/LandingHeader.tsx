@@ -60,7 +60,7 @@ export default function LandingHeader() {
 
     if (!mounted) {
         return (
-            <header className="fixed w-full z-50 bg-transparent py-4">
+            <header className="fixed w-full z-[100] bg-transparent py-4">
                 <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
                     <div className="w-32 h-8 bg-slate-200 dark:bg-slate-700 animate-pulse rounded" />
                 </div>
@@ -70,7 +70,7 @@ export default function LandingHeader() {
 
     return (
         <header
-            className={`fixed w-full z-50 transition-all duration-300 ${
+            className={`fixed w-full z-[100] transition-all duration-300 ${
                 isScrolled
                     ? isDark
                         ? "bg-slate-900 md:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-slate-800 py-3"
@@ -138,7 +138,7 @@ export default function LandingHeader() {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 z-50 flex flex-col px-6 py-8 md:hidden transition-transform duration-300 ${
+                className={`fixed inset-0 z-[110] flex flex-col px-6 py-8 md:hidden transition-transform duration-300 ${
                     isDark ? "bg-slate-900" : "bg-white"
                 } ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
             >

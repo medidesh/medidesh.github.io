@@ -191,7 +191,7 @@ export default function AboutPage() {
                                                 className="text-white/80 hover:text-white transition-colors p-0.5"
                                                 aria-label={`${member.name} LinkedIn`}
                                             >
-                                                <LinkedinLogo size={18} weight="fill" />
+                                                <LinkedinLogo size={22} weight="fill" />
                                             </a>
                                         )}
                                     </div>
@@ -233,7 +233,7 @@ export default function AboutPage() {
                                                     className="text-white/80 hover:text-white transition-colors p-0.5"
                                                     aria-label={`${person.name} LinkedIn`}
                                                 >
-                                                    <LinkedinLogo size={18} weight="fill" />
+                                                    <LinkedinLogo size={22} weight="fill" />
                                                 </a>
                                             )}
                                         </div>
@@ -302,7 +302,7 @@ export default function AboutPage() {
                                                 className="text-white/80 hover:text-white transition-colors p-0.5"
                                                 aria-label={`${mentor.name} LinkedIn`}
                                             >
-                                                <LinkedinLogo size={18} weight="fill" />
+                                                <LinkedinLogo size={22} weight="fill" />
                                             </a>
                                         )}
                                     </div>

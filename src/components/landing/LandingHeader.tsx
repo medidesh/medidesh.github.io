@@ -71,13 +71,15 @@ export default function LandingHeader() {
     return (
         <header
             className={`fixed w-full z-[100] transition-all duration-300 ${
-                isScrolled
-                    ? isDark
-                        ? "bg-slate-900/80 backdrop-blur-md shadow-sm border-b border-slate-800 py-3"
-                        : "bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100 py-3"
-                    : isDark
-                        ? "bg-slate-900/40 backdrop-blur-sm py-4"
-                        : "bg-white/40 backdrop-blur-sm py-4 hover:bg-white/60 transition-colors"
+                isMobileMenuOpen
+                    ? isDark ? "bg-slate-900" : "bg-white"
+                    : isScrolled
+                        ? isDark
+                            ? "bg-slate-900/80 backdrop-blur-md shadow-sm border-b border-slate-800 py-3"
+                            : "bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100 py-3"
+                        : isDark
+                            ? "bg-slate-900/40 backdrop-blur-sm py-4"
+                            : "bg-white/40 backdrop-blur-sm py-4 hover:bg-white/60 transition-colors"
             }`}
         >
             <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
@@ -138,8 +140,8 @@ export default function LandingHeader() {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 z-[110] flex flex-col px-6 py-8 md:hidden transition-transform duration-300 ${
-                    isDark ? "bg-slate-900" : "bg-white"
+                className={`fixed inset-0 w-screen h-screen z-[110] flex flex-col px-6 py-8 md:hidden transition-transform duration-300 !opacity-100 ${
+                    isDark ? "!bg-slate-900" : "!bg-white"
                 } ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
             >
                 <div className="flex justify-between items-center mb-10">

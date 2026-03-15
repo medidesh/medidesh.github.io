@@ -2,8 +2,7 @@ import { GooglePlayLogoIcon, Monitor, ShieldCheck, WifiSlash, Lightning, Headset
 
 export default function DownloadSection() {
     return (
-        <section id="download" className="py-20 lg:py-28 bg-white border-t border-slate-100 relative overflow-hidden">
-            {/* Phone outline illustration */}
+        <section id="download" className="py-24 lg:py-32 bg-white border-t border-slate-100 relative overflow-hidden">
             <svg
                 className="absolute right-10 top-1/2 -translate-y-1/2 w-48 h-48 opacity-[0.05] pointer-events-none hidden xl:block"
                 viewBox="0 0 120 200"
@@ -14,14 +13,12 @@ export default function DownloadSection() {
                 <rect x="20" y="14" width="80" height="152" rx="8" fill="#2E8B57" opacity="0.15" />
                 <circle cx="60" cy="182" r="7" stroke="#2E8B57" strokeWidth="3" />
                 <rect x="40" y="8" width="40" height="6" rx="3" fill="#2E8B57" opacity="0.4" />
-                {/* Screen lines */}
                 <rect x="28" y="30" width="64" height="6" rx="3" fill="#2E8B57" opacity="0.3" />
                 <rect x="28" y="44" width="44" height="4" rx="2" fill="#2E8B57" opacity="0.2" />
                 <rect x="28" y="60" width="64" height="32" rx="6" fill="#2E8B57" opacity="0.15" />
                 <rect x="28" y="100" width="28" height="28" rx="6" fill="#2E8B57" opacity="0.15" />
                 <rect x="64" y="100" width="28" height="28" rx="6" fill="#2E8B57" opacity="0.15" />
             </svg>
-            {/* Blob left */}
             <svg
                 className="absolute -left-20 -bottom-20 w-72 h-72 opacity-[0.04] pointer-events-none"
                 viewBox="0 0 280 280"
@@ -33,14 +30,13 @@ export default function DownloadSection() {
                     fill="#2E8B57"
                 />
             </svg>
-            <div className="container mx-auto px-6 lg:px-12">
+            <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="max-w-4xl mx-auto">
-                    {/* Content */}
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-slate-100 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5">
                             অ্যাপ ডাউনলোড
                         </div>
-                        <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-5 leading-tight">
+                        <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
                             আধুনিক ফার্মেসি{" "}
                             <span className="text-medidesh-teal-500">ম্যানেজমেন্ট</span>
                         </h2>
@@ -49,29 +45,24 @@ export default function DownloadSection() {
                         </p>
                     </div>
 
-                    {/* Download buttons */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
                         <a
                             href="https://wa.me/+8801608844017?text=আমি%20মেডিদেশ%20Android%20অ্যাপ%20ডাউনলোড%20করতে%20চাই"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5 shadow-lg group"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3.5 bg-slate-900 hover:bg-slate-800 text-white px-10 py-5 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-black/10 active:scale-[0.98] group"
                         >
-                            <GooglePlayLogoIcon weight="fill" size={22} className="text-medidesh-teal-400 group-hover:scale-110 transition-transform" />
-                            <div className="text-left">
-                                <div>Google Play</div>
-                            </div>
+                            <GooglePlayLogoIcon weight="fill" size={24} className="text-medidesh-teal-400 group-hover:scale-110 transition-transform" />
+                            <span>Google Play</span>
                         </a>
                         <a
                             href="https://wa.me/+8801608844017?text=আমি%20মেডিদেশ%20Windows%20PC%20ভার্সন%20পেতে%20চাই"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-8 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5 shadow-sm group"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3.5 bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-10 py-5 rounded-xl font-bold text-base transition-all hover:shadow-lg active:scale-[0.98] group"
                         >
-                            <Monitor weight="duotone" size={22} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
-                            <div className="text-left">
-                                <div>Windows</div>
-                            </div>
+                            <Monitor weight="duotone" size={24} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
+                            <span>Windows PC</span>
                         </a>
                     </div>
                 </div>

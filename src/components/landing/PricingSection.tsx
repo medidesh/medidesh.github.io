@@ -48,7 +48,7 @@ export default function PricingSection() {
             features: [
                 "১টি ফার্মেসি",
                 "৫ জন ব্যবহারকারী, ৩টি ডিভাইস",
-                "উন্নত ইনভেন্টরি, বাকি খাতা ও সম্পূর্ণ অ্যাকাউন্টিং",
+                "উন্নত ইনভেন্টরি, বাকি খাতা ও সম্পূর্ণ অ্যাকাউটিং",
                 "অ্যাডভান্সড রিপোর্ট ও ব্যবসায়িক বিশ্লেষণ",
                 "ক্রেতাদের ওষুধের চাহিদার ডাটা বিশ্লেষণ",
                 "বিজ্ঞাপনমুক্ত অভিজ্ঞতা",
@@ -88,8 +88,7 @@ export default function PricingSection() {
     const discount = getDiscount();
 
     return (
-        <section id="pricing" className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden">
-            {/* ── Blob decorations ── */}
+        <section id="pricing" className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden text-slate-900">
             <svg
                 className="absolute -top-20 -right-20 w-80 h-80 opacity-[0.06] pointer-events-none"
                 viewBox="0 0 320 320"
@@ -112,7 +111,6 @@ export default function PricingSection() {
                     fill="#2E8B57"
                 />
             </svg>
-            {/* Dotted decorative grid */}
             <svg
                 className="absolute top-20 left-8 opacity-[0.08] pointer-events-none hidden lg:block"
                 width="120" height="120"
@@ -124,18 +122,16 @@ export default function PricingSection() {
             </svg>
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
-                {/* Section header */}
-                <div className="max-w-2xl mx-auto text-center mb-12">
+                <div className="max-w-2xl mx-auto text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
                         <Tag size={13} weight="bold" />
                         সহজ সাবস্ক্রিপশন
                     </div>
-                    <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
-                        সাধ্যের মধ্যে সেরা প্যাকেজটি পছন্দ করুন ।
+                    <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
+                        সাধ্যের মধ্যে সেরা প্যাকেজটি পছন্দ করুন।
                     </h2>
 
-                    {/* Billing toggle */}
-                    <div className="inline-flex p-1 bg-white border border-slate-200 rounded shadow-sm">
+                    <div className="inline-flex p-1 bg-white border border-slate-200 rounded lg shadow-sm">
                         {(["monthly", "6-month", "yearly"] as const).map((cycle) => (
                             <button
                                 key={cycle}
@@ -154,7 +150,6 @@ export default function PricingSection() {
                     )}
                 </div>
 
-                {/* Plans */}
                 <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                     {plans.map((plan, index) => (
                         <div
@@ -171,7 +166,6 @@ export default function PricingSection() {
                             )}
 
                             <div className="p-7 flex flex-col flex-1">
-                                {/* Plan name */}
                                 <div className="mb-6">
                                     <h3 className={`text-xl font-black mb-1 ${plan.highlight ? "text-white" : "text-slate-900"}`}>
                                         {plan.name}
@@ -181,7 +175,6 @@ export default function PricingSection() {
                                     </p>
                                 </div>
 
-                                {/* Price */}
                                 <div className="mb-7">
                                     <div className="flex items-baseline gap-1">
                                         <span className={`text-4xl font-black tracking-tight ${plan.highlight ? "text-white" : "text-slate-900"}`}>
@@ -195,7 +188,6 @@ export default function PricingSection() {
                                     </div>
                                 </div>
 
-                                {/* Features */}
                                 <ul className="space-y-3 mb-8 flex-1">
                                     {plan.features.map((feature, idx) => (
                                         <li key={idx} className="flex items-start gap-2.5">
@@ -211,7 +203,6 @@ export default function PricingSection() {
                                     ))}
                                 </ul>
 
-                                {/* CTA */}
                                 {plan.cta && (
                                     <a
                                         href="https://wa.me/+8801608844017"
@@ -230,12 +221,11 @@ export default function PricingSection() {
                     ))}
                 </div>
 
-                {/* Help row */}
                 <div className="mt-10 max-w-2xl mx-auto">
                     <div className="bg-white rounded p-6 border border-slate-100 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
                         <div>
                             <h4 className="font-bold text-slate-900 mb-1">সঠিক প্ল্যান নির্বাচনে সাহায্য লাগবে?</h4>
-                            <p className="text-sm text-slate-500">আমাদের টিম শনি–বৃহস্পতি সকাল ১০টা–রাত ৮টা সরাসরি সাহায্য করবে।</p>
+                            <p className="text-sm text-slate-500">আমাদের টিম সরাসরি সাহায্য করবে।</p>
                         </div>
                         <a
                             href="tel:+8801608844017"

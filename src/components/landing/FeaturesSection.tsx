@@ -86,8 +86,7 @@ const features = [
 
 export default function FeaturesSection() {
     return (
-        <section id="features" className="py-20 lg:py-28 bg-white relative overflow-hidden">
-            {/* Dashed circle decoration */}
+        <section id="features" className="py-24 lg:py-32 bg-white relative overflow-hidden">
             <svg
                 className="absolute -right-24 top-1/3 w-64 h-64 opacity-[0.05] pointer-events-none"
                 viewBox="0 0 256 256"
@@ -98,7 +97,6 @@ export default function FeaturesSection() {
                 <circle cx="128" cy="128" r="80" stroke="#2E8B57" strokeWidth="1.5" strokeDasharray="5 5" />
                 <circle cx="128" cy="128" r="16" fill="#2E8B57" opacity="0.3" />
             </svg>
-            {/* Dotted grid left */}
             <svg
                 className="absolute left-8 bottom-20 opacity-[0.07] pointer-events-none hidden lg:block"
                 width="100" height="100"
@@ -109,28 +107,26 @@ export default function FeaturesSection() {
                 )))}
             </svg>
             <div className="container mx-auto px-6 lg:px-12">
-                {/* Section header */}
-                <div className="max-w-2xl mx-auto text-center mb-14">
+                <div className="max-w-2xl mx-auto text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-slate-100 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5">
                         ফিচারসমূহ
                     </div>
-                    <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
+                    <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
                         ব্যবসা পরিচালনার {" "}
                         <span className="text-medidesh-teal-500">সবকিছু এক জায়গায়</span>
                     </h2>
-                    <p className="text-slate-500 text-lg leading-relaxed">
+                    <p className="text-slate-500 text-lg leading-relaxed max-w-2xl mx-auto">
                         টেকনাফ থেকে তেঁতুলিয়া— বাস্তব চাহিদা মাথায় রেখে প্রতিটি ফিচার সাজানো হয়েছে।
                     </p>
                 </div>
 
-                {/* Feature grid */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
                     {features.map((feature, idx) => (
                         <div
                             key={idx}
-                            className="bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 hover:shadow-md rounded p-5 transition-all duration-300 group cursor-default"
+                            className="bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 hover:shadow-xl rounded-xl p-5 transition-all duration-300 group cursor-default"
                         >
-                            <div className={`w-10 h-10 rounded ${feature.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                            <div className={`w-10 h-10 rounded-lg ${feature.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
                                 <feature.icon
                                     size={20}
                                     weight="fill"

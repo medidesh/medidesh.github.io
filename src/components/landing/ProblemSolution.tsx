@@ -74,8 +74,7 @@ const points = [
 
 export default function ProblemSolution() {
     return (
-        <section id="solutions" className="py-20 lg:py-28 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
-            {/* Wavy line decoration */}
+        <section id="solutions" className="py-24 lg:py-32 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
             <svg
                 className="absolute top-0 left-0 w-full opacity-[0.04] pointer-events-none"
                 viewBox="0 0 1440 60"
@@ -90,7 +89,6 @@ export default function ProblemSolution() {
                     fill="none"
                 />
             </svg>
-            {/* Blob top-right */}
             <svg
                 className="absolute -top-16 -right-16 w-64 h-64 opacity-[0.05] pointer-events-none"
                 viewBox="0 0 260 260"
@@ -103,29 +101,27 @@ export default function ProblemSolution() {
                 />
             </svg>
             <div className="container mx-auto px-6 lg:px-12">
-                {/* Section header */}
                 <div className="max-w-2xl mx-auto text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
                         <SparkleIcon size={13} weight="fill" className="text-medidesh-teal-500" />
                         কেন মেডিদেশ
                     </div>
-                    <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
+                    <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
                         ডিজিটাল সিস্টেমের {" "}
                         <span className="text-medidesh-teal-500">সমস্যাগুলোর</span> সমাধান
                     </h2>
                     <p className="text-slate-500 text-lg leading-relaxed">
-                        টেকনিক্যাল ভয় , হার্ডওয়্যার খরচ , বিশ্বস্ততা , উচ্চমূল্য — সব ঝামেলার এক সহজ সমাধান: মেডিদেশ।
+                        টেকনিক্যাল ভয়, হার্ডওয়্যার খরচ, বিশ্বস্ততা, উচ্চমূল্য — সব ঝামেলার এক সহজ সমাধান: মেডিদেশ।
                     </p>
                 </div>
 
-                {/* Cards grid */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                     {points.map((item, idx) => (
                         <div
                             key={idx}
-                            className="bg-white p-6 rounded border border-slate-100 hover:border-medidesh-teal-200 hover:shadow-lg hover:shadow-medidesh-teal-500/5 transition-all duration-300 group"
+                            className="bg-white p-7 rounded-xl border border-slate-100 hover:border-medidesh-teal-200 hover:shadow-xl hover:shadow-medidesh-teal-500/5 transition-all duration-300 group"
                         >
-                            <div className={`w-11 h-11 rounded ${item.accent} border flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                            <div className={`w-11 h-11 rounded-lg ${item.accent} border flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
                                 <item.icon size={22} weight="duotone" />
                             </div>
                             <h3 className="font-bold text-slate-800 text-base mb-2 leading-snug">
@@ -138,14 +134,13 @@ export default function ProblemSolution() {
                     ))}
                 </div>
 
-                {/* Bottom CTA strip */}
-                <div className="mt-12 max-w-xl mx-auto text-center">
+                <div className="mt-16 max-w-xl mx-auto text-center">
                     <a
                         href="#features"
-                        className="inline-flex items-center gap-2 text-medidesh-teal-600 font-semibold text-sm hover:gap-3 transition-all duration-200"
+                        className="inline-flex items-center gap-2 text-medidesh-teal-600 font-bold text-base hover:gap-3 transition-all duration-200"
                     >
                         সব ফিচার দেখুন
-                        <ArrowRight size={16} weight="bold" />
+                        <ArrowRight size={18} weight="bold" />
                     </a>
                 </div>
             </div>

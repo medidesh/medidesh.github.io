@@ -3,7 +3,6 @@ import { GooglePlayLogoIcon, Monitor, Star, ArrowRight, CheckCircle, YoutubeLogo
 export default function LandingHero() {
     return (
         <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-white overflow-hidden">
-            {/* Subtle grid background */}
             <div
                 className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{
@@ -11,10 +10,8 @@ export default function LandingHero() {
                     backgroundSize: "60px 60px",
                 }}
             />
-            {/* Soft radial glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-medidesh-teal-500/5 rounded blur-[120px] pointer-events-none" />
 
-            {/* ── Left blob illustration ── */}
             <svg
                 className="absolute left-0 top-1/2 -translate-y-1/2 w-72 h-72 opacity-[0.07] pointer-events-none"
                 viewBox="0 0 300 300"
@@ -29,7 +26,6 @@ export default function LandingHero() {
                 <circle cx="60" cy="220" r="10" fill="#2E8B57" opacity="0.4" />
             </svg>
 
-            {/* ── Right blob illustration ── */}
             <svg
                 className="absolute right-0 bottom-0 w-80 h-80 opacity-[0.06] pointer-events-none"
                 viewBox="0 0 300 300"
@@ -40,7 +36,6 @@ export default function LandingHero() {
                     d="M240,60 C270,100 280,160 260,200 C240,240 190,270 140,260 C90,250 60,210 70,160 C80,110 130,80 160,60 C190,40 220,30 240,60 Z"
                     fill="#2E8B57"
                 />
-                {/* Dotted pattern */}
                 {[0, 1, 2, 3].map(row =>
                     [0, 1, 2, 3].map(col => (
                         <circle
@@ -55,7 +50,6 @@ export default function LandingHero() {
                 )}
             </svg>
 
-            {/* ── Floating pharmacy cross decoration ── */}
             <svg
                 className="absolute top-28 right-16 w-12 h-12 opacity-10 pointer-events-none hidden lg:block"
                 viewBox="0 0 48 48"
@@ -66,7 +60,6 @@ export default function LandingHero() {
                 <rect x="4" y="18" width="40" height="12" rx="4" fill="#2E8B57" />
             </svg>
 
-            {/* ── Floating pill illustration ── */}
             <svg
                 className="absolute top-36 left-16 w-16 h-8 opacity-10 pointer-events-none hidden lg:block rotate-[30deg]"
                 viewBox="0 0 80 36"
@@ -79,14 +72,11 @@ export default function LandingHero() {
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="max-w-3xl mx-auto text-center">
-
-                    {/* Free forever badge */}
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded bg-medidesh-teal-50 border border-medidesh-teal-100 text-medidesh-teal-700 text-sm font-bold mb-8 shadow-sm">
                         <Star size={14} weight="fill" className="text-medidesh-teal-500" />
                         <span>মেডিদেশ চিরতরে বিনামূল্যে</span>
                     </div>
 
-                    {/* Headline */}
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-[1.1] tracking-tight">
                         শুধুমাএ একটি মোবাইল ফোন দিয়ে {" "}
                         <span className="relative inline-block text-medidesh-teal-500">
@@ -110,12 +100,10 @@ export default function LandingHero() {
                         {" "}করুন স্মার্টলি
                     </h1>
 
-                    {/* Subheading */}
                     <p className="text-lg lg:text-xl text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        ফার্মেসি মালিকদের জন্য তৈরি — স্টকের হিসাব, বিক্রয়, বাকি খাতা ও <br></br>মেয়াদোত্তীর্ণ সতর্কতা এখন এক অ্যাপে আপনার পকেটে ।
+                        ফার্মেসি মালিকদের জন্য তৈরি — স্টকের হিসাব, বিক্রয়, বাকি খাতা ও <br></br>মেয়াদোত্তীর্ণ সতর্কতা এখন এক অ্যাপে আপনার পকেটে।
                     </p>
 
-                    {/* CTAs */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
                         <a
                             href="#download"
@@ -136,7 +124,6 @@ export default function LandingHero() {
                         </a>
                     </div>
 
-                    {/* Trust strip */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 pt-8 border-t border-slate-100">
                         {[
                             { value: "১,০০০+", label: "সক্রিয় ব্যবহারকারী" },

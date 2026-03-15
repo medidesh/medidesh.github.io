@@ -27,60 +27,61 @@ const faqs = [
 ];
 
 export default function FAQSection() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section id="faq" className="py-20 lg:py-28 bg-slate-50 border-t border-slate-100">
+        <section id="faq" className="py-24 lg:py-32 bg-slate-50 border-t border-slate-100">
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="max-w-3xl mx-auto">
-                    {/* Header */}
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-16">
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
                             <Question size={13} weight="fill" className="text-medidesh-teal-500" />
                             প্রশ্নোত্তর
                         </div>
-                        <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4">
+                        <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
                             সাধারণ কিছু প্রশ্ন
                         </h2>
-                        <p className="text-slate-500 text-lg">
+                        <p className="text-slate-500 text-lg leading-relaxed">
                             তথ্য না পেলে আমাদের টিমের সাথে{" "}
-                            <a href="mailto:support@medidesh.com" className="text-medidesh-teal-600 font-semibold hover:underline">
+                            <a href="https://wa.me/+8801608844017" target="_blank" rel="noopener noreferrer" className="text-medidesh-teal-600 font-bold hover:underline">
                                 যোগাযোগ করুন
                             </a>
                         </p>
                     </div>
 
-                    {/* Accordion */}
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                         {faqs.map((item, i) => (
                             <div
                                 key={i}
-                                className={`bg-white rounded border transition-all duration-200 overflow-hidden ${openIndex === i
-                                        ? "border-medidesh-teal-200 shadow-sm"
+                                className={`bg-white rounded-xl border transition-all duration-300 overflow-hidden ${openIndex === i
+                                        ? "border-medidesh-teal-200 shadow-md"
                                         : "border-slate-100 hover:border-slate-200"
                                     }`}
                             >
                                 <button
-                                    className="w-full flex justify-between items-center p-5 text-left"
+                                    className="w-full flex justify-between items-center p-6 text-left"
                                     onClick={() => setOpenIndex(openIndex === i ? null : i)}
                                 >
-                                    <span className="font-bold text-slate-900 text-base pr-4 leading-snug">
+                                    <span className={`font-black text-slate-900 text-base pr-4 leading-snug ${openIndex === i ? "text-medidesh-teal-600" : ""}`}>
                                         {item.q}
                                     </span>
                                     <span
-                                        className={`shrink-0 w-7 h-7 rounded flex items-center justify-center transition-all duration-200 ${openIndex === i
+                                        className={`shrink-0 w-8 h-8 rounded flex items-center justify-center transition-all duration-300 ${openIndex === i
                                                 ? "bg-medidesh-teal-500 text-white rotate-180"
-                                                : "bg-slate-100 text-slate-500"
+                                                : "bg-slate-50 text-slate-400"
                                             }`}
                                     >
-                                        <CaretDown size={14} weight="bold" />
+                                        <CaretDown size={16} weight="bold" />
                                     </span>
                                 </button>
-                                {openIndex === i && (
-                                    <div className="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                                <div
+                                    className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                                        }`}
+                                >
+                                    <div className="px-6 pb-6 text-slate-600 text-base leading-relaxed">
                                         {item.a}
                                     </div>
-                                )}
+                                </div>
                             </div>
                         ))}
                     </div>

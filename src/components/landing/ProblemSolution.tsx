@@ -12,6 +12,7 @@ import {
     RocketLaunch,
     Headset,
     CloudSlash,
+    BellRinging,
 } from "@phosphor-icons/react/dist/ssr";
 
 const points = [
@@ -62,6 +63,12 @@ const points = [
         solution: "যেকোনো প্রয়োজনে আমাদের দক্ষ সাপোর্ট টিম সরাসরি আপনার পাশে আছে। সমস্যা আপনার, সমাধান আমাদের।",
         icon: Headset,
         accent: "bg-cyan-50 text-cyan-600 border-cyan-100",
+    },
+    {
+        problem: "ওষুধের মেয়াদ নিয়ে দুশ্চিন্তা",
+        solution: "অটোমেটিক এক্সপায়ারি ট্র্যাকিং যা ওষুধের মেয়াদ শেষ হওয়ার কয়েক মাস আগেই আপনাকে অ্যালার্ট দেবে।",
+        icon: BellRinging,
+        accent: "bg-pink-50 text-pink-600 border-pink-100",
     },
 ];
 

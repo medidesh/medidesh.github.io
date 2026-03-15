@@ -6,6 +6,7 @@ import {
     SparkleIcon,
     GooglePlayLogoIcon,
     WhatsappLogoIcon,
+    LinkedinLogo,
 } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
@@ -14,10 +15,10 @@ export const metadata: Metadata = {
 };
 
 const team = [
-    { name: "Faysal Hossain", role: "CEO & Co-Founder", photo: "https://i.pravatar.cc/600?img=12" },
-    { name: "Farhan Ahmed", role: "CAO & Co-Founder", photo: "https://i.pravatar.cc/600?img=68" },
-    { name: "Noor Mohammad", role: "Head of Pharmacy & Supply Chain", photo: "https://i.pravatar.cc/600?img=57" },
-    { name: "Jannatul Maowa", role: "Head of Human Resources", photo: "https://i.pravatar.cc/600?img=47" },
+    { name: "Faysal Hossain", role: "CEO & Co-Founder", photo: "https://i.pravatar.cc/600?img=12", linkedin: "#" },
+    { name: "Farhan Ahmed", role: "CAO & Co-Founder", photo: "https://i.pravatar.cc/600?img=68", linkedin: "#" },
+    { name: "Noor Mohammad", role: "Head of Pharmacy & Supply Chain", photo: "https://i.pravatar.cc/600?img=57", linkedin: "#" },
+    { name: "Jannatul Maowa", role: "Head of Human Resources", photo: "https://i.pravatar.cc/600?img=47", linkedin: "#" },
 ];
 
 const contributors = [
@@ -26,26 +27,29 @@ const contributors = [
         role: "Design & Marketing",
         desc: "ব্র্যান্ড ভিজ্যুয়াল, UI ডিজাইন ও মার্কেটিং কন্টেন্ট তৈরিতে সহায়তা করেন।",
         photo: "https://i.pravatar.cc/600?img=44",
+        linkedin: "#",
     },
     {
         name: "Mahfuz",
         role: "Business Analysis",
         desc: "বাজার গবেষণা ও ব্যবসায়িক সিদ্ধান্ত গ্রহণে বিশ্লেষণী সহায়তা প্রদান করেন।",
         photo: "https://i.pravatar.cc/600?img=53",
+        linkedin: "#",
     },
     {
         name: "Mbr Sagor",
         role: "Web & Database Design",
         desc: "ওয়েব ইন্টারফেস ও ডেটাবেজ আর্কিটেকচার ডিজাইনে গুরুত্বপূর্ণ অবদান রাখেন।",
         photo: "https://i.pravatar.cc/600?img=18",
+        linkedin: "#",
     },
 ];
 
 const mentors = [
-    { name: "James Tan", role: "Business Advisor", org: "CEO, Heyjom & Mantra", photo: "https://i.pravatar.cc/600?img=33" },
-    { name: "Murugan Thangiah", role: "Academic Advisor", org: "Senior Lecturer, Taylor's University", photo: "https://i.pravatar.cc/600?img=60" },
-    { name: "Abdus Sami", role: "Technology Advisor", org: "CEO, AppifyDevs", photo: "https://i.pravatar.cc/600?img=7" },
-    { name: "Prof. Dr. C. A. Vaithilingam", role: "Innovation Advisor", org: "Professor & Sustainability Catalyst", photo: "https://i.pravatar.cc/600?img=66" },
+    { name: "James Tan", role: "Business Advisor", org: "CEO, Heyjom & Mantra", photo: "https://i.pravatar.cc/600?img=33", linkedin: "#" },
+    { name: "Murugan Thangiah", role: "Academic Advisor", org: "Senior Lecturer, Taylor's University", photo: "https://i.pravatar.cc/600?img=60", linkedin: "#" },
+    { name: "Abdus Sami", role: "Technology Advisor", org: "CEO, AppifyDevs", photo: "https://i.pravatar.cc/600?img=7", linkedin: "#" },
+    { name: "Prof. Dr. C. A. Vaithilingam", role: "Innovation Advisor", org: "Professor & Sustainability Catalyst", photo: "https://i.pravatar.cc/600?img=66", linkedin: "#" },
 ];
 
 
@@ -178,7 +182,20 @@ export default function AboutPage() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                                 <div className="absolute bottom-0 left-0 right-0 p-4">
-                                    <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{member.name}</h3>
+                                    <div className="flex items-center justify-between gap-2">
+                                        <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{member.name}</h3>
+                                        {member.linkedin && (
+                                            <a
+                                                href={member.linkedin}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-white/80 hover:text-white transition-colors"
+                                                aria-label={`${member.name} LinkedIn`}
+                                            >
+                                                <LinkedinLogo size={14} weight="fill" />
+                                            </a>
+                                        )}
+                                    </div>
                                     <p className="text-white/70 text-xs mt-0.5 leading-snug">{member.role}</p>
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-medidesh-teal-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -189,6 +206,7 @@ export default function AboutPage() {
                     {/* Contributors sub-section */}
                     <div className="max-w-5xl mx-auto mt-16 pt-12 border-t border-slate-100">
                         <div className="flex items-center gap-3 mb-8">
+                            <div className="h-px flex-1 bg-slate-100" />
                             <span className="text-xs font-semibold uppercase text-slate-400 px-2">বিশেষ সহযোগী</span>
                             <div className="h-px flex-1 bg-slate-100" />
                         </div>
@@ -206,7 +224,20 @@ export default function AboutPage() {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
                                     <div className="absolute bottom-0 left-0 right-0 p-3">
-                                        <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{person.name}</h3>
+                                        <div className="flex items-center justify-between gap-2">
+                                            <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{person.name}</h3>
+                                            {person.linkedin && (
+                                                <a
+                                                    href={person.linkedin}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-white/80 hover:text-white transition-colors"
+                                                    aria-label={`${person.name} LinkedIn`}
+                                                >
+                                                    <LinkedinLogo size={14} weight="fill" />
+                                                </a>
+                                            )}
+                                        </div>
                                         <p className="text-white/65 text-xs mt-0.5 leading-snug">{person.role}</p>
                                     </div>
                                     <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-medidesh-teal-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -262,7 +293,20 @@ export default function AboutPage() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
                                 {/* Info overlay at bottom */}
                                 <div className="absolute bottom-0 left-0 right-0 p-4">
-                                    <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{mentor.name}</h3>
+                                    <div className="flex items-center justify-between gap-2">
+                                        <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{mentor.name}</h3>
+                                        {mentor.linkedin && (
+                                            <a
+                                                href={mentor.linkedin}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-white/80 hover:text-white transition-colors"
+                                                aria-label={`${mentor.name} LinkedIn`}
+                                            >
+                                                <LinkedinLogo size={14} weight="fill" />
+                                            </a>
+                                        )}
+                                    </div>
                                     <span className="inline-block mt-1 px-2 py-0.5 bg-amber-400/20 border border-amber-300/40 text-amber-200 text-[10px] font-semibold rounded backdrop-blur-sm">
                                         {mentor.org}
                                     </span>

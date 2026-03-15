@@ -138,8 +138,8 @@ export default function LandingHeader() {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 z-[110] flex flex-col px-6 py-8 md:hidden transition-transform duration-300 backdrop-blur-xl ${
-                    isDark ? "bg-slate-900/95" : "bg-white/95"
+                className={`fixed inset-0 z-[110] flex flex-col px-6 py-8 md:hidden transition-transform duration-300 ${
+                    isDark ? "bg-slate-900" : "bg-white"
                 } ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
             >
                 <div className="flex justify-between items-center mb-10">

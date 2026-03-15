@@ -5,6 +5,7 @@ import {
     InstagramLogo,
     YoutubeLogo,
     GooglePlayLogoIcon,
+    Monitor,
     Heart,
 } from "@phosphor-icons/react/dist/ssr";
 
@@ -93,16 +94,30 @@ export default function LandingFooter() {
                         <p className="text-sm mb-5 leading-relaxed">
                             অ্যান্ড্রয়েড মোবাইল ও কম্পিউটারে ব্যবহার করুন — অফলাইনেও পূর্ণ কার্যকর।
                         </p>
-                        <a
-                            href="#download"
-                            className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-4 py-3 rounded transition-all duration-200 group"
-                        >
-                            <GooglePlayLogoIcon weight="fill" size={22} className="text-medidesh-teal-400 group-hover:scale-110 transition-transform" />
-                            <div>
-                                <div className="text-[10px] text-slate-400 uppercase tracking-wider">Get it on</div>
-                                <div className="text-sm font-bold">Google Play</div>
-                            </div>
-                        </a>
+                        <div className="flex flex-col gap-3">
+                            <a
+                                href="https://wa.me/+8801608844017?text=আমি%20মেডিদেশ%20Android%20অ্যাপ%20ডাউনলোড%20করতে%20চাই"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-4 py-3 rounded transition-all duration-200 group border border-slate-700"
+                            >
+                                <GooglePlayLogoIcon weight="fill" size={20} className="text-medidesh-teal-400 group-hover:scale-110 transition-transform" />
+                                <div className="text-left">
+                                    <div className="text-xs font-bold leading-none">Google Play</div>
+                                </div>
+                            </a>
+                            <a
+                                href="https://wa.me/+8801608844017?text=আমি%20মেডিদেশ%20Windows%20PC%20ভার্সন%20পেতে%20চাই"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 bg-white hover:bg-slate-50 text-slate-900 px-4 py-3 rounded transition-all duration-200 group border border-slate-200"
+                            >
+                                <Monitor weight="duotone" size={20} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
+                                <div className="text-left">
+                                    <div className="text-xs font-bold leading-none">Windows App</div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 

@@ -1,8 +1,108 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode — .dark on <html> activates dark: variants */
+@variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('/fonts/HindSiliguri-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('/fonts/HindSiliguri-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('/fonts/HindSiliguri-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('/fonts/HindSiliguri-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('/fonts/HindSiliguri-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiro Bangla';
+  src: url('/fonts/TiroBangla-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: var(--font-hind-siliguri), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-heading: var(--font-hind-siliguri), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Hind Siliguri', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Hind Siliguri', ui-sans-serif, system-ui, sans-serif;
+  --font-tiro-bangla: 'Tiro Bangla', serif;
+  --font-orbitron: 'Orbitron', sans-serif;
+
+  /* Medidesh Sea Green */
+  --color-medidesh-teal-50: #edfaf3;
+  --color-medidesh-teal-100: #d1f5e3;
+  --color-medidesh-teal-200: #a3e9c6;
+  --color-medidesh-teal-300: #6dd5a0;
+  --color-medidesh-teal-400: #3cbd79;
+  --color-medidesh-teal-500: #2E8B57;
+  --color-medidesh-teal-600: #236a43;
+  --color-medidesh-teal-700: #1a5033;
+  --color-medidesh-teal-800: #123625;
+  --color-medidesh-teal-900: #0b2218;
+
+  --color-medidesh-bg: #fcfcfc;
+  --color-medidesh-dark: #0b1120;
 
   --color-pharma-green-50: #f0fdf4;
   --color-pharma-green-100: #dcfce7;
@@ -10,7 +110,7 @@
   --color-pharma-green-300: #86efac;
   --color-pharma-green-400: #4ade80;
   --color-pharma-green-500: #22c55e;
-  --color-pharma-green-600: #009B86;
+  --color-pharma-green-600: #2E8B57; /* Re-mapped to sea green */
   --color-pharma-green-700: #15803d;
   --color-pharma-green-800: #166534;
   --color-pharma-green-900: #14532d;
@@ -70,3 +170,61 @@ html {
 .mask-linear-fade {
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
+
+/* ═══════════════════════════════════════════════════════
+   DARK MODE — unlayered CSS overrides @layer utilities
+   in Tailwind v4 so no !important needed
+═══════════════════════════════════════════════════════ */
+.dark { color-scheme: dark; }
+
+/* Backgrounds */
+.dark .bg-white          { background-color: #1e293b; }
+.dark .bg-slate-50       { background-color: #1e293b; }
+.dark .bg-slate-100      { background-color: #334155; }
+.dark .bg-slate-200      { background-color: #475569; }
+.dark .bg-white\/90      { background-color: rgb(15 23 42 / 0.95); }
+.dark .bg-white\/60      { background-color: rgb(15 23 42 / 0.7); }
+
+/* Text */
+.dark .text-slate-900    { color: #f8fafc; }
+.dark .text-slate-800    { color: #f1f5f9; }
+.dark .text-slate-700    { color: #e2e8f0; }
+.dark .text-slate-600    { color: #94a3b8; }
+.dark .text-slate-500    { color: #64748b; }
+.dark .text-slate-400    { color: #475569; }
+
+/* Borders */
+.dark .border-slate-50   { border-color: #1e293b; }
+.dark .border-slate-100  { border-color: #334155; }
+.dark .border-slate-200  { border-color: #475569; }
+.dark .border-slate-300  { border-color: #64748b; }
+
+/* Card hovers */
+.dark .hover\:border-slate-200:hover  { border-color: #475569; }
+.dark .hover\:shadow-md:hover         { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4); }
+
+/* Specific component backgrounds */
+.dark .bg-amber-50       { background-color: #451a03; }
+.dark .bg-blue-50        { background-color: #172554; }
+.dark .bg-indigo-50      { background-color: #1e1b4b; }
+.dark .bg-violet-50      { background-color: #2e1065; }
+.dark .bg-rose-50        { background-color: #4c0519; }
+.dark .bg-orange-50      { background-color: #431407; }
+.dark .bg-emerald-50     { background-color: #022c22; }
+.dark .bg-cyan-50        { background-color: #083344; }
+.dark .bg-teal-50        { background-color: #042f2e; }
+.dark .bg-green-50       { background-color: #052e16; }
+.dark .bg-purple-50      { background-color: #2e1065; }
+.dark .bg-red-50         { background-color: #450a0a; }
+.dark .bg-yellow-50      { background-color: #422006; }
+
+/* Section bg alternation */
+.dark section.bg-white        { background-color: #0f172a; }
+.dark section.bg-slate-50     { background-color: #1e293b; }
+
+/* FAQ accordion open state */
+.dark .bg-slate-800      { background-color: #1e293b; }
+
+/* Shadows */
+.dark .shadow-sm         { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.5); }
+.dark .shadow-md         { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5); }

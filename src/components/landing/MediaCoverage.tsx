@@ -4,7 +4,7 @@ export default function MediaCoverage() {
     return (
         <section className="py-20 bg-slate-50 border-t border-slate-100">
             <div className="container mx-auto px-6 lg:px-12 text-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200 text-slate-600 text-xs font-bold mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-200 text-slate-600 text-xs font-bold mb-6">
                     <Newspaper weight="fill" />
                     <span>মিডিয়া কাভারেজ</span>
                 </div>
@@ -14,7 +14,7 @@ export default function MediaCoverage() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {/* Card 1 */}
-                    <div className="group bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
+                    <div className="group bg-white p-6 rounded border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
                         <div className="h-12 flex items-center mb-6">
                             <img
                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUTX3amtUek4Ia80_rbqUkfwS6sYaeSUdqwg&s"
@@ -23,7 +23,7 @@ export default function MediaCoverage() {
                             />
                         </div>
                         <h3 className="text-lg font-bold text-slate-900 mb-4 line-clamp-2 leading-snug">
-                            "ফার্মেসি ব্যবসায় ডিজিটাইজেশনের নতুন দিগন্ত উন্মোচন করল মেডিদেশ"
+                            &quot;ফার্মেসি ব্যবসায় ডিজিটাইজেশনের নতুন দিগন্ত উন্মোচন করল মেডিদেশ&quot;
                         </h3>
                         <div className="mt-auto pt-4 flex items-center justify-between border-t border-slate-100">
                             <span className="text-xs text-slate-400 font-medium">
@@ -39,7 +39,7 @@ export default function MediaCoverage() {
                     </div>
 
                     {/* Card 2 */}
-                    <div className="group bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
+                    <div className="group bg-white p-6 rounded border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
                         <div className="h-12 flex items-center mb-6">
                             <img
                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8knKcONkR3eLrJ0R7WnN4_SBJwegZmm8C2g&s"
@@ -48,7 +48,7 @@ export default function MediaCoverage() {
                             />
                         </div>
                         <h3 className="text-lg font-bold text-slate-900 mb-4 line-clamp-2 leading-snug">
-                            "মেডিদেশ: স্থানীয় ফার্মেসী ইনভেন্টরি ম্যানেজমেন্টে বৈপ্লবিক পরিবর্তন"
+                            &quot;মেডিদেশ: স্থানীয় ফার্মেসি ইনভেন্টরি ম্যানেজমেন্টে বৈপ্লবিক পরিবর্তন&quot;
                         </h3>
                         <div className="mt-auto pt-4 flex items-center justify-between border-t border-slate-100">
                             <span className="text-xs text-slate-400 font-medium">
@@ -64,7 +64,7 @@ export default function MediaCoverage() {
                     </div>
 
                     {/* Card 3 */}
-                    <div className="group bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
+                    <div className="group bg-white p-6 rounded border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
                         <div className="h-12 flex items-center mb-6">
                             <img
                                 src="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/Channel-i.svg/1200px-Channel-i.svg.png"
@@ -73,8 +73,8 @@ export default function MediaCoverage() {
                             />
                         </div>
                         <h3 className="text-lg font-bold text-slate-900 mb-4 line-clamp-2 leading-snug">
-                            "নবীন উদ্যোক্তা: প্রযুক্তির ছোঁয়ায় বদলে যাচ্ছে গ্রামের ওষুধের
-                            দোকান"
+                            &quot;নবীন উদ্যোক্তা: প্রযুক্তির ছোঁয়ায় বদলে যাচ্ছে গ্রামের ওষুধের
+                            দোকান&quot;
                         </h3>
                         <div className="mt-auto pt-4 flex items-center justify-between border-t border-slate-100">
                             <span className="text-xs text-slate-400 font-medium">
@@ -91,7 +91,7 @@ export default function MediaCoverage() {
 
 
                     {/* Card 4 */}
-                    <div className="group bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
+                    <div className="group bg-white p-6 rounded border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-left flex flex-col h-full">
                         <div className="h-12 flex items-center mb-6">
                             <img
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/The_Business_Standard_logo.svg/1200px-The_Business_Standard_logo.svg.png"
@@ -100,7 +100,7 @@ export default function MediaCoverage() {
                             />
                         </div>
                         <h3 className="text-lg font-bold text-slate-900 mb-4 line-clamp-2 leading-snug">
-                            "কিভাবে সাস (SaaS) প্ল্যাটফর্মগুলো বাংলাদেশের ক্ষুদ্র ব্যবসায়ীদের ক্ষমতায়ন করছে"
+                            &quot;কীভাবে SaaS প্ল্যাটফর্মগুলো বাংলাদেশের ক্ষুদ্র ব্যবসায়ীদের ক্ষমতায়ন করছে&quot;
                         </h3>
                         <div className="mt-auto pt-4 flex items-center justify-between border-t border-slate-100">
                             <span className="text-xs text-slate-400 font-medium">

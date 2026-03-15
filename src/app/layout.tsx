@@ -1,17 +1,5 @@
 import type { Metadata } from "next";
-import { Hind_Siliguri, Orbitron } from "next/font/google";
 import "./globals.css";
-
-const hindSiliguri = Hind_Siliguri({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["bengali", "latin"],
-  variable: "--font-hind-siliguri",
-});
-
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  variable: "--font-orbitron",
-});
 
 export const metadata: Metadata = {
   title: "Medidesh - Pharmacy Management Software",
@@ -34,8 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="bn">
-      <body className={`${hindSiliguri.variable} ${orbitron.variable} ${hindSiliguri.className}`}>
+    <html lang="bn" suppressHydrationWarning>
+      <head>
+        {/* Prevent flash of wrong theme */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(t===null&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()` }} />
+      </head>
+      <body className="font-sans antialiased bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
         {children}
       </body>
     </html>

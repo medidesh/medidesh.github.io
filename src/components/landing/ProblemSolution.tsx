@@ -1,76 +1,130 @@
+"use client";
+
 import {
-    WarningOctagon,
-    HourglassHigh,
-    DesktopTower,
-    Notebook,
+    Monitor,
+    Eye,
+    Tag,
+    WifiSlash,
+    Database,
+    ShieldCheck,
+    ArrowRight,
+    Sparkle,
 } from "@phosphor-icons/react/dist/ssr";
+
+const points = [
+    {
+        problem: "প্রযুক্তি ভীতি ও জটিল ইন্টারফেস",
+        solution: "এতটাই সহজ যে কোনো প্রশিক্ষণ ছাড়াই সরাসরি ব্যবহার শুরু করা যাবে — গ্রামের দোকান থেকে শহরের বড় ফার্মেসি পর্যন্ত।",
+        icon: Monitor,
+        accent: "bg-blue-50 text-blue-600 border-blue-100",
+    },
+    {
+        problem: "হিসাবে অস্বচ্ছতা ও মালের অপচয়",
+        solution: "রিয়েল-টাইম স্টক হিসাব যা চুরি ও লোকসান শূন্যে নামিয়ে আনে। বাকি খাতাও ডিজিটাল।",
+        icon: Eye,
+        accent: "bg-violet-50 text-violet-600 border-violet-100",
+    },
+    {
+        problem: "সফটওয়্যারে উচ্চ খরচের ভুল ধারণা",
+        solution: "বিনামূল্যে শুরু করুন — পদ্মা প্ল্যান চিরতরে ফ্রি। মাসে মাত্র ৳৩৯৯ থেকে প্রিমিয়াম সুবিধা।",
+        icon: Tag,
+        accent: "bg-medidesh-teal-50 text-medidesh-teal-600 border-medidesh-teal-100",
+    },
+    {
+        problem: "লোডশেডিং ও ইন্টারনেট না থাকলে কাজ বন্ধ",
+        solution: "ইন্টারনেট নেই? কোনো সমস্যা নেই! অফলাইনেও সম্পূর্ণ কার্যকর — বিদ্যুৎ ফিরলে ডেটা স্বয়ংক্রিয়ভাবে সিঙ্ক হয়ে যাবে।",
+        icon: WifiSlash,
+        accent: "bg-orange-50 text-orange-600 border-orange-100",
+    },
+    {
+        problem: "ইনভেন্টরিতে ওষুধ যোগ করার ঝামেলা",
+        solution: "বাংলাদেশের হাজার হাজার জেনেরিক ও ব্র্যান্ডের ওষুধের তালিকা আগে থেকেই যুক্ত আছে — শুধু সার্চ করে অ্যাড করে নিন।",
+        icon: Database,
+        accent: "bg-indigo-50 text-indigo-600 border-indigo-100",
+    },
+    {
+        problem: "অবিশ্বস্ত সফটওয়্যার ও ডেটা হারানোর আতঙ্ক",
+        solution: "ব্যাংক-গ্রেড এনক্রিপশন ও প্রতিদিনের স্বয়ংক্রিয় ব্যাকআপে আপনার ব্যবসার ডেটা সর্বদা নিরাপদ।",
+        icon: ShieldCheck,
+        accent: "bg-emerald-50 text-emerald-600 border-emerald-100",
+    },
+];
 
 export default function ProblemSolution() {
     return (
-        <section className="py-24 bg-slate-50">
+        <section id="solutions" className="py-20 lg:py-28 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+            {/* Wavy line decoration */}
+            <svg
+                className="absolute top-0 left-0 w-full opacity-[0.04] pointer-events-none"
+                viewBox="0 0 1440 60"
+                fill="none"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            >
+                <path
+                    d="M0,30 C180,60 360,0 540,30 C720,60 900,0 1080,30 C1260,60 1380,20 1440,30"
+                    stroke="#2E8B57"
+                    strokeWidth="3"
+                    fill="none"
+                />
+            </svg>
+            {/* Blob top-right */}
+            <svg
+                className="absolute -top-16 -right-16 w-64 h-64 opacity-[0.05] pointer-events-none"
+                viewBox="0 0 260 260"
+                fill="none"
+                aria-hidden="true"
+            >
+                <path
+                    d="M130,20 C180,5 240,50 250,110 C260,170 220,230 160,245 C100,260 40,220 20,160 C0,100 30,40 80,20 C100,12 110,25 130,20 Z"
+                    fill="#2E8B57"
+                />
+            </svg>
             <div className="container mx-auto px-6 lg:px-12">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <span className="text-pharma-green-600 font-bold tracking-wider uppercase text-sm">
-                            সাধারণ সমস্যাসমূহ
-                        </span>
-                        <h2 className="text-3xl lg:text-5xl font-bold mt-3 mb-6 text-slate-900 leading-tight">
-                            বাংলাদেশে ফার্মেসি চালানো সহজ নয়।
-                        </h2>
-                        <p className="text-lg text-slate-500 leading-relaxed">
-                            পুরানো পদ্ধতি এবং সফটওয়্যার আপনার প্রতিদিনের কাজে বাধা সৃষ্টি করে
-                            এবং লোকসান বাড়ায়।
-                        </p>
+                {/* Section header */}
+                <div className="max-w-2xl mx-auto text-center mb-16">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
+                        <Sparkle size={13} weight="fill" className="text-medidesh-teal-500" />
+                        কেন মেডিদেশ
                     </div>
+                    <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
+                        বাংলাদেশের ফার্মেসি মালিকদের{" "}
+                        <span className="text-medidesh-teal-500">সবচেয়ে বড় সমস্যাগুলোর</span> সমাধান
+                    </h2>
+                    <p className="text-slate-500 text-lg leading-relaxed">
+                        ম্যানুয়াল খাতা, লোডশেডিং কিংবা বাকির খাতা — সব ঝামেলার এক সহজ সমাধান: মেডিদেশ।
+                    </p>
+                </div>
 
-                    <div className="grid sm:grid-cols-2 gap-6">
-                        <div className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                            <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center text-red-600 mb-4">
-                                <WarningOctagon size={32} />
+                {/* Cards grid */}
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                    {points.map((item, idx) => (
+                        <div
+                            key={idx}
+                            className="bg-white p-6 rounded border border-slate-100 hover:border-medidesh-teal-200 hover:shadow-lg hover:shadow-medidesh-teal-500/5 transition-all duration-300 group"
+                        >
+                            <div className={`w-11 h-11 rounded ${item.accent} border flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                                <item.icon size={22} weight="duotone" />
                             </div>
-                            <h3 className="text-lg font-bold text-slate-900 mb-2">
-                                স্টক গরমিল
+                            <h3 className="font-bold text-slate-800 text-base mb-2 leading-snug">
+                                {item.problem}
                             </h3>
-                            <p className="text-sm text-slate-500">
-                                হিসাবহীন বিক্রি এবং চুরির কারণে প্রতি মাসে হাজার হাজার টাকা
-                                লোকসান।
+                            <p className="text-sm text-slate-500 leading-relaxed">
+                                {item.solution}
                             </p>
                         </div>
-                        <div className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                            <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 mb-4">
-                                <HourglassHigh size={32} />
-                            </div>
-                            <h3 className="text-lg font-bold text-slate-900 mb-2">
-                                মেয়াদোত্তীর্ণ ঔষধ
-                            </h3>
-                            <p className="text-sm text-slate-500">
-                                মেয়াদ শেষ হওয়া ঔষধ শেল্ফে পড়ে থাকে অলক্ষ্যে, যা পরে ফেলে দিতে
-                                হয়।
-                            </p>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                            <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 mb-4">
-                                <DesktopTower size={32} />
-                            </div>
-                            <h3 className="text-lg font-bold text-slate-900 mb-2">
-                                হার্ডওয়্যার নির্ভরতা
-                            </h3>
-                            <p className="text-sm text-slate-500">
-                                পিসি নষ্ট হলে ব্যবসা বন্ধ। একাধিক কাউন্টার সেটআপ করা ব্যয়বহুল।
-                            </p>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                            <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 mb-4">
-                                <Notebook size={32} />
-                            </div>
-                            <h3 className="text-lg font-bold text-slate-900 mb-2">
-                                হিসাবের ভুল
-                            </h3>
-                            <p className="text-sm text-slate-500">
-                                কাগজে-কলমে দৈনিক বিক্রির হিসাব মেলাতে ঘন্টার পর ঘন্টা সময় নষ্ট।
-                            </p>
-                        </div>
-                    </div>
+                    ))}
+                </div>
+
+                {/* Bottom CTA strip */}
+                <div className="mt-12 max-w-xl mx-auto text-center">
+                    <a
+                        href="#features"
+                        className="inline-flex items-center gap-2 text-medidesh-teal-600 font-semibold text-sm hover:gap-3 transition-all duration-200"
+                    >
+                        সব ফিচার দেখুন
+                        <ArrowRight size={16} weight="bold" />
+                    </a>
                 </div>
             </div>
         </section>

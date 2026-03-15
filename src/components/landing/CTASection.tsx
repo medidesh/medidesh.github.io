@@ -1,46 +1,68 @@
-import { EnvelopeSimple, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeSimple, WhatsappLogo, Phone } from "@phosphor-icons/react/dist/ssr";
 
 export default function CTASection() {
     return (
-        <section id="cta" className="py-16 relative overflow-hidden bg-slate-900">
-            <div className="absolute inset-0 bg-slate-900"></div>
-            {/* Grainy Noise Overlay - typically done with CSS/Image, approximating with opacity here or could import noise svg */}
-            <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+        <section id="cta" className="py-20 lg:py-28 bg-medidesh-teal-500 relative overflow-hidden">
+            {/* Subtle background pattern */}
+            <div
+                className="absolute inset-0 opacity-[0.04] pointer-events-none"
+                style={{
+                    backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
+                    backgroundSize: "30px 30px",
+                }}
+            />
+            {/* Glow accents */}
+            <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-black/10 rounded blur-3xl pointer-events-none" />
 
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-pharma-green-500/20 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[120px] -translate-x-1/2 translate-y-1/2"></div>
-
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl lg:text-5xl font-extrabold text-white mb-8 leading-tight">
-                        আপনার ফার্মেসি ব‍্যবস্থাপনা <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-pharma-green-400 to-blue-400">
-                            হোক স্মার্ট ও ঝামেলামুক্ত
-                        </span>
+            <div className="container mx-auto px-6 lg:px-12 relative z-10">
+                <div className="max-w-3xl mx-auto text-center">
+                    <h2 className="text-3xl lg:text-5xl font-black text-white mb-5 leading-tight">
+                        আজই শুরু করুন —<br />
+                        পদ্মা প্ল্যান চিরতরে বিনামূল্যে
                     </h2>
+                    <p className="text-medidesh-teal-50 text-lg mb-10 leading-relaxed max-w-xl mx-auto">
+                        কোনো ক্রেডিট কার্ড লাগবে না। মাত্র ৫ মিনিটে সেটআপ করুন। বাংলাদেশের হাজারো ফার্মেসির পাশাপাশি আপনার ফার্মেসিকেও ডিজিটালি এগিয়ে নিন।
+                    </p>
 
-                    <div className="flex flex-col sm:flex-row justify-center gap-5 mt-12">
+                    <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
                         <a
-                            href="mailto:support@medidesh.com"
-                            className="bg-white text-slate-900 hover:bg-slate-50 px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 group"
+                            href="#download"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-slate-50 text-medidesh-teal-700 px-8 py-4 rounded font-bold text-base shadow-xl transition-all hover:-translate-y-0.5"
                         >
-                            <EnvelopeSimple weight="fill" className="text-2xl text-pharma-green-600 group-hover:scale-110 transition-transform" />
-                            <span>আমাদের ইমেইল করুন</span>
+                            বিনামূল্যে ডাউনলোড করুন
                         </a>
                         <a
-                            href="https://wa.me/+8801712345678"
+                            href="https://wa.me/+8801608844017"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-green-500/20 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-medidesh-teal-600 hover:bg-medidesh-teal-700 text-white border border-white/20 px-8 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5"
                         >
-                            <WhatsappLogo weight="fill" className="text-2xl" />
-                            <span>হোয়াটসঅ্যাপে কথা বলুন</span>
+                            <WhatsappLogo weight="fill" size={20} />
+                            WhatsApp করুন
                         </a>
                     </div>
 
-                    <p className="mt-8 text-slate-400 text-sm">
-                        আপনাদের পাশে, সর্বদা আন্তরিক ও বিশ্বস্ত সেবায়
-                    </p>
+                    {/* Contact options */}
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 border-t border-white/20">
+                        <a
+                            href="mailto:support@medidesh.com"
+                            className="flex items-center gap-2 text-medidesh-teal-100 hover:text-white text-sm font-medium transition-colors"
+                        >
+                            <EnvelopeSimple weight="fill" size={16} />
+                            support@medidesh.com
+                        </a>
+                        <span className="w-1 h-1 bg-white/30 rounded-full hidden sm:block" />
+                        <a
+                            href="tel:+8801608844017"
+                            className="flex items-center gap-2 text-medidesh-teal-100 hover:text-white text-sm font-medium transition-colors"
+                        >
+                            <Phone weight="fill" size={16} />
+                            01608-844017
+                        </a>
+                        <span className="w-1 h-1 bg-white/30 rounded-full hidden sm:block" />
+                        <span className="text-medidesh-teal-100 text-sm">শনি–বৃহস্পতি, সকাল ১০টা – রাত ৮টা</span>
+                    </div>
                 </div>
             </div>
         </section>

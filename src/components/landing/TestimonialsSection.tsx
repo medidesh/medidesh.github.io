@@ -1,137 +1,96 @@
-import { Quotes, Star, ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { Star, Quotes } from "@phosphor-icons/react/dist/ssr";
+
+const testimonials = [
+    {
+        quote: "মেডিদেশ ব্যবহার করে প্রতিদিনের লাভ-ক্ষতি এক ক্লিকে দেখতে পাই। আগে হিসাব মিলত না, ক্যাশ শর্ট পড়ত — এখন সেই সমস্যা নেই।",
+        name: "মো. রফিকুল ইসলাম",
+        role: "মালিক, বিসমিল্লাহ ফার্মেসি, ঢাকা",
+        initials: "র",
+    },
+    {
+        quote: "স্টক মেলানো ছিল সবচেয়ে বড় ঝামেলা। এখন ইনভেন্টরি স্বয়ংক্রিয়ভাবে আপডেট হয়। কোন ওষুধ শেষ হচ্ছে তা আগেই জানতে পারি।",
+        name: "আব্দুল কাদের",
+        role: "মালিক, সেবা মেডিসিন কর্নার, চট্টগ্রাম",
+        initials: "আ",
+    },
+    {
+        quote: "সফটওয়্যারটা এত সহজ যে আমার দোকানের নতুন কর্মচারীও প্রথম দিনেই বিল করতে পেরেছে। মোবাইল অ্যাপটা সত্যিই দারুণ।",
+        name: "সুমন আহমেদ",
+        role: "মালিক, মা ফার্মেসি, সিলেট",
+        initials: "সু",
+    },
+];
 
 export default function TestimonialsSection() {
     return (
-        <section className="py-24 bg-white">
+        <section className="py-20 lg:py-28 bg-white border-t border-slate-100 relative overflow-hidden">
+            {/* Quote mark large decoration */}
+            <svg
+                className="absolute top-10 left-6 w-32 h-32 opacity-[0.04] pointer-events-none"
+                viewBox="0 0 120 100"
+                fill="none"
+                aria-hidden="true"
+            >
+                <text x="0" y="90" fontSize="120" fill="#2E8B57" fontFamily="Georgia, serif">&ldquo;</text>
+            </svg>
+            {/* Dotted cluster right */}
+            <svg
+                className="absolute right-10 bottom-10 opacity-[0.07] pointer-events-none hidden lg:block"
+                width="130" height="130"
+                aria-hidden="true"
+            >
+                {[0,1,2,3,4].map(r => [0,1,2,3,4].map(c => (
+                    <circle key={`${r}-${c}`} cx={13 + c * 26} cy={13 + r * 26} r="3" fill="#2E8B57" />
+                )))}
+            </svg>
             <div className="container mx-auto px-6 lg:px-12">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        মালিকরা কেন মেডিদেশ ভালোবাসেন?
+                {/* Header */}
+                <div className="max-w-2xl mx-auto text-center mb-14">
+                    <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-100 text-amber-700 text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded mb-5">
+                        <Star size={12} weight="fill" className="text-amber-500" />
+                        গ্রাহকদের মতামত
+                    </div>
+                    <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
+                        ফার্মেসি মালিকরা কী বলছেন
                     </h2>
-                    <div className="inline-flex justify-center items-center gap-3 bg-white shadow-sm border border-slate-200 rounded-full px-5 py-2">
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png"
-                            alt="Google"
-                            className="w-5 h-5"
-                        />
+                    <div className="inline-flex items-center gap-2.5 bg-slate-50 border border-slate-100 rounded px-4 py-2">
                         <div className="flex items-center gap-0.5">
                             {[...Array(5)].map((_, i) => (
-                                <Star key={i} weight="fill" className="text-amber-400 text-base" />
+                                <Star key={i} weight="fill" size={14} className="text-amber-400" />
                             ))}
                         </div>
-                        <span className="text-sm font-bold text-slate-700">
-                            ৪.৯/৫ গুগল রিভিউ
-                        </span>
+                        <span className="text-sm font-bold text-slate-700">৪.৯/৫</span>
+                        <span className="text-sm text-slate-500">গুগল রিভিউ</span>
                     </div>
                 </div>
 
-                <div
-                    id="testimonials-container"
-                    className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scrollbar-hide"
-                >
-                    {/* Testimonial 1 */}
-                    <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 relative min-w-[300px] md:min-w-[400px] snap-center">
-                        <Quotes weight="fill" className="text-4xl text-pharma-green-200 absolute top-4 right-4" />
-                        <div className="mb-4">
-                            <span className="text-xs font-bold text-red-500 bg-red-50 px-2 py-1 rounded">
-                                সমস্যা
-                            </span>
-                            <p className="text-sm text-slate-500 mt-1 italic">
-                                "হিসাব মিলত না, ক্যাশ শর্ট পড়ত।"
+                {/* Cards */}
+                <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    {testimonials.map((t, i) => (
+                        <div
+                            key={i}
+                            className="bg-slate-50 border border-slate-100 rounded p-6 hover:border-medidesh-teal-200 hover:shadow-md transition-all duration-300 relative"
+                        >
+                            <Quotes weight="fill" size={28} className="text-slate-200 absolute top-5 right-5" />
+                            <div className="flex items-center gap-0.5 mb-4">
+                                {[...Array(5)].map((_, j) => (
+                                    <Star key={j} weight="fill" size={13} className="text-amber-400" />
+                                ))}
+                            </div>
+                            <p className="text-slate-700 text-sm leading-relaxed mb-6">
+                                &ldquo;{t.quote}&rdquo;
                             </p>
-                        </div>
-                        <div className="mb-6">
-                            <span className="text-xs font-bold text-pharma-green-600 bg-pharma-green-50 px-2 py-1 rounded">
-                                সমাধান
-                            </span>
-                            <p className="text-slate-700 mt-2 font-medium">
-                                "মেডিদেশ ব্যবহার করে আমি এখন প্রতিদিনের লাভ-ক্ষতি এক ক্লিকে দেখতে
-                                পাই। আমার টেনশন কমে গেছে।"
-                            </p>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-slate-200 rounded-full"></div>
-                            <div>
-                                <div className="font-bold text-slate-900">
-                                    মো: রফিকুল ইসলাম
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded bg-medidesh-teal-500 flex items-center justify-center text-white font-bold text-sm shrink-0">
+                                    {t.initials}
                                 </div>
-                                <div className="text-xs text-slate-500">
-                                    মালিক, বিসমিল্লাহ ফার্মেসি, ঢাকা
+                                <div>
+                                    <div className="font-bold text-slate-900 text-sm">{t.name}</div>
+                                    <div className="text-xs text-slate-500">{t.role}</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    {/* Testimonial 2 */}
-                    <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 relative min-w-[300px] md:min-w-[400px] snap-center">
-                        <Quotes weight="fill" className="text-4xl text-pharma-green-200 absolute top-4 right-4" />
-                        <div className="mb-4">
-                            <span className="text-xs font-bold text-red-500 bg-red-50 px-2 py-1 rounded">
-                                সমস্যা
-                            </span>
-                            <p className="text-sm text-slate-500 mt-1 italic">
-                                "স্টক মেলানোটাই ছিল বড় ঝামেলা।"
-                            </p>
-                        </div>
-                        <div className="mb-6">
-                            <span className="text-xs font-bold text-pharma-green-600 bg-pharma-green-50 px-2 py-1 rounded">
-                                সমাধান
-                            </span>
-                            <p className="text-slate-700 mt-2 font-medium">
-                                "এখন ইনভেন্টরি অটোমেটিক আপডেট হয়। কোন ঔষধ শেষ হচ্ছে তা অ্যাপ
-                                থেকে আগেই জেনে যাই।"
-                            </p>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-slate-200 rounded-full"></div>
-                            <div>
-                                <div className="font-bold text-slate-900">আব্দুল কাদের</div>
-                                <div className="text-xs text-slate-500">
-                                    সেবা মেডিসিন কর্ণার, চট্টগ্রাম
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Testimonial 3 */}
-                    <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 relative min-w-[300px] md:min-w-[400px] snap-center">
-                        <Quotes weight="fill" className="text-4xl text-pharma-green-200 absolute top-4 right-4" />
-                        <div className="mb-4">
-                            <span className="text-xs font-bold text-red-500 bg-red-50 px-2 py-1 rounded">
-                                সমস্যা
-                            </span>
-                            <p className="text-sm text-slate-500 mt-1 italic">
-                                "কম্পিউটার চালাতে পারতাম না।"
-                            </p>
-                        </div>
-                        <div className="mb-6">
-                            <span className="text-xs font-bold text-pharma-green-600 bg-pharma-green-50 px-2 py-1 rounded">
-                                সমাধান
-                            </span>
-                            <p className="text-slate-700 mt-2 font-medium">
-                                "সফটওয়্যারটা এত সহজ যে আমার দোকানের ছোট ছেলেটাও এখন বিল করতে
-                                পারে। মোবাইল অ্যাপটা দারুণ।"
-                            </p>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-slate-200 rounded-full"></div>
-                            <div>
-                                <div className="font-bold text-slate-900">সুমন আহমেদ</div>
-                                <div className="text-xs text-slate-500">
-                                    মা ফার্মেসি, সিলেট
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="flex justify-center gap-4 mt-12">
-                    <button className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-50 transition-colors">
-                        <ArrowLeft weight="bold" />
-                    </button>
-                    <button className="w-12 h-12 rounded-full bg-pharma-green-600 text-white flex items-center justify-center shadow-lg hover:bg-pharma-green-700 transition-colors">
-                        <ArrowRight weight="bold" />
-                    </button>
+                    ))}
                 </div>
             </div>
         </section>

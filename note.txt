@@ -1,0 +1,72 @@
+Bro you have to update the pricing of medidesh website
+
+Medidesh Pricing Model
+
+Medidesh offers three simple plans designed for pharmacies of different sizes. The plans are named after major rivers of Bangladesh.
+
+---
+
+Podma Plan
+Price: Free
+
+Designed for small pharmacies that want to start using digital management.
+
+Included Features
+
+• 1 pharmacy
+• 1 user (Owner)
+• 1 device
+• Basic inventory management
+• Basic sales and purchase tracking
+• Mobile app access
+• Advertisements included
+
+This plan allows pharmacies to experience Medidesh before upgrading.
+
+---
+
+Meghna Plan
+Price: 399 BDT per month
+
+Best for growing pharmacies that need full management tools.
+
+Included Features
+
+• 1 pharmacy
+• Up to 3 users (Owner, Manager, Staff)
+• Up to 2 devices
+• Full inventory management
+• Full accounting management
+• Expiry reminders
+• Low stock alerts
+• Stock out alerts
+• Report downloads (PDF, Excel, CSV)
+• Thermal printing support
+• Quick customer support
+• Advertisements included
+
+---
+
+Jamuna Plan
+Price: 899 BDT per month
+
+Designed for pharmacies that want advanced features and priority services.
+
+Included Features
+
+• 1 pharmacy
+• Up to 5 users (Owner, Manager, Staff)
+• Up to 2 devices
+• Full inventory management
+• Full accounting management
+• Expiry reminders and stock alerts
+• Advanced reports and analytics
+• Report downloads (PDF, Excel, CSV)
+• Thermal printing support
+• Priority customer support
+• No advertisements
+• Customer medicine demand search feature
+
+
+
+also in the pricing section show clips monthly / 6 month and Year , and price should be shown as caluclate price, also please follow medidesh design principal and best of the best pracitce for responsive design

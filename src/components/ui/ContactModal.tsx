@@ -43,7 +43,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                     <div className="p-8 space-y-6 bg-white">
                         <a
-                            href="tel:+8801712345678"
+                            href="tel:+8801608844017"
                             className="flex items-center gap-4 group p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100"
                         >
                             <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
@@ -54,7 +54,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                     হটলাইন
                                 </div>
                                 <div className="text-lg font-bold text-slate-800">
-                                    +880 1712 345678
+                                    +880 1608 844017
                                 </div>
                             </div>
                         </a>

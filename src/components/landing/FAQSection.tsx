@@ -1,75 +1,94 @@
 "use client";
 
-import { CaretDown } from "@phosphor-icons/react/dist/ssr";
+import { useState } from "react";
+import { CaretDown, Question } from "@phosphor-icons/react/dist/ssr";
+
+const faqs = [
+    {
+        q: "মেডিদেশ কি সত্যিই বিনামূল্যে ব্যবহার করা যায়?",
+        a: "হ্যাঁ! পদ্মা প্ল্যানটি চিরতরে বিনামূল্যে। কোনো ক্রেডিট কার্ড বা ট্রায়াল পিরিয়ড নেই — শুধু ডাউনলোড করুন এবং শুরু করুন। আপনার ব্যবসা বড় হলে যেকোনো সময় প্রিমিয়াম প্ল্যানে আপগ্রেড করতে পারবেন।",
+    },
+    {
+        q: "লোডশেডিং বা ইন্টারনেট না থাকলে কি কাজ করবে?",
+        a: "হ্যাঁ! বাংলাদেশের বাস্তবতা মাথায় রেখে অফলাইন মোড তৈরি। বিদ্যুৎ বা নেট না থাকলেও বিক্রয় ও ইনভেন্টরি আপডেট হয়। নেটওয়ার্ক ফিরলে সমস্ত ডেটা স্বয়ংক্রিয়ভাবে সিঙ্ক হয়।",
+    },
+    {
+        q: "কাস্টমার সাপোর্ট কতক্ষণ পাওয়া যায়?",
+        a: "আমাদের বাংলাদেশি সাপোর্ট টিম শনি–বৃহস্পতি সকাল ১০টা থেকে রাত ৮টা পর্যন্ত সরাসরি সাড়া দেয়। WhatsApp ও ফোনে যোগাযোগ করতে পারবেন: 01608-844017। যমুনা প্ল্যানে প্রায়োরিটি সাপোর্ট পাওয়া যায়।",
+    },
+    {
+        q: "আমার ডেটা কতটা নিরাপদ?",
+        a: "আপনার ডেটা Google Cloud-এ ব্যাংক-গ্রেড AES-256 এনক্রিপশনে সংরক্ষিত থাকে। স্বয়ংক্রিয় ব্যাকআপ প্রতিদিন তৈরি হয়, তাই ডেটা হারানোর কোনো সুযোগ নেই।",
+    },
+    {
+        q: "একাধিক স্টাফ কি একসাথে ব্যবহার করতে পারবে?",
+        a: "হ্যাঁ। মেঘনা প্ল্যানে ৩ জন ও যমুনা প্ল্যানে ৫ জন ব্যবহারকারী যুক্ত করা যায়। প্রত্যেকের জন্য আলাদা অনুমতি (permission) সেট করা সম্ভব — যেমন ক্যাশিয়ার শুধু বিক্রয় করতে পারবে, রিপোর্ট দেখতে পারবে না।",
+    },
+    {
+        q: "প্ল্যান পরিবর্তন বা বাতিল করা কি সহজ?",
+        a: "অবশ্যই। যেকোনো সময় সরাসরি অ্যাপ থেকে আপগ্রেড বা ডাউনগ্রেড করতে পারবেন। কোনো লুকানো চার্জ বা বাতিল ফি নেই।",
+    },
+];
 
 export default function FAQSection() {
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
+
     return (
-        <section id="faq" className="py-24 bg-white">
+        <section id="faq" className="py-20 lg:py-28 bg-slate-50 border-t border-slate-100">
             <div className="container mx-auto px-6 lg:px-12">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-                        সচরাচর জিজ্ঞাসিত প্রশ্ন
-                    </h2>
-                    <p className="text-slate-500">
-                        আপনার মনে থাকা কিছু সাধারণ প্রশ্নের উত্তর
-                    </p>
-                </div>
-                <div className="max-w-3xl mx-auto space-y-4">
-                    <div className="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
-                        <details className="group">
-                            <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900">
-                                <span>মেডিদেশ কি সম্পূর্ণ ফ্রি?</span>
-                                <span className="transition group-open:rotate-180">
-                                    <CaretDown weight="bold" />
-                                </span>
-                            </summary>
-                            <div className="text-slate-600 p-6 pt-0 leading-relaxed">
-                                হ্যাঁ! 'তিতাস' প্যাকেজটি সম্পূর্ণ ফ্রি। এতে আপনি স্টক এবং বিক্রয়ের
-                                হিসাব রাখতে পারবেন।
-                            </div>
-                        </details>
+                <div className="max-w-3xl mx-auto">
+                    {/* Header */}
+                    <div className="text-center mb-12">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
+                            <Question size={13} weight="fill" className="text-medidesh-teal-500" />
+                            প্রশ্নোত্তর
+                        </div>
+                        <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4">
+                            সাধারণ জিজ্ঞাসা
+                        </h2>
+                        <p className="text-slate-500 text-lg">
+                            যা জানতে চান তা এখানে না থাকলে আমাদের{" "}
+                            <a href="mailto:support@medidesh.com" className="text-medidesh-teal-600 font-semibold hover:underline">
+                                সরাসরি জিজ্ঞেস করুন
+                            </a>
+                        </p>
                     </div>
-                    <div className="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
-                        <details className="group">
-                            <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900">
-                                <span>সাপোর্ট কি ২৪ ঘন্টা পাওয়া যাবে?</span>
-                                <span className="transition group-open:rotate-180">
-                                    <CaretDown weight="bold" />
-                                </span>
-                            </summary>
-                            <div className="text-slate-600 p-6 pt-0 leading-relaxed">
-                                হ্যাঁ, আমাদের সাপোর্ট টিম সকাল ১০টা থেকে রাত ১০টা পর্যন্ত সরাসরি এবং
-                                ২৪ ঘন্টা ইমেইল সাপোর্টে নিয়োজিত আছে।
+
+                    {/* Accordion */}
+                    <div className="space-y-3">
+                        {faqs.map((item, i) => (
+                            <div
+                                key={i}
+                                className={`bg-white rounded border transition-all duration-200 overflow-hidden ${
+                                    openIndex === i
+                                        ? "border-medidesh-teal-200 shadow-sm"
+                                        : "border-slate-100 hover:border-slate-200"
+                                }`}
+                            >
+                                <button
+                                    className="w-full flex justify-between items-center p-5 text-left"
+                                    onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                                >
+                                    <span className="font-bold text-slate-900 text-base pr-4 leading-snug">
+                                        {item.q}
+                                    </span>
+                                    <span
+                                        className={`shrink-0 w-7 h-7 rounded flex items-center justify-center transition-all duration-200 ${
+                                            openIndex === i
+                                                ? "bg-medidesh-teal-500 text-white rotate-180"
+                                                : "bg-slate-100 text-slate-500"
+                                        }`}
+                                    >
+                                        <CaretDown size={14} weight="bold" />
+                                    </span>
+                                </button>
+                                {openIndex === i && (
+                                    <div className="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                                        {item.a}
+                                    </div>
+                                )}
                             </div>
-                        </details>
-                    </div>
-                    <div className="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
-                        <details className="group">
-                            <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900">
-                                <span>মোবাইল অ্যাপ আছে কি?</span>
-                                <span className="transition group-open:rotate-180">
-                                    <CaretDown weight="bold" />
-                                </span>
-                            </summary>
-                            <div className="text-slate-600 p-6 pt-0 leading-relaxed">
-                                হ্যাঁ, আমাদের অ্যান্ড্রয়েড অ্যাপ আছে যা আপনি প্লে-স্টোর থেকে নামিয়ে
-                                ব্যবহার করতে পারেন।
-                            </div>
-                        </details>
-                    </div>
-                    <div className="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
-                        <details className="group">
-                            <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900">
-                                <span>ডাটা কি নিরাপদ?</span>
-                                <span className="transition group-open:rotate-180">
-                                    <CaretDown weight="bold" />
-                                </span>
-                            </summary>
-                            <div className="text-slate-600 p-6 pt-0 leading-relaxed">
-                                ১০০% নিরাপদ। আমরা গুগল ক্লাউড সার্ভার ব্যবহার করি এবং আপনার ডাটা
-                                এনক্রিপ্টেড থাকে।
-                            </div>
-                        </details>
+                        ))}
                     </div>
                 </div>
             </div>

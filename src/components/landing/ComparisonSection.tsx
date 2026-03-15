@@ -1,50 +1,63 @@
-import { Check, X } from "@phosphor-icons/react/dist/ssr";
+import { Check, X, Trophy } from "@phosphor-icons/react/dist/ssr";
+
+const rows = [
+    { feature: "স্মার্ট ইনভেন্টরি ম্যানেজমেন্ট", manual: false, medidesh: true, others: true },
+    { feature: "Android মোবাইল অ্যাপ", manual: false, medidesh: true, others: false },
+    { feature: "অফলাইনে সম্পূর্ণ কার্যকর", manual: true, medidesh: true, others: false },
+    { feature: "স্বয়ংক্রিয় ডেটা ব্যাকআপ", manual: false, medidesh: true, others: true },
+    { feature: "লো-স্টক ও মেয়াদোত্তীর্ণ সতর্কতা", manual: false, medidesh: true, others: false },
+    { feature: "বিনামূল্যে শুরু করা যায়", manual: false, medidesh: true, others: false },
+    { feature: "সহজ বাংলা ইন্টারফেস", manual: false, medidesh: true, others: false },
+    { feature: "লাইভ কাস্টমার সাপোর্ট", manual: false, medidesh: true, others: false },
+];
 
 export default function ComparisonSection() {
-    const comparisonData = [
-        { feature: "স্মার্ট ইনভেন্টরি ম্যানেজমেন্ট", manual: false, medidesh: true, others: true },
-        { feature: "মোবাইল অ্যাপ (Android & iOS)", manual: false, medidesh: true, others: false },
-        { feature: "অনলাইন ও অফলাইন ব্যবহার", manual: true, medidesh: true, others: false },
-        { feature: "অটোমেটিক ডাটা ব্যাকআপ", manual: false, medidesh: true, others: true },
-        { feature: "২৪/৭ কাস্টমার সাপোর্ট", manual: false, medidesh: true, others: false },
-        { feature: "ফ্রি আপডেট ও মেইনটেনেন্স", manual: false, medidesh: true, others: false },
-        { feature: "সহজ এবং আধুনিক ডিজাইন", manual: false, medidesh: true, others: false },
-        { feature: "আনলিমিটেড ইউজার এক্সেস", manual: false, medidesh: true, others: false },
-    ];
-
     return (
-        <section id="comparison" className="py-24 bg-white border-t border-slate-100">
+        <section id="comparison" className="py-20 lg:py-28 bg-slate-50 border-t border-slate-100">
             <div className="container mx-auto px-6 lg:px-12">
-                <h2 className="text-3xl lg:text-4xl font-bold text-center mb-16 text-slate-900">
-                    কেন মেডিদেশ সেরা?
-                </h2>
+                {/* Header */}
+                <div className="max-w-2xl mx-auto text-center mb-12">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
+                        <Trophy size={13} weight="fill" className="text-amber-500" />
+                        তুলনা
+                    </div>
+                    <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
+                        কেন মেডিদেশ সেরা পছন্দ?
+                    </h2>
+                    <p className="text-slate-500 text-lg">
+                        ম্যানুয়াল খাতা ও অন্যান্য সফটওয়্যারের সাথে তুলনা দেখুন।
+                    </p>
+                </div>
 
-                <div className="overflow-x-auto pb-4">
-                    <table className="w-full text-left border-collapse min-w-[600px] rounded-2xl overflow-hidden shadow-sm">
+                {/* Table */}
+                <div className="max-w-3xl mx-auto overflow-x-auto">
+                    <table className="w-full border-collapse min-w-[520px]">
                         <thead>
                             <tr>
-                                <th className="p-5 bg-slate-50 text-slate-600 font-bold border-b border-slate-200 w-1/4 uppercase text-xs tracking-wider">বৈশিষ্ট্য</th>
-                                <th className="p-5 bg-slate-50 text-slate-500 font-bold border-b border-slate-200 text-center w-1/4 text-sm">ম্যানুয়াল খাতা</th>
-                                <th className="p-5 bg-pharma-green-600 text-white font-bold border-b-4 border-pharma-green-700 text-center w-1/4 text-lg shadow-lg relative z-10">
+                                <th className="text-left py-3 px-4 text-xs font-semibold text-slate-500 uppercase tracking-wider w-1/2" />
+                                <th className="py-3 px-4 text-center text-xs font-semibold text-slate-400 uppercase tracking-wider">ম্যানুয়াল</th>
+                                <th className="py-3 px-4 text-center bg-medidesh-teal-500 text-white text-sm font-black rounded-t-xl">
                                     মেডিদেশ
-                                    <div className="text-[10px] font-normal opacity-90 mt-1">সেরা চয়েস</div>
                                 </th>
-                                <th className="p-5 bg-slate-50 text-slate-500 font-bold border-b border-slate-200 text-center w-1/4 text-sm">অন্যান্য সফটওয়্যার</th>
+                                <th className="py-3 px-4 text-center text-xs font-semibold text-slate-400 uppercase tracking-wider">অন্যান্য</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {comparisonData.map((item, index) => (
-                                <tr key={index} className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors">
-                                    <td className="p-4 font-medium text-slate-700 border-r border-slate-50">{item.feature}</td>
-                                    <td className="p-4 text-center border-r border-slate-50">
-                                        {item.manual ? <Check weight="bold" className="text-green-500 mx-auto bg-green-100 p-1 rounded-full w-6 h-6" /> : <X weight="bold" className="text-slate-300 mx-auto w-5 h-5" />}
+                        <tbody className="bg-white rounded-xl overflow-hidden">
+                            {rows.map((row, i) => (
+                                <tr key={i} className="border-b border-slate-100 last:border-0">
+                                    <td className="py-3.5 px-4 text-sm font-medium text-slate-700">{row.feature}</td>
+                                    <td className="py-3.5 px-4 text-center">
+                                        {row.manual
+                                            ? <Check weight="bold" size={16} className="text-green-500 mx-auto" />
+                                            : <X weight="bold" size={16} className="text-slate-200 mx-auto" />}
                                     </td>
-                                    <td className="p-4 text-center bg-pharma-green-50/30 border-x-2 border-pharma-green-100 relative">
-                                        <div className="absolute inset-0 bg-pharma-green-50/50 opacity-0 hover:opacity-100 transition-opacity"></div>
-                                        <Check weight="fill" className="text-pharma-green-600 text-2xl mx-auto drop-shadow-sm relative z-10" />
+                                    <td className="py-3.5 px-4 text-center bg-medidesh-teal-50/60">
+                                        <Check weight="bold" size={18} className="text-medidesh-teal-600 mx-auto" />
                                     </td>
-                                    <td className="p-4 text-center">
-                                        {item.others ? <Check weight="bold" className="text-green-500 mx-auto bg-green-100 p-1 rounded-full w-6 h-6" /> : <X weight="bold" className="text-slate-300 mx-auto w-5 h-5" />}
+                                    <td className="py-3.5 px-4 text-center">
+                                        {row.others
+                                            ? <Check weight="bold" size={16} className="text-green-500 mx-auto" />
+                                            : <X weight="bold" size={16} className="text-slate-200 mx-auto" />}
                                     </td>
                                 </tr>
                             ))}

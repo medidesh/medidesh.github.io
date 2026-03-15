@@ -1,101 +1,100 @@
-import Link from "next/link";
-import { DownloadSimple, WindowsLogo, AppleLogo, AndroidLogo, AppStoreLogo, CheckCircle, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { GooglePlayLogo, Monitor, ShieldCheck, WifiSlash, Lightning, Headset } from "@phosphor-icons/react/dist/ssr";
 
 export default function DownloadSection() {
     return (
-        <section id="download" className="py-24 bg-gradient-to-br from-slate-900 via-[#0B1120] to-slate-900 text-white overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-pharma-green-600/10 rounded-full blur-[100px]"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
-
-            <div className="container mx-auto px-6 lg:px-12 relative z-10 text-center">
-                <div className="max-w-3xl mx-auto">
-                    <h2 className="text-3xl lg:text-5xl font-extrabold mb-6 leading-tight">
-                        মেডিদেশ এখন{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-pharma-green-400 to-emerald-400">
-                            হাতের মুঠোয়
-                        </span>
-                    </h2>
-                    <p className="text-slate-400 mb-12 text-lg lg:text-xl font-light">
-                        যেকোনো ডিভাইস থেকে আপনার ফার্মেসি পরিচালনা করুন। সম্পূর্ণ ফ্রিতে
-                        ডাউনলোড করুন।
-                    </p>
-
-                    <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl inline-block w-full max-w-2xl shadow-2xl mb-12">
-                        <div className="flex flex-col md:flex-row items-center gap-6">
-                            <div className="relative shrink-0">
-                                <div className="w-24 h-24 bg-gradient-to-br from-pharma-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg shadow-pharma-green-500/30">
-                                    <img
-                                        src="/assets/logo/Logo.svg"
-                                        alt="Medidesh App"
-                                        className="w-14 h-14 brightness-0 invert"
-                                    />
-                                </div>
-                                <div className="absolute -bottom-3 -right-3 bg-white text-slate-900 text-xs font-bold px-2 py-1 rounded-lg border-2 border-slate-900 shadow-sm">
-                                    ফ্রি
-                                </div>
-                            </div>
-
-                            <div className="text-center md:text-left flex-1">
-                                <h3 className="text-2xl font-bold text-white mb-1">
-                                    মেডিদেশ পজ (POS)
-                                </h3>
-                                <div className="flex items-center justify-center md:justify-start gap-3 mb-4 text-sm">
-                                    <span className="text-slate-400">ভার্সন ২.৫.০</span>
-                                    <span className="w-1 h-1 bg-slate-600 rounded-full"></span>
-                                    <Link
-                                        href="#"
-                                        className="text-pharma-green-400 hover:text-pharma-green-300 font-medium hover:underline flex items-center gap-1 transition-colors"
-                                    >
-                                        নতুন ফির্চাস <ArrowRight weight="bold" />
-                                    </Link>
-                                </div>
-                                <div className="flex items-center justify-center md:justify-start gap-2 text-xs text-slate-500">
-                                    <CheckCircle weight="fill" className="text-emerald-500" />
-                                    <span>আপডেট: ১৮ ডিসেম্বর, ২০২৫</span>
-                                </div>
-                            </div>
-
-                            <div className="shrink-0">
-                                <Link
-                                    href="#"
-                                    className="inline-flex items-center gap-2 bg-white text-slate-900 hover:bg-slate-100 px-6 py-3 rounded-xl font-bold transition-all hover:scale-105 active:scale-95"
-                                >
-                                    <DownloadSimple weight="bold" />
-                                    <span>ডাউনলোড</span>
-                                </Link>
-                            </div>
+        <section id="download" className="py-20 lg:py-28 bg-white border-t border-slate-100 relative overflow-hidden">
+            {/* Phone outline illustration */}
+            <svg
+                className="absolute right-10 top-1/2 -translate-y-1/2 w-48 h-48 opacity-[0.05] pointer-events-none hidden xl:block"
+                viewBox="0 0 120 200"
+                fill="none"
+                aria-hidden="true"
+            >
+                <rect x="10" y="4" width="100" height="192" rx="16" stroke="#2E8B57" strokeWidth="4" />
+                <rect x="20" y="14" width="80" height="152" rx="8" fill="#2E8B57" opacity="0.15" />
+                <circle cx="60" cy="182" r="7" stroke="#2E8B57" strokeWidth="3" />
+                <rect x="40" y="8" width="40" height="6" rx="3" fill="#2E8B57" opacity="0.4" />
+                {/* Screen lines */}
+                <rect x="28" y="30" width="64" height="6" rx="3" fill="#2E8B57" opacity="0.3" />
+                <rect x="28" y="44" width="44" height="4" rx="2" fill="#2E8B57" opacity="0.2" />
+                <rect x="28" y="60" width="64" height="32" rx="6" fill="#2E8B57" opacity="0.15" />
+                <rect x="28" y="100" width="28" height="28" rx="6" fill="#2E8B57" opacity="0.15" />
+                <rect x="64" y="100" width="28" height="28" rx="6" fill="#2E8B57" opacity="0.15" />
+            </svg>
+            {/* Blob left */}
+            <svg
+                className="absolute -left-20 -bottom-20 w-72 h-72 opacity-[0.04] pointer-events-none"
+                viewBox="0 0 280 280"
+                fill="none"
+                aria-hidden="true"
+            >
+                <path
+                    d="M140,30 C190,10 250,60 265,130 C280,200 240,260 170,275 C100,290 30,250 15,180 C0,110 40,40 90,25 C110,18 120,36 140,30 Z"
+                    fill="#2E8B57"
+                />
+            </svg>
+            <div className="container mx-auto px-6 lg:px-12">
+                <div className="max-w-4xl mx-auto">
+                    {/* Content */}
+                    <div className="text-center mb-12">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-slate-100 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5">
+                            অ্যাপ ডাউনলোড
                         </div>
+                        <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-5 leading-tight">
+                            ফার্মেসি থাকুক{" "}
+                            <span className="text-medidesh-teal-500">আপনার হাতের মুঠোয়</span>
+                        </h2>
+                        <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                            Android ফোনে ও Windows পিসিতে সমানভাবে কার্যকর মেডিদেশ — ইন্টারনেট ছাড়াও অফলাইন মোডে কাজ করে।
+                        </p>
                     </div>
 
-                    <div className="flex flex-wrap justify-center gap-4 text-sm">
-                        <Link
-                            href="#"
-                            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 transition-all text-slate-300 hover:text-white"
+                    {/* Download buttons */}
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                        <a
+                            href="https://wa.me/+8801608844017?text=আমি%20মেডিদেশ%20Android%20অ্যাপ%20ডাউনলোড%20করতে%20চাই"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5 shadow-lg group"
                         >
-                            <WindowsLogo weight="fill" className="text-lg" />
-                            <span>Windows</span>
-                        </Link>
-                        <Link
-                            href="#"
-                            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 transition-all text-slate-300 hover:text-white"
+                            <GooglePlayLogo weight="fill" size={22} className="text-medidesh-teal-400 group-hover:scale-110 transition-transform" />
+                            <div className="text-left">
+                                <div className="text-[10px] opacity-70 uppercase tracking-wider">ডাউনলোড করুন</div>
+                                <div>Google Play</div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://wa.me/+8801608844017?text=আমি%20মেডিদেশ%20Windows%20PC%20ভার্সন%20পেতে%20চাই"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-8 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5 shadow-sm group"
                         >
-                            <AppleLogo weight="fill" className="text-lg" />
-                            <span>MacOS</span>
-                        </Link>
-                        <Link
-                            href="#"
-                            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 transition-all text-slate-300 hover:text-white"
-                        >
-                            <AndroidLogo weight="fill" className="text-lg text-emerald-400" />
-                            <span>Android</span>
-                        </Link>
-                        <Link
-                            href="#"
-                            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 transition-all text-slate-300 hover:text-white"
-                        >
-                            <AppStoreLogo weight="fill" className="text-lg text-sky-400" />
-                            <span>iOS</span>
-                        </Link>
+                            <Monitor weight="duotone" size={22} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
+                            <div className="text-left">
+                                <div className="text-[10px] opacity-60 uppercase tracking-wider">ডাউনলোড করুন</div>
+                                <div>Windows PC</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    {/* Stats row */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-10 border-t border-slate-100">
+                        {[
+                            { icon: Lightning, value: "১০ গুণ দ্রুত", label: "ম্যানুয়াল পদ্ধতির চেয়ে", color: "text-yellow-500" },
+                            { icon: WifiSlash, value: "অফলাইনে কার্যকর", label: "ইন্টারনেট ছাড়াও চলে", color: "text-orange-500" },
+                            { icon: ShieldCheck, value: "ব্যাংক-গ্রেড", label: "নিরাপত্তা ও এনক্রিপশন", color: "text-emerald-500" },
+                            { icon: Headset, value: "সকাল ১০টা–রাত ৮টা", label: "সরাসরি সাপোর্ট", color: "text-blue-500" },
+                        ].map((stat, i) => (
+                            <div key={i} className="text-center group">
+                                <div className="flex justify-center mb-2">
+                                    <div className="w-10 h-10 rounded bg-slate-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <stat.icon size={20} weight="duotone" className={stat.color} />
+                                    </div>
+                                </div>
+                                <div className="font-black text-slate-900 text-base mb-0.5">{stat.value}</div>
+                                <div className="text-xs text-slate-500">{stat.label}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

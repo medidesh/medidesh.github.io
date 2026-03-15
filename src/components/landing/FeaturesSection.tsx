@@ -1,6 +1,6 @@
 import {
     Lightning,
-    UsersThree,
+    UsersThreeIcon,
     Package,
     WarningCircle,
     Printer,
@@ -34,7 +34,7 @@ const features = [
         bg: "bg-red-50",
     },
     {
-        icon: UsersThree,
+        icon: UsersThreeIcon,
         title: "মাল্টি-ইউজার অ্যাক্সেস",
         desc: "মালিক, ম্যানেজার ও স্টাফের জন্য আলাদা অ্যাকাউন্ট ও অনুমতি সেট করুন।",
         color: "text-blue-600",
@@ -104,7 +104,7 @@ export default function FeaturesSection() {
                 width="100" height="100"
                 aria-hidden="true"
             >
-                {[0,1,2,3].map(r => [0,1,2,3].map(c => (
+                {[0, 1, 2, 3].map(r => [0, 1, 2, 3].map(c => (
                     <circle key={`${r}-${c}`} cx={12 + c * 25} cy={12 + r * 25} r="2.5" fill="#2E8B57" />
                 )))}
             </svg>
@@ -115,11 +115,11 @@ export default function FeaturesSection() {
                         ফিচারসমূহ
                     </div>
                     <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
-                        ব্যবসা বাড়াতে যা যা লাগে,{" "}
-                        <span className="text-medidesh-teal-500">সব এক জায়গায়</span>
+                        ব্যবসা পরিচালনার {" "}
+                        <span className="text-medidesh-teal-500">সবকিছু এক জায়গায়</span>
                     </h2>
                     <p className="text-slate-500 text-lg leading-relaxed">
-                        ঢাকা থেকে চট্টগ্রাম, সিলেট থেকে রাজশাহী — বাংলাদেশের প্রতিটি ফার্মেসির বাস্তব চাহিদা মাথায় রেখে প্রতিটি ফিচার সাজানো হয়েছে।
+                        টেকনাফ থেকে তেঁতুলিয়া— বাস্তব চাহিদা মাথায় রেখে প্রতিটি ফিচার সাজানো হয়েছে।
                     </p>
                 </div>
 

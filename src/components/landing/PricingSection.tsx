@@ -13,14 +13,14 @@ export default function PricingSection() {
             price: 0,
             description: "ছোট ফার্মেসির ডিজিটাল যাত্রা শুরু করার জন্য।",
             features: [
-                "১টি ফার্মেসি, ১টি ডিভাইস",
-                "১ জন ব্যবহারকারী (মালিক)",
+                "১টি ফার্মেসি",
+                "১ জন ব্যবহারকারী (মালিক), ১টি ডিভাইস",
                 "বেসিক ইনভেন্টরি ম্যানেজমেন্ট",
                 "বেসিক বিক্রয় ও ক্রয় ট্র্যাকিং",
                 "মোবাইল অ্যাপ অ্যাক্সেস",
                 "ইমেইল সাপোর্ট",
             ],
-            cta: "বিনামূল্যে শুরু করুন",
+            cta: null,
             highlight: false,
         },
         {
@@ -29,8 +29,8 @@ export default function PricingSection() {
             price: 399,
             description: "মাঝারি বা বড় ফার্মেসির জন্য সব সুবিধা এক জায়গায়।",
             features: [
-                "১টি ফার্মেসি, ২টি ডিভাইস",
-                "৩ জন ব্যবহারকারী পর্যন্ত",
+                "১টি ফার্মেসি",
+                "৩ জন ব্যবহারকারী, ২টি ডিভাইস",
                 "পূর্ণ ইনভেন্টরি ও অ্যাকাউন্ট ম্যানেজমেন্ট",
                 "মেয়াদোত্তীর্ণ ও লো-স্টক সতর্কতা",
                 "রিপোর্ট ডাউনলোড (PDF, Excel, CSV)",
@@ -46,15 +46,15 @@ export default function PricingSection() {
             price: 899,
             description: "বড় চেইন ফার্মেসি ও দ্রুততম সাপোর্টের জন্য।",
             features: [
-                "১টি ফার্মেসি, ৩টি ডিভাইস",
-                "৫ জন ব্যবহারকারী পর্যন্ত",
+                "১টি ফার্মেসি",
+                "৫ জন ব্যবহারকারী, ৩টি ডিভাইস",
                 "উন্নত ইনভেন্টরি, বাকি খাতা ও সম্পূর্ণ অ্যাকাউন্টিং",
                 "অ্যাডভান্সড রিপোর্ট ও ব্যবসায়িক বিশ্লেষণ",
                 "ক্রেতাদের ওষুধের চাহিদার ডাটা বিশ্লেষণ",
                 "বিজ্ঞাপনমুক্ত অভিজ্ঞতা",
                 "প্রায়োরিটি কাস্টমার সাপোর্ট",
             ],
-            cta: null,
+            cta: "বিস্তারিত",
             highlight: false,
         },
     ];
@@ -128,13 +128,12 @@ export default function PricingSection() {
                 <div className="max-w-2xl mx-auto text-center mb-12">
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
                         <Tag size={13} weight="bold" />
-                        মূল্য পরিকল্পনা
+                       সহজ সাবস্ক্রিপশন
                     </div>
                     <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
-                        সহজ ও স্বচ্ছ মূল্য
+                        সাধ্যের মধ্যে সেরা প্যাকেজটি পছন্দ করুন ।
                     </h2>
-                        আপনার ফার্মেসির আকার অনুযায়ী সবচেয়ে উপযুক্ত প্ল্যানটি বেছে নিন।
-
+                        
                     {/* Billing toggle */}
                     <div className="inline-flex p-1 bg-white border border-slate-200 rounded shadow-sm">
                         {(["monthly", "6-month", "yearly"] as const).map((cycle) => (
@@ -168,7 +167,7 @@ export default function PricingSection() {
                             }`}
                         >
                             {plan.highlight && (
-                                <div className="bg-medidesh-teal-400/40 text-white text-xs font-black uppercase tracking-widest text-center py-2">
+                                <div className="bg-medidesh-teal-400/40 text-white text-xs font-black uppercase text-center py-2">
                                     সবচেয়ে জনপ্রিয়
                                 </div>
                             )}

@@ -1,4 +1,4 @@
-import { GooglePlayLogo, Monitor, Star, ArrowRight, CheckCircle } from "@phosphor-icons/react/dist/ssr";
+import { GooglePlayLogoIcon, Monitor, Star, ArrowRight, CheckCircle, YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
 
 export default function LandingHero() {
     return (
@@ -83,12 +83,12 @@ export default function LandingHero() {
                     {/* Free forever badge */}
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded bg-medidesh-teal-50 border border-medidesh-teal-100 text-medidesh-teal-700 text-sm font-bold mb-8 shadow-sm">
                         <Star size={14} weight="fill" className="text-medidesh-teal-500" />
-                        <span>মেডিদেশ চিরতরে বিনামূল্যে — আজই শুরু করুন আপনার ডিজিটাল যাত্রা</span>
+                        <span>মেডিদেশ চিরতরে বিনামূল্যে</span>
                     </div>
 
                     {/* Headline */}
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-[1.1] tracking-tight">
-                        বাড়তি হার্ডওয়্যার খরচ ছাড়াই{" "}
+                        শুধুমাএ একটি মোবাইল ফোন দিয়ে {" "}
                         <span className="relative inline-block text-medidesh-teal-500">
                             ফার্মেসি পরিচালনা
                             <svg
@@ -112,8 +112,7 @@ export default function LandingHero() {
 
                     {/* Subheading */}
                     <p className="text-lg lg:text-xl text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        বাংলাদেশের ফার্মেসি মালিকদের জন্য তৈরি — স্টকের হিসাব, বিক্রয়, বাকি খাতা ও মেয়াদোত্তীর্ণ সতর্কতা এখন এক অ্যাপে।
-                        ম্যানুয়াল খাতার ঝক্কি সামলে ব্যবসা বাড়ুক ডিজিটাল গতিতে।
+                        ফার্মেসি মালিকদের জন্য তৈরি — স্টকের হিসাব, বিক্রয়, বাকি খাতা ও <br></br>মেয়াদোত্তীর্ণ সতর্কতা এখন এক অ্যাপে আপনার পকেটে ।
                     </p>
 
                     {/* CTAs */}
@@ -122,23 +121,25 @@ export default function LandingHero() {
                             href="#download"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-8 py-4 rounded font-bold text-base shadow-xl shadow-medidesh-teal-500/20 transition-all duration-300 hover:-translate-y-0.5 group"
                         >
-                            <GooglePlayLogo weight="fill" size={20} />
-                            <span>অ্যান্ড্রয়েড অ্যাপ ডাউনলোড</span>
+                            <GooglePlayLogoIcon weight="fill" size={20} />
+                            <span>অ্যাপ ডাউনলোড </span>
                             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a
-                            href="#features"
+                            href="https://youtube.com/@medidesh"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 px-8 py-4 rounded font-bold text-base transition-all duration-300 hover:-translate-y-0.5"
                         >
-                            <Monitor weight="duotone" size={20} className="text-medidesh-teal-500" />
-                            <span>ফিচার দেখুন</span>
+                            <YoutubeLogo weight="fill" size={20} className="text-red-600" />
+                            <span>টিউটোরিয়াল</span>
                         </a>
                     </div>
 
                     {/* Trust strip */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 pt-8 border-t border-slate-100">
                         {[
-                            { value: "১০,০০০+", label: "সক্রিয় ব্যবহারকারী" },
+                            { value: "১,০০০+", label: "সক্রিয় ব্যবহারকারী" },
                             { value: "৫০০+", label: "বিশ্বস্ত ফার্মেসি" },
                             { value: "৪.৯/৫", label: "গুগল রেটিং" },
                         ].map((stat, i) => (

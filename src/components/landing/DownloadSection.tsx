@@ -1,4 +1,4 @@
-import { GooglePlayLogo, Monitor, ShieldCheck, WifiSlash, Lightning, Headset } from "@phosphor-icons/react/dist/ssr";
+import { GooglePlayLogoIcon, Monitor, ShieldCheck, WifiSlash, Lightning, Headset } from "@phosphor-icons/react/dist/ssr";
 
 export default function DownloadSection() {
     return (
@@ -41,11 +41,11 @@ export default function DownloadSection() {
                             অ্যাপ ডাউনলোড
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-5 leading-tight">
-                            ফার্মেসি থাকুক{" "}
-                            <span className="text-medidesh-teal-500">আপনার হাতের মুঠোয়</span>
+                            আধুনিক ফার্মেসি{" "}
+                            <span className="text-medidesh-teal-500">ম্যানেজমেন্ট</span>
                         </h2>
                         <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-                            Android ফোনে ও Windows পিসিতে সমানভাবে কার্যকর মেডিদেশ — ইন্টারনেট ছাড়াও অফলাইন মোডে কাজ করে।
+                            ফোন হোক বা কম্পিউটার, মেডিদেশ সফটওয়্যার আছে সবখানে।
                         </p>
                     </div>
 
@@ -57,9 +57,8 @@ export default function DownloadSection() {
                             rel="noopener noreferrer"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5 shadow-lg group"
                         >
-                            <GooglePlayLogo weight="fill" size={22} className="text-medidesh-teal-400 group-hover:scale-110 transition-transform" />
+                            <GooglePlayLogoIcon weight="fill" size={22} className="text-medidesh-teal-400 group-hover:scale-110 transition-transform" />
                             <div className="text-left">
-                                <div className="text-[10px] opacity-70 uppercase tracking-wider">ডাউনলোড করুন</div>
                                 <div>Google Play</div>
                             </div>
                         </a>
@@ -71,30 +70,9 @@ export default function DownloadSection() {
                         >
                             <Monitor weight="duotone" size={22} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
                             <div className="text-left">
-                                <div className="text-[10px] opacity-60 uppercase tracking-wider">ডাউনলোড করুন</div>
-                                <div>Windows PC</div>
+                                <div>Windows</div>
                             </div>
                         </a>
-                    </div>
-
-                    {/* Stats row */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-10 border-t border-slate-100">
-                        {[
-                            { icon: Lightning, value: "১০ গুণ দ্রুত", label: "ম্যানুয়াল পদ্ধতির চেয়ে", color: "text-yellow-500" },
-                            { icon: WifiSlash, value: "অফলাইনে কার্যকর", label: "ইন্টারনেট ছাড়াও চলে", color: "text-orange-500" },
-                            { icon: ShieldCheck, value: "ব্যাংক-গ্রেড", label: "নিরাপত্তা ও এনক্রিপশন", color: "text-emerald-500" },
-                            { icon: Headset, value: "সকাল ১০টা–রাত ৮টা", label: "সরাসরি সাপোর্ট", color: "text-blue-500" },
-                        ].map((stat, i) => (
-                            <div key={i} className="text-center group">
-                                <div className="flex justify-center mb-2">
-                                    <div className="w-10 h-10 rounded bg-slate-50 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                        <stat.icon size={20} weight="duotone" className={stat.color} />
-                                    </div>
-                                </div>
-                                <div className="font-black text-slate-900 text-base mb-0.5">{stat.value}</div>
-                                <div className="text-xs text-slate-500">{stat.label}</div>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </div>

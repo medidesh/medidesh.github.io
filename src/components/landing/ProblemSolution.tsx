@@ -8,7 +8,7 @@ import {
     Database,
     ShieldCheck,
     ArrowRight,
-    Sparkle,
+    SparkleIcon,
 } from "@phosphor-icons/react/dist/ssr";
 
 const points = [
@@ -29,12 +29,6 @@ const points = [
         solution: "বিনামূল্যে শুরু করুন — পদ্মা প্ল্যান চিরতরে ফ্রি। মাসে মাত্র ৳৩৯৯ থেকে প্রিমিয়াম সুবিধা।",
         icon: Tag,
         accent: "bg-medidesh-teal-50 text-medidesh-teal-600 border-medidesh-teal-100",
-    },
-    {
-        problem: "লোডশেডিং ও ইন্টারনেট না থাকলে কাজ বন্ধ",
-        solution: "ইন্টারনেট নেই? কোনো সমস্যা নেই! অফলাইনেও সম্পূর্ণ কার্যকর — বিদ্যুৎ ফিরলে ডেটা স্বয়ংক্রিয়ভাবে সিঙ্ক হয়ে যাবে।",
-        icon: WifiSlash,
-        accent: "bg-orange-50 text-orange-600 border-orange-100",
     },
     {
         problem: "ইনভেন্টরিতে ওষুধ যোগ করার ঝামেলা",
@@ -84,15 +78,15 @@ export default function ProblemSolution() {
                 {/* Section header */}
                 <div className="max-w-2xl mx-auto text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
-                        <Sparkle size={13} weight="fill" className="text-medidesh-teal-500" />
+                        <SparkleIcon size={13} weight="fill" className="text-medidesh-teal-500" />
                         কেন মেডিদেশ
                     </div>
                     <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
-                        বাংলাদেশের ফার্মেসি মালিকদের{" "}
-                        <span className="text-medidesh-teal-500">সবচেয়ে বড় সমস্যাগুলোর</span> সমাধান
+                        ডিজিটাল সিস্টেমের {" "}
+                        <span className="text-medidesh-teal-500">সমস্যাগুলোর</span> সমাধান
                     </h2>
                     <p className="text-slate-500 text-lg leading-relaxed">
-                        ম্যানুয়াল খাতা, লোডশেডিং কিংবা বাকির খাতা — সব ঝামেলার এক সহজ সমাধান: মেডিদেশ।
+                        টেকনিক্যাল ভয় , হার্ডওয়্যার খরচ , বিশ্বস্ততা , উচ্চমূল্য — সব ঝামেলার এক সহজ সমাধান: মেডিদেশ।
                     </p>
                 </div>
 

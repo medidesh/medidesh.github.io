@@ -1,6 +1,6 @@
 "use client";
 
-import { PhoneCall, WhatsappLogo, FacebookLogo, EnvelopeSimple, PlusCircle, Prescription } from "@phosphor-icons/react/dist/ssr";
+import { PhoneCall, WhatsappLogoIcon, FacebookLogo, EnvelopeSimple, PlusCircle, Prescription } from "@phosphor-icons/react/dist/ssr";
 import { PharmacyData } from "@/types/pharmacy";
 
 interface ContactSectionProps {
@@ -58,7 +58,7 @@ export default function ContactSection({ pharmacy }: ContactSectionProps) {
                             className="flex flex-col items-center p-6 bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-2xl hover:border-emerald-200 transition-all group text-center w-full sm:w-[240px]"
                         >
                             <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 mb-4 group-hover:scale-110 group-hover:-rotate-6 transition-all">
-                                <WhatsappLogo size={24} weight="fill" />
+                                <WhatsappLogoIcon size={24} weight="fill" />
                             </div>
                             <h3 className="text-lg font-bold text-slate-900 mb-1">হোয়াটসঅ্যাপ</h3>
                             <p className="text-slate-500 text-[10px] mb-4 font-medium uppercase tracking-wider">প্রেসক্রিপশন</p>

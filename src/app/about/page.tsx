@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import LandingHeader from "@/components/landing/LandingHeader";
 import LandingFooter from "@/components/landing/LandingFooter";
 import {
-    UsersThree,
-    Sparkle,
-    GooglePlayLogo,
-    WhatsappLogo,
+    UsersThreeIcon,
+    SparkleIcon,
+    GooglePlayLogoIcon,
+    WhatsappLogoIcon,
 } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
     title: "আমাদের সম্পর্কে | মেডিদেশ",
-    description: "বাংলাদেশের ফার্মেসি মালিকদের জন্য তৈরি দল — মেডিদেশ।",
+    description: "ফার্মেসি মালিকদের জন্য তৈরি দল — মেডিদেশ।",
 };
 
 const team = [
@@ -70,8 +70,8 @@ export default function AboutPage() {
                 </svg>
                 {/* Dots left */}
                 <svg className="absolute left-10 bottom-16 opacity-[0.07] pointer-events-none hidden lg:block" width="110" height="110" aria-hidden="true">
-                    {[0,1,2,3,4].map(r => [0,1,2,3,4].map(c => (
-                        <circle key={`${r}-${c}`} cx={11+c*22} cy={11+r*22} r="2.5" fill="#2E8B57" />
+                    {[0, 1, 2, 3, 4].map(r => [0, 1, 2, 3, 4].map(c => (
+                        <circle key={`${r}-${c}`} cx={11 + c * 22} cy={11 + r * 22} r="2.5" fill="#2E8B57" />
                     )))}
                 </svg>
                 {/* Pill decoration */}
@@ -84,7 +84,7 @@ export default function AboutPage() {
                     <div className="max-w-3xl mx-auto text-center">
                         {/* Badge */}
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
-                            <UsersThree size={13} weight="fill" className="text-medidesh-teal-500" />
+                            <UsersThreeIcon size={13} weight="fill" className="text-medidesh-teal-500" />
                             আমাদের সম্পর্কে
                         </div>
 
@@ -114,7 +114,7 @@ export default function AboutPage() {
                 <div className="container mx-auto px-6 lg:px-12 relative z-10">
                     <div className="max-w-2xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
-                            <Sparkle size={13} weight="fill" className="text-medidesh-teal-500" />
+                            <SparkleIcon size={13} weight="fill" className="text-medidesh-teal-500" />
                             আমাদের গল্প
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight">
@@ -150,7 +150,7 @@ export default function AboutPage() {
                     {/* Header */}
                     <div className="max-w-2xl mx-auto text-center mb-14">
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
-                            <UsersThree size={13} weight="fill" className="text-medidesh-teal-500" />
+                            <UsersThreeIcon size={13} weight="fill" className="text-medidesh-teal-500" />
                             আমাদের টিম
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
@@ -224,8 +224,8 @@ export default function AboutPage() {
             <section className="py-20 lg:py-28 bg-slate-50 border-t border-slate-100 relative overflow-hidden">
                 {/* Dots */}
                 <svg className="absolute right-10 top-10 opacity-[0.07] pointer-events-none hidden lg:block" width="120" height="120" aria-hidden="true">
-                    {[0,1,2,3,4].map(r => [0,1,2,3,4].map(c => (
-                        <circle key={`${r}-${c}`} cx={12+c*24} cy={12+r*24} r="2.5" fill="#2E8B57" />
+                    {[0, 1, 2, 3, 4].map(r => [0, 1, 2, 3, 4].map(c => (
+                        <circle key={`${r}-${c}`} cx={12 + c * 24} cy={12 + r * 24} r="2.5" fill="#2E8B57" />
                     )))}
                 </svg>
 
@@ -233,7 +233,7 @@ export default function AboutPage() {
                     {/* Header */}
                     <div className="max-w-2xl mx-auto text-center mb-14">
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-amber-200 text-amber-700 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
-                            <Sparkle size={13} weight="fill" className="text-amber-500" />
+                            <SparkleIcon size={13} weight="fill" className="text-amber-500" />
                             উপদেষ্টামণ্ডলী
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
@@ -303,7 +303,7 @@ export default function AboutPage() {
                                 rel="noopener noreferrer"
                                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-slate-50 text-medidesh-teal-700 px-8 py-4 rounded font-bold text-base shadow-xl transition-all hover:-translate-y-0.5"
                             >
-                                <GooglePlayLogo weight="fill" size={20} />
+                                <GooglePlayLogoIcon weight="fill" size={20} />
                                 অ্যাপ ডাউনলোড করুন
                             </a>
                             <a
@@ -312,7 +312,7 @@ export default function AboutPage() {
                                 rel="noopener noreferrer"
                                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-medidesh-teal-600 hover:bg-medidesh-teal-700 text-white border border-white/20 px-8 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5"
                             >
-                                <WhatsappLogo weight="fill" size={20} />
+                                <WhatsappLogoIcon weight="fill" size={20} />
                                 WhatsApp করুন
                             </a>
                         </div>

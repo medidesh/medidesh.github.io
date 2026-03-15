@@ -4,7 +4,7 @@ import {
     LinkedinLogo,
     InstagramLogo,
     YoutubeLogo,
-    GooglePlayLogo,
+    GooglePlayLogoIcon,
     Heart,
 } from "@phosphor-icons/react/dist/ssr";
 
@@ -26,7 +26,7 @@ export default function LandingFooter() {
                             <span className="text-lg font-bold text-white">মেডিদেশ</span>
                         </Link>
                         <p className="text-sm leading-relaxed mb-6">
-                            বাংলাদেশের ফার্মেসি মালিকদের জন্য সবচেয়ে নির্ভরযোগ্য ও আধুনিক ডিজিটাল ম্যানেজমেন্ট সফটওয়্যার।
+                            ফার্মেসি মালিকদের জন্য সবচেয়ে নির্ভরযোগ্য ও আধুনিক ডিজিটাল ম্যানেজমেন্ট সফটওয়্যার।
                         </p>
                         <div className="flex items-center gap-3">
                             {[
@@ -97,7 +97,7 @@ export default function LandingFooter() {
                             href="#download"
                             className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-4 py-3 rounded transition-all duration-200 group"
                         >
-                            <GooglePlayLogo weight="fill" size={22} className="text-medidesh-teal-400 group-hover:scale-110 transition-transform" />
+                            <GooglePlayLogoIcon weight="fill" size={22} className="text-medidesh-teal-400 group-hover:scale-110 transition-transform" />
                             <div>
                                 <div className="text-[10px] text-slate-400 uppercase tracking-wider">Get it on</div>
                                 <div className="text-sm font-bold">Google Play</div>

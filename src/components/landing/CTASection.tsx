@@ -1,4 +1,4 @@
-import { EnvelopeSimple, WhatsappLogo, Phone } from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeSimple, WhatsappLogoIcon, Phone } from "@phosphor-icons/react/dist/ssr";
 
 export default function CTASection() {
     return (
@@ -18,30 +18,11 @@ export default function CTASection() {
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="text-3xl lg:text-5xl font-black text-white mb-5 leading-tight">
-                        আজই শুরু করুন —<br />
-                        পদ্মা প্ল্যান চিরতরে বিনামূল্যে
+                        বিনা মূল্যে আধুনিক ব্যবস্থাপন
                     </h2>
                     <p className="text-medidesh-teal-50 text-lg mb-10 leading-relaxed max-w-xl mx-auto">
-                        কোনো ক্রেডিট কার্ড লাগবে না। মাত্র ৫ মিনিটে সেটআপ করুন। বাংলাদেশের হাজারো ফার্মেসির পাশাপাশি আপনার ফার্মেসিকেও ডিজিটালি এগিয়ে নিন।
+                        দেশের হাজারো ফার্মেসির মতো আপনিও হোন ডিজিটাল ।
                     </p>
-
-                    <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-                        <a
-                            href="#download"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-slate-50 text-medidesh-teal-700 px-8 py-4 rounded font-bold text-base shadow-xl transition-all hover:-translate-y-0.5"
-                        >
-                            বিনামূল্যে ডাউনলোড করুন
-                        </a>
-                        <a
-                            href="https://wa.me/+8801608844017"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-medidesh-teal-600 hover:bg-medidesh-teal-700 text-white border border-white/20 px-8 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5"
-                        >
-                            <WhatsappLogo weight="fill" size={20} />
-                            WhatsApp করুন
-                        </a>
-                    </div>
 
                     {/* Contact options */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 border-t border-white/20">

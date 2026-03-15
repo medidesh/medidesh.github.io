@@ -1,4 +1,4 @@
-import { ChartLineUp, Lightning, Brain, Sparkle } from "@phosphor-icons/react/dist/ssr";
+import { ChartLineUp, Lightning, Brain, SparkleIcon } from "@phosphor-icons/react/dist/ssr";
 
 export default function AIFeatures() {
     return (
@@ -15,7 +15,7 @@ export default function AIFeatures() {
                     {/* Left: Content Card */}
                     <div className="lg:w-1/2">
                         <div className="inline-flex items-center gap-3 px-5 py-2 rounded bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-[0.2em] mb-6">
-                            <Sparkle weight="fill" className="animate-pulse" />
+                            <SparkleIcon weight="fill" className="animate-pulse" />
                             কৃত্রিম বুদ্ধিমত্তা — শীঘ্রই আসছে
                         </div>
 
@@ -63,7 +63,7 @@ export default function AIFeatures() {
 
                             {/* Floating Tech Badges */}
                             <div className="absolute top-0 right-0 p-8 bg-white/5 backdrop-blur-3xl rounded border border-white/10 shadow-2xl animate-float">
-                                <Sparkle size={48} weight="fill" className="text-indigo-400 mb-4" />
+                                <SparkleIcon size={48} weight="fill" className="text-indigo-400 mb-4" />
                                 <div className="text-xs font-black text-white/40 uppercase tracking-widest leading-none mb-1">Accuracy</div>
                                 <div className="text-3xl font-black text-white">99.9%</div>
                             </div>

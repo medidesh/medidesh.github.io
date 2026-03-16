@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { List, X, Sun, Moon } from "@phosphor-icons/react/dist/ssr";
+import { List, X, Sun, Moon, Globe } from "@phosphor-icons/react/dist/ssr";
+import { useLanguage } from "@/lib/i18n";
 
 export default function LandingHeader() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -13,19 +14,24 @@ export default function LandingHeader() {
     const [isDark, setIsDark] = useState(false);
     const pathname = usePathname();
     const isHome = pathname === "/";
+    const isAbout = pathname === "/about";
+    const hasCta = isHome || isAbout; // pages that have their own #cta anchor
+    const { lang, toggleLang } = useLanguage();
 
-    // On sub-pages, section links must navigate to /#section
     const navLinks = [
-        { name: "ফিচার",    href: isHome ? "#features"  : "/#features"  },
-        { name: "সমাধান",   href: isHome ? "#solutions" : "/#solutions" },
-        { name: "প্রাইসিং", href: isHome ? "#pricing"   : "/#pricing"   },
-        { name: "প্রশ্নোত্তর", href: isHome ? "#faq"    : "/#faq"       },
-        { name: "যোগাযোগ", href: "#cta" },
+        { bn: "ফিচার",           en: "Features",  href: isHome ? "#features"  : "/#features"  },
+        { bn: "সমাধান",          en: "Solutions", href: isHome ? "#solutions" : "/#solutions" },
+        { bn: "প্রাইসিং",        en: "Pricing",   href: isHome ? "#pricing"   : "/#pricing"   },
+        { bn: "প্রশ্নোত্তর",    en: "FAQ",       href: isHome ? "#faq"       : "/#faq"       },
+        { bn: "যোগাযোগ",        en: "Contact",   href: hasCta  ? "#cta"      : "/#cta"       },
+        { bn: "আমাদের সম্পর্কে", en: "About",     href: "/about" },
     ];
 
     useEffect(() => {
         const stored = localStorage.getItem("theme");
-        const prefersDark = stored === "dark" || (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        const prefersDark =
+            stored === "dark" ||
+            (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
         setIsDark(prefersDark);
         document.documentElement.classList.toggle("dark", prefersDark);
     }, []);
@@ -60,7 +66,7 @@ export default function LandingHeader() {
 
     if (!mounted) {
         return (
-            <header className="fixed w-full z-[100] bg-transparent py-4">
+            <header className="fixed w-full z-50 bg-transparent py-4">
                 <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
                     <div className="w-32 h-8 bg-slate-200 dark:bg-slate-700 animate-pulse rounded" />
                 </div>
@@ -68,18 +74,21 @@ export default function LandingHeader() {
         );
     }
 
+    const isActive = (link: typeof navLinks[0]) => {
+        if (link.href === "/about") return pathname === "/about";
+        return isHome && activeSection === link.href.replace("/#", "").replace("#", "");
+    };
+
     return (
         <header
-            className={`fixed w-full z-[100] transition-all duration-300 ${
-                isMobileMenuOpen
-                    ? isDark ? "bg-slate-900" : "bg-white"
-                    : isScrolled
-                        ? isDark
-                            ? "bg-slate-900/80 backdrop-blur-md shadow-sm border-b border-slate-800 py-3"
-                            : "bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100 py-3"
-                        : isDark
-                            ? "bg-slate-900/40 backdrop-blur-sm py-4"
-                            : "bg-white/40 backdrop-blur-sm py-4 hover:bg-white/60 transition-colors"
+            className={`fixed w-full z-50 transition-all duration-300 ${
+                isScrolled
+                    ? isDark
+                        ? "bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-slate-800 py-3"
+                        : "bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100 py-3"
+                    : isDark
+                        ? "bg-slate-900/70 backdrop-blur-sm py-4"
+                        : "bg-white/60 backdrop-blur-sm py-4"
             }`}
         >
             <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
@@ -90,31 +99,49 @@ export default function LandingHeader() {
                         alt="Medidesh Logo"
                         className={`w-8 h-8 group-hover:scale-105 transition-transform duration-300 ${isDark ? "brightness-0 invert" : ""}`}
                     />
-                    <span className="text-lg font-bold text-slate-900 dark:text-white">মেডিদেশ</span>
+                    <span className="text-lg font-bold text-slate-900 dark:text-white">
+                        {lang === "bn" ? "মেডিদেশ" : "Medidesh"}
+                    </span>
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+                <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
                     {navLinks.map((link) => (
                         <a
-                            key={link.name}
+                            key={link.en}
                             href={link.href}
                             className={`transition-colors duration-200 relative py-1 ${
-                                isHome && activeSection === link.href.replace("/#", "").replace("#", "")
+                                isActive(link)
                                     ? "text-medidesh-teal-500 font-semibold"
                                     : "hover:text-medidesh-teal-500"
                             }`}
                         >
-                            {link.name}
-                            {isHome && activeSection === link.href.replace("/#", "").replace("#", "") && (
+                            {lang === "bn" ? link.bn : link.en}
+                            {isActive(link) && (
                                 <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-medidesh-teal-500 rounded" />
                             )}
                         </a>
                     ))}
                 </nav>
 
-                {/* Theme toggle */}
-                <div className="hidden md:flex items-center gap-3">
+                {/* Controls */}
+                <div className="hidden md:flex items-center gap-2">
+                    {/* Language toggle */}
+                    <button
+                        onClick={toggleLang}
+                        aria-label={lang === "bn" ? "Switch to English" : "বাংলায় দেখুন"}
+                        title={lang === "bn" ? "Switch to English" : "বাংলায় দেখুন"}
+                        className={`h-9 px-3 flex items-center gap-1.5 rounded border transition-all duration-200 text-xs font-bold ${
+                            isDark
+                                ? "border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white"
+                                : "border-slate-200 bg-white hover:bg-medidesh-teal-50 text-slate-600 hover:text-medidesh-teal-600 hover:border-medidesh-teal-300"
+                        }`}
+                    >
+                        <Globe size={14} weight="bold" />
+                        <span>{lang === "bn" ? "EN" : "বাং"}</span>
+                    </button>
+
+                    {/* Theme toggle */}
                     <button
                         onClick={toggleTheme}
                         aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
@@ -132,7 +159,7 @@ export default function LandingHeader() {
                 <button
                     className="md:hidden p-2 text-slate-800 dark:text-slate-200"
                     onClick={() => setIsMobileMenuOpen(true)}
-                    aria-label="মেনু খুলুন"
+                    aria-label="Open menu"
                 >
                     <List size={24} />
                 </button>
@@ -140,8 +167,8 @@ export default function LandingHeader() {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 w-screen h-screen z-[110] flex flex-col px-6 py-8 md:hidden transition-transform duration-300 !opacity-100 ${
-                    isDark ? "!bg-slate-900" : "!bg-white"
+                className={`fixed inset-0 z-50 flex flex-col px-6 py-8 md:hidden transition-transform duration-300 ${
+                    isDark ? "bg-slate-900" : "bg-white"
                 } ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
             >
                 <div className="flex justify-between items-center mb-10">
@@ -151,12 +178,14 @@ export default function LandingHeader() {
                             alt="Medidesh"
                             className={`w-8 h-8 ${isDark ? "brightness-0 invert" : ""}`}
                         />
-                        <span className="text-lg font-bold text-slate-900 dark:text-white">মেডিদেশ</span>
+                        <span className="text-lg font-bold text-slate-900 dark:text-white">
+                            {lang === "bn" ? "মেডিদেশ" : "Medidesh"}
+                        </span>
                     </Link>
                     <button
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="p-2 text-slate-700 dark:text-slate-300"
-                        aria-label="মেনু বন্ধ করুন"
+                        aria-label="Close menu"
                     >
                         <X size={24} />
                     </button>
@@ -165,17 +194,29 @@ export default function LandingHeader() {
                 <nav className="flex flex-col gap-1">
                     {navLinks.map((link) => (
                         <a
-                            key={link.name}
+                            key={link.en}
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="text-lg font-medium text-slate-800 dark:text-slate-200 hover:text-medidesh-teal-500 py-3 border-b border-slate-100 dark:border-slate-800 transition-colors"
                         >
-                            {link.name}
+                            {lang === "bn" ? link.bn : link.en}
                         </a>
                     ))}
                 </nav>
 
-                <div className="mt-8">
+                <div className="mt-8 flex flex-col gap-3">
+                    <button
+                        onClick={toggleLang}
+                        className={`w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded font-semibold text-base border transition-colors ${
+                            isDark
+                                ? "border-slate-700 bg-slate-800 text-slate-300"
+                                : "border-slate-200 text-slate-700"
+                        }`}
+                    >
+                        <Globe size={20} weight="bold" />
+                        {lang === "bn" ? "Switch to English" : "বাংলায় দেখুন"}
+                    </button>
+
                     <button
                         onClick={() => { toggleTheme(); setIsMobileMenuOpen(false); }}
                         className={`w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded font-semibold text-base border transition-colors ${
@@ -187,7 +228,9 @@ export default function LandingHeader() {
                         {isDark
                             ? <Sun size={20} weight="fill" className="text-amber-400" />
                             : <Moon size={20} weight="duotone" className="text-slate-500" />}
-                        {isDark ? "লাইট মোড চালু করুন" : "ডার্ক মোড চালু করুন"}
+                        {isDark
+                            ? (lang === "bn" ? "লাইট মোড চালু করুন" : "Switch to Light Mode")
+                            : (lang === "bn" ? "ডার্ক মোড চালু করুন" : "Switch to Dark Mode")}
                     </button>
                 </div>
             </div>

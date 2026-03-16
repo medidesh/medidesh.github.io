@@ -4,7 +4,7 @@ import VisionSection from "@/components/landing/VisionSection";
 
 export default function VisionPage() {
     return (
-        <main className="bg-white min-h-screen">
+        <main className="bg-white dark:bg-slate-900 min-h-screen">
             <LandingHeader />
             <div className="pt-20">
                 <VisionSection />

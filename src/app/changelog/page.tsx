@@ -32,7 +32,7 @@ export default function ChangelogPage() {
     ];
 
     return (
-        <main className="bg-white min-h-screen">
+        <main className="bg-white dark:bg-slate-900 min-h-screen">
             <LandingHeader />
             <div className="pt-32 pb-20 container mx-auto px-6 lg:px-12 max-w-3xl">
                 <h1 className="text-4xl font-bold mb-12 text-slate-900">নতুন আপডেট (Changelog)</h1>

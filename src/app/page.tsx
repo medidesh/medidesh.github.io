@@ -11,7 +11,7 @@ import LandingFooter from "@/components/landing/LandingFooter";
 
 export default function Home() {
   return (
-    <main className="bg-white min-h-screen">
+    <main className="bg-white dark:bg-slate-900 min-h-screen">
       <LandingHeader />
       <LandingHero />
       <ProblemSolution />

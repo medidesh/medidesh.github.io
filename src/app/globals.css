@@ -86,6 +86,8 @@
 @theme {
   --font-sans: 'Hind Siliguri', ui-sans-serif, system-ui, sans-serif;
   --font-heading: 'Hind Siliguri', ui-sans-serif, system-ui, sans-serif;
+  --font-inter: var(--font-inter);
+  --font-bricolage: var(--font-bricolage);
   --font-tiro-bangla: 'Tiro Bangla', serif;
   --font-orbitron: 'Orbitron', sans-serif;
 
@@ -228,3 +230,40 @@ html {
 /* Shadows */
 .dark .shadow-sm         { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.5); }
 .dark .shadow-md         { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5); }
+
+/* Prose / sub-page content in dark mode */
+.dark .prose            { color: #cbd5e1; }
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4         { color: #f1f5f9; }
+.dark .prose strong     { color: #e2e8f0; }
+.dark .prose a          { color: #6dd5a0; }
+.dark .prose ul,
+.dark .prose ol         { color: #cbd5e1; }
+.dark .prose li         { color: #cbd5e1; }
+
+/* ═══════════════════════════════════════════════════════
+   ENGLISH MODE — Inter body + Bricolage Grotesque headings
+═══════════════════════════════════════════════════════ */
+.lang-en body,
+.lang-en p,
+.lang-en span,
+.lang-en a,
+.lang-en li,
+.lang-en td,
+.lang-en th,
+.lang-en label,
+.lang-en button {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+.lang-en h1,
+.lang-en h2,
+.lang-en h3,
+.lang-en h4,
+.lang-en h5,
+.lang-en h6 {
+  font-family: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}

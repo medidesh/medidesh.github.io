@@ -3,7 +3,7 @@ import LandingFooter from "@/components/landing/LandingFooter";
 
 export default function TermsPage() {
     return (
-        <main className="bg-white min-h-screen">
+        <main className="bg-white dark:bg-slate-900 min-h-screen">
             <LandingHeader />
             <div className="pt-32 pb-20 container mx-auto px-6 lg:px-12 max-w-4xl">
                 <h1 className="text-4xl font-bold mb-8 text-slate-900">শর্তাবলী</h1>

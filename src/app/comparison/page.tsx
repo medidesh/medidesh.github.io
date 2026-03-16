@@ -12,7 +12,7 @@ export default function ComparisonPage() {
     ];
 
     return (
-        <main className="bg-white min-h-screen">
+        <main className="bg-white dark:bg-slate-900 min-h-screen">
             <LandingHeader />
             <div className="pt-32 pb-20 container mx-auto px-6 lg:px-12">
                 <h1 className="text-4xl font-bold text-center mb-16 text-slate-900">

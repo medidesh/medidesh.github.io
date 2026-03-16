@@ -29,7 +29,7 @@ export default async function BlogDetailPage({
     }
 
     return (
-        <article className="pt-32 pb-20 bg-white min-h-screen">
+        <article className="pt-32 pb-20 bg-white dark:bg-slate-900 min-h-screen">
             <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
                 <Link
                     href="/blog"

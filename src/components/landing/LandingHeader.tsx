@@ -94,11 +94,11 @@ export default function LandingHeader() {
             className={`fixed w-full z-50 transition-all duration-300 ${
                 isScrolled
                     ? isDark
-                        ? "bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-slate-800 py-3"
-                        : "bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100 py-3"
+                        ? "bg-slate-900/98 backdrop-blur-md shadow-sm border-b border-slate-800 py-3"
+                        : "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 py-3"
                     : isDark
-                        ? "bg-slate-900/70 backdrop-blur-sm py-4"
-                        : "bg-white/60 backdrop-blur-sm py-4"
+                        ? "bg-slate-900/90 backdrop-blur-sm py-4"
+                        : "bg-white/85 backdrop-blur-sm py-4"
             }`}
         >
             <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">

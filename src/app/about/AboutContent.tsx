@@ -85,7 +85,7 @@ export default function AboutContent() {
             <LandingHeader />
 
             {/* HERO */}
-            <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-white overflow-hidden">
+            <section id="hero" className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-white overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "linear-gradient(#2E8B57 1px,transparent 1px),linear-gradient(90deg,#2E8B57 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-medidesh-teal-500/5 rounded blur-[120px] pointer-events-none" />
                 
@@ -117,8 +117,8 @@ export default function AboutContent() {
                 </div>
             </section>
 
-            {/* STORY */}
-            <section id="story" className="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-100 dark:border-slate-800/60 relative overflow-hidden">
+            {/* MISSION */}
+            <section id="mission" className="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-100 dark:border-slate-800/60 relative overflow-hidden">
                 <svg className="absolute top-0 left-0 w-full opacity-[0.04] pointer-events-none" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="none" aria-hidden="true">
                     <path d="M0,25 C240,50 480,0 720,25 C960,50 1200,0 1440,25" stroke="#2E8B57" strokeWidth="3" />
                 </svg>
@@ -183,8 +183,8 @@ export default function AboutContent() {
                         ))}
                     </div>
 
-                    {/* Contributors */}
-                    <div className="max-w-5xl mx-auto mt-16 pt-12 border-t border-slate-100 dark:border-slate-800/60">
+                    {/* Contributors / Supporters */}
+                    <div id="supporters" className="max-w-5xl mx-auto mt-16 pt-12 border-t border-slate-100 dark:border-slate-800/60">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="h-px flex-1 bg-slate-100 dark:bg-slate-800" />
                             <span className="text-xs font-semibold uppercase text-slate-400 dark:text-slate-500 px-2">{t.contributorsLabel}</span>
@@ -209,8 +209,8 @@ export default function AboutContent() {
                 </div>
             </section>
 
-            {/* MENTORS */}
-            <section id="mentors" className="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-800/60 relative overflow-hidden">
+            {/* ADVISORS */}
+            <section id="advisors" className="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-800/60 relative overflow-hidden">
                 <svg className="absolute right-10 top-10 opacity-[0.07] pointer-events-none hidden lg:block" width="120" height="120" aria-hidden="true">
                     {[0,1,2,3,4].map(r => [0,1,2,3,4].map(c => (
                         <circle key={`${r}-${c}`} cx={12+c*24} cy={12+r*24} r="2.5" fill="#2E8B57" />

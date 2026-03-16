@@ -28,12 +28,12 @@ export default function LandingHeader() {
     ];
 
     const aboutLinks = [
-        { bn: "ফিচার",           en: "Features",  href: "/#features" },
-        { bn: "সমাধান",          en: "Solutions", href: "/#solutions" },
-        { bn: "প্রাইসিং",        en: "Pricing",   href: "/#pricing" },
-        { bn: "আমাদের সম্পর্কে", en: "About",     href: "/about" },
-        { bn: "প্রশ্নোত্তর",    en: "FAQ",       href: "/#faq" },
-        { bn: "যোগাযোগ",        en: "Contact",   href: "#cta" },
+        { bn: "আমাদের সম্পর্কে", en: "About",      href: "#hero" },
+        { bn: "মিশন",          en: "Mission",    href: "#mission" },
+        { bn: "টিম",            en: "Team",       href: "#team" },
+        { bn: "সহযোগী",        en: "Supporters", href: "#supporters" },
+        { bn: "উপদেষ্টা",        en: "Advisors",   href: "#advisors" },
+        { bn: "যোগাযোগ",        en: "Contact",    href: "#cta" },
     ];
 
     const navLinks = isAbout ? aboutLinks : homeLinks;
@@ -60,7 +60,7 @@ export default function LandingHeader() {
             setIsScrolled(window.scrollY > 10);
             
             const sections = isAbout 
-                ? ["story", "team", "mentors", "cta"]
+                ? ["hero", "mission", "team", "supporters", "advisors", "cta"]
                 : ["features", "solutions", "pricing", "faq", "cta"];
 
             for (const section of sections) {

@@ -156,16 +156,13 @@ export default function PricingSection() {
                         <div className="flex items-center gap-10 border-r border-slate-200 pr-10">
                             <img src="https://www.logo.wine/a/logo/BKash/BKash-Icon-Logo.wine.svg" alt="bKash" className="h-8 lg:h-10 w-auto object-contain" />
                             <img src="https://www.logo.wine/a/logo/Nagad/Nagad-Logo.wine.svg" alt="Nagad" className="h-10 lg:h-12 w-auto object-contain" />
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Rocket_logo.png/300px-Rocket_logo.png" alt="Rocket" className="h-6 lg:h-8 w-auto object-contain grayscale brightness-110" />
+                            <img src="/assets/payment/rocket.png" alt="Rocket" className="h-8 lg:h-10 w-auto object-contain" />
                         </div>
                         {/* Cards & Bank */}
                         <div className="flex items-center gap-10">
                             <img src="https://www.logo.wine/a/logo/Visa_Inc./Visa_Inc.-Logo.wine.svg" alt="VISA" className="h-8 lg:h-10 w-auto object-contain" />
                             <img src="https://www.logo.wine/a/logo/Mastercard/Mastercard-Logo.wine.svg" alt="Mastercard" className="h-8 lg:h-10 w-auto object-contain" />
-                            <div className="flex items-center gap-2.5 text-slate-400 border-l border-slate-200 pl-10">
-                                <Monitor size={20} weight="bold" />
-                                <span className="text-[10px] font-black uppercase tracking-tight">{lang === "bn" ? "অনলাইন ব্যাংক" : "Bank Transfer"}</span>
-                            </div>
+                            <img src="/assets/payment/bank.png" alt="Bank Transfer" className="h-8 lg:h-10 w-auto object-contain ml-2 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
                         </div>
                     </div>
                 </div>

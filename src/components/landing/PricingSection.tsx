@@ -151,14 +151,12 @@ export default function PricingSection() {
                 </div>
 
                 <div className="mt-16 max-w-4xl mx-auto text-center font-hind-siliguri">
-                    <p className="text-slate-400 text-xs font-bold uppercase tracking-tighter mb-8">
-                        {lang === "bn" ? "আমরা যেসকল পেমেন্ট গ্রহণ করি" : "Accepted Payment Methods"}
-                    </p>
-                    <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+                    <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-90">
                         {/* Mobile Financial Services */}
                         <div className="flex items-center gap-10 border-r border-slate-200 pr-10">
                             <img src="https://www.logo.wine/a/logo/BKash/BKash-Icon-Logo.wine.svg" alt="bKash" className="h-8 lg:h-10 w-auto object-contain" />
                             <img src="https://www.logo.wine/a/logo/Nagad/Nagad-Logo.wine.svg" alt="Nagad" className="h-10 lg:h-12 w-auto object-contain" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Rocket_logo.png/300px-Rocket_logo.png" alt="Rocket" className="h-6 lg:h-8 w-auto object-contain grayscale brightness-110" />
                         </div>
                         {/* Cards & Bank */}
                         <div className="flex items-center gap-10">
@@ -166,7 +164,7 @@ export default function PricingSection() {
                             <img src="https://www.logo.wine/a/logo/Mastercard/Mastercard-Logo.wine.svg" alt="Mastercard" className="h-8 lg:h-10 w-auto object-contain" />
                             <div className="flex items-center gap-2.5 text-slate-400 border-l border-slate-200 pl-10">
                                 <Monitor size={20} weight="bold" />
-                                <span className="text-[10px] font-black uppercase tracking-widest">{lang === "bn" ? "অনলাইন ব্যাংক" : "Bank Transfer"}</span>
+                                <span className="text-[10px] font-black uppercase tracking-tight">{lang === "bn" ? "অনলাইন ব্যাংক" : "Bank Transfer"}</span>
                             </div>
                         </div>
                     </div>

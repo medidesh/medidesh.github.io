@@ -27,13 +27,13 @@ export default function CTASection() {
     const t = T[lang];
 
     return (
-        <section id="cta" className="py-16 lg:py-24 bg-slate-900 relative overflow-hidden">
+        <section id="cta" className="py-16 lg:py-24 bg-[#0a1a1a] relative overflow-hidden">
             {/* Minimalist Grid Pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{ backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
-                <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 bg-slate-800/40 backdrop-blur-xl border border-white/5 p-8 lg:p-14 rounded-3xl shadow-2xl">
+                <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 bg-white/[0.03] backdrop-blur-xl border border-white/5 p-8 lg:p-14 rounded-3xl shadow-2xl">
                     <div className="flex-1 text-center lg:text-left">
                         <h2 className="text-3xl lg:text-5xl font-black text-white mb-5 leading-tight tracking-tight font-hind-siliguri">
                             {t.heading}
@@ -62,7 +62,7 @@ export default function CTASection() {
                                 title={t.email}
                             >
                                 <EnvelopeSimple size={20} weight="fill" className="text-medidesh-teal-400" />
-                                <span className="text-sm font-semibold tracking-wide">{lang === "bn" ? "ইমেইল করুন" : "Email Support"}</span>
+                                <span className="text-sm font-semibold">{lang === "bn" ? "ইমেইল করুন" : "Email Support"}</span>
                             </a>
                             <a 
                                 href={`tel:${t.phone}`} 
@@ -70,12 +70,12 @@ export default function CTASection() {
                                 title={t.phone}
                             >
                                 <Phone size={20} weight="fill" className="text-medidesh-teal-400" />
-                                <span className="text-sm font-semibold tracking-wide">{lang === "bn" ? "ফোন করুন" : "Call Directly"}</span>
+                                <span className="text-sm font-semibold">{lang === "bn" ? "ফোন করুন" : "Call Directly"}</span>
                             </a>
                         </div>
 
                         <div className="flex flex-col items-center lg:items-end opacity-50">
-                            <p className="text-[10px] uppercase tracking-[0.2em] font-black text-slate-300">{t.hours}</p>
+                            <p className="text-[10px] uppercase font-black text-slate-400">{t.hours}</p>
                         </div>
                     </div>
                 </div>

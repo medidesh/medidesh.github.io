@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, Phone, Tag } from "@phosphor-icons/react/dist/ssr";
+import { CheckCircle, Phone, Tag, Monitor } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
 
 const T = {
@@ -150,29 +150,25 @@ export default function PricingSection() {
                     ))}
                 </div>
 
-                <div className="mt-16 max-w-4xl mx-auto text-center">
-                    <p className="text-slate-400 text-xs font-bold uppercase tracking-[0.2em] mb-8">
-                        {lang === "bn" ? "আমরা যেসকল পেমেন্ট গ্রহণ করি" : "Accepted Payment Methods"}
+                <div className="mt-16 max-w-4xl mx-auto text-center font-hind-siliguri">
+                    <p className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-8">
+                        {lang === "bn" ? "আমরা যে সকল পেমেন্ট গ্রহণ করি" : "Accepted Payment Methods"}
                     </p>
-                    <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        <div className="flex flex-col items-center gap-1.5 grayscale-0 opacity-100">
-                            <span className="text-[10px] font-black tracking-tighter text-[#D12053]">bKash</span>
+                    <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 opacity-80">
+                        {/* Mobile Financial Services */}
+                        <div className="flex items-center gap-8 border-r border-slate-200 pr-8">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Bkash_logo.png/300px-Bkash_logo.png" alt="bKash" className="h-4 lg:h-5 object-contain" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Nagad_logo.png/300px-Nagad_logo.png" alt="Nagad" className="h-4 lg:h-5 object-contain" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Rocket_logo.png/300px-Rocket_logo.png" alt="Rocket" className="h-5 lg:h-6 object-contain" />
                         </div>
-                        <div className="flex flex-col items-center gap-1.5 grayscale-0 opacity-100">
-                            <span className="text-[10px] font-black tracking-tighter text-[#F7941E]">Nagad</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-1.5 grayscale-0 opacity-100">
-                            <span className="text-[10px] font-black tracking-tighter text-[#8C3494]">Rocket</span>
-                        </div>
-                        <div className="w-px h-4 bg-slate-200 hidden md:block" />
-                        <div className="flex flex-col items-center gap-1.5">
-                            <span className="text-[10px] font-black tracking-tighter text-[#1A1F71]">VISA</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-1.5">
-                            <span className="text-[10px] font-black tracking-tighter text-[#EB001B]">Mastercard</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-1.5">
-                            <span className="text-[10px] font-black tracking-tighter text-slate-800">{lang === "bn" ? "যেকোনো ব্যাংক" : "All Banks"}</span>
+                        {/* Cards & Bank */}
+                        <div className="flex items-center gap-8">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/300px-Visa_Inc._logo.svg.png" alt="VISA" className="h-3 lg:h-4 object-contain" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/300px-Mastercard-logo.svg.png" alt="Mastercard" className="h-4 lg:h-5 object-contain" />
+                            <div className="flex items-center gap-2 text-slate-400">
+                                <Monitor size={16} weight="bold" />
+                                <span className="text-[10px] font-bold uppercase tracking-widest">{lang === "bn" ? "অনলাইন ব্যাংক" : "Bank Transfer"}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

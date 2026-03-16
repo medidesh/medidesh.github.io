@@ -18,14 +18,24 @@ export default function LandingHeader() {
     const hasCta = isHome || isAbout; // pages that have their own #cta anchor
     const { lang, toggleLang } = useLanguage();
 
-    const navLinks = [
-        { bn: "ফিচার",           en: "Features",  href: isHome ? "#features"  : "/#features"  },
-        { bn: "সমাধান",          en: "Solutions", href: isHome ? "#solutions" : "/#solutions" },
-        { bn: "প্রাইসিং",        en: "Pricing",   href: isHome ? "#pricing"   : "/#pricing"   },
-        { bn: "প্রশ্নোত্তর",    en: "FAQ",       href: isHome ? "#faq"       : "/#faq"       },
-        { bn: "যোগাযোগ",        en: "Contact",   href: hasCta  ? "#cta"      : "/#cta"       },
+    const homeLinks = [
+        { bn: "ফিচার",           en: "Features",  href: "/#features" },
+        { bn: "সমাধান",          en: "Solutions", href: "/#solutions" },
+        { bn: "প্রাইসিং",        en: "Pricing",   href: "/#pricing" },
         { bn: "আমাদের সম্পর্কে", en: "About",     href: "/about" },
+        { bn: "প্রশ্নোত্তর",    en: "FAQ",       href: "/#faq" },
+        { bn: "যোগাযোগ",        en: "Contact",   href: "#cta" },
     ];
+
+    const aboutLinks = [
+        { bn: "আমাদের গল্প",    en: "Story",     href: "#story" },
+        { bn: "টিম",            en: "Team",      href: "#team" },
+        { bn: "মেন্টর",          en: "Mentors",   href: "#mentors" },
+        { bn: "হোম",            en: "Home",      href: "/" },
+        { bn: "যোগাযোগ",        en: "Contact",   href: "#cta" },
+    ];
+
+    const navLinks = isAbout ? aboutLinks : homeLinks;
 
     useEffect(() => {
         const stored = localStorage.getItem("theme");

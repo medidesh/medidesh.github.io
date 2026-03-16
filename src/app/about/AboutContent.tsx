@@ -108,7 +108,7 @@ export default function AboutContent() {
             </section>
 
             {/* STORY */}
-            <section className="py-20 lg:py-28 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+            <section id="story" className="py-20 lg:py-28 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
                 <svg className="absolute top-0 left-0 w-full opacity-[0.04] pointer-events-none" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="none" aria-hidden="true">
                     <path d="M0,25 C240,50 480,0 720,25 C960,50 1200,0 1440,25" stroke="#2E8B57" strokeWidth="3" />
                 </svg>
@@ -131,7 +131,7 @@ export default function AboutContent() {
             </section>
 
             {/* TEAM */}
-            <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
+            <section id="team" className="py-20 lg:py-28 bg-white relative overflow-hidden">
                 <svg className="absolute -right-24 top-1/3 w-64 h-64 opacity-[0.05] pointer-events-none" viewBox="0 0 256 256" fill="none" aria-hidden="true">
                     <circle cx="128" cy="128" r="110" stroke="#2E8B57" strokeWidth="2" strokeDasharray="8 6" />
                     <circle cx="128" cy="128" r="75" stroke="#2E8B57" strokeWidth="1.5" strokeDasharray="5 5" />
@@ -191,7 +191,7 @@ export default function AboutContent() {
             </section>
 
             {/* MENTORS */}
-            <section className="py-20 lg:py-28 bg-slate-50 border-t border-slate-100 relative overflow-hidden">
+            <section id="mentors" className="py-20 lg:py-28 bg-slate-50 border-t border-slate-100 relative overflow-hidden">
                 <svg className="absolute right-10 top-10 opacity-[0.07] pointer-events-none hidden lg:block" width="120" height="120" aria-hidden="true">
                     {[0,1,2,3,4].map(r => [0,1,2,3,4].map(c => (
                         <circle key={`${r}-${c}`} cx={12+c*24} cy={12+r*24} r="2.5" fill="#2E8B57" />

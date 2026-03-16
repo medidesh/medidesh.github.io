@@ -120,6 +120,14 @@ export default function AboutContent() {
                 <svg className="absolute top-0 left-0 w-full opacity-[0.04] pointer-events-none" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="none" aria-hidden="true">
                     <path d="M0,25 C240,50 480,0 720,25 C960,50 1200,0 1440,25" stroke="#2E8B57" strokeWidth="3" />
                 </svg>
+                
+                {/* Decorative background shapes for Story */}
+                <div className="absolute top-1/4 -left-20 w-80 h-80 bg-medidesh-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+                <svg className="absolute right-10 top-20 w-48 h-48 opacity-[0.03] text-medidesh-teal-600 pointer-events-none" viewBox="0 0 100 100" fill="currentColor">
+                    <path d="M10,50 Q25,25 50,50 T90,50" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                    <path d="M10,60 Q25,35 50,60 T90,60" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                </svg>
+
                 <div className="container mx-auto px-6 lg:px-12 relative z-10">
                     <div className="max-w-2xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
@@ -140,9 +148,11 @@ export default function AboutContent() {
 
             {/* TEAM */}
             <section id="team" className="py-20 lg:py-28 bg-white dark:bg-slate-900 relative overflow-hidden">
-                <svg className="absolute -right-24 top-1/3 w-64 h-64 opacity-[0.05] pointer-events-none" viewBox="0 0 256 256" fill="none" aria-hidden="true">
-                    <circle cx="128" cy="128" r="110" stroke="#2E8B57" strokeWidth="2" strokeDasharray="8 6" />
-                    <circle cx="128" cy="128" r="75" stroke="#2E8B57" strokeWidth="1.5" strokeDasharray="5 5" />
+                {/* Background Shapes for Team */}
+                <div className="absolute -right-20 top-20 w-96 h-96 bg-medidesh-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+                <svg className="absolute left-10 bottom-20 w-64 h-64 opacity-[0.05] pointer-events-none" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+                    <circle cx="100" cy="100" r="80" stroke="#2E8B57" strokeWidth="0.5" strokeDasharray="12 8" />
+                    <circle cx="100" cy="100" r="50" stroke="#2E8B57" strokeWidth="1" strokeDasharray="8 6" />
                 </svg>
                 <div className="container mx-auto px-6 lg:px-12 relative z-10">
                     <div className="max-w-2xl mx-auto text-center mb-14">

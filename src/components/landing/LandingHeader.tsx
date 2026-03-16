@@ -57,8 +57,11 @@ export default function LandingHeader() {
         setMounted(true);
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
-            if (!isHome) return;
-            const sections = ["features", "solutions", "pricing", "faq", "cta"];
+            
+            const sections = isAbout 
+                ? ["story", "team", "mentors", "cta"]
+                : ["features", "solutions", "pricing", "faq", "cta"];
+
             for (const section of sections) {
                 const element = document.getElementById(section);
                 if (element) {

@@ -23,10 +23,10 @@ const contributors = [
 const mentors = [
     { name: "James Tan",                      role: { bn: "ব্যবসায়িক উপদেষ্টা",  en: "Business Advisor"    }, org: "CEO, Heyjom & Mantra",                    photo: "/assets/team/James.png" },
     { name: "Prof. Dr. C. A. Vaithilingam",   role: { bn: "ইনোভেশন উপদেষ্টা",    en: "Innovation Advisor"  }, org: "Professor & Sustainability Catalyst",     photo: "/assets/team/Arvind.png" },
-    { name: "Mosarrof Hossain",               role: { bn: "প্রযুক্তি উপদেষ্টা",   en: "Technology Advisor"  }, org: "CEO, QTEC Solution Limited",              photo: "/assets/team/Mosarrof.png" },
+    { name: "Murugan Thangiah",               role: { bn: "একাডেমিক উপদেষ্টা",   en: "Academic Advisor"    }, org: "Senior Lecturer, Taylor's University",    photo: "/assets/team/Murgan.png" },
     { name: "Patrica Tan",                    role: { bn: "ব্যবস্থাপনা কৌশল",     en: "Management Strategy" }, org: "Founder & CEO, SCORE MY",                   photo: "/assets/team/Patricia Tan.png" },
     { name: "Abdus Sami",                     role: { bn: "প্রযুক্তি উপদেষ্টা",   en: "Technology Advisor"  }, org: "CEO, AppifyDevs",                         photo: "/assets/team/Sami.png" },
-    { name: "Murugan Thangiah",               role: { bn: "একাডেমিক উপদেষ্টা",   en: "Academic Advisor"    }, org: "Senior Lecturer, Taylor's University",    photo: "/assets/team/Murgan.png" },
+    { name: "Mosarrof Hossain",               role: { bn: "প্রযুক্তি উপদেষ্টা",   en: "Technology Advisor"  }, org: "CEO, QTEC Solution Limited",              photo: "/assets/team/Mosarrof.png" },
 ];
 
 const T = {
@@ -46,7 +46,7 @@ const T = {
         teamHeading2: "টিম-এর সদস্যরা",
         teamHeading3: "",
         teamSub: "ফার্মেসি, প্রযুক্তি ও ব্যবসায়িক অভিজ্ঞতার এক অনন্য সমন্বয়।",
-        contributorsLabel: "বিশেষ সহায়ক ও সহযোগী",
+        contributorsLabel: "সহযোগী ও শুভাকাঙ্ক্ষী",
         mentorsBadge: "উপদেষ্টা",
         mentorsHeading1: "কৌশলগত",
         mentorsHeading2: "পরামর্শ",
@@ -68,7 +68,7 @@ const T = {
         teamHeading2: "Medidesh",
         teamHeading3: "",
         teamSub: "A diverse group of experts dedicated to pharmacy innovation and business excellence.",
-        contributorsLabel: "Support & Mentorship",
+        contributorsLabel: "Partners & Supporters",
         mentorsBadge: "Advisors",
         mentorsHeading1: "Strategic",
         mentorsHeading2: "Guidance",
@@ -190,7 +190,7 @@ export default function AboutContent() {
                             <span className="text-xs font-semibold uppercase text-slate-400 dark:text-slate-500 px-2">{t.contributorsLabel}</span>
                             <div className="h-px flex-1 bg-slate-100 dark:bg-slate-800" />
                         </div>
-                        <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
                             {contributors.map((person, i) => (
                                 <div key={i} className="flex flex-col gap-3">
                                     <div className="relative overflow-hidden rounded group cursor-default" style={{ aspectRatio: "3/4" }}>

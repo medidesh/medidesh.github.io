@@ -49,11 +49,6 @@ const T = {
         mentorsHeading1: "যারা আমাদের",
         mentorsHeading2: "পথ দেখাচ্ছেন",
         mentorsSub: "শিল্প বিশেষজ্ঞ ও অভিজ্ঞ উদ্যোক্তাদের গাইডেন্সে আমরা এগিয়ে চলেছি।",
-        stats: [
-            { value: "২০২৪", label: "যাত্রা শুরু" },
-            { value: "গাজীপুর", label: "উৎপত্তি" },
-            { value: "১০০%", label: "দেশি সফটওয়্যার" },
-        ],
     },
     en: {
         heroBadge: "About Us",
@@ -76,11 +71,6 @@ const T = {
         mentorsHeading1: "Those guiding",
         mentorsHeading2: "our path",
         mentorsSub: "We move forward with guidance from industry experts and experienced entrepreneurs.",
-        stats: [
-            { value: "2024", label: "Founded" },
-            { value: "Gazipur", label: "HQ" },
-            { value: "100%", label: "Local Initiative" },
-        ],
     },
 };
 
@@ -121,15 +111,6 @@ export default function AboutContent() {
                             </span>
                         </h1>
                         <p className="text-lg lg:text-xl text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">{t.heroSub}</p>
-
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 pt-10 border-t border-slate-100/60 max-w-xl mx-auto">
-                            {(t as any).stats.map((stat: any, i: number) => (
-                                <div key={i} className="flex flex-col items-center sm:items-start text-center sm:text-left">
-                                    <span className="font-black text-slate-900 text-2xl mb-1">{stat.value}</span>
-                                    <span className="text-slate-500 text-xs font-bold uppercase tracking-wider">{stat.label}</span>
-                                </div>
-                            ))}
-                        </div>
                     </div>
                 </div>
             </section>

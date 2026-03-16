@@ -14,9 +14,9 @@ const team = [
 ];
 
 const contributors = [
-    { name: "Tivana",     role: { bn: "ডিজাইন ও মার্কেটিং",    en: "Design & Marketing"    }, desc: { bn: "ব্র্যান্ড ভিজ্যুয়াল, UI ডিজাইন ও মার্কেটিং কন্টেন্ট তৈরিতে সহায়তা করেন।",                       en: "Supports brand visuals, UI design, and marketing content creation."           }, photo: "/assets/team/Tivana.png" },
-    { name: "Mahfuz",     role: { bn: "বিজনেস অ্যানালিসিস",     en: "Business Analysis"     }, desc: { bn: "বাজার গবেষণা ও ব্যবসায়িক সিদ্ধান্ত গ্রহণে বিশ্লেষণী সহায়তা প্রদান করেন।",                       en: "Provides analytical support for market research and business decisions."       }, photo: "/assets/team/Mahfuz.png" },
-    { name: "Mbr Sagor",  role: { bn: "ওয়েব ও ডেটাবেজ ডিজাইন", en: "Web & Database Design" }, desc: { bn: "ওয়েব ইন্টারফেস ও ডেটাবেজ আর্কিটেকচার ডিজাইনে গুরুত্বপূর্ণ অবদান রাখেন।",                        en: "Makes key contributions to web interface and database architecture design."    }, photo: "/assets/team/Sagor.png" },
+    { name: "Tivana",     role: { bn: "ডিজাইন ও মার্কেটিং",    en: "Design & Marketing"    }, photo: "/assets/team/Tivana.png" },
+    { name: "Mahfuz",     role: { bn: "বিজনেস অ্যানালিসিস",     en: "Business Analysis"     }, photo: "/assets/team/Mahfuz.png" },
+    { name: "Mbr Sagor",  role: { bn: "ওয়েব ও ডেটাবেজ ডিজাইন", en: "Web & Database Design" }, photo: "/assets/team/Sagor.png" },
 ];
 
 const mentors = [
@@ -44,7 +44,7 @@ const T = {
         teamHeading2: "টিম-এর সদস্যরা",
         teamHeading3: "",
         teamSub: "ফার্মেসি, প্রযুক্তি ও ব্যবসায়িক অভিজ্ঞতার এক অনন্য সমন্বয়।",
-        contributorsLabel: "অবদানকারী",
+        contributorsLabel: "বিশেষ সহযোগিতায়",
         mentorsBadge: "উপদেষ্টা",
         mentorsHeading1: "কৌশলগত",
         mentorsHeading2: "পরামর্শ",
@@ -66,7 +66,7 @@ const T = {
         teamHeading2: "Medidesh",
         teamHeading3: "",
         teamSub: "A diverse group of experts dedicated to pharmacy innovation and business excellence.",
-        contributorsLabel: "Contributors",
+        contributorsLabel: "Special Support",
         mentorsBadge: "Advisors",
         mentorsHeading1: "Strategic",
         mentorsHeading2: "Guidance",
@@ -190,7 +190,6 @@ export default function AboutContent() {
                                         </div>
                                         <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-medidesh-teal-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                                     </div>
-                                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed text-center">{person.desc[lang]}</p>
                                 </div>
                             ))}
                         </div>

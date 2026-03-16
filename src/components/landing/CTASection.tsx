@@ -10,7 +10,7 @@ const T = {
         whatsappBtn: "সরাসরি হোয়াটসঅ্যাপ করুন",
         email: "support@medidesh.com",
         phone: "+8801608-844017",
-        hours: "শনি–বৃহস্পতি, সকাল ১০টা – রাত ৮টা",
+        hours: "শনি–বৃহস্পতি,সকাল ১০টা–রাত ৮টা",
     },
     en: {
         heading: "Support & Contact",

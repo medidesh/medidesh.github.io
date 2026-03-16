@@ -22,16 +22,17 @@ export default function LandingHeader() {
         { bn: "ফিচার",           en: "Features",  href: "/#features" },
         { bn: "সমাধান",          en: "Solutions", href: "/#solutions" },
         { bn: "প্রাইসিং",        en: "Pricing",   href: "/#pricing" },
-        { bn: "প্রশ্নোত্তর",    en: "FAQ",       href: "/#faq" },
         { bn: "আমাদের সম্পর্কে", en: "About",     href: "/about" },
+        { bn: "প্রশ্নোত্তর",    en: "FAQ",       href: "/#faq" },
         { bn: "যোগাযোগ",        en: "Contact",   href: "#cta" },
     ];
 
     const aboutLinks = [
-        { bn: "হোম",            en: "Home",      href: "/" },
-        { bn: "আমাদের গল্প",    en: "Story",     href: "#story" },
-        { bn: "টিম",            en: "Team",      href: "#team" },
-        { bn: "মেন্টর",          en: "Mentors",   href: "#mentors" },
+        { bn: "ফিচার",           en: "Features",  href: "/#features" },
+        { bn: "সমাধান",          en: "Solutions", href: "/#solutions" },
+        { bn: "প্রাইসিং",        en: "Pricing",   href: "/#pricing" },
+        { bn: "আমাদের সম্পর্কে", en: "About",     href: "/about" },
+        { bn: "প্রশ্নোত্তর",    en: "FAQ",       href: "/#faq" },
         { bn: "যোগাযোগ",        en: "Contact",   href: "#cta" },
     ];
 

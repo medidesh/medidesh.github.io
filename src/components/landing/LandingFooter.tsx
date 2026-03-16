@@ -53,7 +53,7 @@ export default function LandingFooter() {
     const t = T[lang];
 
     return (
-        <footer className="bg-slate-900 text-slate-400 pt-20 pb-10">
+        <footer className="bg-[#0a1a1a] text-slate-400 pt-20 pb-10 border-t border-white/5">
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     <div className="lg:col-span-1">

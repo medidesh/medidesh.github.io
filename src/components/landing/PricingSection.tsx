@@ -81,7 +81,7 @@ export default function PricingSection() {
     const discount = billingCycle !== "monthly" ? t.discounts[billingCycle] : null;
 
     return (
-        <section id="pricing" className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden text-slate-900">
+        <section id="pricing" className="py-24 lg:py-32 bg-slate-50 dark:bg-slate-900/50 relative overflow-hidden text-slate-900 dark:text-white">
             <svg className="absolute -top-20 -right-20 w-80 h-80 opacity-[0.06] pointer-events-none" viewBox="0 0 320 320" fill="none" aria-hidden="true">
                 <path d="M160,30 C220,10 300,60 310,130 C320,200 270,270 200,285 C130,300 60,260 40,190 C20,120 60,50 100,35 C120,27 140,36 160,30 Z" fill="#2E8B57" />
             </svg>

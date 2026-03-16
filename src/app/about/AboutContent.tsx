@@ -14,14 +14,16 @@ const team = [
 ];
 
 const contributors = [
-    { name: "Tivana",     role: { bn: "ডিজাইন ও মার্কেটিং",    en: "Design & Marketing"    }, photo: "/assets/team/Tivana.png" },
-    { name: "Mahfuz",     role: { bn: "বিজনেস অ্যানালিসিস",     en: "Business Analysis"     }, photo: "/assets/team/Mahfuz.png" },
-    { name: "Mbr Sagor",  role: { bn: "ওয়েব ও ডেটাবেজ ডিজাইন", en: "Web & Database Design" }, photo: "/assets/team/Sagor.png" },
+    { name: "Tivana",              role: { bn: "ডিজাইন ও মার্কেটিং",    en: "Design & Marketing"    }, photo: "/assets/team/Tivana.png" },
+    { name: "Nayeem Shiddiki Abir", role: { bn: "মোবাইল অ্যাপ বিশেষজ্ঞ",   en: "Mobile App Specialist"   }, photo: "/assets/team/Abir.png" },
+    { name: "Mahfuz",              role: { bn: "বিজনেস অ্যানালিসিস",     en: "Business Analysis"     }, photo: "/assets/team/Mahfuz.png" },
+    { name: "Mbr Sagor",           role: { bn: "ওয়েব ও ডেটাবেজ ডিজাইন", en: "Web & Database Design" }, photo: "/assets/team/Sagor.png" },
 ];
 
 const mentors = [
     { name: "James Tan",                      role: { bn: "ব্যবসায়িক উপদেষ্টা",  en: "Business Advisor"    }, org: "CEO, Heyjom & Mantra",                    photo: "/assets/team/James.png" },
     { name: "Prof. Dr. C. A. Vaithilingam",   role: { bn: "ইনোভেশন উপদেষ্টা",    en: "Innovation Advisor"  }, org: "Professor & Sustainability Catalyst",     photo: "/assets/team/Arvind.png" },
+    { name: "Mosarrof Hossain",               role: { bn: "প্রযুক্তি উপদেষ্টা",   en: "Technology Advisor"  }, org: "CEO, QTEC Solution Limited",              photo: "/assets/team/Mosarrof.png" },
     { name: "Patrica Tan",                    role: { bn: "ব্যবস্থাপনা কৌশল",     en: "Management Strategy" }, org: "Founder & CEO, SCORE MY",                   photo: "/assets/team/Patricia Tan.png" },
     { name: "Abdus Sami",                     role: { bn: "প্রযুক্তি উপদেষ্টা",   en: "Technology Advisor"  }, org: "CEO, AppifyDevs",                         photo: "/assets/team/Sami.png" },
     { name: "Murugan Thangiah",               role: { bn: "একাডেমিক উপদেষ্টা",   en: "Academic Advisor"    }, org: "Senior Lecturer, Taylor's University",    photo: "/assets/team/Murgan.png" },

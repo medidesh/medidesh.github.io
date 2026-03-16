@@ -22,9 +22,9 @@ const contributors = [
 const mentors = [
     { name: "James Tan",                      role: { bn: "ব্যবসায়িক উপদেষ্টা",  en: "Business Advisor"    }, org: "CEO, Heyjom & Mantra",                    photo: "/assets/team/James.png" },
     { name: "Prof. Dr. C. A. Vaithilingam",   role: { bn: "ইনোভেশন উপদেষ্টা",    en: "Innovation Advisor"  }, org: "Professor & Sustainability Catalyst",     photo: "/assets/team/Arvind.png" },
-    { name: "Patrica Tan",                    role: { bn: "প্রতিষ্ঠাতা ও সিইও",       en: "Founder & CEO"       }, org: "SCORE MY & SG",                           photo: "/assets/team/Patricia Tan.png" },
-    { name: "Murugan Thangiah",               role: { bn: "একাডেমিক উপদেষ্টা",   en: "Academic Advisor"    }, org: "Senior Lecturer, Taylor's University",    photo: "/assets/team/Murgan.png" },
+    { name: "Patrica Tan",                    role: { bn: "ব্যবস্থাপনা কৌশল",     en: "Management Strategy" }, org: "Founder & CEO, SCORE MY",                   photo: "/assets/team/Patricia Tan.png" },
     { name: "Abdus Sami",                     role: { bn: "প্রযুক্তি উপদেষ্টা",   en: "Technology Advisor"  }, org: "CEO, AppifyDevs",                         photo: "/assets/team/Sami.png" },
+    { name: "Murugan Thangiah",               role: { bn: "একাডেমিক উপদেষ্টা",   en: "Academic Advisor"    }, org: "Senior Lecturer, Taylor's University",    photo: "/assets/team/Murgan.png" },
 ];
 
 const T = {
@@ -45,10 +45,10 @@ const T = {
         teamHeading3: "গড়ছে",
         teamSub: "ফার্মেসি, প্রযুক্তি ও ব্যবসায়িক অভিজ্ঞতার সমন্বয়ে গড়া আমাদের দল।",
         contributorsLabel: "অবদানকারী",
-        mentorsBadge: "উপদেষ্টামণ্ডলী",
-        mentorsHeading1: "যারা আমাদের",
-        mentorsHeading2: "পথ দেখাচ্ছেন",
-        mentorsSub: "শিল্প বিশেষজ্ঞ ও অভিজ্ঞ উদ্যোক্তাদের গাইডেন্সে আমরা এগিয়ে চলেছি।",
+        mentorsBadge: "উপদেষ্টা",
+        mentorsHeading1: "কৌশলগত",
+        mentorsHeading2: "পরামর্শ",
+        mentorsSub: "বৈশ্বিক স্বপ্নদ্রষ্টা ও বিশেষজ্ঞদের তত্ত্বাবধানে আমাদের পথচলা।",
     },
     en: {
         heroBadge: "About Us",
@@ -67,10 +67,10 @@ const T = {
         teamHeading3: "",
         teamSub: "Our team brings together expertise in pharmacy, technology, and business.",
         contributorsLabel: "Contributors",
-        mentorsBadge: "Advisory Board",
-        mentorsHeading1: "Those guiding",
-        mentorsHeading2: "our path",
-        mentorsSub: "We move forward with guidance from industry experts and experienced entrepreneurs.",
+        mentorsBadge: "Advisors",
+        mentorsHeading1: "Strategic",
+        mentorsHeading2: "Guidance",
+        mentorsSub: "Guided by global visionaries and industry-leading experts.",
     },
 };
 

@@ -20,11 +20,11 @@ const contributors = [
 ];
 
 const mentors = [
-    { name: "Patrica Tan",                    role: { bn: "প্রতিষ্ঠাতা ও সিইও",       en: "Founder & CEO"       }, org: "SCORE MY & SG",                           photo: "/assets/team/Patricia Tan.png" },
     { name: "James Tan",                      role: { bn: "ব্যবসায়িক উপদেষ্টা",  en: "Business Advisor"    }, org: "CEO, Heyjom & Mantra",                    photo: "/assets/team/James.png" },
+    { name: "Prof. Dr. C. A. Vaithilingam",   role: { bn: "ইনোভেশন উপদেষ্টা",    en: "Innovation Advisor"  }, org: "Professor & Sustainability Catalyst",     photo: "/assets/team/Arvind.png" },
+    { name: "Patrica Tan",                    role: { bn: "প্রতিষ্ঠাতা ও সিইও",       en: "Founder & CEO"       }, org: "SCORE MY & SG",                           photo: "/assets/team/Patricia Tan.png" },
     { name: "Murugan Thangiah",               role: { bn: "একাডেমিক উপদেষ্টা",   en: "Academic Advisor"    }, org: "Senior Lecturer, Taylor's University",    photo: "/assets/team/Murgan.png" },
     { name: "Abdus Sami",                     role: { bn: "প্রযুক্তি উপদেষ্টা",   en: "Technology Advisor"  }, org: "CEO, AppifyDevs",                         photo: "/assets/team/Sami.png" },
-    { name: "Prof. Dr. C. A. Vaithilingam",   role: { bn: "ইনোভেশন উপদেষ্টা",    en: "Innovation Advisor"  }, org: "Professor & Sustainability Catalyst",     photo: "/assets/team/Arvind.png" },
 ];
 
 const T = {

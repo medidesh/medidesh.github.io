@@ -44,7 +44,7 @@ const T = {
         teamHeading2: "টিম-এর সদস্যরা",
         teamHeading3: "",
         teamSub: "ফার্মেসি, প্রযুক্তি ও ব্যবসায়িক অভিজ্ঞতার এক অনন্য সমন্বয়।",
-        contributorsLabel: "বিশেষ সহযোগিতায়",
+        contributorsLabel: "বিশেষ সহায়ক ও সহযোগী",
         mentorsBadge: "উপদেষ্টা",
         mentorsHeading1: "কৌশলগত",
         mentorsHeading2: "পরামর্শ",
@@ -66,7 +66,7 @@ const T = {
         teamHeading2: "Medidesh",
         teamHeading3: "",
         teamSub: "A diverse group of experts dedicated to pharmacy innovation and business excellence.",
-        contributorsLabel: "Special Support",
+        contributorsLabel: "Support & Mentorship",
         mentorsBadge: "Advisors",
         mentorsHeading1: "Strategic",
         mentorsHeading2: "Guidance",
@@ -175,7 +175,7 @@ export default function AboutContent() {
                     <div className="max-w-5xl mx-auto mt-16 pt-12 border-t border-slate-100 dark:border-slate-800/60">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="h-px flex-1 bg-slate-100 dark:bg-slate-800" />
-                            <span className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 px-2">{t.contributorsLabel}</span>
+                            <span className="text-xs font-semibold uppercase text-slate-400 dark:text-slate-500 px-2">{t.contributorsLabel}</span>
                             <div className="h-px flex-1 bg-slate-100 dark:bg-slate-800" />
                         </div>
                         <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">

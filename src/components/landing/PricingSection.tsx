@@ -150,16 +150,30 @@ export default function PricingSection() {
                     ))}
                 </div>
 
-                <div className="mt-10 max-w-2xl mx-auto">
-                    <div className="bg-white rounded p-6 border border-slate-100 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
-                        <div>
-                            <h4 className="font-bold text-slate-900 mb-1">{t.helpTitle}</h4>
-                            <p className="text-sm text-slate-500">{t.helpSub}</p>
+                <div className="mt-16 max-w-4xl mx-auto text-center">
+                    <p className="text-slate-400 text-xs font-bold uppercase tracking-[0.2em] mb-8">
+                        {lang === "bn" ? "আমরা যেসকল পেমেন্ট গ্রহণ করি" : "Accepted Payment Methods"}
+                    </p>
+                    <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                        <div className="flex flex-col items-center gap-1.5 grayscale-0 opacity-100">
+                            <span className="text-[10px] font-black tracking-tighter text-[#D12053]">bKash</span>
                         </div>
-                        <a href="tel:+8801608844017" className="shrink-0 inline-flex items-center gap-2.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-6 py-3 rounded font-bold text-sm transition-all shadow-sm hover:-translate-y-0.5">
-                            <Phone weight="fill" size={16} />
-                            +8801608-844017
-                        </a>
+                        <div className="flex flex-col items-center gap-1.5 grayscale-0 opacity-100">
+                            <span className="text-[10px] font-black tracking-tighter text-[#F7941E]">Nagad</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-1.5 grayscale-0 opacity-100">
+                            <span className="text-[10px] font-black tracking-tighter text-[#8C3494]">Rocket</span>
+                        </div>
+                        <div className="w-px h-4 bg-slate-200 hidden md:block" />
+                        <div className="flex flex-col items-center gap-1.5">
+                            <span className="text-[10px] font-black tracking-tighter text-[#1A1F71]">VISA</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-1.5">
+                            <span className="text-[10px] font-black tracking-tighter text-[#EB001B]">Mastercard</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-1.5">
+                            <span className="text-[10px] font-black tracking-tighter text-slate-800">{lang === "bn" ? "যেকোনো ব্যাংক" : "All Banks"}</span>
+                        </div>
                     </div>
                 </div>
             </div>

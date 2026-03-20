@@ -10,7 +10,7 @@ export default function PrivacyPage() {
 
                 <div className="prose prose-lg prose-slate max-w-none text-slate-700">
                     <section className="mb-8">
-                        <p>Medidesh (“we”, “our” or “us”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application Medidesh (“the App"), which includes Inventory Management, Point of Sale (POS), and Medicine Search functionalities.</p>
+                        <p>Medidesh (&ldquo;we&rdquo;, &ldquo;our&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application Medidesh (&ldquo;the App&rdquo;), which includes Inventory Management, Point of Sale (POS), and Medicine Search functionalities.</p>
                         <p className="mt-4">This Policy is drafted in accordance with the Digital Security Act 2018 (Bangladesh), the Personal Data Protection Act (Bangladesh), and the General Data Protection Regulation (GDPR) for international users.</p>
                     </section>
 
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
                         <p className="mb-4">To provide specific features, Medidesh app requires certain permissions on your device:</p>
 
                         <h3 className="text-xl font-bold text-slate-800 mb-2 mt-4">4.1. Camera Permission</h3>
-                        <p>Medidesh app uses your device's camera to allow you to capture and upload images of prescriptions, medical reports, or your profile picture directly within the app. We do not record or store images without your explicit action.</p>
+                        <p>Medidesh app uses your device&apos;s camera to allow you to capture and upload images of prescriptions, medical reports, or your profile picture directly within the app. We do not record or store images without your explicit action.</p>
 
                         <h3 className="text-xl font-bold text-slate-800 mb-2 mt-4">4.2. Bluetooth Permission</h3>
                         <p>The app utilizes Bluetooth connectivity to pair with and print receipts via compatible thermal printers and to connect with supported medical devices for health data integration. Bluetooth is used solely for these connection purposes.</p>

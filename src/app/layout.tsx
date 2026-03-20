@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Bricolage_Grotesque } from "next/font/google";
+import { Saira, Bricolage_Grotesque } from "next/font/google";
 import { LanguageProvider } from "@/lib/i18n";
 import "./globals.css";
 
-const inter = Inter({
+const saira = Saira({
     subsets: ["latin"],
-    variable: "--font-inter",
+    variable: "--font-saira",
     display: "swap",
 });
 
@@ -17,8 +17,25 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-    title: "Medidesh - Pharmacy Management Software",
-    description: "Manage your pharmacy inventory, sales, and accounts with ease.",
+    title: {
+        template: "%s | Medidesh",
+        default: "Medidesh - No.1 Free Pharmacy Management Software in Bangladesh",
+    },
+    description: "Empower your pharmacy business with seamless stock tracking, intelligent sales analytics, and automated expiry alerts. The ultimate smart pharmacy ecosystem, absolutely free.",
+    keywords: ["pharmacy software", "pharmacy management", "free POS", "medical software", "Bangladesh", "store management", "inventory tracking"],
+    openGraph: {
+        title: "Medidesh - Smart Pharmacy Ecosystem In Your Pocket",
+        description: "Transform your pharmacy operations with our free and smart management system. Stock tracking, daily sales, and expiry alerts in one mobile app.",
+        url: "https://medidesh.com",
+        siteName: "Medidesh",
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Medidesh - Pharmacy Management Software",
+        description: "Empower your pharmacy with seamless stock tracking, AI analytics, and expiry alerts. 100% Free.",
+    },
     icons: {
         icon: [
             { url: "/favicon.ico" },
@@ -49,7 +66,7 @@ export default function RootLayout({
                 />
             </head>
             <body
-                className={`${inter.variable} ${bricolage.variable} font-sans antialiased bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300`}
+                className={`${saira.variable} ${bricolage.variable} font-sans antialiased bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300`}
             >
                 <LanguageProvider>{children}</LanguageProvider>
             </body>

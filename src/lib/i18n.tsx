@@ -17,6 +17,11 @@ const LanguageContext = createContext<LanguageContextType>({
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const [lang, setLang] = useState<Lang>("bn");
 
+    const applyLang = (l: Lang) => {
+        document.documentElement.lang = l === "bn" ? "bn" : "en";
+        document.documentElement.classList.toggle("lang-en", l === "en");
+    };
+
     useEffect(() => {
         const stored = localStorage.getItem("lang") as Lang | null;
         if (stored === "bn" || stored === "en") {
@@ -32,11 +37,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
             setLang(detected);
         }
     }, []);
-
-    const applyLang = (l: Lang) => {
-        document.documentElement.lang = l === "bn" ? "bn" : "en";
-        document.documentElement.classList.toggle("lang-en", l === "en");
-    };
 
     const toggleLang = () => {
         const next: Lang = lang === "bn" ? "en" : "bn";

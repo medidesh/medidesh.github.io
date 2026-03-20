@@ -16,9 +16,9 @@ export default function Home() {
       <LandingHero />
       <ProblemSolution />
       <FeaturesSection />
+      <DownloadSection />
       <TestimonialsSection />
       <PricingSection />
-      <DownloadSection />
       <FAQSection />
       <CTASection />
       <LandingFooter />

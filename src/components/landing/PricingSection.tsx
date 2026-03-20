@@ -72,10 +72,23 @@ export default function PricingSection() {
 
     const getPrice = (basePrice: number) => {
         if (basePrice === 0) return t.freePrice;
-        if (billingCycle === "monthly") return `৳${basePrice}`;
-        if (billingCycle === "6-month") return `৳${Math.round(basePrice * 6 * 0.9)}`;
-        if (billingCycle === "yearly") return `৳${Math.round(basePrice * 12 * 0.8)}`;
-        return `৳${basePrice}`;
+        
+        const isEn = lang === "en";
+        const symbol = isEn ? "$" : "৳";
+        const rate = isEn ? 120 : 1;
+        const converted = basePrice / rate;
+
+        if (billingCycle === "monthly") {
+             const val = converted;
+             return `${symbol}${isEn && val % 1 !== 0 ? val.toFixed(2) : Math.round(val)}`;
+        }
+        if (billingCycle === "6-month") {
+             const val = converted * 6 * 0.9;
+             return `${symbol}${isEn && val % 1 !== 0 ? val.toFixed(2) : Math.round(val)}`;
+        }
+        // yearly
+        const val = converted * 12 * 0.8;
+        return `${symbol}${isEn && val % 1 !== 0 ? val.toFixed(2) : Math.round(val)}`;
     };
 
     const discount = billingCycle !== "monthly" ? t.discounts[billingCycle] : null;

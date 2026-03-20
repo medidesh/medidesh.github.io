@@ -21,13 +21,13 @@ export default function LandingHeader() {
     // Home page: Features · Solutions · Pricing · FAQ · Contact · About
     // Home page: Features · Solutions · Pricing · Download · FAQ · Contact · About
     const homeLinks = [
-        { bn: "ফিচার",            en: "Features",  href: isHome ? "#features"  : "/#features"  },
-        { bn: "সমাধান",           en: "Solutions", href: isHome ? "#solutions" : "/#solutions" },
-        { bn: "মূল্য পরিকল্পনা", en: "Pricing",   href: isHome ? "#pricing"   : "/#pricing"   },
-        { bn: "ডাউনলোড",         en: "Download",  href: isHome ? "#download"  : "/#download"  },
-        { bn: "প্রশ্নোত্তর",     en: "FAQ",       href: isHome ? "#faq"       : "/#faq"       },
-        { bn: "যোগাযোগ",         en: "Contact",   href: isHome ? "#cta"       : "/#cta"       },
-        { bn: "আমাদের সম্পর্কে",  en: "About",     href: "/about"                               },
+        { bn: "সমাধান",        en: "Solutions",   href: isHome ? "#solutions" : "/#solutions" },
+        { bn: "ফিচার",         en: "Features",    href: isHome ? "#features"  : "/#features"  },
+        { bn: "ডাউনলোড",       en: "Download",    href: isHome ? "#download"  : "/#download"  },
+        { bn: "প্রাইসিং",      en: "Pricing",     href: isHome ? "#pricing"   : "/#pricing"   },
+        { bn: "প্রশ্নোত্তর",  en: "FAQ",         href: isHome ? "#faq"       : "/#faq"       },
+        { bn: "যোগাযোগ",      en: "Contact",     href: isHome ? "#cta"       : "/#cta"       },
+        { bn: "আমাদের সম্পর্কে",en: "About Us",    href: "/about"                               },
     ];
 
     // About page: Vision · Story · Team · Supporters · Advisors · Contact
@@ -64,7 +64,7 @@ export default function LandingHeader() {
         setMounted(true);
 
         // Section IDs in the order they appear on each page
-        const homeSections  = ["solutions", "features", "pricing", "download", "faq", "cta"];
+        const homeSections  = ["hero", "solutions", "features", "download", "pricing", "faq", "cta"];
         const aboutSections = ["hero", "mission", "team", "supporters", "advisors", "cta"];
         const sections = isAbout ? aboutSections : homeSections;
 
@@ -78,7 +78,7 @@ export default function LandingHeader() {
         // Use IntersectionObserver for more efficient section detection
         const observerOptions = {
             root: null,
-            rootMargin: "-80px 0px -70% 0px",
+            rootMargin: "-20% 0px -40% 0px",
             threshold: 0
         };
 
@@ -121,11 +121,9 @@ export default function LandingHeader() {
 
     const headerBg = isScrolled
         ? isDark
-            ? "bg-slate-900/80 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)] border-b border-white/5 py-3"
-            : "bg-white/70 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.05)] border-b border-black/5 py-3"
-        : isDark
-            ? "bg-slate-900/40 backdrop-blur-sm py-4 border-b border-transparent"
-            : "bg-white/40 backdrop-blur-sm py-4 border-b border-transparent";
+            ? "bg-slate-900/70 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] border-b border-white/10 py-3"
+            : "bg-white/70 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] border-b border-black/5 py-3"
+        : "bg-transparent py-5 border-b border-transparent";
 
     return (
         <>

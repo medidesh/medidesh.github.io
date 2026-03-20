@@ -86,7 +86,7 @@
 @theme {
   --font-sans: 'Hind Siliguri', ui-sans-serif, system-ui, sans-serif;
   --font-heading: 'Hind Siliguri', ui-sans-serif, system-ui, sans-serif;
-  --font-inter: var(--font-inter);
+  --font-saira: var(--font-saira);
   --font-bricolage: var(--font-bricolage);
   --font-tiro-bangla: 'Tiro Bangla', serif;
   --font-orbitron: 'Orbitron', sans-serif;
@@ -161,12 +161,27 @@ html {
   50% { box-shadow: 0 0 20px rgba(0, 155, 134, 0.4), 0 0 30px rgba(0, 155, 134, 0.2); }
 }
 
+@keyframes map-pulse {
+  0%, 100% {
+    stroke: rgb(46 139 87 / 0.1);
+    fill: rgb(46 139 87 / 0.02);
+  }
+  50% {
+    stroke: rgb(46 139 87 / 0.4);
+    fill: rgb(46 139 87 / 0.06);
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
 .glow-primary {
   animation: glow 3s ease-in-out infinite;
+}
+
+.animate-map-pulse {
+  animation: map-pulse 6s ease-in-out infinite;
 }
 
 .mask-linear-fade {
@@ -244,7 +259,7 @@ html {
 .dark .prose li         { color: #cbd5e1; }
 
 /* ═══════════════════════════════════════════════════════
-   ENGLISH MODE — Inter body + Bricolage Grotesque headings
+   ENGLISH MODE — Saira body + Bricolage Grotesque headings
 ═══════════════════════════════════════════════════════ */
 .lang-en body,
 .lang-en p,
@@ -255,7 +270,7 @@ html {
 .lang-en th,
 .lang-en label,
 .lang-en button {
-  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-saira), ui-sans-serif, system-ui, sans-serif;
 }
 
 .lang-en h1,

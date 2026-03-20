@@ -2,14 +2,15 @@
 
 import { GooglePlayLogoIcon, Star, ArrowRight, CheckCircle, YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
+import BangladeshMap from "./BangladeshMap";
 
 const T = {
     bn: {
-        badge: "মেডিদেশ চিরতরে বিনামূল্যে",
-        title1: "শুধুমাত্র একটি মোবাইল ফোন দিয়ে",
-        titleHighlight: "ফার্মেসি পরিচালনা",
-        title2: "করুন স্মার্টলি",
-        sub: "ফার্মেসি মালিকদের জন্য তৈরি — স্টকের হিসাব, বিক্রয়, বাকি খাতা ও মেয়াদোত্তীর্ণ সতর্কতা এখন এক অ্যাপে আপনার পকেটে।",
+        badge: "মেডিদেশ — চিরতরে বিনামূল্যে",
+        title1: "আপনার পকেটে",
+        titleHighlight: "স্মার্ট ফার্মেসি",
+        title2: "ম্যানেজমেন্ট সিস্টেম",
+        sub: "অত্যাধুনিক প্রযুক্তিতে আপনার ফার্মেসি ব্যবসার সম্পূর্ণ নিয়ন্ত্রণ নিন। স্টকের হিসাব, ডিজিটাল বাকি খাতা ও মেয়াদোত্তীর্ণের স্বয়ংক্রিয় সতর্কতা—সবকিছু এখন একটি অ্যাপে, সম্পূর্ণ বিনামূল্যে।",
         downloadBtn: "অ্যাপ ডাউনলোড",
         tutorialBtn: "টিউটোরিয়াল",
         stats: [
@@ -20,10 +21,10 @@ const T = {
     },
     en: {
         badge: "Medidesh — Forever Free",
-        title1: "Manage your pharmacy",
-        titleHighlight: "smartly",
-        title2: "with just a mobile phone",
-        sub: "Built for pharmacy owners — stock tracking, sales, credit ledger & expiry alerts, all in one app in your pocket.",
+        title1: "The Ultimate",
+        titleHighlight: "Pharmacy Ecosystem",
+        title2: "In Your Pocket",
+        sub: "Empower your pharmacy business with seamless stock tracking, intelligent sales analytics, and automated expiry alerts—all from your mobile phone. Premium features, absolutely free.",
         downloadBtn: "Download App",
         tutorialBtn: "Tutorials",
         stats: [
@@ -39,7 +40,7 @@ export default function LandingHero() {
     const t = T[lang];
 
     return (
-        <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-white overflow-hidden">
+        <section id="hero" className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-white overflow-hidden">
             <div
                 className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{
@@ -49,18 +50,9 @@ export default function LandingHero() {
             />
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-medidesh-teal-500/5 rounded blur-[120px] pointer-events-none" />
 
-            <svg className="absolute left-0 top-1/2 -translate-y-1/2 w-72 h-72 opacity-[0.07] pointer-events-none" viewBox="0 0 300 300" fill="none" aria-hidden="true">
-                <path d="M60,130 C40,80 80,20 140,30 C200,40 240,90 230,150 C220,210 170,260 110,250 C50,240 20,200 30,160 C35,145 50,140 60,130 Z" fill="#2E8B57" />
-                <circle cx="200" cy="80" r="18" fill="#2E8B57" opacity="0.5" />
-                <circle cx="60" cy="220" r="10" fill="#2E8B57" opacity="0.4" />
-            </svg>
-
-            <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-[0.06] pointer-events-none" viewBox="0 0 300 300" fill="none" aria-hidden="true">
-                <path d="M240,60 C270,100 280,160 260,200 C240,240 190,270 140,260 C90,250 60,210 70,160 C80,110 130,80 160,60 C190,40 220,30 240,60 Z" fill="#2E8B57" />
-                {[0,1,2,3].map(row => [0,1,2,3].map(col => (
-                    <circle key={`${row}-${col}`} cx={180+col*22} cy={180+row*22} r="2.5" fill="#2E8B57" opacity="0.6" />
-                )))}
-            </svg>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[900px] lg:h-[900px] opacity-[0.15] pointer-events-none z-0">
+                <BangladeshMap className="w-full h-full object-contain" />
+            </div>
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="max-w-3xl mx-auto text-center">

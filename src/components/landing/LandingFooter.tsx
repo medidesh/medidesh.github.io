@@ -13,16 +13,16 @@ const T = {
         downloadSub: "অ্যান্ড্রয়েড ও কম্পিউটারে ব্যবহার করুন — অফলাইনেও পূর্ণ কার্যকর।",
         copyright: "সর্বস্বত্ব সংরক্ষিত।",
         product: [
-            { label: "ফিচারসমূহ",   href: "#features"   },
+            { label: "ফিচারসমূহ", href: "#features" },
             { label: "মূল্য পরিকল্পনা", href: "#pricing" },
-            { label: "অ্যাপ ডাউনলোড", href: "#download"  },
-            { label: "আপডেট লগ",    href: "/changelog"  },
+            { label: "অ্যাপ ডাউনলোড", href: "#download" },
+            { label: "আপডেট লগ", href: "/changelog" },
         ],
         company: [
-            { label: "আমাদের সম্পর্কে", href: "/about"   },
-            { label: "যোগাযোগ",         href: "#cta"     },
-            { label: "গোপনীয়তা নীতি",  href: "/privacy" },
-            { label: "শর্তাবলী",         href: "/terms"  },
+            { label: "আমাদের সম্পর্কে", href: "/about" },
+            { label: "যোগাযোগ", href: "#cta" },
+            { label: "গোপনীয়তা নীতি", href: "/privacy" },
+            { label: "শর্তাবলী", href: "/terms" },
         ],
     },
     en: {
@@ -33,15 +33,15 @@ const T = {
         downloadSub: "Use on Android and computer — fully functional even offline.",
         copyright: "All rights reserved.",
         product: [
-            { label: "Features",    href: "#features"  },
-            { label: "Pricing",     href: "#pricing"   },
+            { label: "Features", href: "#features" },
+            { label: "Pricing", href: "#pricing" },
             { label: "Download App", href: "#download" },
-            { label: "Changelog",   href: "/changelog" },
+            { label: "Changelog", href: "/changelog" },
         ],
         company: [
-            { label: "About Us",         href: "/about"   },
-            { label: "Contact",          href: "#cta"     },
-            { label: "Privacy Policy",   href: "/privacy" },
+            { label: "About Us", href: "/about" },
+            { label: "Contact", href: "#cta" },
+            { label: "Privacy Policy", href: "/privacy" },
             { label: "Terms & Conditions", href: "/terms" },
         ],
     },
@@ -114,7 +114,7 @@ export default function LandingFooter() {
                             </a>
                             <a href="https://wa.me/+8801608844017?text=আমি%20মেডিদেশ%20Windows%20PC%20ভার্সন%20পেতে%20চাই" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-white hover:bg-slate-50 text-slate-900 px-4 py-3 rounded transition-all duration-200 group border border-slate-200">
                                 <Monitor weight="duotone" size={20} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
-                                <span className="text-xs font-bold">Windows App</span>
+                                <span className="text-xs font-bold">Windows</span>
                             </a>
                         </div>
                     </div>

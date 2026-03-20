@@ -5,20 +5,20 @@ import { useLanguage } from "@/lib/i18n";
 
 const T = {
     bn: {
-        badge: "অ্যাপ ডাউনলোড",
+        badge: "ডাউনলোড",
         heading1: "আধুনিক ফার্মেসি",
         heading2: "ম্যানেজমেন্ট",
         sub: "ফোন হোক বা কম্পিউটার, মেডিদেশ সফটওয়্যার আছে সবখানে।",
         googlePlay: "Google Play",
-        windowsPC: "Windows PC",
+        windowsPC: "Windows",
     },
     en: {
-        badge: "App Download",
+        badge: "Download",
         heading1: "Modern Pharmacy",
         heading2: "Management",
         sub: "Phone or computer, Medidesh software is everywhere.",
         googlePlay: "Google Play",
-        windowsPC: "Windows PC",
+        windowsPC: "Windows",
     },
 };
 
@@ -27,7 +27,7 @@ export default function DownloadSection() {
     const t = T[lang];
 
     return (
-        <section id="download" className="py-24 lg:py-32 relative overflow-hidden bg-slate-900">
+        <section id="download" className="py-20 lg:py-28 relative overflow-hidden bg-slate-900">
             {/* Dot grid */}
             <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
                 style={{ backgroundImage: "radial-gradient(circle, #2E8B57 1.5px, transparent 1.5px)", backgroundSize: "32px 32px" }} />

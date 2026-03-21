@@ -23,7 +23,7 @@ const T = {
                 features: ["১টি ফার্মেসি", "১ জন ব্যবহারকারী (মালিক), ১টি ডিভাইস", "বেসিক ইনভেন্টরি ম্যানেজমেন্ট", "বেসিক বিক্রয় ও ক্রয় ট্র্যাকিং", "মোবাইল অ্যাপ অ্যাক্সেস", "ইমেইল সাপোর্ট"],
             },
             {
-                name: "মেঘনা", tagline: "সবচেয়ে জনপ্রিয়", price: 399, highlight: true, cta: null,
+                name: "মেঘনা", tagline: "সবচেয়ে জনপ্রিয়", price: 399, highlight: true, cta: "বিস্তারিত",
                 description: "মাঝারি বা বড় ফার্মেসির জন্য সব সুবিধা এক জায়গায়।",
                 features: ["১টি ফার্মেসি", "৩ জন ব্যবহারকারী, ২টি ডিভাইস", "পূর্ণ ইনভেন্টরি ও অ্যাকাউন্ট ম্যানেজমেন্ট", "মেয়াদোত্তীর্ণ ও লো-স্টক সতর্কতা", "রিপোর্ট ডাউনলোড (PDF, Excel, CSV)", "থার্মাল প্রিন্টিং সাপোর্ট", "দ্রুত কাস্টমার সাপোর্ট"],
             },
@@ -52,7 +52,7 @@ const T = {
                 features: ["1 pharmacy", "1 user (owner), 1 device", "Basic inventory management", "Basic sales & purchase tracking", "Mobile app access", "Email support"],
             },
             {
-                name: "Meghna", tagline: "Most Popular", price: 399, highlight: true, cta: null,
+                name: "Meghna", tagline: "Most Popular", price: 399, highlight: true, cta: "Details",
                 description: "All features in one place for mid to large pharmacies.",
                 features: ["1 pharmacy", "3 users, 2 devices", "Full inventory & account management", "Expiry & low-stock alerts", "Report downloads (PDF, Excel, CSV)", "Thermal printing support", "Fast customer support"],
             },

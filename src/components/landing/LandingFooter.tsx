@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { FacebookLogo, LinkedinLogo, InstagramLogo, YoutubeLogo, GooglePlayLogoIcon, Monitor, Heart } from "@phosphor-icons/react/dist/ssr";
+import { FacebookLogo, LinkedinLogo, InstagramLogo, YoutubeLogo, GooglePlayLogoIcon, Monitor, Heart, AppleLogo } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
+import ComingSoonModal from "@/components/ui/ComingSoonModal";
 
 const T = {
     bn: {
@@ -51,6 +53,14 @@ export default function LandingFooter() {
     const currentYear = new Date().getFullYear();
     const { lang } = useLanguage();
     const t = T[lang];
+    const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
+    const [comingSoonPlatform, setComingSoonPlatform] = useState<"Windows" | "App Store" | null>(null);
+
+    const handleAppStoreClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setComingSoonPlatform("App Store");
+        setIsComingSoonOpen(true);
+    };
 
     return (
         <footer className="bg-[#0a1a1a] text-slate-400 pt-20 pb-10 border-t border-white/5">
@@ -108,14 +118,14 @@ export default function LandingFooter() {
                         <h4 className="text-white font-bold text-sm mb-6 uppercase tracking-wider">{t.downloadLabel}</h4>
                         <p className="text-sm mb-6 leading-relaxed">{t.downloadSub}</p>
                         <div className="flex flex-col gap-3">
-                            <a href="https://wa.me/+8801608844017?text=আমি%20মেডিদেশ%20Android%20অ্যাপ%20ডাউনলোড%20করতে%20চাই" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-4 py-3 rounded transition-all duration-200 group border border-slate-700">
+                            <a href="https://play.google.com/store/apps/details?id=com.medidesh.pharmacy" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-4 py-3 rounded transition-all duration-200 group border border-slate-700">
                                 <GooglePlayLogoIcon weight="fill" size={20} className="text-medidesh-teal-400 group-hover:scale-110 transition-transform" />
                                 <span className="text-xs font-bold">Google Play</span>
                             </a>
-                            <a href="https://wa.me/+8801608844017?text=আমি%20মেডিদেশ%20Windows%20PC%20ভার্সন%20পেতে%20চাই" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-white hover:bg-slate-50 text-slate-900 px-4 py-3 rounded transition-all duration-200 group border border-slate-200">
-                                <Monitor weight="duotone" size={20} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
-                                <span className="text-xs font-bold">Windows</span>
-                            </a>
+                            <button onClick={handleAppStoreClick} className="flex w-full items-center gap-3 bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded transition-all duration-200 group border border-white/10 hover:border-white/20 cursor-pointer">
+                                <AppleLogo weight="fill" size={20} className="text-slate-300 group-hover:scale-110 transition-transform" />
+                                <span className="text-xs font-bold text-white">App Store</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -129,6 +139,12 @@ export default function LandingFooter() {
                     </div>
                 </div>
             </div>
+
+            <ComingSoonModal 
+                isOpen={isComingSoonOpen} 
+                onClose={() => setIsComingSoonOpen(false)} 
+                platform={comingSoonPlatform} 
+            />
         </footer>
     );
 }

@@ -1,7 +1,9 @@
 "use client";
 
-import { GooglePlayLogoIcon, Monitor, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { useState } from "react";
+import { GooglePlayLogoIcon, Monitor, ArrowRight, AppleLogo } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
+import ComingSoonModal from "@/components/ui/ComingSoonModal";
 
 const T = {
     bn: {
@@ -11,6 +13,7 @@ const T = {
         sub: "ফোন হোক বা কম্পিউটার, মেডিদেশ সফটওয়্যার আছে সবখানে।",
         googlePlay: "Google Play",
         windowsPC: "Windows",
+        appStore: "App Store",
     },
     en: {
         badge: "Download",
@@ -19,12 +22,27 @@ const T = {
         sub: "Phone or computer, Medidesh software is everywhere.",
         googlePlay: "Google Play",
         windowsPC: "Windows",
+        appStore: "App Store",
     },
 };
 
 export default function DownloadSection() {
     const { lang } = useLanguage();
     const t = T[lang];
+    const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
+    const [comingSoonPlatform, setComingSoonPlatform] = useState<"Windows" | "App Store" | null>(null);
+
+    const handleWindowsClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setComingSoonPlatform("Windows");
+        setIsComingSoonOpen(true);
+    };
+
+    const handleAppStoreClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setComingSoonPlatform("App Store");
+        setIsComingSoonOpen(true);
+    };
 
     return (
         <section id="download" className="py-20 lg:py-28 relative overflow-hidden bg-slate-900">
@@ -73,7 +91,7 @@ export default function DownloadSection() {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a
-                            href="https://wa.me/+8801608844017?text=আমি%20মেডিদেশ%20Android%20অ্যাপ%20ডাউনলোড%20করতে%20চাই"
+                            href="https://play.google.com/store/apps/details?id=com.medidesh.pharmacy"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-medidesh-teal-500 hover:bg-medidesh-teal-400 text-white px-10 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5 shadow-lg shadow-medidesh-teal-500/30 group"
@@ -82,18 +100,29 @@ export default function DownloadSection() {
                             <span>{t.googlePlay}</span>
                             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                         </a>
-                        <a
-                            href="https://wa.me/+8801608844017?text=আমি%20মেডিদেশ%20Windows%20PC%20ভার্সন%20পেতে%20চাই"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 text-white border border-white/15 hover:border-white/30 px-10 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5 group"
+                        <button
+                            onClick={handleAppStoreClick}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 text-white border border-white/15 hover:border-white/30 px-10 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5 group cursor-pointer"
+                        >
+                            <AppleLogo weight="fill" size={22} className="text-slate-300" />
+                            <span>{t.appStore}</span>
+                        </button>
+                        <button
+                            onClick={handleWindowsClick}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 text-white border border-white/15 hover:border-white/30 px-10 py-4 rounded font-bold text-base transition-all hover:-translate-y-0.5 group cursor-pointer"
                         >
                             <Monitor weight="duotone" size={22} className="text-medidesh-teal-400" />
                             <span>{t.windowsPC}</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
+
+            <ComingSoonModal 
+                isOpen={isComingSoonOpen} 
+                onClose={() => setIsComingSoonOpen(false)} 
+                platform={comingSoonPlatform} 
+            />
         </section>
     );
 }

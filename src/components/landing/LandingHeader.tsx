@@ -15,11 +15,11 @@ export default function LandingHeader() {
     const pathname  = usePathname();
     const isHome    = pathname === "/";
     const isAbout   = pathname.includes("/about");
+    const isStore   = pathname.includes("/store");
     const { lang, toggleLang } = useLanguage();
 
     // ── Nav link definitions ──────────────────────────────────────────
-    // Home page: Features · Solutions · Pricing · FAQ · Contact · About
-    // Home page: Features · Solutions · Pricing · Download · FAQ · Contact · About
+    // Home page: Features · Solutions · Pricing · FAQ · Contact · Store · About
     const homeLinks = [
         { bn: "সমাধান",        en: "Solutions",   href: isHome ? "#solutions" : "/#solutions" },
         { bn: "ফিচার",         en: "Features",    href: isHome ? "#features"  : "/#features"  },
@@ -27,6 +27,7 @@ export default function LandingHeader() {
         { bn: "প্রাইসিং",      en: "Pricing",     href: isHome ? "#pricing"   : "/#pricing"   },
         { bn: "প্রশ্নোত্তর",  en: "FAQ",         href: isHome ? "#faq"       : "/#faq"       },
         { bn: "যোগাযোগ",      en: "Contact",     href: isHome ? "#cta"       : "/#cta"       },
+        { bn: "স্টোর",         en: "Store",       href: "/store"                              },
         { bn: "আমাদের সম্পর্কে",en: "About Us",    href: "/about"                               },
     ];
 
@@ -40,7 +41,13 @@ export default function LandingHeader() {
         { bn: "যোগাযোগ",         en: "Contact",    href: "#cta"        },
     ];
 
-    const navLinks = isAbout ? aboutLinks : homeLinks;
+    // Store page: Home · About
+    const storeLinks = [
+        { bn: "হোম",           en: "Home",       href: "/"           },
+        { bn: "আমাদের সম্পর্কে",en: "About Us",   href: "/about"      },
+    ];
+
+    const navLinks = isStore ? storeLinks : isAbout ? aboutLinks : homeLinks;
 
     // ── Theme init ────────────────────────────────────────────────────
     useEffect(() => {
@@ -66,7 +73,8 @@ export default function LandingHeader() {
         // Section IDs in the order they appear on each page
         const homeSections  = ["hero", "solutions", "features", "download", "pricing", "faq", "cta"];
         const aboutSections = ["hero", "mission", "team", "supporters", "advisors", "cta"];
-        const sections = isAbout ? aboutSections : homeSections;
+        const storeSections: string[] = []; // Store page handles no hash sections for now
+        const sections = isStore ? storeSections : isAbout ? aboutSections : homeSections;
 
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);

@@ -117,7 +117,7 @@ export const STORE_ITEMS: StoreItem[] = [
         },
         price: "3,180",
         originalPrice: "3,500",
-        images: ["https://pixposbd.com/wp-content/uploads/2024/09/pixpos-d58.png"],
+        images: ["https://pixposbd.com/wp-content/uploads/2024/11/Pix-D58-Label-Sticker-printer-2.jpg"],
         features: {
             bn: ["ডেস্কটপ মডেল", "সহজ ব্যবহার", "সাশ্রয়ী মূল্য"],
             en: ["Desktop Model", "Easy to Use", "Affordable Price"],
@@ -137,7 +137,7 @@ export const STORE_ITEMS: StoreItem[] = [
         },
         price: "30,999",
         originalPrice: "38,999",
-        images: ["https://pixposbd.com/wp-content/uploads/2024/09/pixpos-z108.png"],
+        images: ["https://pixposbd.com/wp-content/uploads/2025/06/IMG_20250611_225007.jpg"],
         features: {
             bn: ["ডুয়াল ডিসপ্লে", "অ্যান্ড্রয়েড ভিত্তিক", "হাই-এন্ড পারফরম্যান্স"],
             en: ["Dual Display", "Android Based", "High-end Performance"],

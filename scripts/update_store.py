@@ -1,8 +1,8 @@
-import requests
-from bs4 import BeautifulSoup
 import json
 import re
 import os
+import asyncio
+from playwright.async_api import async_playwright
 
 # Configuration
 URLS = [
@@ -15,61 +15,51 @@ URLS = [
     "https://pixposbd.com/product/pixpos-z108-pos-printer-dual-display/"
 ]
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
-}
+# Brave Browser path on macOS
+BRAVE_PATH = "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 
-def extract_product_data(url):
+async def extract_product_data(browser, url):
     print(f"Scraping: {url}...")
+    page = await browser.new_page()
     try:
-        response = requests.get(url, headers=HEADERS, timeout=15)
-        if response.status_code != 200:
-            print(f"Error {response.status_code} for {url}")
-            return None
-        
-        soup = BeautifulSoup(response.text, 'html.parser')
+        # Navigate and wait for content
+        await page.goto(url, wait_until="networkidle", timeout=60000)
         
         # Selectors (standard WooCommerce)
-        title = soup.select_one('.product_title').text.strip() if soup.select_one('.product_title') else "N/A"
+        title = await page.locator('.product_title').inner_text()
         
         # Price
-        price_el = soup.select_one('.price')
-        prices = []
-        if price_el:
-            price_text = price_el.text.replace('৳', '').replace(',', '').strip()
-            prices = re.findall(r'\d+', price_text)
+        price_el = await page.locator('.price').inner_text()
+        prices = re.findall(r'\d+', price_el.replace(',', ''))
         
         current_price = prices[-1] if prices else "0"
         original_price = prices[0] if len(prices) > 1 else None
         
         # Image
-        img_el = soup.select_one('.woocommerce-product-gallery__image img')
-        image = img_el['src'] if img_el else ""
+        image = await page.locator('.woocommerce-product-gallery__image img').get_attribute('src')
         
         # Features & Description
-        short_desc_el = soup.select_one('.woocommerce-product-details__short-description')
-        features = []
-        if short_desc_el:
-            features = [li.text.strip() for li in short_desc_el.select('li')]
-        
-        desc = short_desc_el.text.strip() if short_desc_el else ""
+        features = await page.locator('.woocommerce-product-details__short-description li').all_inner_texts()
+        desc = await page.locator('.woocommerce-product-details__short-description').inner_text()
         
         # Generate ID from URL
         prod_id = url.split('/product/')[-1].strip('/')
         
+        await page.close()
+        
         return {
             "id": prod_id,
-            "name": {"bn": title, "en": title},
+            "name": {"bn": title.strip(), "en": title.strip()},
             "price": "{:,}".format(int(current_price)),
             "originalPrice": "{:,}".format(int(original_price)) if original_price else None,
             "images": [image],
             "features": {"bn": features, "en": features},
-            "description": {"bn": desc, "en": desc},
+            "description": {"bn": desc.strip(), "en": desc.strip()},
             "externalUrl": url
         }
     except Exception as e:
         print(f"Failed to scrape {url}: {e}")
+        await page.close()
         return None
 
 def update_store_ts(items):
@@ -81,18 +71,6 @@ def update_store_ts(items):
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Create the new STORE_ITEMS array string
-    items_json = json.dumps(items, indent=4, ensure_ascii=False)
-    # Fix formatting to match TS (remove quotes from keys we want to keep as variables)
-    items_json = items_json.replace('"vendor": "VENDORS.pixstore"', '"vendor": VENDORS.pixstore')
-    
-    # Use regex to find the STORE_ITEMS constant and replace its content
-    pattern = r'(export const STORE_ITEMS: StoreItem\[\] = )\[.*?\];'
-    # We use a bit more complex replacement because of the nested objects
-    # This is a simplified version, ideally we'd use a better parser
-    
-    # For simplicity in this script, we'll just write a new STORE_ITEMS section
-    # by finding the start and end of the array
     start_tag = "export const STORE_ITEMS: StoreItem[] = ["
     end_tag = "];"
     
@@ -102,13 +80,14 @@ def update_store_ts(items):
         return
         
     prefix = parts[0]
-    # Find the closing bracket of the array
-    # This is naive but works for standard formatting
     suffix = parts[1][parts[1].find(end_tag) + len(end_tag):]
     
-    # Build list string
     items_str = " [\n"
     for item in items:
+        # Sanitization for TS strings
+        safe_desc_bn = item['description']['bn'].replace('"', '\\"').replace('\n', ' ')
+        safe_desc_en = item['description']['en'].replace('"', '\\"').replace('\n', ' ')
+
         item_str = f"""    {{
         id: "{item['id']}",
         vendor: VENDORS.pixstore,
@@ -124,8 +103,8 @@ def update_store_ts(items):
             en: {json.dumps(item['features']['en'], ensure_ascii=False)},
         }},
         description: {{
-            bn: "{item['description']['bn'].replace('"', '\\"')}",
-            en: "{item['description']['en'].replace('"', '\\"')}",
+            bn: "{safe_desc_bn}",
+            en: "{safe_desc_en}",
         }},
         externalUrl: "{item['externalUrl']}",
     }},"""
@@ -138,14 +117,27 @@ def update_store_ts(items):
         f.write(new_content)
     print("store.ts updated successfully!")
 
+async def main():
+    if not os.path.exists(BRAVE_PATH):
+        print(f"Brave browser not found at {BRAVE_PATH}")
+        return
+
+    async with async_playwright() as p:
+        # Launch Brave Browser
+        browser = await p.chromium.launch(executable_path=BRAVE_PATH, headless=True)
+        
+        extracted_items = []
+        for url in URLS:
+            data = await extract_product_data(browser, url)
+            if data:
+                extracted_items.append(data)
+        
+        await browser.close()
+        
+        if extracted_items:
+            update_store_ts(extracted_items)
+        else:
+            print("No data extracted successfully.")
+
 if __name__ == "__main__":
-    extracted_items = []
-    for url in URLS:
-        data = extract_product_data(url)
-        if data:
-            extracted_items.append(data)
-    
-    if extracted_items:
-        update_store_ts(extracted_items)
-    else:
-        print("No data extracted successfully.")
+    asyncio.run(main())

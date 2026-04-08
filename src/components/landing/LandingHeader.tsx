@@ -18,9 +18,15 @@ export default function LandingHeader() {
     const isStore   = pathname.includes("/store");
     const { lang, toggleLang } = useLanguage();
 
+    interface NavLink {
+        bn: string;
+        en: string;
+        href: string;
+    }
+
     // ── Nav link definitions ──────────────────────────────────────────
     // Home page: Features · Solutions · Pricing · FAQ · Contact · Store · About
-    const homeLinks = [
+    const homeLinks: NavLink[] = [
         { bn: "সমাধান",        en: "Solutions",   href: isHome ? "#solutions" : "/#solutions" },
         { bn: "ফিচার",         en: "Features",    href: isHome ? "#features"  : "/#features"  },
         { bn: "ডাউনলোড",       en: "Download",    href: isHome ? "#download"  : "/#download"  },
@@ -30,7 +36,7 @@ export default function LandingHeader() {
     ];
 
     // About page: Vision · Story · Team · Supporters · Advisors · Contact
-    const aboutLinks = [
+    const aboutLinks: NavLink[] = [
         { bn: "লক্ষ্য",           en: "Vision",     href: "#hero"       },
         { bn: "আমাদের গল্প",      en: "Story",      href: "#mission"    },
         { bn: "আমাদের দল",        en: "Team",       href: "#team"       },
@@ -40,7 +46,7 @@ export default function LandingHeader() {
     ];
 
     // Store page: Empty links as per user request to simplify
-    const storeLinks = [];
+    const storeLinks: NavLink[] = [];
 
     const navLinks = isStore ? storeLinks : isAbout ? aboutLinks : homeLinks;
 
@@ -106,7 +112,7 @@ export default function LandingHeader() {
     }, [isHome, isAbout]);
 
     // ── Active check ─────────────────────────────────────────────────
-    const isActive = (link: typeof navLinks[0]) => {
+    const isActive = (link: NavLink) => {
         if (link.href === "/about") return isAbout;
         const id = link.href.replace(/^\/?#/, "").replace("/#", "");
         return activeSection === id;

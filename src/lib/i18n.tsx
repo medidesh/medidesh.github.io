@@ -7,11 +7,13 @@ export type Lang = "bn" | "en";
 interface LanguageContextType {
     lang: Lang;
     toggleLang: () => void;
+    mounted: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType>({
     lang: "bn",
     toggleLang: () => {},
+    mounted: false,
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
@@ -69,7 +71,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     // but returning children immediately allows SEO to work gracefully.
     // If a user sees a brief flash, `suppressHydrationWarning` on `html` masks the React error.
     return (
-        <LanguageContext.Provider value={{ lang, toggleLang, mounted } as any}>
+        <LanguageContext.Provider value={{ lang, toggleLang, mounted }}>
             {children}
         </LanguageContext.Provider>
     );

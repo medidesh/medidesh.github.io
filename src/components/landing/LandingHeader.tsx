@@ -27,8 +27,6 @@ export default function LandingHeader() {
         { bn: "প্রাইসিং",      en: "Pricing",     href: isHome ? "#pricing"   : "/#pricing"   },
         { bn: "প্রশ্নোত্তর",  en: "FAQ",         href: isHome ? "#faq"       : "/#faq"       },
         { bn: "যোগাযোগ",      en: "Contact",     href: isHome ? "#cta"       : "/#cta"       },
-        { bn: "স্টোর",         en: "Store",       href: "/store"                              },
-        { bn: "আমাদের সম্পর্কে",en: "About Us",    href: "/about"                               },
     ];
 
     // About page: Vision · Story · Team · Supporters · Advisors · Contact

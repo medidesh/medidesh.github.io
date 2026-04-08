@@ -1,7 +1,8 @@
 "use client";
 
-import { Star, Quotes } from "@phosphor-icons/react/dist/ssr";
+import { Quotes, Star } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
+import SectionBadge from "../ui/SectionBadge";
 
 const T = {
     bn: {
@@ -37,11 +38,8 @@ export default function TestimonialsSection() {
             </svg>
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 <div className="max-w-2xl mx-auto text-center mb-16">
-                    <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-100 text-amber-700 text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded mb-5 shadow-sm">
-                        <Star size={12} weight="fill" className="text-amber-500" />
-                        {t.badge}
-                    </div>
-                    <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight tracking-tight">{t.heading}</h2>
+                    <SectionBadge icon={Star} text={t.badge} />
+                    <h2 className="text-3xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tight">{t.heading}</h2>
                     <div className="inline-flex items-center gap-2.5 bg-slate-50 border border-slate-100 rounded px-5 py-2">
                         <div className="flex items-center gap-1">
                             {[...Array(5)].map((_, i) => <Star key={i} weight="fill" size={14} className="text-amber-400" />)}

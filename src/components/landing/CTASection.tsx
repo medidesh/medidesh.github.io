@@ -1,7 +1,8 @@
 "use client";
 
-import { EnvelopeSimple, Phone, WhatsappLogo, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeSimple, Phone, WhatsappLogo, ArrowRight, Headset } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
+import SectionBadge from "../ui/SectionBadge";
 
 const T = {
     bn: {
@@ -10,7 +11,7 @@ const T = {
         headingAccent: "পাশে আছি",
         sub: "যেকোনো প্রশ্ন বা সাহায্যের জন্য আমাদের সাথে যোগাযোগ করুন।",
         whatsapp: "WhatsApp করুন",
-        email: "support@medidesh.com",
+        email: "info.medidesh@gmail.com",
         phone: "+8801608-844017",
         hours: "শনি–বৃহস্পতি · সকাল ১০টা – রাত ৮টা",
     },
@@ -20,7 +21,7 @@ const T = {
         headingAccent: "here for you",
         sub: "Reach out with any question — our team responds fast.",
         whatsapp: "WhatsApp Us",
-        email: "support@medidesh.com",
+        email: "info.medidesh@gmail.com",
         phone: "+8801608-844017",
         hours: "Sat–Thu · 10 AM – 8 PM",
     },
@@ -47,8 +48,8 @@ export default function CTASection() {
             {/* Ring */}
             <svg className="absolute right-10 lg:right-24 top-1/2 -translate-y-1/2 w-48 h-48 opacity-[0.08] pointer-events-none hidden md:block" viewBox="0 0 200 200" fill="none" aria-hidden="true">
                 <circle cx="100" cy="100" r="90" stroke="white" strokeWidth="1.5" strokeDasharray="8 5" />
-                <circle cx="100" cy="100" r="65" stroke="white" strokeWidth="1"   strokeDasharray="5 4" />
-                <circle cx="100" cy="100" r="40" stroke="white" strokeWidth="1"   strokeDasharray="3 3" />
+                <circle cx="100" cy="100" r="65" stroke="white" strokeWidth="1" strokeDasharray="5 4" />
+                <circle cx="100" cy="100" r="40" stroke="white" strokeWidth="1" strokeDasharray="3 3" />
             </svg>
 
             {/* Crosses */}
@@ -67,10 +68,7 @@ export default function CTASection() {
 
                         {/* Left — text */}
                         <div className="lg:max-w-md">
-                            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-white/15 border border-white/20 text-white text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-sm">
-                                <span className="w-1.5 h-1.5 rounded bg-white animate-pulse" />
-                                {t.badge}
-                            </div>
+                            <SectionBadge icon={Headset} text={t.badge} />
                             <h2 className="text-3xl lg:text-4xl font-black text-white leading-tight tracking-tight mb-3">
                                 {t.heading}{" "}
                                 <span className="relative inline-block">

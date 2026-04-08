@@ -59,7 +59,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                             </div>
                         </a>
                         <a
-                            href="mailto:support@medidesh.com"
+                            href="mailto:info.medidesh@gmail.com"
                             className="flex items-center gap-4 group p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100"
                         >
                             <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
@@ -70,7 +70,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                     ইমেইল
                                 </div>
                                 <div className="text-lg font-bold text-slate-800">
-                                    support@medidesh.com
+                                    info.medidesh@gmail.com
                                 </div>
                             </div>
                         </a>

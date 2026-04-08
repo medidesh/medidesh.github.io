@@ -41,11 +41,8 @@ export default function LandingHeader() {
         { bn: "যোগাযোগ",         en: "Contact",    href: "#cta"        },
     ];
 
-    // Store page: Home · About
-    const storeLinks = [
-        { bn: "হোম",           en: "Home",       href: "/"           },
-        { bn: "আমাদের সম্পর্কে",en: "About Us",   href: "/about"      },
-    ];
+    // Store page: Empty links as per user request to simplify
+    const storeLinks = [];
 
     const navLinks = isStore ? storeLinks : isAbout ? aboutLinks : homeLinks;
 

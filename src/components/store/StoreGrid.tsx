@@ -173,9 +173,11 @@ export default function StoreGrid() {
                         const discountLabel = calculateDiscount(item.price, item.originalPrice);
 
                         return (
-                            <Link 
+                            <a 
                                 key={item.id}
-                                href={`/store/${item.id}`}
+                                href={item.externalUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="group flex flex-col bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 overflow-hidden hover:border-medidesh-teal-400 dark:hover:border-medidesh-teal-500/50 hover:shadow-lg transition-all duration-300 cursor-pointer"
                             >
                                 {/* Full-bleed Image Header */}
@@ -222,7 +224,7 @@ export default function StoreGrid() {
                                     {item.description[lang]}
                                 </p>
                             </div>
-                            </Link>
+                            </a>
                         );
                     })}
                 </div>

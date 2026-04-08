@@ -7,44 +7,44 @@ import { UsersThree, Sparkle } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
 
 const team = [
-    { name: "Faysal Hossain", role: { bn: "CEO ও সহ-প্রতিষ্ঠাতা",          en: "CEO & Co-Founder"               }, photo: "/assets/team/Faysal.png" },
-    { name: "Farhan Ahmed",   role: { bn: "CAO ও সহ-প্রতিষ্ঠাতা",          en: "CAO & Co-Founder"               }, photo: "/assets/team/Farhan.png" },
-    { name: "Noor Mohammad",  role: { bn: "হেড অব ফার্মেসি ও সাপ্লাই চেইন", en: "Head of Pharmacy & Supply Chain" }, photo: "/assets/team/Noor.png" },
-    { name: "Jannatul Maowa", role: { bn: "হেড অব হিউম্যান রিসোর্সেস",      en: "Head of Human Resources"        }, photo: "/assets/team/Maowa.png" },
+    { name: "Faysal Hossain", role: "Chief Executive Officer & Founder", photo: "/assets/team/Faysal.png" },
+    { name: "Noor Mohammad",  role: "Head of Pharmacy & Supply Chain", photo: "/assets/team/Noor.png" },
+    { name: "Jannatul Maowa", role: "Head of Human Resources",        photo: "/assets/team/Maowa.png" },
 ];
 
 const contributors = [
-    { name: "Tivana",               role: { bn: "ডিজাইন ও মার্কেটিং",    en: "Design & Marketing"    }, photo: "/assets/team/Tivana.png" },
-    { name: "Nayeem Shiddiki Abir", role: { bn: "মোবাইল অ্যাপ বিশেষজ্ঞ",  en: "Mobile App Specialist" }, photo: "/assets/team/Abir.png" },
-    { name: "Mahfuz",               role: { bn: "বিজনেস অ্যানালিসিস",     en: "Business Analysis"     }, photo: "/assets/team/Mahfuz.png" },
-    { name: "Mbr Sagor",            role: { bn: "ওয়েব ও ডেটাবেজ ডিজাইন", en: "Web & Database Design" }, photo: "/assets/team/Sagor.png" },
+    { name: "Tajriman Jannat Tivana", role: "Design & Marketing",    photo: "/assets/team/Tivana.png" },
+    { name: "Nayeem Shiddiki Abir",  role: "Mobile App Specialist", photo: "/assets/team/Abir.png" },
+    { name: "Mahfuz",                role: "Business Analysis",     photo: "/assets/team/Mahfuz.png" },
+    { name: "Mbr Sagor",             role: "Web & Database Design", photo: "/assets/team/Sagor.png" },
 ];
 
 const mentors = [
-    { name: "James Tan",                    role: { bn: "ব্যবসায়িক উপদেষ্টা", en: "Business Advisor"    }, org: "CEO, Heyjom & Mantra",                photo: "/assets/team/James.png" },
-    { name: "Prof. Dr. C. A. Vaithilingam", role: { bn: "ইনোভেশন উপদেষ্টা",   en: "Innovation Advisor"  }, org: "Professor & Sustainability Catalyst", photo: "/assets/team/Arvind.png" },
-    { name: "Prof. Dr. Murugan Thangiah",   role: { bn: "একাডেমিক উপদেষ্টা",  en: "Academic Advisor"    }, org: "Senior Lecturer, Taylor's University", photo: "/assets/team/Murgan.png" },
-    { name: "Patrica Tan",                  role: { bn: "ব্যবস্থাপনা কৌশল",    en: "Management Strategy" }, org: "Founder & CEO, SCORE MY",             photo: "/assets/team/Patricia Tan.png" },
-    { name: "Abdus Sami",                   role: { bn: "প্রযুক্তি উপদেষ্টা",  en: "Technology Advisor"  }, org: "CEO, AppifyDevs",                     photo: "/assets/team/Sami.png" },
-    { name: "Mosarrof Hossain",             role: { bn: "প্রযুক্তি উপদেষ্টা",  en: "Technology Advisor"  }, org: "CEO, QTEC Solution Limited",          photo: "/assets/team/Mosarrof.png" },
+    { name: "James Tan",                    role: "Business Advisor",               org: "CEO, Heyjom & Mantra",                photo: "/assets/team/James.png" },
+    { name: "Prof. Dr. C. A. Vaithilingam", role: "Innovation Advisor",             org: "Professor & Sustainability Catalyst", photo: "/assets/team/Arvind.png" },
+    { name: "Prof. Dr. Murugan Thangiah",   role: "Academic Advisor",               org: "Senior Lecturer, Taylor's University", photo: "/assets/team/Murgan.png" },
+    { name: "Dr. Ng Eng Hui (Alvin)",       role: "Engineering & Academic Advisor", org: "Senior Lecturer, Taylor's University", photo: "/assets/team/Alvin.png" },
+    { name: "Mahmudul Hasan Forhad",       role: "Communication Advisor",          org: "IELTS Instructor, Mentors'", photo: "/assets/team/Forhad.png" },
+    { name: "Abdus Sami",                   role: "Technology Advisor",             org: "CEO, AppifyDevs",                     photo: "/assets/team/Sami.png" },
+    { name: "Mosarrof Hossain",             role: "Technology Advisor",             org: "CEO, QTEC Solution Limited",          photo: "/assets/team/Mosarrof.png" },
 ];
 
 const T = {
     bn: {
         heroBadge: "ভবিষ্যতের উদ্যোগ",
-        heroHeading1: "স্মার্ট ফার্মেসি,",
-        heroHeading2: "স্মার্ট বাংলাদেশ",
-        heroSub: "মেডিদেশ একটি অত্যাধুনিক ডিজিটাল প্ল্যাটফর্ম যা দেশের প্রান্তিক ফার্মেসিগুলোতে স্বয়ংক্রিয় স্টক ব্যবস্থাপনা ও নিরাপদ চিকিৎসাসেবা নিশ্চিত করতে বদ্ধপরিকর।",
-        storyBadge: "আমাদের গল্প",
-        storyHeading1: "সমস্যার গভীরে,",
-        storyHeading2: "সমাধানের সন্ধানে",
+        heroHeading1: "সমন্বিত ডিজিটাল",
+        heroHeading2: "স্বাস্থ্য পরিকাঠামো",
+        heroSub: "আমরা কেবল একটি সফটওয়্যার নয়, বরং একটি সমন্বিত ডিজিটাল স্বাস্থ্য পরিকাঠামো গড়ে তুলছি, যা প্রতিটি মানুষের জন্য প্রয়োজনীয় ঔষধের সহজলভ্যতা ও নিরাপত্তা নিশ্চিত করবে।",
+        storyBadge: "আমাদের ভিত্তি",
+        storyHeading1: "ম্যানেজমেন্ট ছাড়িয়ে",
+        storyHeading2: " ঔষধের সহজলভ্যতা",
         storyP1: "বাংলাদেশের ফার্মেসি খাত দীর্ঘকাল ধরে সনাতন পদ্ধতিতে পরিচালিত হয়ে আসছে। হাতে লেখা খাতা আর অনিয়ন্ত্রিত ইনভেন্টরি ব্যবস্থাপনার কারণে মালিকদের প্রতিনিয়ত নানা আর্থিক ও পরিচালনাগত জটিলতায় পড়তে হয়।",
-        storyP2: "এর প্রত্যক্ষ প্রভাব পড়ে ঔষধের মেয়াদ ও গুণগত মানের ওপর। আমরা অনুধাবন করেছি যে, এই সমস্যার মূল কারণ শুধুমাত্র সদিচ্ছার অভাব নয়, বরং একটি সমন্বিত ডিজিটাল কাঠামোর অনুপস্থিতি।",
-        storyP3: "আধুনিক প্রযুক্তির সর্বোত্তম ব্যবহার নিশ্চিত করে ফার্মেসি ব্যবসাকে শতভাগ স্বচ্ছ, ঝুঁকিহীন এবং লাভজনক করার উদ্দেশ্যেই আমাদের এই উদ্যোগ। মেডিদেশ শুধু একটি সফটওয়্যার নয়, এটি দেশের স্বাস্থ্যখাতে যুগান্তকারী পরিবর্তনের এক বলিষ্ঠ অঙ্গীকার।",
-        teamBadge: "আমাদের টিম",
-        teamHeading1: "কোর",
-        teamHeading2: "লিডারশিপ",
-        teamSub: "স্বাস্থ্যসেবা এবং তথ্যপ্রযুক্তি খাতের একদল অভিজ্ঞ পেশাদারদের নিয়ে গঠিত আমাদের লিডারশিপ টিম। ফার্মেসি সাপ্লাই চেইনকে একটি আধুনিক ও সুরক্ষিত ডিজিটাল ইকোসিস্টেমে রূপান্তর করাই আমাদের মূল লক্ষ্য।",
+        storyP2: "মেডিদেশ-এ আমরা অনুধাবন করেছি যে, শুধু স্টক ম্যানেজমেন্ট যথেষ্ট নয়। আসল চ্যালেঞ্জ হলো সঠিক সময়ে ঔষধের প্রাপ্যতা নিশ্চিত করা। ফার্মেসিগুলোকে ডিজিটাইজ করার মাধ্যমে আমরা এমন এক নেটওয়ার্ক তৈরি করছি যা ঔষধের মজুদ ও অবস্থান সম্পর্কে স্বচ্ছ ধারণা দেবে।",
+        storyP3: "আমাদের লক্ষ্য হলো রোগীকে ঔষধের সন্ধানে দ্বারে দ্বারে ঘোরা থেকে মুক্তি দেওয়া। প্রযুক্তি এবং মানবিকতার সমন্বয়ে আমরা এমন এক যোগসূত্র তৈরি করছি যা স্থানীয় ফার্মেসি এবং সাধারণ মানুষের মাঝে আস্থার সেতুবন্ধন হিসেবে কাজ করবে।",
+        teamBadge: "আমাদের লক্ষ্য",
+        teamHeading1: "সমন্বিত",
+        teamHeading2: "স্বাস্থ্যসেবা",
+        teamSub: "স্বয়ংক্রিয় ব্যবস্থাপনার গণ্ডি পেরিয়ে আমরা এমন এক ভবিষ্যতের স্বপ্ন দেখি যেখানে প্রযুক্তি প্রতিটি রোগীকে তার নিকটস্থ ফার্মেসির সাথে সরাসরি সংযুক্ত করবে।",
         supportersBadge: "কন্ট্রিবিউটর",
         supportersHeading1: "আমাদের",
         supportersHeading2: "কন্ট্রিবিউটর",
@@ -58,17 +58,17 @@ const T = {
         heroBadge: "Strategic Vision",
         heroHeading1: "Architecting a Resilient",
         heroHeading2: "Digital Health Infrastructure",
-        heroSub: "We are transforming the pharmaceutical ecosystem with intelligent data systems, ensuring operational excellence and medicine safety at every node of the supply chain.",
+        heroSub: "We are building the backbone of a connected healthcare ecosystem, moving beyond management software to ensure every patient can find and access the medicine they need, when they need it.",
         storyBadge: "Our Foundation",
-        storyHeading1: "Addressing the",
-        storyHeading2: "Structural Gaps",
+        storyHeading1: "Beyond Inventory",
+        storyHeading2: "Toward Accessibility",
         storyP1: "The pharmaceutical sector in emerging markets faces critical challenges, ranging from fragmented supply chains to a lack of real-time inventory visibility. In Bangladesh, numerous community pharmacies operate without digital oversight, resulting in significant risks.",
-        storyP2: "At Medidesh, we analyzed these systemic inefficiencies through an engineering lens. Our research revealed that the problem lies in the absence of a unified ecosystem that integrates procurement, storage, and sales data onto a securely managed platform.",
-        storyP3: "We built Medidesh to serve as that infrastructure. By bridging the gap between medical science and software engineering, we are providing the essential data-driven backbone required to modernize the nation's healthcare delivery system.",
-        teamBadge: "Our Team",
-        teamHeading1: "Executive",
-        teamHeading2: "Leadership",
-        teamSub: "A specialized cross-functional team of engineering veterans and healthcare professionals driving the transition toward a highly secure, data-driven pharmaceutical ecosystem.",
+        storyP2: "At Medidesh, we recognized that inventory management is only the first step. The real challenge is medicine accessibility. By digitizing pharmacy stocks, we are creating a transparent network that allows for real-time visibility of life-saving medications.",
+        storyP3: "Our ultimate goal is to eliminate the 'medicine hunt'. We are bridging the gap between local pharmacies and the community they serve, ensuring that critical healthcare data translates into immediate, physical availability for every citizen.",
+        teamBadge: "Our Mission",
+        teamHeading1: "Connecting",
+        teamHeading2: "the Ecosystem",
+        teamSub: "Beyond simple automation, we are engineering a future where health data serves as a bridge between supply and demand, ensuring no patient is ever left without vital medication.",
         supportersBadge: "Contributors",
         supportersHeading1: "Core",
         supportersHeading2: "Contributors",
@@ -216,18 +216,28 @@ export default function AboutContent() {
                         <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">{t.teamSub}</p>
                     </div>
 
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-                        {team.map((member, i) => (
-                            <div key={i} className="relative overflow-hidden rounded group cursor-default" style={{ aspectRatio: "3/4" }}>
-                                <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                                <div className="absolute bottom-0 left-0 right-0 p-4">
-                                    <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{member.name}</h3>
-                                    <p className="text-white/70 text-xs mt-0.5 leading-snug">{member.role[lang]}</p>
-                                </div>
-                                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-medidesh-teal-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                        <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center group hover:border-medidesh-teal-500/30 transition-all duration-300">
+                            <div className="w-14 h-14 rounded-xl bg-medidesh-teal-50 dark:bg-medidesh-teal-500/10 flex items-center justify-center text-medidesh-teal-600 mb-6 group-hover:scale-110 transition-transform">
+                                <UsersThree size={28} weight="duotone" />
                             </div>
-                        ))}
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Community Hub</h3>
+                            <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">Empowering local pharmacies to become accessible healthcare nodes for their neighborhood.</p>
+                        </div>
+                        <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center group hover:border-medidesh-teal-500/30 transition-all duration-300">
+                            <div className="w-14 h-14 rounded-xl bg-medidesh-teal-50 dark:bg-medidesh-teal-500/10 flex items-center justify-center text-medidesh-teal-600 mb-6 group-hover:scale-110 transition-transform">
+                                <Sparkle size={28} weight="duotone" />
+                            </div>
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Real-time Visibility</h3>
+                            <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">Creating an open data network that shows medicine availability across the entire country.</p>
+                        </div>
+                        <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center group hover:border-medidesh-teal-500/30 transition-all duration-300">
+                            <div className="w-14 h-14 rounded-xl bg-medidesh-teal-50 dark:bg-medidesh-teal-500/10 flex items-center justify-center text-medidesh-teal-600 mb-6 group-hover:scale-110 transition-transform">
+                                <Sparkle size={28} weight="duotone" className="rotate-45" />
+                            </div>
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Health Security</h3>
+                            <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">Ensuring medicine authenticity and supply chain integrity through precision engineering.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -273,7 +283,7 @@ export default function AboutContent() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
                                 <div className="absolute bottom-0 left-0 right-0 p-3">
                                     <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{person.name}</h3>
-                                    <p className="text-white/65 text-xs mt-0.5 leading-snug">{person.role[lang]}</p>
+                                    <p className="text-white/65 text-xs mt-0.5 leading-snug">{person.role}</p>
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-medidesh-teal-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                             </div>
@@ -323,7 +333,7 @@ export default function AboutContent() {
                         </h2>
                         <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">{t.mentorsSub}</p>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                         {mentors.map((mentor, i) => (
                             <div key={i} className="relative overflow-hidden rounded group cursor-default" style={{ aspectRatio: "3/4" }}>
                                 <img src={mentor.photo} alt={mentor.name} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
@@ -331,7 +341,7 @@ export default function AboutContent() {
                                 <div className="absolute bottom-0 left-0 right-0 p-4">
                                     <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{mentor.name}</h3>
                                     <span className="inline-block mt-1 px-2 py-0.5 bg-amber-400/20 border border-amber-300/40 text-amber-200 text-[10px] font-semibold rounded backdrop-blur-sm">{mentor.org}</span>
-                                    <p className="text-white/60 text-xs mt-1">{mentor.role[lang]}</p>
+                                    <p className="text-white/60 text-xs mt-1">{mentor.role}</p>
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                             </div>

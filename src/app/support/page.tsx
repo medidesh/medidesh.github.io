@@ -2,7 +2,7 @@
 
 import LandingHeader from "@/components/landing/LandingHeader";
 import LandingFooter from "@/components/landing/LandingFooter";
-import { Headset, ChatTeardropText, Phone, Envelope } from "@phosphor-icons/react/dist/ssr";
+import { Headset, ChatTeardropText, Phone, EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 
 export default function SupportPage() {
     return (
@@ -47,9 +47,9 @@ export default function SupportPage() {
                         <div className="relative z-10">
                             <h2 className="text-3xl font-bold mb-6">টিকেট ওপেন করুন</h2>
                             <p className="text-slate-300 mb-8 max-w-lg">আপনার যদি কোনো বড় অভিযোগ বা ফিডব্যাক থাকে, তবে আমাদের ইনবক্স করুন। আমাদের টিম দ্রুত আপনার সাথে যোগাযোগ করবে।</p>
-                            <a href="mailto:support@medidesh.com" className="flex items-center gap-2 text-xl font-bold hover:text-pharma-green-400 transition-colors">
-                                <Envelope size={24} />
-                                support@medidesh.com
+                            <a href="mailto:info.medidesh@gmail.com" className="flex items-center gap-2 text-xl font-bold hover:text-pharma-green-400 transition-colors">
+                                <EnvelopeSimple size={24} weight="bold" />
+                                info.medidesh@gmail.com
                             </a>
                         </div>
                         <div className="absolute top-0 right-0 w-64 h-64 bg-pharma-green-500/10 blur-[80px]"></div>

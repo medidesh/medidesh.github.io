@@ -16,7 +16,7 @@ export default function PrivacyPage() {
 
                     <section className="mb-8">
                         <h2 className="text-2xl font-bold text-slate-800 mb-4">1. Data Controller</h2>
-                        <p>The entity responsible for the processing of your data is: <strong>Medidesh, Gazipur, Bangladesh, info.support@medidesh.com</strong></p>
+                        <p>The entity responsible for the processing of your data is: <strong>Medidesh, Gazipur, Bangladesh, info.info.medidesh@gmail.com</strong></p>
                     </section>
 
                     <section className="mb-8">
@@ -133,7 +133,7 @@ export default function PrivacyPage() {
 
                     <section className="mb-8">
                         <h2 className="text-2xl font-bold text-slate-800 mb-4">12. Contact us & Grievance officer</h2>
-                        <p>In accordance with the Information Technology laws of Bangladesh, if you have any questions or grievances, please contact: <a href="mailto:info.support@medidesh.com" className="text-green-600 hover:underline font-bold">info.support@medidesh.com</a></p>
+                        <p>In accordance with the Information Technology laws of Bangladesh, if you have any questions or grievances, please contact: <a href="mailto:info.info.medidesh@gmail.com" className="text-green-600 hover:underline font-bold">info.info.medidesh@gmail.com</a></p>
                         <p className="mt-2"><strong>Designation:</strong> Privacy Compliance Officer</p>
                     </section>
 

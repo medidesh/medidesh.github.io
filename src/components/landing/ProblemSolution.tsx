@@ -1,10 +1,11 @@
 "use client";
 
-import {
-    Monitor, Eye, Tag, WifiSlash, Database, ShieldCheck,
-    ArrowRight, SparkleIcon, RocketLaunch, Headset, CloudSlash, BellRinging,
+import { 
+    Monitor, Eye, Tag, WifiSlash, Database, ShieldCheck, 
+    ArrowRight, Sparkle, RocketLaunch, Headset, CloudSlash, BellRinging 
 } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
+import SectionBadge from "../ui/SectionBadge";
 
 const points = {
     bn: [
@@ -46,12 +47,9 @@ export default function ProblemSolution() {
             <svg className="absolute top-0 left-0 w-full opacity-[0.04] pointer-events-none" viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" aria-hidden="true">
                 <path d="M0,30 C180,60 360,0 540,30 C720,60 900,0 1080,30 C1260,60 1380,20 1440,30" stroke="#2E8B57" strokeWidth="3" fill="none" />
             </svg>
-            <div className="container mx-auto px-6 lg:px-12">
-                <div className="max-w-2xl mx-auto text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
-                        <SparkleIcon size={13} weight="fill" className="text-medidesh-teal-500" />
-                        {t.badge}
-                    </div>
+            <div className="container mx-auto px-6 lg:px-12 relative z-10">
+                <div className="max-w-2xl mx-auto text-center mb-16 px-4">
+                    <SectionBadge icon={Sparkle} text={t.badge} />
                     <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
                         {t.heading1}{" "}<span className="text-medidesh-teal-500">{t.heading2}</span> {t.heading3}
                     </h2>
@@ -70,10 +68,10 @@ export default function ProblemSolution() {
                     ))}
                 </div>
 
-                <div className="mt-16 max-w-xl mx-auto text-center">
-                    <a href="#features" className="inline-flex items-center gap-2 text-medidesh-teal-600 font-bold text-base hover:gap-3 transition-all duration-200">
+                <div className="mt-16 max-w-xl mx-auto text-center font-hind-siliguri">
+                    <a href="#features" className="inline-flex items-center gap-2 text-medidesh-teal-600 font-bold text-base hover:gap-3 transition-all duration-200 group">
                         {t.cta}
-                        <ArrowRight size={18} weight="bold" />
+                        <ArrowRight size={18} weight="bold" className="group-hover:translate-x-1 transition-transform" />
                     </a>
                 </div>
             </div>

@@ -7,7 +7,7 @@ export default function TermsPage() {
             <LandingHeader />
             <div className="pt-32 pb-20 container mx-auto px-6 lg:px-12 max-w-4xl">
                 <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Terms and Conditions for Medidesh</h1>
-                
+
                 <div className="prose prose-lg prose-slate max-w-none text-slate-700">
                     <section className="mb-8">
                         <p>Welcome to Medidesh. These Terms and Conditions (&ldquo;Terms&rdquo;) govern your use of the Medidesh mobile application and related services (&ldquo;the App&rdquo;), which provide Inventory Management, Point of Sale (POS), and Medicine Search functionalities. By accessing or using the App, you agree to be bound by these Terms.</p>
@@ -27,7 +27,7 @@ export default function TermsPage() {
                         <h2 className="text-2xl font-bold text-slate-800 mb-4">2. Use of Services</h2>
                         <h3 className="text-xl font-bold text-slate-800 mb-2 mt-4">2.1. Inventory & POS Management</h3>
                         <p>Our platform is designed to assist you with tracking stock, managing accounts, and generating receipts. However, you acknowledge that you are solely responsible for the physical accuracy of your inventory, verifying stock expiry dates manually, and managing your financial taxes. Medidesh does not act as an accounting or tax advisory service.</p>
-                        
+
                         <h3 className="text-xl font-bold text-slate-800 mb-2 mt-4">2.2. Medicine Search & Health Data</h3>
                         <p>The Medicine Search feature is provided for informational and reference purposes only. It does not constitute professional medical advice, diagnosis, or treatment. Pharmacists utilizing this tool must rely on their professional judgment and the prescriptions provided by registered medical practitioners.</p>
                     </section>
@@ -74,7 +74,7 @@ export default function TermsPage() {
                         <address className="not-italic mt-2">
                             <strong>Medidesh</strong><br />
                             Gazipur, Bangladesh<br />
-                            Email: <a href="mailto:info.support@medidesh.com" className="text-medidesh-teal-600 hover:underline font-bold">info.support@medidesh.com</a>
+                            Email: <a href="mailto:info.info.medidesh@gmail.com" className="text-medidesh-teal-600 hover:underline font-bold">info.info.medidesh@gmail.com</a>
                         </address>
                     </section>
                 </div>

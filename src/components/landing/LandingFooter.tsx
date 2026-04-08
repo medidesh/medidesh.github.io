@@ -22,6 +22,7 @@ const T = {
         ],
         company: [
             { label: "আমাদের সম্পর্কে", href: "/about" },
+            { label: "মেডিদেশ স্টোর", href: "/store" },
             { label: "যোগাযোগ", href: "/#cta" },
             { label: "গোপনীয়তা নীতি", href: "/privacy" },
             { label: "শর্তাবলী", href: "/terms" },
@@ -42,6 +43,7 @@ const T = {
         ],
         company: [
             { label: "About Us", href: "/about" },
+            { label: "Medidesh Store", href: "/store" },
             { label: "Contact", href: "/#cta" },
             { label: "Privacy Policy", href: "/privacy" },
             { label: "Terms & Conditions", href: "/terms" },

@@ -35,8 +35,13 @@ async def extract_product_data(browser, url):
         current_price = prices[-1] if prices else "0"
         original_price = prices[0] if len(prices) > 1 else None
         
-        # Image
-        image = await page.locator('.woocommerce-product-gallery__image img').get_attribute('src')
+        # Multiple Images
+        img_locators = await page.locator('.woocommerce-product-gallery__image img').all()
+        images = []
+        for img in img_locators:
+            src = await img.get_attribute('src')
+            if src and src not in images:
+                images.append(src)
         
         # Features & Description
         features = await page.locator('.woocommerce-product-details__short-description li').all_inner_texts()
@@ -52,9 +57,9 @@ async def extract_product_data(browser, url):
             "name": {"bn": title.strip(), "en": title.strip()},
             "price": "{:,}".format(int(current_price)),
             "originalPrice": "{:,}".format(int(original_price)) if original_price else None,
-            "images": [image],
+            "images": images,
             "features": {"bn": features, "en": features},
-            "description": {"bn": desc.strip(), "en": desc.strip()},
+            "description": {"bn": desc.strip().replace('\n', ' '), "en": desc.strip().replace('\n', ' ')},
             "externalUrl": url
         }
     except Exception as e:
@@ -67,6 +72,14 @@ def update_store_ts(items):
     if not os.path.exists(file_path):
         print(f"File not found: {file_path}")
         return
+
+    # Deduplicate items in the list before writing
+    seen_urls = set()
+    deduped_items = []
+    for item in items:
+        if item['externalUrl'] not in seen_urls:
+            deduped_items.append(item)
+            seen_urls.add(item['externalUrl'])
 
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
@@ -83,7 +96,7 @@ def update_store_ts(items):
     suffix = parts[1][parts[1].find(end_tag) + len(end_tag):]
     
     items_str = " [\n"
-    for item in items:
+    for item in deduped_items:
         # Sanitization for TS strings
         safe_desc_bn = item['description']['bn'].replace('"', '\\"').replace('\n', ' ')
         safe_desc_en = item['description']['en'].replace('"', '\\"').replace('\n', ' ')
@@ -115,7 +128,7 @@ def update_store_ts(items):
     
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(new_content)
-    print("store.ts updated successfully!")
+    print(f"store.ts updated successfully with {len(deduped_items)} items!")
 
 async def main():
     if not os.path.exists(BRAVE_PATH):

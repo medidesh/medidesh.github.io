@@ -69,26 +69,6 @@ export const STORE_ITEMS: StoreItem[] = [
         externalUrl: "https://pixposbd.com/product/pix-z80c-3-inch-autocut-desk/",
     },
     {
-        id: "pix-dual-mode",
-        vendor: VENDORS.pixstore,
-        name: {
-            bn: "Pix Dual Mode Label & POS Printer",
-            en: "Pix Dual Mode Label & POS Printer",
-        },
-        price: "6,999",
-        originalPrice: "7,500",
-        images: ["https://pixposbd.com/wp-content/uploads/2026/02/PixPos-M860-3-inch-POS-Printer-Bluetooth-PC.jpg"],
-        features: {
-            bn: ["ডুয়াল মোড: লেবেল এবং রিসিট", "৩ ইঞ্চি প্রিন্টিং", "পেশাদার গ্রেড"],
-            en: ["Dual Mode: Label & Receipt", "3 inch Printing", "Professional Grade"],
-        },
-        description: {
-            bn: "একই সাথে লেবেল স্টিকার এবং ক্যাশ মেমো প্রিন্ট করুন।",
-            en: "Print both label stickers and cash memos with one device.",
-        },
-        externalUrl: "https://pixposbd.com/product/printer-dual-mode-label-pos/",
-    },
-    {
         id: "pixpos-l58p",
         vendor: VENDORS.pixstore,
         name: {

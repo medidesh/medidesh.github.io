@@ -23,7 +23,6 @@ const mentors = [
     { name: "James Tan",                    role: "Business Advisor",               org: "CEO, Heyjom & Mantra",                photo: "/assets/team/James.png" },
     { name: "Prof. Dr. C. A. Vaithilingam", role: "Innovation Advisor",             org: "Professor & Sustainability Catalyst", photo: "/assets/team/Arvind.png" },
     { name: "Prof. Dr. Murugan Thangiah",   role: "Academic Advisor",               org: "Senior Lecturer, Taylor's University", photo: "/assets/team/Murgan.png" },
-    { name: "Dr. Ng Eng Hui",               role: "Engineering & Academic Advisor", org: "Senior Lecturer, Taylor's University", photo: "/assets/team/Alvin.png" },
     { name: "Mahmudul Hasan Forhad",       role: "Communication Advisor",          org: "IELTS Instructor, Mentors'", photo: "/assets/team/Forhad.png" },
     { name: "Abdus Sami",                   role: "Technology Advisor",             org: "CEO, AppifyDevs",                     photo: "/assets/team/Sami.png" },
     { name: "Mosarrof Hossain",             role: "Technology Advisor",             org: "CEO, QTEC Solution Limited",          photo: "/assets/team/Mosarrof.png" },

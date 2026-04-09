@@ -23,7 +23,7 @@ const mentors = [
     { name: "James Tan",                    role: "Business Advisor",               org: "CEO, Heyjom & Mantra",                photo: "/assets/team/James.png" },
     { name: "Prof. Dr. C. A. Vaithilingam", role: "Innovation Advisor",             org: "Professor & Sustainability Catalyst", photo: "/assets/team/Arvind.png" },
     { name: "Prof. Dr. Murugan Thangiah",   role: "Academic Advisor",               org: "Senior Lecturer, Taylor's University", photo: "/assets/team/Murgan.png" },
-    { name: "Dr. Ng Eng Hui (Alvin)",       role: "Engineering & Academic Advisor", org: "Senior Lecturer, Taylor's University", photo: "/assets/team/Alvin.png" },
+    { name: "Dr. Ng Eng Hui",               role: "Engineering & Academic Advisor", org: "Senior Lecturer, Taylor's University", photo: "/assets/team/Alvin.png" },
     { name: "Mahmudul Hasan Forhad",       role: "Communication Advisor",          org: "IELTS Instructor, Mentors'", photo: "/assets/team/Forhad.png" },
     { name: "Abdus Sami",                   role: "Technology Advisor",             org: "CEO, AppifyDevs",                     photo: "/assets/team/Sami.png" },
     { name: "Mosarrof Hossain",             role: "Technology Advisor",             org: "CEO, QTEC Solution Limited",          photo: "/assets/team/Mosarrof.png" },
@@ -333,7 +333,7 @@ export default function AboutContent() {
                         </h2>
                         <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">{t.mentorsSub}</p>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                         {mentors.map((mentor, i) => (
                             <div key={i} className="relative overflow-hidden rounded group cursor-default" style={{ aspectRatio: "3/4" }}>
                                 <img src={mentor.photo} alt={mentor.name} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />

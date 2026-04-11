@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.medidesh.pharmacy",
+      "sha256_cert_fingerprints": [
+        "DD:0B:B6:24:00:EC:C8:45:40:1A:A5:D2:59:98:B5:1F:FF:FF:31:AA:29:CF:B4:A7:C3:82:80:A2:E3:0E:FF:20"
+      ]
+    }
+  }
+]

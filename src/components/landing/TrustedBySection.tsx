@@ -1,23 +1,25 @@
 "use client";
 
 import { useLanguage } from "@/lib/i18n";
-import { Circle, Hexagon, Infinity as InfinityIcon, Planet, Target } from "@phosphor-icons/react/dist/ssr";
 
 const T = {
     bn: {
-        text: "১০০+ এর বেশি ফার্মেসির বিশ্বস্ত সফটওয়্যার",
+        text: "৫,০০০+ ফার্মেসি মেডিদেশ ব্যবহার করে তাদের ব্যবসা পরিচালনা করছে",
     },
     en: {
-        text: "Trusted software for over 100+ pharmacies",
+        text: "Over 5,000 pharmacies rely on Medidesh to manage their business",
     },
 };
 
 const PHARMACIES = [
-    { name: "Mayer Doa Pharma", font: "font-sans font-black tracking-tighter" },
-    { name: "Bismillah Pharmacy", font: "font-serif italic font-bold tracking-tight" },
-    { name: "Sikder Medical", font: "font-[Orbitron] font-bold uppercase tracking-wider" },
-    { name: "Lazz Pharma", font: "font-sans font-extrabold tracking-widest text-white/90" },
-    { name: "Al-Madina Pharma", font: "font-mono font-bold tracking-tight" },
+    { name: "Lazz Pharma", font: "font-sans font-black tracking-tighter" },
+    { name: "Bismillah", font: "font-serif italic font-bold" },
+    { name: "Mayer Doa", font: "font-sans font-extrabold uppercase tracking-widest" },
+    { name: "Sikder Medical", font: "font-mono font-bold" },
+    { name: "Al-Madina", font: "font-sans font-black" },
+    { name: "Popular", font: "font-serif font-black uppercase" },
+    { name: "Khidmat", font: "font-sans font-extrabold italic" },
+    { name: "Standard", font: "font-mono font-black tracking-tighter" },
 ];
 
 export default function TrustedBySection() {
@@ -25,24 +27,23 @@ export default function TrustedBySection() {
     const t = T[lang];
 
     return (
-        <section className="bg-[#0a0a0a] py-6 overflow-hidden border-b border-white/10">
-            <div className="container mx-auto px-5 lg:px-10 flex flex-col md:flex-row items-center gap-6 lg:gap-12">
-                <div className="w-full md:w-1/3 text-white">
-                    <p className="text-lg lg:text-xl font-medium leading-snug">
-                        {t.text}
-                    </p>
-                </div>
-                
-                {/* Marquee Container */}
-                <div className="w-full md:w-2/3 relative flex overflow-x-hidden">
-                    {/* Gradient Masks */}
-                    <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
-                    <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
-                    
-                    <div className="flex items-center whitespace-nowrap animate-marquee">
-                        {[...PHARMACIES, ...PHARMACIES, ...PHARMACIES].map((pharmacy, i) => (
-                            <div key={i} className="flex items-center gap-2 text-white/60 hover:text-white/80 transition-colors mx-8">
-                                <span className={`text-2xl ${pharmacy.font}`}>{pharmacy.name}</span>
+        <section className="bg-black py-16 lg:py-24 border-y border-white/5">
+            <div className="container mx-auto px-5 lg:px-10">
+                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+                    {/* Left Text */}
+                    <div className="w-full lg:w-1/2">
+                        <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-white leading-[1.15] tracking-tight">
+                            {t.text}
+                        </h2>
+                    </div>
+
+                    {/* Right Logos Grid */}
+                    <div className="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-10 items-center opacity-70">
+                        {PHARMACIES.map((pharmacy, i) => (
+                            <div key={i} className="flex items-center justify-center lg:justify-start">
+                                <span className={`text-xl lg:text-2xl text-white whitespace-nowrap ${pharmacy.font}`}>
+                                    {pharmacy.name}
+                                </span>
                             </div>
                         ))}
                     </div>

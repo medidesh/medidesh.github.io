@@ -94,24 +94,16 @@ export default function LandingHero() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="flex flex-col sm:flex-row items-center justify-center gap-3 lg:gap-4 mb-20 w-full sm:w-auto"
                     >
-                        {/* Primary CTA - Google Play */}
-                        <a href="https://play.google.com/store/apps/details?id=com.medidesh.pharmacy" target="_blank" rel="noopener noreferrer"
-                            className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-medidesh-teal-50 border-2 border-medidesh-teal-200 text-medidesh-teal-700 px-6 lg:px-8 py-3.5 font-bold text-[15px] transition-all hover:-translate-y-1 hover:bg-medidesh-teal-100 hover:shadow-lg hover:shadow-medidesh-teal-500/20 rounded-2xl lg:rounded-full group">
-                            <GooglePlayLogoIcon weight="fill" size={20} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
+                        {/* Primary CTA — solid with rounded corners */}
+                        <a href="#download"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px rounded-xl shadow-lg shadow-medidesh-teal-500/20">
                             <span>{t.downloadBtn}</span>
                         </a>
-
-                        {/* Windows App */}
-                        <button onClick={(e) => handleComingSoonClick("Windows", e)}
-                            className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-blue-50 border-2 border-blue-200 text-blue-700 px-6 lg:px-8 py-3.5 font-bold text-[15px] transition-all hover:-translate-y-1 hover:bg-blue-100 hover:shadow-lg hover:shadow-blue-500/20 rounded-2xl lg:rounded-full group">
-                            <WindowsLogo weight="fill" size={20} className="text-blue-500 group-hover:scale-110 transition-transform" />
-                            <span>Windows</span>
-                        </button>
-
-                        {/* Watch Demo */}
+                        
+                        {/* Secondary CTA — bordered with rounded corners */}
                         <button onClick={() => setIsVideoOpen(true)}
-                            className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-amber-50 border-2 border-amber-200 text-amber-700 px-6 lg:px-8 py-3.5 font-bold text-[15px] transition-all hover:-translate-y-1 hover:bg-amber-100 hover:shadow-lg hover:shadow-amber-500/20 rounded-2xl lg:rounded-full group">
-                            <Play weight="fill" size={20} className="text-amber-500 group-hover:scale-110 transition-transform" />
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-medidesh-teal-600 border-2 border-medidesh-teal-600 px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px hover:bg-medidesh-teal-50 rounded-xl">
+                            <Play weight="fill" size={16} />
                             <span>{t.tutorialBtn}</span>
                         </button>
                     </motion.div>

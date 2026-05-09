@@ -58,28 +58,28 @@ export default function LandingHero() {
     };
 
     return (
-        <section id="hero" className="relative pt-24 pb-0 lg:pt-32 lg:pb-0 bg-white overflow-hidden text-center border-b-[6px] border-slate-900">
+        <section id="hero" className="relative pt-24 pb-0 lg:pt-32 lg:pb-0 bg-[#fafafa] overflow-hidden text-center border-b border-slate-200">
             {/* Zubaz-style hand-drawn arrows */}
             <ArrowDoodle className="absolute left-4 lg:left-24 top-24 lg:top-32 w-32 lg:w-48 text-slate-900 hidden sm:block pointer-events-none" />
             <SparkleLines className="absolute right-8 lg:right-32 top-32 lg:top-40 w-16 lg:w-20 text-slate-900 hidden sm:block pointer-events-none" />
 
-            {/* Giant Lime Semi-circle behind the phone - Adjusted to cover ~half of the phone */}
-            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[600px] h-[250px] lg:w-[1000px] lg:h-[380px] bg-[#9fff40] rounded-t-full opacity-100 pointer-events-none z-0"></div>
+            {/* Lime Semi-circle — positioned to cover bottom ~50% of the phone */}
+            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[600px] h-[220px] lg:w-[900px] lg:h-[340px] bg-[#9fff40] rounded-t-full pointer-events-none z-0"></div>
             
-            {/* Additional colorful glows */}
-            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-medidesh-teal-400/10 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute top-1/3 -right-20 w-80 h-80 bg-[#9fff40]/10 rounded-full blur-[80px] pointer-events-none" />
+            {/* Soft ambient glows */}
+            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-medidesh-teal-400/8 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-1/3 -right-20 w-80 h-80 bg-[#9fff40]/8 rounded-full blur-[80px] pointer-events-none" />
 
             <div className="container mx-auto px-5 lg:px-10 relative z-10">
-                <div className="max-w-4xl mx-auto flex flex-col items-center">
+                <div className="max-w-3xl mx-auto flex flex-col items-center">
                     <motion.h1
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="text-3xl md:text-5xl lg:text-[72px] font-black text-slate-900 mb-6 leading-[1.05] tracking-[-0.04em]"
+                        className="text-3xl md:text-5xl lg:text-[64px] font-black text-slate-900 mb-6 leading-[1.08] tracking-[-0.03em]"
                     >
                         {t.title1}{" "}
-                        <span className="text-medidesh-teal-600">{t.titleHighlight}</span>{" "}
+                        <span className="text-medidesh-teal-500">{t.titleHighlight}</span>{" "}
                         {t.title2}
                     </motion.h1>
 
@@ -87,7 +87,7 @@ export default function LandingHero() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-base lg:text-[20px] text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed font-medium"
+                        className="text-base lg:text-lg text-slate-500 mb-10 max-w-xl mx-auto leading-relaxed"
                     >
                         {t.sub}
                     </motion.p>
@@ -96,7 +96,7 @@ export default function LandingHero() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-3 lg:gap-4 mb-20 w-full sm:w-auto"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-3 lg:gap-4 mb-16 lg:mb-20 w-full sm:w-auto"
                     >
                         {/* Primary CTA */}
                         <a href="#download"
@@ -112,92 +112,83 @@ export default function LandingHero() {
                         </button>
                     </motion.div>
 
-                    {/* iPhone App Mockup & Floating Elements */}
+                    {/* === Phone Mockup + Floating Elements === */}
                     <motion.div
                         initial={{ opacity: 0, y: 32 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.3 }}
-                        className="relative mx-auto flex justify-center w-full max-w-6xl h-[400px] lg:h-[500px]"
+                        className="relative mx-auto flex justify-center w-full max-w-5xl"
+                        style={{ height: "clamp(380px, 50vw, 520px)" }}
                     >
-                        {/* The Phone - Buried 25% */}
-                        <div className="absolute left-1/2 -translate-x-1/2 z-20 translate-y-[20%] lg:translate-y-[25%]">
+                        {/* The Phone — sunk down so bottom ~20% is hidden by overflow */}
+                        <div className="absolute left-1/2 -translate-x-1/2 top-[10%] lg:top-[12%] z-20">
                             <PhoneMockup frameColor="bg-slate-900">
                                 <div className="w-full h-full relative rounded-[2.5rem] overflow-hidden">
-                                    {/* iPhone Status Bar Simulation */}
-                                    <div className="absolute top-0 w-full h-7 bg-transparent z-20 flex justify-between items-center px-5 pt-1">
-                                        <span className="text-[10px] font-medium text-slate-900">9:41</span>
-                                        <div className="flex gap-1 items-center">
-                                            <div className="w-3 h-2.5 border border-slate-900 rounded-[2px] relative"><div className="w-0.5 h-1 bg-slate-900 absolute -right-1 top-[2px]"></div></div>
-                                        </div>
-                                    </div>
                                     <img src="/assets/mobile_app.png" alt="Medidesh App" className="w-full h-full object-cover object-left-top" loading="eager" />
                                 </div>
                             </PhoneMockup>
                         </div>
 
-                        {/* Top Left Pill */}
-                        <div className="absolute left-[2%] lg:left-[18%] top-[5%] lg:top-[8%] z-30 animate-float scale-50 sm:scale-75 lg:scale-100 origin-right" style={{ animationDelay: "0.5s" }}>
-                            <div className="relative -rotate-6">
-                                <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-1.5 translate-y-1.5"></div>
-                                <div className="relative bg-[#9fff40] border-2 border-slate-900 rounded-none px-5 py-3 flex items-center gap-3">
-                                    <CurrencyCircleDollar weight="fill" size={24} className="text-slate-900" />
-                                    <span className="font-black text-base text-slate-900 tracking-tight">{t.floating.pill}</span>
+                        {/* ── Top-Left Pill ($5,000 collected) ── */}
+                        <div className="absolute left-[1%] lg:left-[12%] top-[14%] lg:top-[12%] z-30 animate-float hidden sm:block" style={{ animationDelay: "0.5s" }}>
+                            <div className="relative -rotate-3">
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-lg translate-x-1 translate-y-1"></div>
+                                <div className="relative bg-[#9fff40] border-[2.5px] border-slate-900 rounded-lg px-4 py-2.5 flex items-center gap-2">
+                                    <CurrencyCircleDollar weight="fill" size={22} className="text-slate-900" />
+                                    <span className="font-black text-sm text-slate-900">{t.floating.pill}</span>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Bottom Left Card */}
-                        <div className="absolute left-[-5%] lg:left-[2%] bottom-[10%] lg:bottom-[15%] z-30 animate-float scale-50 sm:scale-75 lg:scale-100 origin-right" style={{ animationDelay: "1s" }}>
-                            <div className="relative w-56 -rotate-6">
-                                <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-2 translate-y-2"></div>
-                                <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-4 translate-y-4"></div>
-                                <div className="relative bg-white border-2 border-slate-900 rounded-none p-6 text-left">
-                                    <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-5">
-                                        <Wallet weight="fill" size={24} className="text-[#9fff40]" />
+                        {/* ── Bottom-Left Card (Total spending / Inventory) ── */}
+                        <div className="absolute left-[-3%] lg:left-[3%] bottom-[8%] lg:bottom-[12%] z-30 animate-float hidden sm:block" style={{ animationDelay: "1s" }}>
+                            <div className="relative w-44 lg:w-48 -rotate-3">
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-1.5 translate-y-1.5"></div>
+                                <div className="relative bg-white border-[2.5px] border-slate-900 rounded-xl p-5 text-left">
+                                    <div className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center mb-3">
+                                        <Wallet weight="fill" size={20} className="text-[#9fff40]" />
                                     </div>
-                                    <p className="text-[13px] font-bold text-slate-500 mb-1">Total spending</p>
-                                    <p className="text-[28px] font-black text-slate-900 tracking-tight">$42.040</p>
+                                    <p className="text-[11px] font-semibold text-slate-500 mb-0.5">{t.floating.spendTitle}</p>
+                                    <p className="text-xl font-black text-slate-900">{t.floating.spendValue}</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Top Right Card (Photo) */}
-                        <div className="absolute right-[2%] lg:right-[15%] top-[2%] lg:top-[5%] z-30 animate-float scale-50 sm:scale-75 lg:scale-100 origin-left" style={{ animationDelay: "1.5s" }}>
-                            <div className="relative w-44 rotate-6">
-                                <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-2 translate-y-2"></div>
-                                <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-4 translate-y-4"></div>
-                                <div className="relative bg-white border-2 border-slate-900 rounded-none p-1 overflow-hidden">
-                                    <img src="/assets/pharmacist.png" alt="Pharmacist" className="w-full h-44 object-cover rounded-none" />
-                                    {/* Action lines - stylized top right */}
-                                    <div className="absolute -top-1 -right-1">
-                                        <div className="flex gap-1">
-                                            <div className="w-1 h-4 bg-slate-900 rotate-45 transform origin-bottom"></div>
-                                            <div className="w-1 h-6 bg-slate-900 rotate-45 transform origin-bottom"></div>
-                                            <div className="w-1 h-4 bg-slate-900 rotate-45 transform origin-bottom"></div>
-                                        </div>
-                                    </div>
+                        {/* ── Top-Right Card (Pharmacist photo) ── */}
+                        <div className="absolute right-[1%] lg:right-[10%] top-[5%] lg:top-[4%] z-30 animate-float hidden sm:block" style={{ animationDelay: "1.5s" }}>
+                            <div className="relative w-32 lg:w-36 rotate-6">
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-1.5 translate-y-1.5"></div>
+                                <div className="relative bg-white border-[2.5px] border-slate-900 rounded-xl p-1 overflow-hidden">
+                                    <img src="/assets/pharmacist.png" alt="Pharmacist" className="w-full h-32 lg:h-36 object-cover rounded-lg bg-slate-100" />
+                                </div>
+                                {/* Action lines */}
+                                <div className="absolute -top-2 -right-2">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-slate-900">
+                                        <line x1="12" y1="2" x2="12" y2="8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                                        <line x1="18" y1="6" x2="14" y2="10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                                        <line x1="22" y1="12" x2="16" y2="12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Bottom Right Card (Comparison) */}
-                        <div className="absolute right-[-8%] lg:right-[2%] bottom-[5%] lg:bottom-[10%] z-30 animate-float scale-50 sm:scale-75 lg:scale-100 origin-left" style={{ animationDelay: "2s" }}>
-                            <div className="relative w-72 rotate-2">
-                                <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-2 translate-y-2"></div>
-                                <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-4 translate-y-4"></div>
-                                <div className="relative bg-white border-2 border-slate-900 rounded-none p-6 text-left">
-                                    <p className="font-black text-[18px] text-slate-900 mb-5">Comparison (Month)</p>
-                                    <div className="space-y-5">
-                                        <div className="flex items-center gap-4">
-                                            <span className="text-[12px] font-bold text-slate-500 w-20">This month</span>
-                                            <div className="flex-1 h-3.5 bg-slate-100 rounded-none overflow-hidden border border-slate-200">
-                                                <div className="h-full bg-[#9fff40] w-[70%] border-r-2 border-slate-900"></div>
+                        {/* ── Bottom-Right Card (Comparison Month) ── */}
+                        <div className="absolute right-[-3%] lg:right-[3%] bottom-[12%] lg:bottom-[16%] z-30 animate-float hidden sm:block" style={{ animationDelay: "2s" }}>
+                            <div className="relative w-52 lg:w-56 rotate-2">
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-1.5 translate-y-1.5"></div>
+                                <div className="relative bg-white border-[2.5px] border-slate-900 rounded-xl p-5 text-left">
+                                    <p className="font-black text-sm text-slate-900 mb-4">{t.floating.compTitle}</p>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-[11px] font-bold text-slate-500 w-[60px] shrink-0">{t.floating.thisMonth}</span>
+                                            <div className="flex-1 h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                                                <div className="h-full bg-[#9fff40] rounded-full w-[70%]"></div>
                                             </div>
                                         </div>
-                                        <div className="flex items-center gap-4">
-                                            <span className="text-[12px] font-bold text-slate-500 w-20">Last month</span>
-                                            <div className="flex-1 h-3.5 bg-slate-100 rounded-none overflow-hidden border border-slate-200">
-                                                <div className="h-full bg-slate-800 w-[55%]"></div>
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-[11px] font-bold text-slate-500 w-[60px] shrink-0">{t.floating.lastMonth}</span>
+                                            <div className="flex-1 h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                                                <div className="h-full bg-slate-800 rounded-full w-[50%]"></div>
                                             </div>
                                         </div>
                                     </div>

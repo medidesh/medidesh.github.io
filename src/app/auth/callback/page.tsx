@@ -39,18 +39,20 @@ export default function AuthCallbackPage() {
                 </div>
 
                 {/* Clear Messaging */}
-                <h1 className="text-2xl font-bold text-slate-900 mb-3">
-                    লগইন সফল হয়েছে
+                <h1 className="text-2xl font-bold text-slate-900 mb-4 leading-tight">
+                    অভিনন্দন! <br /> 
+                    আপনার লগইন সফল হয়েছে
                 </h1>
                 <p className="text-slate-600 mb-8 leading-relaxed">
-                    আপনাকে সরাসরি মেডিদেশ অ্যাপে ফিরিয়ে নেওয়া হচ্ছে
+                    নিরাপদভাবে আপনাকে মেডিদেশ অ্যাপে <br /> 
+                    ফিরিয়ে নেওয়া হচ্ছে, দয়া করে অপেক্ষা করুন
                 </p>
 
                 {/* Simple Status Indicator */}
                 <div className="mb-10 p-4 bg-slate-50 rounded-xl text-sm text-slate-500 font-semibold border border-slate-100">
                     {countdown > 0 ? (
                         <span className="flex items-center justify-center gap-2">
-                             রিডাইরেক্ট হতে {countdown} সেকেন্ড বাকি
+                             রিডাইরেক্ট হতে {countdown} সেকেন্ড <br className="xs:hidden" /> সময় লাগতে পারে
                         </span>
                     ) : (
                         <span className="flex items-center justify-center gap-2 text-medidesh-teal-600">

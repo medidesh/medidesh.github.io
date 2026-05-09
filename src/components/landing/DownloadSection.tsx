@@ -48,14 +48,7 @@ export default function DownloadSection() {
                     <SparkleLines className="absolute -top-10 lg:-top-16 left-0 lg:left-10 w-24 h-24 text-medidesh-teal-200 -rotate-12 z-0" />
                     
                     <div className="relative z-10 rotate-[-5deg] lg:rotate-[-5deg] translate-y-12 lg:translate-y-24">
-                        <PhoneMockup className="shadow-[0px_0px_50px_rgba(0,0,0,0.5)]">
-                            {/* iPhone Status Bar Simulation */}
-                            <div className="absolute top-0 w-full h-7 bg-transparent z-20 flex justify-between items-center px-5 pt-1">
-                                <span className="text-[10px] font-medium text-slate-900">9:41</span>
-                                <div className="flex gap-1 items-center">
-                                    <div className="w-3 h-2.5 border border-slate-900 rounded-[2px] relative"><div className="w-0.5 h-1 bg-slate-900 absolute -right-1 top-[2px]"></div></div>
-                                </div>
-                            </div>
+                        <PhoneMockup showNotch={false} frameColor="bg-[#064e3b]" className="shadow-[0px_0px_50px_rgba(0,0,0,0.5)]">
                             <img src="/assets/playstore_preview.png" alt="Medidesh App" className="w-full h-full object-cover object-top" loading="lazy" />
                         </PhoneMockup>
                     </div>

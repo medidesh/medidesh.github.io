@@ -14,7 +14,6 @@ const T = {
         sub: "আপনার ফার্মেসির ভবিষ্যৎ এখন একটি ডাউনলোডের দূরত্বে। আমাদের অ্যাপ ডাউনলোড করে ব্যবসা পরিচালনার নতুন অভিজ্ঞতা নিন।",
         platforms: [
             { name: "Google Play", sub: "GET IT ON", icon: GooglePlayLogoIcon, href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy", comingSoon: null },
-            { name: "App Store", sub: "DOWNLOAD ON THE", icon: AppleLogo, href: "#", comingSoon: "App Store" as const },
         ],
     },
     en: {
@@ -23,7 +22,6 @@ const T = {
         sub: "Your pharmacy's future is just a download away. Get our app and experience the benefits of better business management.",
         platforms: [
             { name: "Google Play", sub: "GET IT ON", icon: GooglePlayLogoIcon, href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy", comingSoon: null },
-            { name: "App Store", sub: "DOWNLOAD ON THE", icon: AppleLogo, href: "#", comingSoon: "App Store" as const },
         ],
     },
 };

@@ -63,8 +63,12 @@ export default function LandingHero() {
             <ArrowDoodle className="absolute left-4 lg:left-24 top-24 lg:top-32 w-32 lg:w-48 text-slate-900 hidden sm:block pointer-events-none" />
             <SparkleLines className="absolute right-8 lg:right-32 top-32 lg:top-40 w-16 lg:w-20 text-slate-900 hidden sm:block pointer-events-none" />
 
-            {/* Giant Green Blob behind the phone */}
-            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[800px] h-[400px] lg:w-[1200px] lg:h-[600px] bg-medidesh-teal-100 rounded-[100%] translate-y-1/3 opacity-90 pointer-events-none z-0"></div>
+            {/* Giant Lime Semi-circle behind the phone */}
+            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[600px] h-[300px] lg:w-[1000px] lg:h-[500px] bg-[#9fff40] rounded-t-full opacity-40 pointer-events-none z-0"></div>
+            
+            {/* Additional colorful glows */}
+            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-medidesh-teal-400/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-1/3 -right-20 w-80 h-80 bg-[#9fff40]/10 rounded-full blur-[80px] pointer-events-none" />
 
             <div className="container mx-auto px-5 lg:px-10 relative z-10">
                 <div className="max-w-3xl mx-auto flex flex-col items-center">
@@ -134,8 +138,8 @@ export default function LandingHero() {
                         {/* Top Left Pill */}
                         <div className="absolute left-0 lg:left-12 top-10 z-30 hidden md:block animate-float" style={{ animationDelay: "0.5s" }}>
                             <div className="relative -rotate-3">
-                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-lg translate-x-1.5 translate-y-1.5"></div>
-                                <div className="relative bg-medidesh-teal-200 border-[2.5px] border-slate-900 rounded-lg px-4 py-2 flex items-center gap-2">
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-none translate-x-1.5 translate-y-1.5"></div>
+                                <div className="relative bg-[#9fff40] border-[2.5px] border-slate-900 rounded-none px-4 py-2 flex items-center gap-2">
                                     <CurrencyCircleDollar weight="fill" size={20} className="text-slate-900" />
                                     <span className="font-black text-sm text-slate-900">{t.floating.pill}</span>
                                 </div>
@@ -196,33 +200,6 @@ export default function LandingHero() {
 
             <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoId="qU-1J53j4zE" />
             
-            {/* ComingSoonModal */}
-            {isComingSoonOpen && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-                    <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setIsComingSoonOpen(false)}></div>
-                    <div className="bg-white rounded-3xl p-8 max-w-sm w-full relative z-10 shadow-2xl animate-in zoom-in-95 duration-200">
-                        <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                            {comingSoonPlatform === "Windows" ? (
-                                <WindowsLogo weight="fill" size={32} className="text-blue-500" />
-                            ) : (
-                                <AppleLogo weight="fill" size={32} className="text-slate-500" />
-                            )}
-                        </div>
-                        <h3 className="text-2xl font-black text-slate-900 text-center mb-2">
-                            {lang === "bn" ? "খুব শিগগিরই আসছে" : "Coming Soon"}
-                        </h3>
-                        <p className="text-center text-slate-500 mb-6 leading-relaxed">
-                            {lang === "bn"
-                                ? `মেডিদেশের ${comingSoonPlatform} ভার্সনটি এখনও ডেভেলপমেন্টে আছে। খুব শিগগিরই এটি উন্মুক্ত করা হবে!`
-                                : `The ${comingSoonPlatform} version of Medidesh is currently under development. It will be released very soon!`}
-                        </p>
-                        <button onClick={() => setIsComingSoonOpen(false)}
-                            className="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-800 transition-colors">
-                            {lang === "bn" ? "ঠিক আছে" : "Got it"}
-                        </button>
-                    </div>
-                </div>
-            )}
         </section>
     );
 }

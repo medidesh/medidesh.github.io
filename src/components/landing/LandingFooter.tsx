@@ -129,16 +129,6 @@ export default function LandingFooter() {
                                 <GooglePlayLogoIcon weight="fill" size={18} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
                                 <span>Google Play</span>
                             </a>
-                            <button onClick={(e) => handleComingSoonClick("Windows", e)}
-                                className="flex w-full items-center gap-2.5 bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-none text-[13px] font-bold transition-all hover:-translate-y-1 hover:shadow-md hover:bg-blue-100 group">
-                                <WindowsLogo weight="fill" size={18} className="text-blue-500 group-hover:scale-110 transition-transform" />
-                                <span>Windows</span>
-                            </button>
-                            <button onClick={(e) => handleComingSoonClick("App Store", e)}
-                                className="flex w-full items-center gap-2.5 bg-slate-50 border border-slate-200 text-slate-700 px-4 py-3 rounded-none text-[13px] font-bold transition-all hover:-translate-y-1 hover:shadow-md hover:bg-slate-100 group">
-                                <AppleLogo weight="fill" size={18} className="text-slate-500 group-hover:scale-110 transition-transform" />
-                                <span>App Store</span>
-                            </button>
                         </div>
                     </div>
                 </div>

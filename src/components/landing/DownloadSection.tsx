@@ -56,7 +56,7 @@ export default function DownloadSection() {
                                     <div className="w-3 h-2.5 border border-slate-900 rounded-[2px] relative"><div className="w-0.5 h-1 bg-slate-900 absolute -right-1 top-[2px]"></div></div>
                                 </div>
                             </div>
-                            <img src="/assets/mobile_app.png" alt="Medidesh App" className="w-full h-full object-cover object-left-top" loading="lazy" />
+                            <img src="/assets/playstore_preview.png" alt="Medidesh App" className="w-full h-full object-cover object-top" loading="lazy" />
                         </PhoneMockup>
                     </div>
                 </div>

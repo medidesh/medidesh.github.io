@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, CurrencyCircleDollar, ArrowRight, Star } from "@phosphor-icons/react/dist/ssr";
+import { Check, Star, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
 
 const T = {
@@ -20,13 +20,14 @@ const T = {
                 name: "পদ্মা",
                 price: "বিনামূল্যে",
                 yearlyPrice: "বিনামূল্যে",
-                description: "ছোট ফার্মেসির জন্য আদর্শ।",
+                description: "ছোট ফার্মেসির ডিজিটাল যাত্রা শুরু করার জন্য।",
                 features: [
-                    "১ ডিভাইসে ব্যবহার",
-                    "৩০০ পণ্য পর্যন্ত ইনভেন্টরি",
-                    "প্রতিদিনের সেলস রিপোর্ট",
-                    "বেসিক ক্রেডিট ম্যানেজমেন্ট",
-                    "স্ট্যান্ডার্ড সাপোর্ট",
+                    "১টি ফার্মেসি",
+                    "১ জন ব্যবহারকারী (মালিক), ১টি ডিভাইস",
+                    "বেসিক ইনভেন্টরি ম্যানেজমেন্ট",
+                    "বেসিক বিক্রয় ও ক্রয় ট্র্যাকিং",
+                    "মোবাইল অ্যাপ অ্যাক্সেস",
+                    "ইমেইল সাপোর্ট",
                 ],
                 highlight: false,
                 href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
@@ -35,30 +36,32 @@ const T = {
                 name: "মেঘনা",
                 price: "৳৩৯৯",
                 yearlyPrice: "৳৩,৯৯০",
-                description: "বড় পরিসরের জন্য পূর্ণাঙ্গ সমাধান।",
+                description: "মাঝারি বা বড় ফার্মেসির জন্য সব সুবিধা এক জায়গায়।",
                 features: [
-                    "সবকিছু পদ্মা প্ল্যানে আছে",
-                    "৩ ডিভাইসে ব্যবহার",
-                    "আনলিমিটেড পণ্য ইনভেন্টরি",
-                    "উন্নত বিক্রয় বিশ্লেষণ ড্যাশবোর্ড",
-                    "রোল-বেসড অ্যাক্সেস কন্ট্রোল",
-                    "প্রায়োরিটি সাপোর্ট",
+                    "১টি ফার্মেসি",
+                    "৩ জন ব্যবহারকারী, ২টি ডিভাইস",
+                    "পূর্ণ ইনভেন্টরি ও অ্যাকাউন্ট ম্যানেজমেন্ট",
+                    "মেয়াদোত্তীর্ণ ও লো-স্টক সতর্কতা",
+                    "রিপোর্ট ডাউনলোড (PDF, Excel, CSV)",
+                    "থার্মাল প্রিন্টিং সাপোর্ট",
+                    "দ্রুত কাস্টমার সাপোর্ট",
                 ],
                 highlight: true,
                 href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
             },
             {
                 name: "যমুনা",
-                price: "৳৯৯৯",
-                yearlyPrice: "৳৯,৯৯০",
-                description: "চেইন ফার্মেসি ও এন্টারপ্রাইজ গ্রাহকদের জন্য।",
+                price: "৳৮৯৯",
+                yearlyPrice: "৳৮,৯৯০",
+                description: "বড় চেইন ফার্মেসি ও দ্রুততম সাপোর্টের জন্য।",
                 features: [
-                    "সবকিছু মেঘনা প্ল্যানে আছে",
-                    "৫+ ডিভাইস লিংক",
-                    "মাল্টি-ব্রাঞ্চ ম্যানেজমেন্ট",
-                    "কাস্টম ইন্টিগ্রেশন সুবিধা",
-                    "ডেডিকেটেড অ্যাকাউন্ট ম্যানেজার",
-                    "ভিআইপি সাপোর্ট + ওয়ানবোর্ডিং",
+                    "১টি ফার্মেসি",
+                    "৫ জন ব্যবহারকারী, ৩টি ডিভাইস",
+                    "উন্নত ইনভেন্টরি, বাকি খাতা ও সম্পূর্ণ অ্যাকাউন্টিং",
+                    "অ্যাডভান্সড রিপোর্ট ও ব্যবসায়িক বিশ্লেষণ",
+                    "ক্রেতাদের ওষুধের চাহিদার ডাটা বিশ্লেষণ",
+                    "বিজ্ঞাপনমুক্ত অভিজ্ঞতা",
+                    "প্রায়োরিটি কাস্টমার সাপোর্ট",
                 ],
                 highlight: false,
                 href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
@@ -66,7 +69,6 @@ const T = {
         ],
         payment: {
             title: "পেমেন্ট সিস্টেম",
-            methods: ["বিকাশ", "নগদ", "রকেট", "ব্যাংক ট্রান্সফার"],
         },
     },
     en: {
@@ -84,13 +86,14 @@ const T = {
                 name: "Padma",
                 price: "Free",
                 yearlyPrice: "Free",
-                description: "Ideal for small pharmacies.",
+                description: "Ideal for starting your digital journey.",
                 features: [
-                    "Use on 1 device",
-                    "Inventory up to 300 products",
-                    "Daily sales reports",
-                    "Basic credit management",
-                    "Standard support",
+                    "1 Pharmacy",
+                    "1 User (Owner), 1 Device",
+                    "Basic Inventory Management",
+                    "Basic Sales & Purchase Tracking",
+                    "Mobile App Access",
+                    "Email Support",
                 ],
                 highlight: false,
                 href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
@@ -99,30 +102,32 @@ const T = {
                 name: "Meghna",
                 price: "৳399",
                 yearlyPrice: "৳3,990",
-                description: "Complete solution for larger operations.",
+                description: "All features in one place for medium/large pharmacies.",
                 features: [
-                    "Everything in Padma plan",
-                    "Use on 3 devices",
-                    "Unlimited product inventory",
-                    "Advanced sales analytics dashboard",
-                    "Role-based access control",
-                    "Priority support",
+                    "1 Pharmacy",
+                    "3 Users, 2 Devices",
+                    "Full Inventory & Account Management",
+                    "Expiry & Low-Stock Alerts",
+                    "Report Download (PDF, Excel, CSV)",
+                    "Thermal Printing Support",
+                    "Fast Customer Support",
                 ],
                 highlight: true,
                 href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
             },
             {
                 name: "Jamuna",
-                price: "৳999",
-                yearlyPrice: "৳9,990",
-                description: "For chain pharmacies & enterprise customers.",
+                price: "৳899",
+                yearlyPrice: "৳8,990",
+                description: "For large chain pharmacies and fastest support.",
                 features: [
-                    "Everything in Meghna plan",
-                    "5+ device linking",
-                    "Multi-branch management",
-                    "Custom integration options",
-                    "Dedicated account manager",
-                    "VIP support + onboarding",
+                    "1 Pharmacy",
+                    "5 Users, 3 Devices",
+                    "Advanced Inventory, Credit & Accounting",
+                    "Advanced Reports & Analytics",
+                    "Customer Medicine Demand Analysis",
+                    "Ad-Free Experience",
+                    "Priority Customer Support",
                 ],
                 highlight: false,
                 href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
@@ -130,7 +135,6 @@ const T = {
         ],
         payment: {
             title: "Payment Methods",
-            methods: ["bKash", "Nagad", "Rocket", "Bank Transfer"],
         },
     },
 };
@@ -159,7 +163,7 @@ export default function PricingSection() {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
                     {t.plans.map((plan, idx) => (
                         <div key={idx} className={`relative p-8 lg:p-10 flex flex-col rounded-xl transition-all hover:-translate-y-1 ${
                             plan.highlight 
@@ -173,7 +177,7 @@ export default function PricingSection() {
                                 </div>
                             )}
                             <h3 className={`text-xl lg:text-2xl font-black mb-2 text-slate-900`}>{plan.name}</h3>
-                            <p className={`text-[14px] mb-6 font-medium ${plan.highlight ? "text-slate-600" : "text-slate-500"}`}>{plan.description}</p>
+                            <p className={`text-[14px] mb-6 font-medium leading-relaxed ${plan.highlight ? "text-slate-600" : "text-slate-500"}`}>{plan.description}</p>
                             <div className="mb-8">
                                 <span className={`text-4xl lg:text-5xl font-black tracking-tighter text-slate-900`}>{isYearly ? plan.yearlyPrice : plan.price}</span>
                                 {plan.price !== "Free" && plan.price !== "বিনামূল্যে" && (
@@ -188,7 +192,7 @@ export default function PricingSection() {
                                         <div className={`w-5 h-5 flex items-center justify-center rounded-full flex-shrink-0 mt-0.5 ${plan.highlight ? "bg-medidesh-teal-500/20" : "bg-medidesh-teal-50"}`}>
                                             <Check size={12} weight="bold" className={plan.highlight ? "text-medidesh-teal-600" : "text-medidesh-teal-600"} />
                                         </div>
-                                        <span className={`text-[14px] font-medium text-slate-700`}>{f}</span>
+                                        <span className={`text-[14px] font-medium text-slate-700 leading-tight`}>{f}</span>
                                     </li>
                                 ))}
                             </ul>

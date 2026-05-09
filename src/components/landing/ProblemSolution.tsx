@@ -166,10 +166,10 @@ export default function ProblemSolution() {
                         <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-black text-slate-900 mb-6 leading-[1.1] tracking-[-0.03em]">
                             {t.inventory.heading1} <br /> {t.inventory.heading2}
                         </h2>
-                        <p className="text-slate-600 text-[19px] lg:text-[22px] leading-relaxed max-w-xl font-medium">
+                        <p className="text-slate-600 text-[19px] lg:text-[22px] leading-relaxed max-w-xl font-normal">
                             {t.inventory.segments.map((seg, i) => 
                                 seg.hl ? (
-                                    <span key={i} className={`font-black ${seg.color}`}>
+                                    <span key={i} className={seg.color}>
                                         {seg.text}
                                     </span>
                                 ) : (

@@ -104,11 +104,11 @@ export default function LandingHeader() {
                     </nav>
 
                     <div className="hidden md:flex items-center gap-2 shrink-0">
-                        <button onClick={toggleLang} className="h-8 px-2.5 flex items-center gap-1.5 border border-slate-200 hover:border-slate-300 bg-white text-slate-600 hover:text-slate-900 text-xs font-bold transition-all">
+                        <button onClick={toggleLang} className="h-8 px-3 rounded-full flex items-center gap-1.5 border border-slate-200 hover:border-slate-300 bg-white text-slate-600 hover:text-slate-900 text-xs font-bold transition-all">
                             <Globe size={13} weight="bold" />
                             <span>{lang === "bn" ? "EN" : "বাং"}</span>
                         </button>
-                        <a href="#download" className="ml-1.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-5 py-2 font-bold text-[13px] transition-all hover:-translate-y-px">
+                        <a href="#download" className="ml-1.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-5 py-2 rounded-full font-bold text-[13px] transition-all hover:-translate-y-px">
                             {lang === "bn" ? "ডাউনলোড" : "Get Started"}
                         </a>
                     </div>
@@ -131,17 +131,17 @@ export default function LandingHeader() {
                 <nav className="flex-1 flex flex-col px-5 pt-4 overflow-y-auto">
                     {navLinks.map((link) => (
                         <a key={link.en} href={link.href} onClick={() => setIsMobileMenuOpen(false)}
-                            className={`text-base font-bold py-3.5 border-b border-slate-100 ${isActive(link) ? "text-medidesh-teal-600" : "text-slate-800"}`}>
+                            className={`text-base font-normal py-3.5 border-b border-slate-100 ${isActive(link) ? "text-medidesh-teal-600" : "text-slate-800"}`}>
                             {lang === "bn" ? link.bn : link.en}
                         </a>
                     ))}
                 </nav>
                 <div className="px-5 py-4 border-t border-slate-100 flex flex-col gap-2.5">
-                    <button onClick={toggleLang} className="w-full flex items-center justify-center gap-2 px-5 py-3 font-semibold text-sm border border-slate-200 text-slate-700">
-                        <Globe size={16} weight="bold" />{lang === "bn" ? "Switch to English" : "বাংলায় দেখুন"}
+                    <button onClick={toggleLang} className="w-full flex items-center justify-center gap-2 px-5 py-3 font-semibold text-sm border border-slate-200 rounded-xl text-slate-700">
+                        <Globe size={16} /> {lang === "bn" ? "English" : "বাংলা"}
                     </button>
-                    <a href="#download" onClick={() => setIsMobileMenuOpen(false)} className="w-full text-center bg-medidesh-teal-500 text-white px-5 py-3 font-bold text-sm">
-                        {lang === "bn" ? "অ্যাপ ডাউনলোড" : "Download App"}
+                    <a href="#download" onClick={() => setIsMobileMenuOpen(false)} className="w-full text-center bg-slate-900 text-white font-bold py-3.5 rounded-xl">
+                        {lang === "bn" ? "অ্যাপ ডাউনলোড করুন" : "Get Started"}
                     </a>
                 </div>
             </div>

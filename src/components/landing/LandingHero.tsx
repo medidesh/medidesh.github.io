@@ -63,8 +63,8 @@ export default function LandingHero() {
             <ArrowDoodle className="absolute left-4 lg:left-24 top-24 lg:top-32 w-32 lg:w-48 text-slate-900 hidden sm:block pointer-events-none" />
             <SparkleLines className="absolute right-8 lg:right-32 top-32 lg:top-40 w-16 lg:w-20 text-slate-900 hidden sm:block pointer-events-none" />
 
-            {/* Giant Lime Semi-circle behind the phone */}
-            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[800px] h-[400px] lg:w-[1200px] lg:h-[600px] bg-[#9fff40] rounded-t-full opacity-100 pointer-events-none z-0"></div>
+            {/* Giant Lime Semi-circle behind the phone - Adjusted to cover ~half of the phone */}
+            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[600px] h-[250px] lg:w-[1000px] lg:h-[380px] bg-[#9fff40] rounded-t-full opacity-100 pointer-events-none z-0"></div>
             
             {/* Additional colorful glows */}
             <div className="absolute top-1/4 -left-20 w-96 h-96 bg-medidesh-teal-400/10 rounded-full blur-[100px] pointer-events-none" />
@@ -96,18 +96,18 @@ export default function LandingHero() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6 mb-20 w-full sm:w-auto"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-3 lg:gap-4 mb-20 w-full sm:w-auto"
                     >
                         {/* Primary CTA */}
                         <a href="#download"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 font-black text-[15px] transition-all hover:-translate-y-1 rounded-none shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px rounded-none shadow-lg shadow-medidesh-teal-500/20">
                             <span>{t.downloadBtn}</span>
                         </a>
                         
                         {/* Secondary CTA */}
                         <button onClick={() => setIsVideoOpen(true)}
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-slate-900 border-2 border-slate-900 px-10 py-4 font-black text-[15px] transition-all hover:-translate-y-1 hover:bg-slate-50 rounded-none shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">
-                            <Play weight="fill" size={18} />
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-medidesh-teal-600 border-2 border-medidesh-teal-600 px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px hover:bg-medidesh-teal-50 rounded-none">
+                            <Play weight="fill" size={16} />
                             <span>{t.tutorialBtn}</span>
                         </button>
                     </motion.div>

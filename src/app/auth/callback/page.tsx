@@ -10,8 +10,12 @@ export default function AuthCallbackPage() {
     const [deepLink, setDeepLink] = useState("medidesh://auth/callback");
 
     useEffect(() => {
+        // Capture both the search (?code=...) and the hash (#token=...)
+        const search = window.location.search;
         const hash = window.location.hash;
-        const targetLink = `medidesh://auth/callback${hash}`;
+        
+        // Combine them into the target link
+        const targetLink = `medidesh://auth/callback${search}${hash}`;
         setDeepLink(targetLink);
 
         const timer = setInterval(() => {
@@ -19,13 +23,13 @@ export default function AuthCallbackPage() {
                 if (prev <= 1) {
                     clearInterval(timer);
                     setIsRedirecting(true);
+                    // Use the combined link
                     window.location.replace(targetLink);
                     return 0;
                 }
                 return prev - 1;
             });
         }, 1000);
-
         return () => clearInterval(timer);
     }, []);
 

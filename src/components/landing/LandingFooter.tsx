@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FacebookLogo, LinkedinLogo, InstagramLogo, YoutubeLogo, GooglePlayLogoIcon, Monitor, Heart, AppleLogo } from "@phosphor-icons/react/dist/ssr";
+import { FacebookLogo, LinkedinLogo, InstagramLogo, YoutubeLogo, GooglePlayLogoIcon, Monitor, Heart, AppleLogo, WindowsLogo } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
 import ComingSoonModal from "@/components/ui/ComingSoonModal";
 
@@ -58,9 +58,9 @@ export default function LandingFooter() {
     const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
     const [comingSoonPlatform, setComingSoonPlatform] = useState<"Windows" | "App Store" | null>(null);
 
-    const handleAppStoreClick = (e: React.MouseEvent) => {
+    const handleComingSoonClick = (platform: "Windows" | "App Store", e: React.MouseEvent) => {
         e.preventDefault();
-        setComingSoonPlatform("App Store");
+        setComingSoonPlatform(platform);
         setIsComingSoonOpen(true);
     };
 
@@ -125,15 +125,20 @@ export default function LandingFooter() {
                     <div>
                         <h4 className="text-slate-900 font-black text-[11px] mb-5 uppercase tracking-widest">{t.downloadLabel}</h4>
                         <p className="text-[13px] mb-5 leading-relaxed text-slate-500">{t.downloadSub}</p>
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-3">
                             <a href="https://play.google.com/store/apps/details?id=com.medidesh.pharmacy" target="_blank" rel="noopener noreferrer"
-                                className="flex items-center gap-2.5 bg-slate-900 text-white px-3.5 py-2.5 text-[13px] font-bold transition-all hover:-translate-y-px">
-                                <GooglePlayLogoIcon weight="fill" size={16} className="text-medidesh-teal-400" />
+                                className="flex items-center gap-2.5 bg-medidesh-teal-50 border border-medidesh-teal-200 text-medidesh-teal-700 px-4 py-3 rounded-xl text-[13px] font-bold transition-all hover:-translate-y-1 hover:shadow-md hover:bg-medidesh-teal-100 group">
+                                <GooglePlayLogoIcon weight="fill" size={18} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
                                 <span>Google Play</span>
                             </a>
-                            <button onClick={handleAppStoreClick}
-                                className="flex w-full items-center gap-2.5 bg-white border border-slate-200 text-slate-700 px-3.5 py-2.5 text-[13px] font-bold transition-all hover:border-slate-300 cursor-pointer">
-                                <AppleLogo weight="fill" size={16} className="text-slate-400" />
+                            <button onClick={(e) => handleComingSoonClick("Windows", e)}
+                                className="flex w-full items-center gap-2.5 bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-xl text-[13px] font-bold transition-all hover:-translate-y-1 hover:shadow-md hover:bg-blue-100 group">
+                                <WindowsLogo weight="fill" size={18} className="text-blue-500 group-hover:scale-110 transition-transform" />
+                                <span>Windows</span>
+                            </button>
+                            <button onClick={(e) => handleComingSoonClick("App Store", e)}
+                                className="flex w-full items-center gap-2.5 bg-slate-50 border border-slate-200 text-slate-700 px-4 py-3 rounded-xl text-[13px] font-bold transition-all hover:-translate-y-1 hover:shadow-md hover:bg-slate-100 group">
+                                <AppleLogo weight="fill" size={18} className="text-slate-500 group-hover:scale-110 transition-transform" />
                                 <span>App Store</span>
                             </button>
                         </div>

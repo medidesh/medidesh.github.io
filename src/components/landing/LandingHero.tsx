@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { GooglePlayLogoIcon, Star, ArrowRight, Play, Wallet, ChartLineUp, CurrencyCircleDollar } from "@phosphor-icons/react/dist/ssr";
+import { GooglePlayLogoIcon, Star, ArrowRight, Play, Wallet, ChartLineUp, CurrencyCircleDollar, AppleLogo, WindowsLogo } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
 import { motion } from "framer-motion";
 import BangladeshMap from "./BangladeshMap";
@@ -48,6 +48,14 @@ export default function LandingHero() {
     const { lang } = useLanguage();
     const t = T[lang];
     const [isVideoOpen, setIsVideoOpen] = useState(false);
+    const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
+    const [comingSoonPlatform, setComingSoonPlatform] = useState<"Windows" | "App Store" | null>(null);
+
+    const handleComingSoonClick = (platform: "Windows" | "App Store", e: React.MouseEvent) => {
+        e.preventDefault();
+        setComingSoonPlatform(platform);
+        setIsComingSoonOpen(true);
+    };
 
     return (
         <section id="hero" className="relative pt-28 pb-16 lg:pt-36 lg:pb-32 bg-white overflow-hidden text-center">
@@ -84,17 +92,26 @@ export default function LandingHero() {
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-3 lg:gap-4 mb-20 w-full sm:w-auto"
                     >
-                        {/* Primary CTA — solid sharp edges */}
-                        <a href="#download"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px rounded-none">
+                        {/* Primary CTA - Google Play */}
+                        <a href="https://play.google.com/store/apps/details?id=com.medidesh.pharmacy" target="_blank" rel="noopener noreferrer"
+                            className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-medidesh-teal-50 border-2 border-medidesh-teal-200 text-medidesh-teal-700 px-6 lg:px-8 py-3.5 font-bold text-[15px] transition-all hover:-translate-y-1 hover:bg-medidesh-teal-100 hover:shadow-lg hover:shadow-medidesh-teal-500/20 rounded-2xl lg:rounded-full group">
+                            <GooglePlayLogoIcon weight="fill" size={20} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
                             <span>{t.downloadBtn}</span>
                         </a>
-                        {/* Secondary CTA — bordered sharp edges */}
+
+                        {/* Windows App */}
+                        <button onClick={(e) => handleComingSoonClick("Windows", e)}
+                            className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-blue-50 border-2 border-blue-200 text-blue-700 px-6 lg:px-8 py-3.5 font-bold text-[15px] transition-all hover:-translate-y-1 hover:bg-blue-100 hover:shadow-lg hover:shadow-blue-500/20 rounded-2xl lg:rounded-full group">
+                            <WindowsLogo weight="fill" size={20} className="text-blue-500 group-hover:scale-110 transition-transform" />
+                            <span>Windows</span>
+                        </button>
+
+                        {/* Watch Demo */}
                         <button onClick={() => setIsVideoOpen(true)}
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-medidesh-teal-600 border-2 border-medidesh-teal-600 px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px hover:bg-medidesh-teal-50 rounded-none">
-                            <Play weight="fill" size={16} />
+                            className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-amber-50 border-2 border-amber-200 text-amber-700 px-6 lg:px-8 py-3.5 font-bold text-[15px] transition-all hover:-translate-y-1 hover:bg-amber-100 hover:shadow-lg hover:shadow-amber-500/20 rounded-2xl lg:rounded-full group">
+                            <Play weight="fill" size={20} className="text-amber-500 group-hover:scale-110 transition-transform" />
                             <span>{t.tutorialBtn}</span>
                         </button>
                     </motion.div>
@@ -185,7 +202,35 @@ export default function LandingHero() {
                 </div>
             </div>
 
-            <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoUrl="https://www.youtube.com/embed/J0ukP78ItCc" />
+            <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoId="qU-1J53j4zE" />
+            
+            {/* ComingSoonModal */}
+            {isComingSoonOpen && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                    <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setIsComingSoonOpen(false)}></div>
+                    <div className="bg-white rounded-3xl p-8 max-w-sm w-full relative z-10 shadow-2xl animate-in zoom-in-95 duration-200">
+                        <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                            {comingSoonPlatform === "Windows" ? (
+                                <WindowsLogo weight="fill" size={32} className="text-blue-500" />
+                            ) : (
+                                <AppleLogo weight="fill" size={32} className="text-slate-500" />
+                            )}
+                        </div>
+                        <h3 className="text-2xl font-black text-slate-900 text-center mb-2">
+                            {lang === "bn" ? "খুব শিগগিরই আসছে" : "Coming Soon"}
+                        </h3>
+                        <p className="text-center text-slate-500 mb-6 leading-relaxed">
+                            {lang === "bn"
+                                ? `মেডিদেশের ${comingSoonPlatform} ভার্সনটি এখনও ডেভেলপমেন্টে আছে। খুব শিগগিরই এটি উন্মুক্ত করা হবে!`
+                                : `The ${comingSoonPlatform} version of Medidesh is currently under development. It will be released very soon!`}
+                        </p>
+                        <button onClick={() => setIsComingSoonOpen(false)}
+                            className="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-800 transition-colors">
+                            {lang === "bn" ? "ঠিক আছে" : "Got it"}
+                        </button>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

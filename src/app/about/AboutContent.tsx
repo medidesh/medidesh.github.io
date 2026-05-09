@@ -37,9 +37,33 @@ const T = {
         storyBadge: "আমাদের ভিত্তি",
         storyHeading1: "ম্যানেজমেন্ট ছাড়িয়ে",
         storyHeading2: " ঔষধের সহজলভ্যতা",
-        storyP1: "বাংলাদেশের ফার্মেসি খাত দীর্ঘকাল ধরে সনাতন পদ্ধতিতে পরিচালিত হয়ে আসছে। হাতে লেখা খাতা আর অনিয়ন্ত্রিত ইনভেন্টরি ব্যবস্থাপনার কারণে মালিকদের প্রতিনিয়ত নানা আর্থিক ও পরিচালনাগত জটিলতায় পড়তে হয়।",
-        storyP2: "মেডিদেশ-এ আমরা অনুধাবন করেছি যে, শুধু স্টক ম্যানেজমেন্ট যথেষ্ট নয়। আসল চ্যালেঞ্জ হলো সঠিক সময়ে ঔষধের প্রাপ্যতা নিশ্চিত করা। ফার্মেসিগুলোকে ডিজিটাইজ করার মাধ্যমে আমরা এমন এক নেটওয়ার্ক তৈরি করছি যা ঔষধের মজুদ ও অবস্থান সম্পর্কে স্বচ্ছ ধারণা দেবে।",
-        storyP3: "আমাদের লক্ষ্য হলো রোগীকে ঔষধের সন্ধানে দ্বারে দ্বারে ঘোরা থেকে মুক্তি দেওয়া। প্রযুক্তি এবং মানবিকতার সমন্বয়ে আমরা এমন এক যোগসূত্র তৈরি করছি যা স্থানীয় ফার্মেসি এবং সাধারণ মানুষের মাঝে আস্থার সেতুবন্ধন হিসেবে কাজ করবে।",
+        storyP1: [
+            { text: "বাংলাদেশের ফার্মেসি খাত দীর্ঘকাল ধরে ", hl: false },
+            { text: "সনাতন পদ্ধতিতে", hl: true, color: "text-rose-500" },
+            { text: " পরিচালিত হয়ে আসছে। হাতে লেখা খাতা আর ", hl: false },
+            { text: "অনিয়ন্ত্রিত ইনভেন্টরি", hl: true, color: "text-amber-600" },
+            { text: " ব্যবস্থাপনার কারণে মালিকদের প্রতিনিয়ত নানা ", hl: false },
+            { text: "আর্থিক ও পরিচালনাগত জটিলতায়", hl: true, color: "text-blue-600" },
+            { text: " পড়তে হয়।", hl: false }
+        ],
+        storyP2: [
+            { text: "মেডিদেশ-এ আমরা অনুধাবন করেছি যে, শুধু ", hl: false },
+            { text: "স্টক ম্যানেজমেন্ট", hl: true, color: "text-medidesh-teal-600" },
+            { text: " যথেষ্ট নয়। আসল চ্যালেঞ্জ হলো সঠিক সময়ে ", hl: false },
+            { text: "ঔষধের প্রাপ্যতা", hl: true, color: "text-amber-500" },
+            { text: " নিশ্চিত করা। ফার্মেসিগুলোকে ডিজিটাইজ করার মাধ্যমে আমরা এমন এক ", hl: false },
+            { text: "স্বচ্ছ নেটওয়ার্ক", hl: true, color: "text-blue-500" },
+            { text: " তৈরি করছি যা ঔষধের মজুদ ও অবস্থান সম্পর্কে স্পষ্ট ধারণা দেবে।", hl: false }
+        ],
+        storyP3: [
+            { text: "আমাদের লক্ষ্য হলো রোগীকে ঔষধের সন্ধানে ", hl: false },
+            { text: "দ্বারে দ্বারে ঘোরা", hl: true, color: "text-rose-500" },
+            { text: " থেকে মুক্তি দেওয়া। প্রযুক্তি এবং মানবিকতার সমন্বয়ে আমরা এমন এক যোগসূত্র তৈরি করছি যা ", hl: false },
+            { text: "স্থানীয় ফার্মেসি", hl: true, color: "text-medidesh-teal-500" },
+            { text: " এবং সাধারণ মানুষের মাঝে ", hl: false },
+            { text: "আস্থার সেতুবন্ধন", hl: true, color: "text-blue-600" },
+            { text: " হিসেবে কাজ করবে।", hl: false }
+        ],
         teamBadge: "আমাদের লক্ষ্য",
         teamHeading1: "সমন্বিত",
         teamHeading2: "স্বাস্থ্যসেবা",
@@ -61,9 +85,33 @@ const T = {
         storyBadge: "Our Foundation",
         storyHeading1: "Beyond Inventory",
         storyHeading2: "Toward Accessibility",
-        storyP1: "The pharmaceutical sector in emerging markets faces critical challenges, ranging from fragmented supply chains to a lack of real-time inventory visibility. In Bangladesh, numerous community pharmacies operate without digital oversight, resulting in significant risks.",
-        storyP2: "At Medidesh, we recognized that inventory management is only the first step. The real challenge is medicine accessibility. By digitizing pharmacy stocks, we are creating a transparent network that allows for real-time visibility of life-saving medications.",
-        storyP3: "Our ultimate goal is to eliminate the 'medicine hunt'. We are bridging the gap between local pharmacies and the community they serve, ensuring that critical healthcare data translates into immediate, physical availability for every citizen.",
+        storyP1: [
+            { text: "The pharmaceutical sector in emerging markets faces ", hl: false },
+            { text: "critical challenges", hl: true, color: "text-rose-500" },
+            { text: ", ranging from ", hl: false },
+            { text: "fragmented supply chains", hl: true, color: "text-amber-600" },
+            { text: " to a ", hl: false },
+            { text: "lack of real-time inventory visibility", hl: true, color: "text-blue-600" },
+            { text: ". In Bangladesh, numerous community pharmacies operate without digital oversight, resulting in significant risks.", hl: false }
+        ],
+        storyP2: [
+            { text: "At Medidesh, we recognized that ", hl: false },
+            { text: "inventory management", hl: true, color: "text-medidesh-teal-600" },
+            { text: " is only the first step. The real challenge is ", hl: false },
+            { text: "medicine accessibility", hl: true, color: "text-amber-500" },
+            { text: ". By digitizing pharmacy stocks, we are creating a ", hl: false },
+            { text: "transparent network", hl: true, color: "text-blue-500" },
+            { text: " that allows for real-time visibility of life-saving medications.", hl: false }
+        ],
+        storyP3: [
+            { text: "Our ultimate goal is to eliminate the ", hl: false },
+            { text: "'medicine hunt'", hl: true, color: "text-rose-500" },
+            { text: ". We are bridging the gap between ", hl: false },
+            { text: "local pharmacies", hl: true, color: "text-medidesh-teal-500" },
+            { text: " and the community they serve, ensuring that critical healthcare data translates into ", hl: false },
+            { text: "immediate, physical availability", hl: true, color: "text-blue-600" },
+            { text: " for every citizen.", hl: false }
+        ],
         teamBadge: "Our Mission",
         teamHeading1: "Connecting",
         teamHeading2: "the Ecosystem",
@@ -125,7 +173,7 @@ export default function AboutContent() {
                             <span className="relative inline-block text-medidesh-teal-500">
                                 {t.heroHeading2}
                                 <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 300 12" fill="none" preserveAspectRatio="none">
-                                    <path d="M2 8 Q 75 2 150 8 T 298 8" stroke="#2E8B57" strokeOpacity="0.3" strokeWidth="4" fill="none" strokeLinecap="round" />
+                                    <path d="M2 8 Q 75 2 150 8 T 298 8" stroke="#2E8B57" strokeOpacity="0.5" strokeWidth="4" fill="none" strokeLinecap="round" />
                                 </svg>
                             </span>
                         </h1>
@@ -150,12 +198,12 @@ export default function AboutContent() {
                 </svg>
                 {/* Crosses */}
                 <svg className="absolute top-10 left-1/3 w-8 h-8 opacity-[0.10] pointer-events-none hidden lg:block" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                    <rect x="15" y="2" width="10" height="36" rx="3" fill="#2E8B57" />
-                    <rect x="2" y="15" width="36" height="10" rx="3" fill="#2E8B57" />
+                    <rect x="15" y="2" width="10" height="36" rx="0" fill="#2E8B57" />
+                    <rect x="2" y="15" width="36" height="10" rx="0" fill="#2E8B57" />
                 </svg>
                 <svg className="absolute bottom-10 right-1/3 w-5 h-5 opacity-[0.08] pointer-events-none hidden lg:block" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                    <rect x="15" y="2" width="10" height="36" rx="3" fill="#2E8B57" />
-                    <rect x="2" y="15" width="36" height="10" rx="3" fill="#2E8B57" />
+                    <rect x="15" y="2" width="10" height="36" rx="0" fill="#2E8B57" />
+                    <rect x="2" y="15" width="36" height="10" rx="0" fill="#2E8B57" />
                 </svg>
                 {/* Dot cluster bottom-left */}
                 <svg className="absolute bottom-10 left-10 opacity-[0.07] pointer-events-none hidden lg:block" width="80" height="80" aria-hidden="true">
@@ -173,10 +221,22 @@ export default function AboutContent() {
                         <h2 className="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white mb-6 leading-tight">
                             {t.storyHeading1}{" "}<span className="text-medidesh-teal-500">{t.storyHeading2}</span>
                         </h2>
-                        <div className="space-y-4 text-slate-600 dark:text-slate-400 text-lg leading-relaxed text-left">
-                            <p>{t.storyP1}</p>
-                            <p>{t.storyP2}</p>
-                            <p>{t.storyP3}</p>
+                        <div className="space-y-4 text-slate-600 dark:text-slate-400 text-lg lg:text-xl leading-relaxed text-left font-normal">
+                            <p>
+                                {t.storyP1.map((seg: any, i: number) => 
+                                    seg.hl ? <span key={i} className={seg.color}>{seg.text}</span> : <span key={i}>{seg.text}</span>
+                                )}
+                            </p>
+                            <p>
+                                {t.storyP2.map((seg: any, i: number) => 
+                                    seg.hl ? <span key={i} className={seg.color}>{seg.text}</span> : <span key={i}>{seg.text}</span>
+                                )}
+                            </p>
+                            <p>
+                                {t.storyP3.map((seg: any, i: number) => 
+                                    seg.hl ? <span key={i} className={seg.color}>{seg.text}</span> : <span key={i}>{seg.text}</span>
+                                )}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -254,8 +314,8 @@ export default function AboutContent() {
                 </svg>
                 {/* Cross right */}
                 <svg className="absolute top-12 right-16 w-9 h-9 opacity-[0.10] pointer-events-none hidden lg:block" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                    <rect x="15" y="2" width="10" height="36" rx="3" fill="#2E8B57" />
-                    <rect x="2" y="15" width="36" height="10" rx="3" fill="#2E8B57" />
+                    <rect x="15" y="2" width="10" height="36" rx="0" fill="#2E8B57" />
+                    <rect x="2" y="15" width="36" height="10" rx="0" fill="#2E8B57" />
                 </svg>
                 {/* Dot cluster */}
                 <svg className="absolute bottom-12 right-12 opacity-[0.07] pointer-events-none hidden lg:block" width="90" height="90" aria-hidden="true">
@@ -311,8 +371,8 @@ export default function AboutContent() {
                 </svg>
                 {/* Cross decoration */}
                 <svg className="absolute top-14 right-1/3 w-7 h-7 opacity-[0.10] pointer-events-none hidden lg:block" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                    <rect x="15" y="2" width="10" height="36" rx="3" fill="#F59E0B" />
-                    <rect x="2" y="15" width="36" height="10" rx="3" fill="#F59E0B" />
+                    <rect x="15" y="2" width="10" height="36" rx="0" fill="#F59E0B" />
+                    <rect x="2" y="15" width="36" height="10" rx="0" fill="#F59E0B" />
                 </svg>
                 {/* Dot cluster top-right */}
                 <svg className="absolute top-10 right-12 opacity-[0.08] pointer-events-none hidden lg:block" width="100" height="100" aria-hidden="true">

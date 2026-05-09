@@ -18,7 +18,6 @@ const T = {
             { label: "ফিচারসমূহ", href: "/#features" },
             { label: "প্রাইসিং", href: "/#pricing" },
             { label: "ডাউনলোড", href: "/#download" },
-            { label: "আপডেট লগ", href: "/changelog" },
         ],
         company: [
             { label: "আমাদের সম্পর্কে", href: "/about" },
@@ -39,7 +38,6 @@ const T = {
             { label: "Features", href: "/#features" },
             { label: "Pricing", href: "/#pricing" },
             { label: "Download", href: "/#download" },
-            { label: "Changelog", href: "/changelog" },
         ],
         company: [
             { label: "About Us", href: "/about" },

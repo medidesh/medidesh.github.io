@@ -93,7 +93,7 @@ export default function AboutContent() {
                 <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none"
                     style={{ backgroundImage: "linear-gradient(#2E8B57 1px,transparent 1px),linear-gradient(90deg,#2E8B57 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
                 {/* Central glow */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-medidesh-teal-500/5 rounded blur-[120px] pointer-events-none" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-medidesh-teal-500/5 rounded-none blur-[120px] pointer-events-none" />
                 {/* Left blob */}
                 <svg className="absolute -left-20 top-1/2 -translate-y-1/2 w-80 h-80 opacity-[0.07] pointer-events-none" viewBox="0 0 300 300" fill="none" aria-hidden="true">
                     <path d="M60,130 C40,80 80,20 140,30 C200,40 240,90 230,150 C220,210 170,260 110,250 C50,240 20,200 30,160 C35,145 50,140 60,130 Z" fill="#2E8B57" />
@@ -110,13 +110,13 @@ export default function AboutContent() {
                 </svg>
                 {/* Cross top-left */}
                 <svg className="absolute top-20 left-1/4 w-7 h-7 opacity-[0.10] pointer-events-none hidden lg:block" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                    <rect x="15" y="2" width="10" height="36" rx="3" fill="#2E8B57" />
-                    <rect x="2" y="15" width="36" height="10" rx="3" fill="#2E8B57" />
+                    <rect x="15" y="2" width="10" height="36" rx="0" fill="#2E8B57" />
+                    <rect x="2" y="15" width="36" height="10" rx="0" fill="#2E8B57" />
                 </svg>
 
                 <div className="container mx-auto px-6 lg:px-12 relative z-10">
                     <div className="max-w-3xl mx-auto text-center">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded bg-medidesh-teal-50 dark:bg-medidesh-teal-500/10 border border-medidesh-teal-100 dark:border-medidesh-teal-500/20 text-medidesh-teal-700 dark:text-medidesh-teal-400 text-sm font-bold mb-8 shadow-sm">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-medidesh-teal-50 dark:bg-medidesh-teal-500/10 border border-medidesh-teal-100 dark:border-medidesh-teal-500/20 text-medidesh-teal-700 dark:text-medidesh-teal-400 text-sm font-bold mb-8 shadow-sm">
                             <UsersThree size={14} weight="fill" className="text-medidesh-teal-500" />
                             <span>{t.heroBadge}</span>
                         </div>
@@ -166,7 +166,7 @@ export default function AboutContent() {
 
                 <div className="container mx-auto px-6 lg:px-12 relative z-10">
                     <div className="max-w-2xl mx-auto text-center">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
                             <Sparkle size={13} weight="fill" className="text-medidesh-teal-500" />
                             {t.storyBadge}
                         </div>
@@ -205,7 +205,7 @@ export default function AboutContent() {
 
                 <div className="container mx-auto px-6 lg:px-12 relative z-10">
                     <div className="max-w-2xl mx-auto text-center mb-14">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
                             <UsersThree size={13} weight="fill" className="text-medidesh-teal-500" />
                             {t.teamBadge}
                         </div>
@@ -216,22 +216,22 @@ export default function AboutContent() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                        <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center group hover:border-medidesh-teal-500/30 transition-all duration-300">
-                            <div className="w-14 h-14 rounded-xl bg-medidesh-teal-50 dark:bg-medidesh-teal-500/10 flex items-center justify-center text-medidesh-teal-600 mb-6 group-hover:scale-110 transition-transform">
+                        <div className="p-8 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center group hover:border-medidesh-teal-500/30 transition-all duration-300">
+                            <div className="w-14 h-14 rounded-none bg-medidesh-teal-50 dark:bg-medidesh-teal-500/10 flex items-center justify-center text-medidesh-teal-600 mb-6 group-hover:scale-110 transition-transform">
                                 <UsersThree size={28} weight="duotone" />
                             </div>
                             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Community Hub</h3>
                             <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">Empowering local pharmacies to become accessible healthcare nodes for their neighborhood.</p>
                         </div>
-                        <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center group hover:border-medidesh-teal-500/30 transition-all duration-300">
-                            <div className="w-14 h-14 rounded-xl bg-medidesh-teal-50 dark:bg-medidesh-teal-500/10 flex items-center justify-center text-medidesh-teal-600 mb-6 group-hover:scale-110 transition-transform">
+                        <div className="p-8 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center group hover:border-medidesh-teal-500/30 transition-all duration-300">
+                            <div className="w-14 h-14 rounded-none bg-medidesh-teal-50 dark:bg-medidesh-teal-500/10 flex items-center justify-center text-medidesh-teal-600 mb-6 group-hover:scale-110 transition-transform">
                                 <Sparkle size={28} weight="duotone" />
                             </div>
                             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Real-time Visibility</h3>
                             <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">Creating an open data network that shows medicine availability across the entire country.</p>
                         </div>
-                        <div className="p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center group hover:border-medidesh-teal-500/30 transition-all duration-300">
-                            <div className="w-14 h-14 rounded-xl bg-medidesh-teal-50 dark:bg-medidesh-teal-500/10 flex items-center justify-center text-medidesh-teal-600 mb-6 group-hover:scale-110 transition-transform">
+                        <div className="p-8 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center group hover:border-medidesh-teal-500/30 transition-all duration-300">
+                            <div className="w-14 h-14 rounded-none bg-medidesh-teal-50 dark:bg-medidesh-teal-500/10 flex items-center justify-center text-medidesh-teal-600 mb-6 group-hover:scale-110 transition-transform">
                                 <Sparkle size={28} weight="duotone" className="rotate-45" />
                             </div>
                             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Health Security</h3>
@@ -266,7 +266,7 @@ export default function AboutContent() {
 
                 <div className="container mx-auto px-6 lg:px-12 relative z-10">
                     <div className="max-w-2xl mx-auto text-center mb-14">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
                             <UsersThree size={13} weight="fill" className="text-medidesh-teal-500" />
                             {t.supportersBadge}
                         </div>
@@ -277,7 +277,7 @@ export default function AboutContent() {
                     </div>
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
                         {contributors.map((person, i) => (
-                            <div key={i} className="relative overflow-hidden rounded group cursor-default" style={{ aspectRatio: "3/4" }}>
+                            <div key={i} className="relative overflow-hidden rounded-none group cursor-default" style={{ aspectRatio: "3/4" }}>
                                 <img src={person.photo} alt={person.name} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
                                 <div className="absolute bottom-0 left-0 right-0 p-3">
@@ -323,7 +323,7 @@ export default function AboutContent() {
 
                 <div className="container mx-auto px-6 lg:px-12 relative z-10">
                     <div className="max-w-2xl mx-auto text-center mb-14">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white dark:bg-slate-800 border border-amber-200 dark:border-amber-900/40 text-amber-700 dark:text-amber-500 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white dark:bg-slate-800 border border-amber-200 dark:border-amber-900/40 text-amber-700 dark:text-amber-500 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
                             <Sparkle size={13} weight="fill" className="text-amber-500" />
                             {t.mentorsBadge}
                         </div>
@@ -334,12 +334,12 @@ export default function AboutContent() {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                         {mentors.map((mentor, i) => (
-                            <div key={i} className="relative overflow-hidden rounded group cursor-default" style={{ aspectRatio: "3/4" }}>
+                            <div key={i} className="relative overflow-hidden rounded-none group cursor-default" style={{ aspectRatio: "3/4" }}>
                                 <img src={mentor.photo} alt={mentor.name} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
                                 <div className="absolute bottom-0 left-0 right-0 p-4">
                                     <h3 className="font-bold text-white text-sm leading-tight drop-shadow">{mentor.name}</h3>
-                                    <span className="inline-block mt-1 px-2 py-0.5 bg-amber-400/20 border border-amber-300/40 text-amber-200 text-[10px] font-semibold rounded backdrop-blur-sm">{mentor.org}</span>
+                                    <span className="inline-block mt-1 px-2 py-0.5 bg-amber-400/20 border border-amber-300/40 text-amber-200 text-[10px] font-semibold rounded-none backdrop-blur-sm">{mentor.org}</span>
                                     <p className="text-white/60 text-xs mt-1">{mentor.role}</p>
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />

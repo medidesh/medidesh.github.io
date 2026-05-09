@@ -136,7 +136,7 @@ export default function LandingHero() {
                         </div>
 
                         {/* Top Left Pill */}
-                        <div className="absolute left-[5%] lg:left-[22%] top-[10%] lg:top-[12%] z-30 animate-float md:scale-100 scale-75" style={{ animationDelay: "0.5s" }}>
+                        <div className="absolute left-[0%] lg:left-[15%] top-[8%] lg:top-[12%] z-30 animate-float scale-50 sm:scale-75 lg:scale-100 origin-right" style={{ animationDelay: "0.5s" }}>
                             <div className="relative -rotate-6">
                                 <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-1 translate-y-1"></div>
                                 <div className="relative bg-[#9fff40] border-2 border-slate-900 rounded-none px-4 py-2 flex items-center gap-2">
@@ -147,7 +147,7 @@ export default function LandingHero() {
                         </div>
 
                         {/* Bottom Left Card */}
-                        <div className="absolute left-[-2%] lg:left-[10%] bottom-[15%] lg:bottom-[20%] z-30 animate-float md:scale-100 scale-75" style={{ animationDelay: "1s" }}>
+                        <div className="absolute left-[-8%] lg:left-[5%] bottom-[15%] lg:bottom-[20%] z-30 animate-float scale-50 sm:scale-75 lg:scale-100 origin-right" style={{ animationDelay: "1s" }}>
                             <div className="relative w-48 -rotate-6">
                                 <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-1.5 translate-y-1.5"></div>
                                 <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-3 translate-y-3"></div>
@@ -162,7 +162,7 @@ export default function LandingHero() {
                         </div>
 
                         {/* Top Right Card (Photo/Graph) */}
-                        <div className="absolute right-[5%] lg:right-[20%] top-[5%] lg:top-[8%] z-30 animate-float md:scale-100 scale-75" style={{ animationDelay: "1.5s" }}>
+                        <div className="absolute right-[0%] lg:right-[15%] top-[5%] lg:top-[8%] z-30 animate-float scale-50 sm:scale-75 lg:scale-100 origin-left" style={{ animationDelay: "1.5s" }}>
                             <div className="relative w-40 rotate-6">
                                 <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-1.5 translate-y-1.5"></div>
                                 <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-3 translate-y-3"></div>
@@ -177,7 +177,7 @@ export default function LandingHero() {
                         </div>
 
                         {/* Bottom Right Card (Comparison) */}
-                        <div className="absolute right-[-5%] lg:right-[10%] bottom-[10%] lg:bottom-[15%] z-30 animate-float md:scale-100 scale-75" style={{ animationDelay: "2s" }}>
+                        <div className="absolute right-[-10%] lg:right-[5%] bottom-[10%] lg:bottom-[15%] z-30 animate-float scale-50 sm:scale-75 lg:scale-100 origin-left" style={{ animationDelay: "2s" }}>
                             <div className="relative w-64 rotate-2">
                                 <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-1.5 translate-y-1.5"></div>
                                 <div className="absolute inset-0 bg-white border-2 border-slate-900 rounded-none translate-x-3 translate-y-3"></div>

@@ -1,5 +1,6 @@
 import LandingHeader from "@/components/landing/LandingHeader";
 import LandingHero from "@/components/landing/LandingHero";
+import TrustedBySection from "@/components/landing/TrustedBySection";
 import ProblemSolution from "@/components/landing/ProblemSolution";
 import FeaturesSection from "@/components/landing/FeaturesSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
@@ -11,9 +12,10 @@ import LandingFooter from "@/components/landing/LandingFooter";
 
 export default function Home() {
   return (
-    <main className="bg-white dark:bg-slate-900 min-h-screen">
+    <main className="bg-zubaz-bg min-h-screen text-slate-900">
       <LandingHeader />
       <LandingHero />
+      <TrustedBySection />
       <ProblemSolution />
       <FeaturesSection />
       <DownloadSection />

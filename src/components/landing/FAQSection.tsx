@@ -1,78 +1,82 @@
 "use client";
 
 import { useState } from "react";
-import { CaretDown, Question } from "@phosphor-icons/react/dist/ssr";
+import { Plus, Minus, Question } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
+import { motion, AnimatePresence } from "framer-motion";
 
 const T = {
     bn: {
         badge: "প্রশ্নোত্তর",
-        heading: "সাধারণ কিছু প্রশ্ন",
-        sub: "তথ্য না পেলে আমাদের টিমের সাথে",
-        subLink: "যোগাযোগ করুন",
-        faqs: [
-            { q: "মেডিদেশ কি সত্যিই বিনামূল্যে ব্যবহার করা যায়?",  a: "হ্যাঁ! পদ্মা প্ল্যানটি চিরতরে বিনামূল্যে। কোনো ক্রেডিট কার্ড বা ট্রায়াল পিরিয়ড নেই — শুধু ডাউনলোড করুন এবং শুরু করুন। আপনার ব্যবসা বড় হলে যেকোনো সময় প্রিমিয়াম প্ল্যানে আপগ্রেড করতে পারবেন।" },
-            { q: "কাস্টমার সাপোর্ট কতক্ষণ পাওয়া যায়?",             a: "আমাদের বাংলাদেশি সাপোর্ট টিম শনি–বৃহস্পতি সকাল ১০টা থেকে রাত ৮টা পর্যন্ত সরাসরি সাড়া দেয়। WhatsApp ও ফোনে যোগাযোগ করতে পারবেন: +8801608-844017। যমুনা প্ল্যানে প্রায়োরিটি সাপোর্ট পাওয়া যায়।" },
-            { q: "আমার ডেটা কতটা নিরাপদ?",                          a: "আপনার ডেটা Google Cloud-এ ব্যাংক-গ্রেড AES-256 এনক্রিপশনে সংরক্ষিত থাকে। স্বয়ংক্রিয় ব্যাকআপ প্রতিদিন তৈরি হয়, তাই ডেটা হারানোর কোনো সুযোগ নেই।" },
-            { q: "একাধিক স্টাফ কি একসাথে ব্যবহার করতে পারবে?",      a: "হ্যাঁ। মেঘনা প্ল্যানে ৩ জন ও যমুনা প্ল্যানে ৫ জন ব্যবহারকারী যুক্ত করা যায়। প্রত্যেকের জন্য আলাদা অনুমতি (permission) সেট করা সম্ভব — যেমন ক্যাশিয়ার শুধু বিক্রয় করতে পারবে, রিপোর্ট দেখতে পারবে না।" },
-            { q: "প্ল্যান পরিবর্তন বা বাতিল করা কি সহজ?",            a: "অবশ্যই। যেকোনো সময় সরাসরি অ্যাপ থেকে আপগ্রেড বা ডাউনগ্রেড করতে পারবেন। কোনো লুকানো চার্জ বা বাতিল ফি নেই।" },
+        heading: "প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী",
+        sub: "আমাদের সবচেয়ে সাধারণ প্রশ্নগুলোর উত্তর এখানে পাবেন।",
+        faq: [
+            { q: "মেডিদেশ কি সত্যিই বিনামূল্যে?", a: "হ্যাঁ! পদ্মা প্ল্যান চিরতরে বিনামূল্যে। এতে ৩০০ পণ্য পর্যন্ত ইনভেন্টরি, দৈনিক সেলস রিপোর্ট এবং বেসিক ক্রেডিট ম্যানেজমেন্ট অন্তর্ভুক্ত। কোনো লুকানো চার্জ নেই।" },
+            { q: "আমার ডেটা কি নিরাপদ?", a: "অবশ্যই। আমরা ব্যাংক-গ্রেড এনক্রিপশন ব্যবহার করি এবং প্রতিদিন স্বয়ংক্রিয় ব্যাকআপ নেওয়া হয়। আপনার ডেটা শুধু আপনার — কোনো থার্ড পার্টির সাথে শেয়ার করা হয় না।" },
+            { q: "ইন্টারনেট ছাড়া কি কাজ করবে?", a: "হ্যাঁ! মেডিদেশ সম্পূর্ণ অফলাইনে কাজ করে। বিলিং, ইনভেন্টরি আপডেট, এবং রিপোর্ট দেখা — সবই ইন্টারনেট ছাড়া সম্ভব। ইন্টারনেট পেলে স্বয়ংক্রিয়ভাবে ক্লাউডে সিঙ্ক হয়ে যায়।" },
+            { q: "আমি কিভাবে পেমেন্ট করতে পারি?", a: "বিকাশ, নগদ, রকেট, এবং ব্যাংক ট্রান্সফার — যেকোনো মাধ্যমে পেমেন্ট করতে পারবেন। মেয়াদ শেষে রিনিউ করুন, অন্যথায় স্বয়ংক্রিয়ভাবে ফ্রি প্ল্যানে ফিরে যাবে।" },
+            { q: "প্ল্যান পরিবর্তন বা বাতিল করা কি সহজ?", a: "একদম! যেকোনো সময় আপগ্রেড বা ডাউনগ্রেড করুন। বাতিল করলে কোনো জরিমানা নেই — বাকি মেয়াদ পর্যন্ত প্রিমিয়াম সুবিধা চলবে, তারপর ফ্রি প্ল্যানে ফিরে যাবে।" },
+            { q: "কম্পিউটারে কি ব্যবহার করতে পারি?", a: "হ্যাঁ! উইন্ডোজ ভার্সন শীঘ্রই আসছে। এখন আপনার অ্যান্ড্রয়েড ফোনে পূর্ণাঙ্গ সব ফিচার ব্যবহার করতে পারবেন।" },
         ],
     },
     en: {
         badge: "FAQ",
-        heading: "Common Questions",
-        sub: "Can't find what you need? ",
-        subLink: "Contact our team",
-        faqs: [
-            { q: "Is Medidesh really free to use?",            a: "Yes! The Padma plan is forever free. No credit card or trial period — just download and start. When your business grows, you can upgrade to a premium plan at any time." },
-            { q: "How long is customer support available?",    a: "Our Bangladeshi support team responds directly Saturday–Thursday from 10 AM to 8 PM. Contact via WhatsApp and phone: +8801608-844017. Priority support is available on the Jamuna plan." },
-            { q: "How safe is my data?",                       a: "Your data is stored on Google Cloud with bank-grade AES-256 encryption. Automatic backups are created daily, so there is no chance of data loss." },
-            { q: "Can multiple staff use it simultaneously?",  a: "Yes. The Meghna plan allows 3 users and the Jamuna plan allows 5 users. Separate permissions can be set for each — for example, a cashier can only make sales but cannot view reports." },
-            { q: "Is it easy to change or cancel a plan?",     a: "Absolutely. You can upgrade or downgrade directly from the app at any time. No hidden charges or cancellation fees." },
+        heading: "Frequently asked questions",
+        sub: "Find answers to our most common questions here.",
+        faq: [
+            { q: "Is Medidesh really free?", a: "Yes! The Padma plan is forever free. It includes inventory for up to 300 products, daily sales reports, and basic credit management. No hidden charges." },
+            { q: "Is my data secure?", a: "Absolutely. We use bank-grade encryption with daily automatic backups. Your data is only yours — never shared with third parties." },
+            { q: "Does it work without internet?", a: "Yes! Medidesh works completely offline. Billing, inventory updates, and viewing reports — all possible without internet. When connected, it automatically syncs to the cloud." },
+            { q: "How can I make payments?", a: "You can pay via bKash, Nagad, Rocket, and bank transfer. Renew before expiry, otherwise it automatically reverts to the free plan." },
+            { q: "Is it easy to change or cancel plans?", a: "Absolutely! Upgrade or downgrade anytime. No penalty for cancellation — premium features continue until the end of the period, then reverts to free." },
+            { q: "Can I use it on a computer?", a: "Yes! Windows version is coming soon. Right now, you can use all features on your Android phone." },
         ],
     },
 };
 
 export default function FAQSection() {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
     const { lang } = useLanguage();
     const t = T[lang];
+    const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section id="faq" className="py-24 lg:py-32 bg-slate-50 border-t border-slate-100">
-            <div className="container mx-auto px-6 lg:px-12">
-                <div className="max-w-3xl mx-auto">
-                    <div className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
-                            <Question size={13} weight="fill" className="text-medidesh-teal-500" />
-                            {t.badge}
-                        </div>
-                        <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight tracking-tight">{t.heading}</h2>
-                        <p className="text-slate-500 text-lg leading-relaxed">
-                            {t.sub}
-                            <a href="https://wa.me/+8801608844017" target="_blank" rel="noopener noreferrer" className="text-medidesh-teal-600 font-bold hover:underline">
-                                {t.subLink}
-                            </a>
-                        </p>
-                    </div>
+        <section id="faq" className="py-20 lg:py-32 bg-slate-50">
+            <div className="container mx-auto px-5 lg:px-10">
+                <div className="max-w-2xl mx-auto text-center mb-16 lg:mb-20">
+                    <h2 className="text-4xl sm:text-5xl lg:text-[48px] font-black text-slate-900 mb-6 leading-[1.1] tracking-[-0.03em]">{t.heading}</h2>
+                    <p className="text-slate-500 text-lg leading-relaxed">{t.sub}</p>
+                </div>
 
-                    <div className="space-y-4">
-                        {t.faqs.map((item, i) => (
-                            <div key={i} className={`bg-white rounded border transition-all duration-300 overflow-hidden ${openIndex === i ? "border-medidesh-teal-200 shadow-md" : "border-slate-100 hover:border-slate-200"}`}>
-                                <button className="w-full flex justify-between items-center p-6 text-left" onClick={() => setOpenIndex(openIndex === i ? null : i)}>
-                                    <span className={`font-black text-slate-900 text-base pr-4 leading-snug ${openIndex === i ? "text-medidesh-teal-600" : ""}`}>
-                                        {item.q}
-                                    </span>
-                                    <span className={`shrink-0 w-8 h-8 rounded flex items-center justify-center transition-all duration-300 ${openIndex === i ? "bg-medidesh-teal-500 text-white rotate-180" : "bg-slate-50 text-slate-400"}`}>
-                                        <CaretDown size={16} weight="bold" />
-                                    </span>
+                <div className="max-w-3xl mx-auto space-y-4">
+                    {t.faq.map((item, idx) => {
+                        const isOpen = openIndex === idx;
+                        return (
+                            <div key={idx} className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? "bg-white border-medidesh-teal-200 shadow-md shadow-medidesh-teal-500/5" : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-sm"}`}>
+                                <button
+                                    onClick={() => setOpenIndex(isOpen ? null : idx)}
+                                    className="flex items-center justify-between w-full px-6 py-5 text-left bg-transparent"
+                                >
+                                    <span className={`font-bold text-base transition-colors ${isOpen ? "text-medidesh-teal-600" : "text-slate-900"}`}>{item.q}</span>
+                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ml-4 transition-all duration-300 ${isOpen ? "bg-medidesh-teal-100 text-medidesh-teal-600 rotate-180" : "bg-slate-100 text-slate-500"}`}>
+                                        {isOpen ? <Minus size={14} weight="bold" /> : <Plus size={14} weight="bold" />}
+                                    </div>
                                 </button>
-                                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
-                                    <div className="px-6 pb-6 text-slate-600 text-base leading-relaxed">{item.a}</div>
-                                </div>
+                                <AnimatePresence initial={false}>
+                                    {isOpen && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.2, ease: "easeInOut" }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="px-6 pb-6 pt-2 text-[15px] text-slate-600 leading-relaxed font-medium">{item.a}</div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </div>
-                        ))}
-                    </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

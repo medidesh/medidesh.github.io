@@ -16,7 +16,7 @@ export default function SectionBadge({ icon: Icon, text, className = "" }: Secti
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-5 shadow-sm group ${className}`}
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-medidesh-teal-50 border border-medidesh-teal-200 text-medidesh-teal-600 text-xs font-bold uppercase tracking-wider mb-5 group ${className}`}
         >
             {Icon && (
                 <div className="text-medidesh-teal-500 group-hover:scale-110 transition-transform duration-300">

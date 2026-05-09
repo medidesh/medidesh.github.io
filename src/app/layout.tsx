@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Saira, Bricolage_Grotesque } from "next/font/google";
+import { Inter, Bricolage_Grotesque } from "next/font/google";
 import { LanguageProvider } from "@/lib/i18n";
 import "./globals.css";
 
-const saira = Saira({
+const inter = Inter({
     subsets: ["latin"],
-    variable: "--font-saira",
+    variable: "--font-inter",
     display: "swap",
 });
 
@@ -52,12 +52,7 @@ export default function RootLayout({
     return (
         <html lang="bn" suppressHydrationWarning>
             <head>
-                {/* Prevent flash of wrong theme */}
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(t===null&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`,
-                    }}
-                />
+
                 {/* Prevent flash of wrong language */}
                 <script
                     dangerouslySetInnerHTML={{
@@ -66,7 +61,7 @@ export default function RootLayout({
                 />
             </head>
             <body
-                className={`${saira.variable} ${bricolage.variable} font-sans antialiased bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300`}
+                className={`${inter.variable} ${bricolage.variable} font-sans antialiased bg-zubaz-bg text-slate-900 transition-colors duration-300`}
             >
                 <LanguageProvider>{children}</LanguageProvider>
             </body>

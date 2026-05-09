@@ -1,39 +1,46 @@
 "use client";
 
 import { useState } from "react";
-import { GooglePlayLogoIcon, Star, ArrowRight, CheckCircle, Play } from "@phosphor-icons/react/dist/ssr";
+import { GooglePlayLogoIcon, Star, ArrowRight, Play, Wallet, ChartLineUp, CurrencyCircleDollar } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
 import { motion } from "framer-motion";
 import BangladeshMap from "./BangladeshMap";
-import SectionBadge from "../ui/SectionBadge";
 import VideoModal from "../ui/VideoModal";
+import { ArrowDoodle, SparkleLines, DotGrid } from "../ui/Vectors";
+import PhoneMockup from "../ui/PhoneMockup";
 
 const T = {
     bn: {
-        badge: "মেডিদেশ — চিরতরে বিনামূল্যে",
         title1: "আপনার পকেটে",
         titleHighlight: "স্মার্ট ফার্মেসি",
         title2: "ম্যানেজমেন্ট",
         sub: "অত্যাধুনিক প্রযুক্তিতে আপনার ফার্মেসি ব্যবসার সম্পূর্ণ নিয়ন্ত্রণ নিন। স্টকের হিসাব, ডিজিটাল বাকি খাতা ও সতর্কতা—সবকিছু এখন একটি অ্যাপে, সম্পূর্ণ বিনামূল্যে।",
         downloadBtn: "অ্যাপ ডাউনলোড",
         tutorialBtn: "এক নজরে মেডিদেশ",
-        stats: [
-            { value: "১,০০০+", label: "সক্রিয় ব্যবহারকারী" },
-            { value: "৫০০+",   label: "বিশ্বস্ত ফার্মেসি" },
-        ],
+        floating: {
+            pill: "৳৫,০০০ বিক্রি",
+            spendTitle: "মোট ইনভেন্টরি মূল্য",
+            spendValue: "৳৪২,০৪০",
+            compTitle: "মাসিক তুলনা",
+            thisMonth: "এই মাস",
+            lastMonth: "গত মাস",
+        }
     },
     en: {
-        badge: "Medidesh — Forever Free",
         title1: "The Ultimate",
         titleHighlight: "Pharmacy Ecosystem",
         title2: "In Your Pocket",
         sub: "Empower your pharmacy business with seamless stock tracking, intelligent sales analytics, and automated expiry alerts—all from your mobile phone. Premium features, absolutely free.",
         downloadBtn: "Download App",
-        tutorialBtn: "Medidesh at a Glance",
-        stats: [
-            { value: "1,000+", label: "Active Users" },
-            { value: "500+",   label: "Trusted Pharmacies" },
-        ],
+        tutorialBtn: "Watch A Demo",
+        floating: {
+            pill: "৳5,000 collected",
+            spendTitle: "Total Inventory Value",
+            spendValue: "৳42,040",
+            compTitle: "Comparison (Month)",
+            thisMonth: "This month",
+            lastMonth: "Last month",
+        }
     },
 };
 
@@ -43,109 +50,142 @@ export default function LandingHero() {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
 
     return (
-        <section id="hero" className="relative pt-28 pb-20 lg:pt-40 lg:pb-36 bg-white overflow-hidden text-center">
-            {/* Background Grid & Map */}
-            <div
-                className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                style={{
-                    backgroundImage: "linear-gradient(#2E8B57 1px, transparent 1px), linear-gradient(90deg, #2E8B57 1px, transparent 1px)",
-                    backgroundSize: "60px 60px",
-                }}
-            />
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-medidesh-teal-500/5 rounded blur-[120px] pointer-events-none" />
+        <section id="hero" className="relative pt-28 pb-16 lg:pt-36 lg:pb-32 bg-white overflow-hidden text-center">
+            {/* Zubaz-style hand-drawn arrows */}
+            <ArrowDoodle className="absolute left-4 lg:left-24 top-24 lg:top-32 w-32 lg:w-48 text-slate-900 hidden sm:block pointer-events-none" />
+            <SparkleLines className="absolute right-8 lg:right-32 top-32 lg:top-40 w-16 lg:w-20 text-slate-900 hidden sm:block pointer-events-none" />
 
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[900px] lg:h-[900px] opacity-[0.10] pointer-events-none z-0">
-                <BangladeshMap className="w-full h-full object-contain" />
-            </div>
+            {/* Giant Green Blob behind the phone */}
+            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[800px] h-[400px] lg:w-[1200px] lg:h-[600px] bg-medidesh-teal-100 rounded-[100%] translate-y-1/3 opacity-90 pointer-events-none z-0"></div>
 
-            <div className="container mx-auto px-6 lg:px-12 relative z-10">
-                <div className="max-w-4xl mx-auto flex flex-col items-center">
-                    
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
+            <div className="container mx-auto px-5 lg:px-10 relative z-10">
+                <div className="max-w-3xl mx-auto flex flex-col items-center">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                    >
-                        <SectionBadge icon={Star} text={t.badge} />
-                    </motion.div>
-                    
-                    <motion.h1 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-4xl lg:text-7xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight text-center"
+                        className="text-3xl md:text-5xl lg:text-[64px] font-black text-slate-900 mb-6 leading-[1.08] tracking-[-0.03em]"
                     >
                         {t.title1}{" "}
-                        <span className="relative inline-block text-medidesh-teal-500">
-                            {t.titleHighlight}
-                            <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none" preserveAspectRatio="none">
-                                <path d="M2 8 Q 75 2 150 8 T 298 8" stroke="#2E8B57" strokeOpacity="0.25" strokeWidth="4" fill="none" strokeLinecap="round" />
-                            </svg>
-                        </span>{" "}
+                        <span className="text-medidesh-teal-500">{t.titleHighlight}</span>{" "}
                         {t.title2}
                     </motion.h1>
 
-                    <motion.p 
-                        initial={{ opacity: 0, y: 20 }}
+                    <motion.p
+                        initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-lg lg:text-xl text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed font-hind-siliguri font-medium"
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="text-base lg:text-lg text-slate-500 mb-10 max-w-xl mx-auto leading-relaxed"
                     >
                         {t.sub}
                     </motion.p>
 
-                    <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
+                    <motion.div
+                        initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 w-full sm:w-auto"
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
                     >
-                        <a
-                            href="#download"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-10 py-4 rounded-lg font-bold text-base shadow-xl shadow-medidesh-teal-500/20 transition-all duration-300 hover:-translate-y-0.5 group"
-                        >
-                            <GooglePlayLogoIcon weight="fill" size={20} />
+                        {/* Primary CTA — solid sharp edges */}
+                        <a href="#download"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px rounded-none">
                             <span>{t.downloadBtn}</span>
-                            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                         </a>
-                        <button
-                            onClick={() => setIsVideoOpen(true)}
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-50 text-slate-800 border-2 border-slate-200 px-10 py-4 rounded-lg font-bold text-base transition-all duration-300 hover:-translate-y-0.5"
-                        >
-                            <div className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-white">
-                                <Play weight="fill" size={14} />
-                            </div>
+                        {/* Secondary CTA — bordered sharp edges */}
+                        <button onClick={() => setIsVideoOpen(true)}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-medidesh-teal-600 border-2 border-medidesh-teal-600 px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px hover:bg-medidesh-teal-50 rounded-none">
+                            <Play weight="fill" size={16} />
                             <span>{t.tutorialBtn}</span>
                         </button>
                     </motion.div>
 
-                    <motion.div 
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.5 }}
-                        className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 pt-10 border-t border-slate-100 w-full max-w-2xl"
+                    {/* iPhone App Mockup & Floating Elements */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 32 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.3 }}
+                        className="relative mx-auto flex justify-center w-full max-w-5xl h-[500px]"
                     >
-                        {t.stats.map((stat, i) => (
-                            <div key={i} className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-lg bg-medidesh-teal-50 flex items-center justify-center text-medidesh-teal-600">
-                                    <CheckCircle weight="fill" size={22} />
+                        {/* The Phone */}
+                        <div className="absolute left-1/2 -translate-x-1/2 z-20">
+                            <PhoneMockup>
+                                {/* iPhone Status Bar Simulation */}
+                                <div className="absolute top-0 w-full h-7 bg-transparent z-20 flex justify-between items-center px-5 pt-1">
+                                    <span className="text-[10px] font-medium text-slate-900">9:41</span>
+                                    <div className="flex gap-1 items-center">
+                                        <div className="w-3 h-2.5 border border-slate-900 rounded-[2px] relative"><div className="w-0.5 h-1 bg-slate-900 absolute -right-1 top-[2px]"></div></div>
+                                    </div>
                                 </div>
-                                <div className="text-left">
-                                    <div className="font-black text-slate-900 text-xl leading-none">{stat.value}</div>
-                                    <div className="text-slate-500 text-xs mt-1 font-bold uppercase tracking-wider">{stat.label}</div>
+                                <img src="/assets/mobile_app.png" alt="Medidesh App" className="w-full h-full object-cover object-left-top" loading="eager" />
+                            </PhoneMockup>
+                        </div>
+
+                        {/* Floating elements — visible mostly on desktop/tablet, hidden on very small screens to avoid clutter */}
+
+                        {/* Top Left Pill */}
+                        <div className="absolute left-0 lg:left-12 top-10 z-30 hidden md:block animate-float" style={{ animationDelay: "0.5s" }}>
+                            <div className="relative -rotate-3">
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-lg translate-x-1.5 translate-y-1.5"></div>
+                                <div className="relative bg-medidesh-teal-200 border-[2.5px] border-slate-900 rounded-lg px-4 py-2 flex items-center gap-2">
+                                    <CurrencyCircleDollar weight="fill" size={20} className="text-slate-900" />
+                                    <span className="font-black text-sm text-slate-900">{t.floating.pill}</span>
                                 </div>
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Bottom Left Card */}
+                        <div className="absolute left-0 lg:left-0 bottom-10 z-30 hidden md:block animate-float" style={{ animationDelay: "1s" }}>
+                            <div className="relative w-48 -rotate-6">
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-2 translate-y-2"></div>
+                                <div className="relative bg-white border-[2.5px] border-slate-900 rounded-xl p-5 text-left">
+                                    <div className="w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center mb-4">
+                                        <Wallet weight="fill" size={24} className="text-medidesh-teal-400" />
+                                    </div>
+                                    <p className="text-sm font-semibold text-slate-500 mb-1">{t.floating.spendTitle}</p>
+                                    <p className="text-2xl font-black text-slate-900">{t.floating.spendValue}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Top Right Card (Photo/Graph) */}
+                        <div className="absolute right-0 lg:right-12 top-0 z-30 hidden md:block animate-float" style={{ animationDelay: "1.5s" }}>
+                            <div className="relative w-36 rotate-6">
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-2 translate-y-2"></div>
+                                <div className="relative bg-white border-[2.5px] border-slate-900 rounded-xl p-1 overflow-hidden">
+                                    <img src="/assets/pharmacist.png" alt="Pharmacist" className="w-full h-36 object-cover rounded-lg bg-slate-100" />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Bottom Right Card (Comparison) */}
+                        <div className="absolute right-0 lg:right-0 bottom-16 z-30 hidden md:block animate-float" style={{ animationDelay: "2s" }}>
+                            <div className="relative w-56 rotate-2">
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-2 translate-y-2"></div>
+                                <div className="relative bg-white border-[2.5px] border-slate-900 rounded-xl p-5 text-left">
+                                    <p className="font-black text-sm text-slate-900 mb-4">{t.floating.compTitle}</p>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-xs font-semibold text-slate-500 w-16">{t.floating.thisMonth}</span>
+                                            <div className="flex-1 h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                                                <div className="h-full bg-medidesh-teal-400 w-[70%]"></div>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-xs font-semibold text-slate-500 w-16">{t.floating.lastMonth}</span>
+                                            <div className="flex-1 h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                                                <div className="h-full bg-slate-800 w-[50%]"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </motion.div>
                 </div>
             </div>
 
-            {/* Cinematic Video Modal */}
-            <VideoModal 
-                isOpen={isVideoOpen} 
-                onClose={() => setIsVideoOpen(false)} 
-                videoUrl="https://www.youtube.com/embed/J0ukP78ItCc" 
-            />
+            <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoUrl="https://www.youtube.com/embed/J0ukP78ItCc" />
         </section>
     );
 }

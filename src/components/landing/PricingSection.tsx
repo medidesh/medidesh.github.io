@@ -1,181 +1,234 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, Phone, Tag, Monitor } from "@phosphor-icons/react/dist/ssr";
+import { Check, CurrencyCircleDollar, ArrowRight, Star } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
 
 const T = {
     bn: {
-        badge: "সহজ সাবস্ক্রিপশন",
-        heading: "সাধ্যের মধ্যে সেরা প্যাকেজটি পছন্দ করুন।",
-        cycles: { monthly: "মাসিক", "6-month": "৬ মাস", yearly: "বার্ষিক" },
-        discounts: { "6-month": "১০% ছাড়", yearly: "২০% ছাড়" },
-        discountSuffix: " — সীমিত সময়ের অফার",
-        freePrice: "বিনামূল্যে",
-        priceLabels: { monthly: "/মাস", "6-month": "/৬ মাস", yearly: "/বছর" },
-        popularBadge: "সবচেয়ে জনপ্রিয়",
-        helpTitle: "সঠিক প্ল্যান নির্বাচনে সাহায্য লাগবে?",
-        helpSub: "আমাদের টিম সরাসরি সাহায্য করবে।",
+        badge: "প্রাইসিং",
+        heading: "আপনার ব্যবসার জন্য সেরা প্ল্যান বেছে নিন",
+        sub: "সবগুলো প্ল্যানে ফ্রি ট্রায়াল সুবিধা রয়েছে। যেকোনো সময় আপগ্রেড বা ডাউনগ্রেড করুন।",
+        monthly: "মাসিক",
+        yearly: "বার্ষিক",
+        monthUnit: "/মাস",
+        getStarted: "শুরু করুন",
+        popular: "সবচেয়ে জনপ্রিয়",
         plans: [
             {
-                name: "পদ্মা", tagline: "ফ্রি চিরতরে", price: 0, highlight: false, cta: null,
-                description: "ছোট ফার্মেসির ডিজিটাল যাত্রা শুরু করার জন্য।",
-                features: ["১টি ফার্মেসি", "১ জন ব্যবহারকারী (মালিক), ১টি ডিভাইস", "বেসিক ইনভেন্টরি ম্যানেজমেন্ট", "বেসিক বিক্রয় ও ক্রয় ট্র্যাকিং", "মোবাইল অ্যাপ অ্যাক্সেস", "ইমেইল সাপোর্ট"],
+                name: "পদ্মা",
+                price: "বিনামূল্যে",
+                yearlyPrice: "বিনামূল্যে",
+                description: "ছোট ফার্মেসির জন্য আদর্শ।",
+                features: [
+                    "১ ডিভাইসে ব্যবহার",
+                    "৩০০ পণ্য পর্যন্ত ইনভেন্টরি",
+                    "প্রতিদিনের সেলস রিপোর্ট",
+                    "বেসিক ক্রেডিট ম্যানেজমেন্ট",
+                    "স্ট্যান্ডার্ড সাপোর্ট",
+                ],
+                highlight: false,
+                href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
             },
             {
-                name: "মেঘনা", tagline: "সবচেয়ে জনপ্রিয়", price: 399, highlight: true, cta: "বিস্তারিত",
-                description: "মাঝারি বা বড় ফার্মেসির জন্য সব সুবিধা এক জায়গায়।",
-                features: ["১টি ফার্মেসি", "৩ জন ব্যবহারকারী, ২টি ডিভাইস", "পূর্ণ ইনভেন্টরি ও অ্যাকাউন্ট ম্যানেজমেন্ট", "মেয়াদোত্তীর্ণ ও লো-স্টক সতর্কতা", "রিপোর্ট ডাউনলোড (PDF, Excel, CSV)", "থার্মাল প্রিন্টিং সাপোর্ট", "দ্রুত কাস্টমার সাপোর্ট"],
+                name: "মেঘনা",
+                price: "৳৩৯৯",
+                yearlyPrice: "৳২৯৯",
+                description: "বড় পরিসরের জন্য পূর্ণাঙ্গ সমাধান।",
+                features: [
+                    "সবকিছু পদ্মা প্ল্যানে আছে",
+                    "৩ ডিভাইসে ব্যবহার",
+                    "আনলিমিটেড পণ্য ইনভেন্টরি",
+                    "উন্নত বিক্রয় বিশ্লেষণ ড্যাশবোর্ড",
+                    "রোল-বেসড অ্যাক্সেস কন্ট্রোল",
+                    "প্রায়োরিটি সাপোর্ট",
+                ],
+                highlight: true,
+                href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
             },
             {
-                name: "যমুনা", tagline: "অ্যাডভান্সড", price: 899, highlight: false, cta: "বিস্তারিত",
-                description: "বড় চেইন ফার্মেসি ও দ্রুততম সাপোর্টের জন্য।",
-                features: ["১টি ফার্মেসি", "৫ জন ব্যবহারকারী, ৩টি ডিভাইস", "উন্নত ইনভেন্টরি, বাকি খাতা ও সম্পূর্ণ অ্যাকাউন্টিং", "অ্যাডভান্সড রিপোর্ট ও ব্যবসায়িক বিশ্লেষণ", "ক্রেতাদের ওষুধের চাহিদার ডাটা বিশ্লেষণ", "বিজ্ঞাপনমুক্ত অভিজ্ঞতা", "প্রায়োরিটি কাস্টমার সাপোর্ট"],
+                name: "যমুনা",
+                price: "৳৫৯৯",
+                yearlyPrice: "৳৪৯৯",
+                description: "চেইন ফার্মেসি ও এন্টারপ্রাইজ গ্রাহকদের জন্য।",
+                features: [
+                    "সবকিছু মেঘনা প্ল্যানে আছে",
+                    "৫+ ডিভাইস লিংক",
+                    "মাল্টি-ব্রাঞ্চ ম্যানেজমেন্ট",
+                    "কাস্টম ইন্টিগ্রেশন সুবিধা",
+                    "ডেডিকেটেড অ্যাকাউন্ট ম্যানেজার",
+                    "ভিআইপি সাপোর্ট + ওয়ানবোর্ডিং",
+                ],
+                highlight: false,
+                href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
             },
         ],
+        payment: {
+            title: "পেমেন্ট সিস্টেম",
+            methods: ["বিকাশ", "নগদ", "রকেট", "ব্যাংক ট্রান্সফার"],
+        },
     },
     en: {
-        badge: "Simple Subscription",
-        heading: "Choose the best plan within your budget.",
-        cycles: { monthly: "Monthly", "6-month": "6 Months", yearly: "Yearly" },
-        discounts: { "6-month": "10% off", yearly: "20% off" },
-        discountSuffix: " — limited time offer",
-        freePrice: "Free",
-        priceLabels: { monthly: "/mo", "6-month": "/6 mo", yearly: "/yr" },
-        popularBadge: "Most Popular",
-        helpTitle: "Need help choosing the right plan?",
-        helpSub: "Our team will help you directly.",
+        badge: "Pricing",
+        heading: "Choose the best plan for your business",
+        sub: "All plans include a free trial. Upgrade or downgrade anytime.",
+        monthly: "Monthly",
+        yearly: "Yearly",
+        monthUnit: "/mo",
+        getStarted: "Get Started",
+        popular: "Most Popular",
         plans: [
             {
-                name: "Padma", tagline: "Forever Free", price: 0, highlight: false, cta: null,
-                description: "Start your digital journey for small pharmacies.",
-                features: ["1 pharmacy", "1 user (owner), 1 device", "Basic inventory management", "Basic sales & purchase tracking", "Mobile app access", "Email support"],
+                name: "Padma",
+                price: "Free",
+                yearlyPrice: "Free",
+                description: "Ideal for small pharmacies.",
+                features: [
+                    "Use on 1 device",
+                    "Inventory up to 300 products",
+                    "Daily sales reports",
+                    "Basic credit management",
+                    "Standard support",
+                ],
+                highlight: false,
+                href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
             },
             {
-                name: "Meghna", tagline: "Most Popular", price: 399, highlight: true, cta: "Details",
-                description: "All features in one place for mid to large pharmacies.",
-                features: ["1 pharmacy", "3 users, 2 devices", "Full inventory & account management", "Expiry & low-stock alerts", "Report downloads (PDF, Excel, CSV)", "Thermal printing support", "Fast customer support"],
+                name: "Meghna",
+                price: "৳399",
+                yearlyPrice: "৳299",
+                description: "Complete solution for larger operations.",
+                features: [
+                    "Everything in Padma plan",
+                    "Use on 3 devices",
+                    "Unlimited product inventory",
+                    "Advanced sales analytics dashboard",
+                    "Role-based access control",
+                    "Priority support",
+                ],
+                highlight: true,
+                href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
             },
             {
-                name: "Jamuna", tagline: "Advanced", price: 899, highlight: false, cta: "Details",
-                description: "For large chain pharmacies and fastest support.",
-                features: ["1 pharmacy", "5 users, 3 devices", "Advanced inventory, credit ledger & full accounting", "Advanced reports & business analytics", "Customer medicine demand data analysis", "Ad-free experience", "Priority customer support"],
+                name: "Jamuna",
+                price: "৳599",
+                yearlyPrice: "৳499",
+                description: "For chain pharmacies & enterprise customers.",
+                features: [
+                    "Everything in Meghna plan",
+                    "5+ device linking",
+                    "Multi-branch management",
+                    "Custom integration options",
+                    "Dedicated account manager",
+                    "VIP support + onboarding",
+                ],
+                highlight: false,
+                href: "https://play.google.com/store/apps/details?id=com.medidesh.pharmacy",
             },
         ],
+        payment: {
+            title: "Payment Methods",
+            methods: ["bKash", "Nagad", "Rocket", "Bank Transfer"],
+        },
     },
 };
 
 export default function PricingSection() {
-    const [billingCycle, setBillingCycle] = useState<"monthly" | "6-month" | "yearly">("monthly");
     const { lang } = useLanguage();
     const t = T[lang];
-
-    const getPrice = (basePrice: number) => {
-        if (basePrice === 0) return t.freePrice;
-        
-        const isEn = lang === "en";
-        const symbol = isEn ? "$" : "৳";
-        const rate = isEn ? 120 : 1;
-        const converted = basePrice / rate;
-
-        if (billingCycle === "monthly") {
-             const val = converted;
-             return `${symbol}${isEn && val % 1 !== 0 ? val.toFixed(2) : Math.round(val)}`;
-        }
-        if (billingCycle === "6-month") {
-             const val = converted * 6 * 0.9;
-             return `${symbol}${isEn && val % 1 !== 0 ? val.toFixed(2) : Math.round(val)}`;
-        }
-        // yearly
-        const val = converted * 12 * 0.8;
-        return `${symbol}${isEn && val % 1 !== 0 ? val.toFixed(2) : Math.round(val)}`;
-    };
-
-    const discount = billingCycle !== "monthly" ? t.discounts[billingCycle] : null;
+    const [isYearly, setIsYearly] = useState(false);
 
     return (
-        <section id="pricing" className="py-24 lg:py-32 bg-slate-50 dark:bg-slate-900/50 relative overflow-hidden text-slate-900 dark:text-white">
-            <svg className="absolute -top-20 -right-20 w-80 h-80 opacity-[0.06] pointer-events-none" viewBox="0 0 320 320" fill="none" aria-hidden="true">
-                <path d="M160,30 C220,10 300,60 310,130 C320,200 270,270 200,285 C130,300 60,260 40,190 C20,120 60,50 100,35 C120,27 140,36 160,30 Z" fill="#2E8B57" />
-            </svg>
-            <svg className="absolute top-20 left-8 opacity-[0.08] pointer-events-none hidden lg:block" width="120" height="120" aria-hidden="true">
-                {[0,1,2,3,4].map(r => [0,1,2,3,4].map(c => (
-                    <circle key={`${r}-${c}`} cx={12+c*24} cy={12+r*24} r="2.5" fill="#2E8B57" />
-                )))}
-            </svg>
+        <section id="pricing" className="py-20 lg:py-32 bg-white">
+            <div className="container mx-auto px-5 lg:px-10">
+                <div className="max-w-xl mx-auto text-center mb-16 lg:mb-20">
+                    <h2 className="text-4xl sm:text-5xl lg:text-[48px] font-black text-slate-900 mb-6 leading-[1.1] tracking-[-0.03em]">{t.heading}</h2>
+                    <p className="text-slate-500 text-lg leading-relaxed mb-8">{t.sub}</p>
 
-            <div className="container mx-auto px-6 lg:px-12 relative z-10">
-                <div className="max-w-2xl mx-auto text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">
-                        <Tag size={13} weight="bold" />
-                        {t.badge}
+                    <div className="inline-flex items-center bg-slate-100 p-1 rounded-full border border-slate-200">
+                        <button
+                            onClick={() => setIsYearly(false)}
+                            className={`px-6 py-2.5 text-[13px] font-bold transition-all rounded-full ${!isYearly ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"}`}
+                        >{t.monthly}</button>
+                        <button
+                            onClick={() => setIsYearly(true)}
+                            className={`px-6 py-2.5 text-[13px] font-bold transition-all rounded-full ${isYearly ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"}`}
+                        >{t.yearly}</button>
                     </div>
-                    <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-8 leading-tight tracking-tight">{t.heading}</h2>
-
-                    <div className="inline-flex p-1 bg-white border border-slate-200 rounded shadow-sm">
-                        {(["monthly", "6-month", "yearly"] as const).map((cycle) => (
-                            <button
-                                key={cycle}
-                                onClick={() => setBillingCycle(cycle)}
-                                className={`px-5 py-2 rounded text-sm font-semibold transition-all ${billingCycle === cycle ? "bg-medidesh-teal-500 text-white shadow-sm" : "text-slate-500 hover:text-slate-800"}`}
-                            >
-                                {t.cycles[cycle]}
-                            </button>
-                        ))}
-                    </div>
-                    {discount && <p className="mt-3 text-medidesh-teal-600 text-sm font-bold">{discount}{t.discountSuffix}</p>}
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    {t.plans.map((plan, index) => (
-                        <div key={index} className={`relative flex flex-col rounded border transition-all duration-300 overflow-hidden ${plan.highlight ? "bg-medidesh-teal-500 border-medidesh-teal-400 shadow-2xl shadow-medidesh-teal-300/30 md:-translate-y-2" : "bg-white border-slate-200 hover:border-medidesh-teal-200 hover:shadow-lg"}`}>
+                <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+                    {t.plans.map((plan, idx) => (
+                        <div key={idx} className={`relative p-8 lg:p-10 flex flex-col rounded-3xl transition-all hover:-translate-y-1 ${
+                            plan.highlight 
+                                ? "bg-medidesh-teal-50 text-slate-900 shadow-xl border-2 border-medidesh-teal-400" 
+                                : "bg-white border border-slate-200 shadow-sm hover:shadow-lg"
+                        }`}>
                             {plan.highlight && (
-                                <div className="bg-medidesh-teal-400/40 text-white text-xs font-black uppercase text-center py-2">{t.popularBadge}</div>
+                                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 bg-medidesh-teal-500 text-white text-[11px] font-black px-4 py-1.5 rounded-full shadow-lg">
+                                    <Star weight="fill" size={12} />
+                                    {t.popular}
+                                </div>
                             )}
-                            <div className="p-7 flex flex-col flex-1">
-                                <div className="mb-6">
-                                    <h3 className={`text-xl font-black mb-1 ${plan.highlight ? "text-white" : "text-slate-900"}`}>{plan.name}</h3>
-                                    <p className={`text-sm ${plan.highlight ? "text-medidesh-teal-100" : "text-slate-500"}`}>{plan.description}</p>
-                                </div>
-                                <div className="mb-7">
-                                    <div className="flex items-baseline gap-1">
-                                        <span className={`text-4xl font-black tracking-tight ${plan.highlight ? "text-white" : "text-slate-900"}`}>{getPrice(plan.price)}</span>
-                                        {plan.price > 0 && (
-                                            <span className={`text-sm font-medium ${plan.highlight ? "text-medidesh-teal-100" : "text-slate-400"}`}>{t.priceLabels[billingCycle]}</span>
-                                        )}
-                                    </div>
-                                </div>
-                                <ul className="space-y-3 mb-8 flex-1">
-                                    {plan.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-start gap-2.5">
-                                            <CheckCircle weight="fill" size={17} className={`mt-0.5 shrink-0 ${plan.highlight ? "text-white" : "text-medidesh-teal-500"}`} />
-                                            <span className={`text-sm leading-snug ${plan.highlight ? "text-white" : "text-slate-700"}`}>{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                {plan.cta && (
-                                    <a href="https://wa.me/+8801608844017" target="_blank" rel="noopener noreferrer" className={`w-full py-3.5 rounded font-bold text-sm transition-all active:scale-[0.98] text-center block ${plan.highlight ? "bg-white text-medidesh-teal-600 hover:bg-slate-50 shadow-md" : "bg-medidesh-teal-500 text-white hover:bg-medidesh-teal-600 shadow-sm"}`}>
-                                        {plan.cta}
-                                    </a>
+                            <h3 className={`text-xl lg:text-2xl font-black mb-2 text-slate-900`}>{plan.name}</h3>
+                            <p className={`text-[14px] mb-6 font-medium ${plan.highlight ? "text-slate-600" : "text-slate-500"}`}>{plan.description}</p>
+                            <div className="mb-8">
+                                <span className={`text-4xl lg:text-5xl font-black tracking-tighter text-slate-900`}>{isYearly ? plan.yearlyPrice : plan.price}</span>
+                                {plan.price !== "Free" && plan.price !== "বিনামূল্যে" && (
+                                    <span className={`text-sm font-bold ml-1 ${plan.highlight ? "text-slate-500" : "text-slate-400"}`}>{t.monthUnit}</span>
                                 )}
                             </div>
+                            <ul className="space-y-4 mb-8 flex-1">
+                                {plan.features.map((f, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                        <div className={`w-5 h-5 flex items-center justify-center rounded-full flex-shrink-0 mt-0.5 ${plan.highlight ? "bg-medidesh-teal-500/20" : "bg-medidesh-teal-50"}`}>
+                                            <Check size={12} weight="bold" className={plan.highlight ? "text-medidesh-teal-600" : "text-medidesh-teal-600"} />
+                                        </div>
+                                        <span className={`text-[14px] font-medium text-slate-700`}>{f}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <a href={plan.href} target="_blank" rel="noopener noreferrer"
+                                className={`w-full text-center py-3.5 font-bold text-[14px] transition-all hover:-translate-y-px flex items-center justify-center gap-2 rounded-full ${
+                                    plan.highlight
+                                        ? "bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white shadow-lg shadow-medidesh-teal-500/30"
+                                        : "bg-slate-900 hover:bg-slate-800 text-white"
+                                }`}
+                            >
+                                {t.getStarted}
+                                <ArrowRight size={14} weight="bold" />
+                            </a>
                         </div>
                     ))}
                 </div>
 
-                <div className="mt-16 max-w-4xl mx-auto text-center font-hind-siliguri">
-                    <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-90">
-                        {/* Mobile Financial Services */}
-                        <div className="flex items-center gap-10 border-r border-slate-200 pr-10">
-                            <img src="https://www.logo.wine/a/logo/BKash/BKash-Icon-Logo.wine.svg" alt="bKash" className="h-8 lg:h-10 w-auto object-contain" />
-                            <img src="https://www.logo.wine/a/logo/Nagad/Nagad-Logo.wine.svg" alt="Nagad" className="h-10 lg:h-12 w-auto object-contain" />
-                            <img src="/assets/payment/rocket.png" alt="Rocket" className="h-8 lg:h-10 w-auto object-contain" />
+                <div className="max-w-xl mx-auto mt-16 flex flex-col items-center">
+                    <p className="text-[12px] text-slate-400 font-bold uppercase tracking-widest mb-4">{t.payment.title}</p>
+                    <div className="flex flex-wrap items-center justify-center gap-4">
+                        {/* bKash */}
+                        <div className="h-10 px-4 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
+                            <span className="font-bold text-[#E2136E] text-[17px] tracking-tight">bKash</span>
                         </div>
-                        {/* Cards & Bank */}
-                        <div className="flex items-center gap-10">
-                            <img src="https://www.logo.wine/a/logo/Visa_Inc./Visa_Inc.-Logo.wine.svg" alt="VISA" className="h-8 lg:h-10 w-auto object-contain" />
-                            <img src="https://www.logo.wine/a/logo/Mastercard/Mastercard-Logo.wine.svg" alt="Mastercard" className="h-8 lg:h-10 w-auto object-contain" />
-                            <img src="/assets/payment/bank.png" alt="Bank Transfer" className="h-8 lg:h-10 w-auto object-contain ml-2 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                        {/* Nagad */}
+                        <div className="h-10 px-4 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
+                            <span className="font-black text-[#ED1C24] text-[15px] tracking-tight">nagad</span>
+                        </div>
+                        {/* Rocket */}
+                        <div className="h-10 px-4 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
+                            <img src="/assets/payment/rocket.png" alt="Rocket" className="h-5 object-contain" />
+                        </div>
+                        {/* Mastercard */}
+                        <div className="h-10 px-4 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow gap-1">
+                            <div className="flex">
+                                <div className="w-5 h-5 rounded-full bg-[#EB001B] mix-blend-multiply opacity-90"></div>
+                                <div className="w-5 h-5 rounded-full bg-[#F79E1B] mix-blend-multiply -ml-2 opacity-90"></div>
+                            </div>
+                            <span className="font-bold text-slate-800 text-[13px] italic ml-1">mastercard</span>
+                        </div>
+                        {/* Bank Transfer */}
+                        <div className="h-10 px-4 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow gap-2">
+                            <img src="/assets/payment/bank.png" alt="Bank" className="h-5 object-contain opacity-80" />
+                            <span className="font-bold text-slate-600 text-[13px]">Bank Transfer</span>
                         </div>
                     </div>
                 </div>

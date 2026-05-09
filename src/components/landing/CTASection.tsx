@@ -1,29 +1,29 @@
 "use client";
 
-import { EnvelopeSimple, Phone, WhatsappLogo, ArrowRight, Headset } from "@phosphor-icons/react/dist/ssr";
+import { WhatsappLogo, Envelope, Phone, Headset, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { WhatsappLogo, Envelope, Phone, Headset, ArrowRight, MapPin } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
-import SectionBadge from "../ui/SectionBadge";
 
 const T = {
     bn: {
         badge: "যোগাযোগ",
-        heading: "আমরা সবসময়",
-        headingAccent: "পাশে আছি",
-        sub: "যেকোনো প্রশ্ন বা সাহায্যের জন্য আমাদের সাথে যোগাযোগ করুন।",
-        whatsapp: "WhatsApp করুন",
+        heading: "আমরা সবসময় পাশে আছি",
+        sub: "যেকোনো সাহায্য বা প্রশ্নের জন্য আমাদের টিমের সাথে যোগাযোগ করুন। আমরা সবসময় আপনার সেবায় প্রস্তুত।",
+        whatsapp: "হোয়াটসঅ্যাপ",
         email: "info.medidesh@gmail.com",
         phone: "+8801608-844017",
-        hours: "শনি–বৃহস্পতি · সকাল ১০টা – রাত ৮টা",
+        hours: "শনি-বৃহস্পতি · সকাল ১০টা – রাত ৮টা",
+        address: "ঢাকা, বাংলাদেশ",
     },
     en: {
-        badge: "Contact",
-        heading: "We're always",
-        headingAccent: "here for you",
-        sub: "Reach out with any question — our team responds fast.",
+        badge: "Contact Us",
+        heading: "We're here to help",
+        sub: "Contact us for any question or help. We're always ready for you.",
         whatsapp: "WhatsApp Us",
         email: "info.medidesh@gmail.com",
         phone: "+8801608-844017",
-        hours: "Sat–Thu · 10 AM – 8 PM",
+        hours: "Mon–Fri · 10AM – 8PM",
+        address: "Dhaka, Bangladesh",
     },
 };
 
@@ -32,91 +32,62 @@ export default function CTASection() {
     const t = T[lang];
 
     return (
-        <section id="cta" className="py-16 lg:py-20 bg-medidesh-teal-500 relative overflow-hidden">
-            {/* Dot grid */}
-            <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
-                style={{ backgroundImage: "radial-gradient(circle, #fff 1.5px, transparent 1.5px)", backgroundSize: "26px 26px" }} />
+        <section id="cta" className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden">
+            <div className="container mx-auto px-5 lg:px-10 relative z-10">
+                <div className="max-w-4xl mx-auto bg-white rounded-[2rem] lg:rounded-[3rem] p-8 lg:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center">
+                    
+                    <div className="w-16 h-16 bg-medidesh-teal-50 rounded-2xl flex items-center justify-center mb-8">
+                        <Headset size={32} weight="fill" className="text-medidesh-teal-500" />
+                    </div>
 
-            {/* Blobs */}
-            <svg className="absolute -top-20 -left-20 w-72 h-72 opacity-[0.10] pointer-events-none" viewBox="0 0 280 280" fill="none" aria-hidden="true">
-                <path d="M140,18 C198,4 260,56 268,130 C276,204 228,264 156,272 C84,280 18,236 10,164 C2,92 52,36 104,22 C118,16 128,20 140,18 Z" fill="white" />
-            </svg>
-            <svg className="absolute -bottom-16 -right-16 w-64 h-64 opacity-[0.08] pointer-events-none" viewBox="0 0 240 240" fill="none" aria-hidden="true">
-                <path d="M120,16 C168,4 220,50 226,112 C232,174 192,224 132,230 C72,236 16,196 10,136 C4,76 46,28 96,16 C108,12 116,18 120,16 Z" fill="white" />
-            </svg>
+                    <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-6 leading-[1.1] tracking-[-0.03em] max-w-2xl">{t.heading}</h2>
+                    <p className="text-slate-500 text-lg leading-relaxed max-w-xl mb-12">{t.sub}</p>
 
-            {/* Ring */}
-            <svg className="absolute right-10 lg:right-24 top-1/2 -translate-y-1/2 w-48 h-48 opacity-[0.08] pointer-events-none hidden md:block" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-                <circle cx="100" cy="100" r="90" stroke="white" strokeWidth="1.5" strokeDasharray="8 5" />
-                <circle cx="100" cy="100" r="65" stroke="white" strokeWidth="1" strokeDasharray="5 4" />
-                <circle cx="100" cy="100" r="40" stroke="white" strokeWidth="1" strokeDasharray="3 3" />
-            </svg>
-
-            {/* Crosses */}
-            <svg className="absolute top-8 right-1/3 w-7 h-7 opacity-[0.15] pointer-events-none hidden lg:block" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                <rect x="15" y="2" width="10" height="36" rx="3" fill="white" />
-                <rect x="2" y="15" width="36" height="10" rx="3" fill="white" />
-            </svg>
-            <svg className="absolute bottom-8 left-1/4 w-5 h-5 opacity-[0.12] pointer-events-none hidden lg:block" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                <rect x="15" y="2" width="10" height="36" rx="3" fill="white" />
-                <rect x="2" y="15" width="36" height="10" rx="3" fill="white" />
-            </svg>
-
-            <div className="container mx-auto px-6 lg:px-12 relative z-10">
-                <div className="max-w-5xl mx-auto">
-                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-
-                        {/* Left — text */}
-                        <div className="lg:max-w-md">
-                            <SectionBadge icon={Headset} text={t.badge} />
-                            <h2 className="text-3xl lg:text-4xl font-black text-white leading-tight tracking-tight mb-3">
-                                {t.heading}{" "}
-                                <span className="relative inline-block">
-                                    {t.headingAccent}
-                                    <svg className="absolute -bottom-0.5 left-0 w-full" viewBox="0 0 160 8" fill="none" preserveAspectRatio="none">
-                                        <path d="M2 5 Q 40 1 80 5 T 158 5" stroke="white" strokeOpacity="0.35" strokeWidth="3" fill="none" strokeLinecap="round" />
-                                    </svg>
-                                </span>
-                            </h2>
-                            <p className="text-medidesh-teal-50/80 text-base leading-relaxed">{t.sub}</p>
-                        </div>
-
-                        {/* Right — actions */}
-                        <div className="flex flex-col gap-3 lg:items-end">
-                            {/* WhatsApp */}
-                            <a
-                                href="https://wa.me/+8801608844017"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group inline-flex items-center gap-2.5 bg-white hover:bg-slate-50 text-medidesh-teal-700 px-7 py-3.5 rounded font-bold text-sm shadow-xl shadow-black/15 transition-all hover:-translate-y-0.5"
-                            >
-                                <WhatsappLogo weight="fill" size={18} />
-                                {t.whatsapp}
-                                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                            </a>
-
-                            {/* Email + Phone row */}
-                            <div className="flex flex-col sm:flex-row gap-2">
-                                <a
-                                    href={`mailto:${t.email}`}
-                                    className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/15 hover:border-white/30 text-white px-4 py-2.5 rounded text-xs font-semibold transition-all backdrop-blur-sm"
-                                >
-                                    <EnvelopeSimple weight="fill" size={14} className="text-medidesh-teal-200 shrink-0" />
-                                    {t.email}
-                                </a>
-                                <a
-                                    href={`tel:${t.phone}`}
-                                    className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/15 hover:border-white/30 text-white px-4 py-2.5 rounded text-xs font-semibold transition-all backdrop-blur-sm"
-                                >
-                                    <Phone weight="fill" size={14} className="text-medidesh-teal-200 shrink-0" />
-                                    {t.phone}
-                                </a>
+                    <div className="grid sm:grid-cols-3 gap-4 w-full max-w-3xl mb-12">
+                        <a href="https://wa.me/8801608844017" target="_blank" rel="noopener noreferrer"
+                            className="flex flex-col items-center gap-3 bg-slate-50 p-6 rounded-2xl transition-all hover:-translate-y-1 hover:bg-green-50 hover:shadow-sm group">
+                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+                                <WhatsappLogo weight="fill" size={24} className="text-green-500 group-hover:scale-110 transition-transform" />
                             </div>
+                            <div className="text-center">
+                                <p className="text-[13px] font-bold text-slate-400 uppercase tracking-wide mb-1">WhatsApp</p>
+                                <p className="font-black text-slate-900 text-[15px]">{t.phone}</p>
+                            </div>
+                        </a>
 
-                            {/* Hours */}
-                            <p className="text-white/40 text-[11px] font-medium lg:text-right">{t.hours}</p>
+                        <a href={`mailto:${t.email}`}
+                            className="flex flex-col items-center gap-3 bg-slate-50 p-6 rounded-2xl transition-all hover:-translate-y-1 hover:bg-medidesh-teal-50 hover:shadow-sm group">
+                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+                                <Envelope weight="fill" size={24} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
+                            </div>
+                            <div className="text-center">
+                                <p className="text-[13px] font-bold text-slate-400 uppercase tracking-wide mb-1">Email</p>
+                                <p className="font-black text-slate-900 text-[15px]">{t.email}</p>
+                            </div>
+                        </a>
+
+                        <a href={`tel:${t.phone.replace(/[-\s]/g, "")}`}
+                            className="flex flex-col items-center gap-3 bg-slate-50 p-6 rounded-2xl transition-all hover:-translate-y-1 hover:bg-blue-50 hover:shadow-sm group">
+                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+                                <Phone weight="fill" size={24} className="text-blue-500 group-hover:scale-110 transition-transform" />
+                            </div>
+                            <div className="text-center">
+                                <p className="text-[13px] font-bold text-slate-400 uppercase tracking-wide mb-1">Call Us</p>
+                                <p className="font-black text-slate-900 text-[15px]">{t.phone}</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-center gap-6 text-sm font-bold text-slate-400">
+                        <div className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-medidesh-teal-500 animate-pulse"></span>
+                            {t.hours}
                         </div>
-
+                        <span className="hidden sm:inline text-slate-200">|</span>
+                        <div className="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm30,173.57C135.53,215,128,223,128,223s-7.53-8-30-29.43C74.31,166.45,56,137.45,56,104a72,72,0,0,1,144,0C200,137.45,181.69,166.45,158,189.57Z"></path></svg>
+                            {t.address}
+                        </div>
                     </div>
                 </div>
             </div>

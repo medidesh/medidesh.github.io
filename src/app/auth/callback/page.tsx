@@ -41,7 +41,7 @@ export default function AuthCallbackPage() {
                 <motion.div 
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, cubicBezier: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                     className="bg-white border border-slate-100 shadow-[0_32px_64px_-16px_rgba(46,139,87,0.1)] rounded-[2.5rem] p-10 md:p-14 text-center overflow-hidden relative"
                 >
                     {/* Top Accent Line */}

@@ -12,7 +12,7 @@ const T = {
         email: "info.medidesh@gmail.com",
         phone: "+8801608-844017",
         hours: "শনি-বৃহস্পতি · সকাল ১০টা – রাত ৮টা",
-        address: "ঢাকা, বাংলাদেশ",
+        address: "137/1 Kajipara, Joydebpur, Gazipur - 1700",
     },
     en: {
         badge: "Contact Us",
@@ -22,7 +22,7 @@ const T = {
         email: "info.medidesh@gmail.com",
         phone: "+8801608-844017",
         hours: "Mon–Fri · 10AM – 8PM",
-        address: "Dhaka, Bangladesh",
+        address: "137/1 Kajipara, Joydebpur, Gazipur - 1700",
     },
 };
 
@@ -32,8 +32,24 @@ export default function CTASection() {
 
     return (
         <section id="cta" className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden">
+            {/* Background Shapes & Vectors */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-medidesh-teal-500/5 blur-[120px]"></div>
+                <div className="absolute bottom-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-500/5 blur-[120px]"></div>
+                
+                {/* Floating Elements */}
+                <div className="absolute top-20 left-[10%] w-24 h-24 border-[3px] border-medidesh-teal-100 rounded-full opacity-50"></div>
+                <div className="absolute bottom-32 right-[10%] w-16 h-16 bg-blue-100 rounded-lg rotate-12 opacity-50"></div>
+                
+                {/* Abstract Line Vector */}
+                <svg className="absolute top-40 right-[15%] w-32 h-32 text-medidesh-teal-200/40" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M10 90 Q 50 10 90 90" />
+                    <circle cx="50" cy="50" r="10" />
+                </svg>
+            </div>
+
             <div className="container mx-auto px-5 lg:px-10 relative z-10">
-                <div className="max-w-4xl mx-auto bg-white rounded-[2rem] lg:rounded-[3rem] p-8 lg:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center">
+                <div className="max-w-4xl mx-auto bg-white rounded-[2rem] lg:rounded-[3rem] p-8 lg:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center relative">
                     
                     <div className="w-16 h-16 bg-medidesh-teal-50 rounded-2xl flex items-center justify-center mb-8">
                         <Headset size={32} weight="fill" className="text-medidesh-teal-500" />

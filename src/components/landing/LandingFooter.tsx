@@ -65,8 +65,23 @@ export default function LandingFooter() {
     };
 
     return (
-        <footer className="bg-zubaz-bg text-slate-600 pt-16 pb-8 border-t border-slate-200">
-            <div className="container mx-auto px-5 lg:px-10">
+        <footer className="relative bg-white text-slate-600 pt-20 pb-8 overflow-hidden">
+            {/* Top decorative gradient border */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-medidesh-teal-400 via-blue-400 to-amber-400"></div>
+
+            {/* Background Shapes */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full bg-slate-50/80 -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-medidesh-teal-50/50 translate-y-1/3 -translate-x-1/4 blur-3xl"></div>
+                
+                {/* Vectors */}
+                <svg className="absolute top-20 right-20 w-32 h-32 text-slate-100 rotate-45" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="50" cy="50" r="40" strokeDasharray="4 4" />
+                    <circle cx="50" cy="50" r="20" />
+                </svg>
+            </div>
+
+            <div className="container mx-auto px-5 lg:px-10 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
                     <div className="lg:col-span-1">
                         <Link href="/" className="flex items-center gap-2 group mb-5">

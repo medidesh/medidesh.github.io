@@ -60,7 +60,7 @@ export default function TestimonialsSection() {
 
                 <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
                     {t.testimonials.map((item, idx) => (
-                        <div key={idx} className="bg-white border border-slate-200 rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div key={idx} className="bg-white border border-slate-200 rounded-xl p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow flex flex-col">
                             <div className="flex justify-between items-start mb-6">
                                 <div className="flex gap-1">
                                     {Array.from({ length: 5 }).map((_, i) => <Star key={i} weight="fill" size={18} className="text-medidesh-teal-500" />)}

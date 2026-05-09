@@ -159,7 +159,7 @@ export default function PricingSection() {
 
                 <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
                     {t.plans.map((plan, idx) => (
-                        <div key={idx} className={`relative p-8 lg:p-10 flex flex-col rounded-3xl transition-all hover:-translate-y-1 ${
+                        <div key={idx} className={`relative p-8 lg:p-10 flex flex-col rounded-xl transition-all hover:-translate-y-1 ${
                             plan.highlight 
                                 ? "bg-medidesh-teal-50 text-slate-900 shadow-xl border-2 border-medidesh-teal-400" 
                                 : "bg-white border border-slate-200 shadow-sm hover:shadow-lg"

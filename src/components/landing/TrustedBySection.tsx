@@ -4,10 +4,10 @@ import { useLanguage } from "@/lib/i18n";
 
 const T = {
     bn: {
-        text: "৫,০০০+ ফার্মেসি মেডিদেশ ব্যবহার করে তাদের ব্যবসা পরিচালনা করছে",
+        text: "১০০+ এর বেশি ফার্মেসি মেডিদেশ ব্যবহার করে তাদের ব্যবসা পরিচালনা করছে",
     },
     en: {
-        text: "Over 5,000 pharmacies rely on Medidesh to manage their business",
+        text: "Over 100+ pharmacies rely on Medidesh to manage their business",
     },
 };
 

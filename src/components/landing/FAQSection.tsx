@@ -51,7 +51,7 @@ export default function FAQSection() {
                     {t.faq.map((item, idx) => {
                         const isOpen = openIndex === idx;
                         return (
-                            <div key={idx} className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? "bg-white border-medidesh-teal-200 shadow-md shadow-medidesh-teal-500/5" : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-sm"}`}>
+                            <div key={idx} className={`border rounded-xl overflow-hidden transition-all duration-300 ${isOpen ? "bg-white border-medidesh-teal-200 shadow-md shadow-medidesh-teal-500/5" : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-sm"}`}>
                                 <button
                                     onClick={() => setOpenIndex(isOpen ? null : idx)}
                                     className="flex items-center justify-between w-full px-6 py-5 text-left bg-transparent"

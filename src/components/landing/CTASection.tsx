@@ -49,7 +49,7 @@ export default function CTASection() {
             </div>
 
             <div className="container mx-auto px-5 lg:px-10 relative z-10">
-                <div className="max-w-4xl mx-auto bg-white rounded-[2rem] lg:rounded-[3rem] p-8 lg:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center relative">
+                <div className="max-w-4xl mx-auto bg-white rounded-xl lg:rounded-2xl p-8 lg:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center relative">
                     
                     <div className="w-16 h-16 bg-medidesh-teal-50 rounded-2xl flex items-center justify-center mb-8">
                         <Headset size={32} weight="fill" className="text-medidesh-teal-500" />

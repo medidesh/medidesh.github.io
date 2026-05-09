@@ -122,14 +122,16 @@ export default function LandingHero() {
                         {/* The Phone */}
                         <div className="absolute left-1/2 -translate-x-1/2 z-20">
                             <PhoneMockup>
-                                {/* iPhone Status Bar Simulation */}
-                                <div className="absolute top-0 w-full h-7 bg-transparent z-20 flex justify-between items-center px-5 pt-1">
-                                    <span className="text-[10px] font-medium text-slate-900">9:41</span>
-                                    <div className="flex gap-1 items-center">
-                                        <div className="w-3 h-2.5 border border-slate-900 rounded-[2px] relative"><div className="w-0.5 h-1 bg-slate-900 absolute -right-1 top-[2px]"></div></div>
+                                <div className="w-full h-full relative rounded-[2.5rem] overflow-hidden">
+                                    {/* iPhone Status Bar Simulation */}
+                                    <div className="absolute top-0 w-full h-7 bg-transparent z-20 flex justify-between items-center px-5 pt-1">
+                                        <span className="text-[10px] font-medium text-slate-900">9:41</span>
+                                        <div className="flex gap-1 items-center">
+                                            <div className="w-3 h-2.5 border border-slate-900 rounded-[2px] relative"><div className="w-0.5 h-1 bg-slate-900 absolute -right-1 top-[2px]"></div></div>
+                                        </div>
                                     </div>
+                                    <img src="/assets/mobile_app.png" alt="Medidesh App" className="w-full h-full object-cover object-left-top" loading="eager" />
                                 </div>
-                                <img src="/assets/mobile_app.png" alt="Medidesh App" className="w-full h-full object-cover object-left-top" loading="eager" />
                             </PhoneMockup>
                         </div>
 

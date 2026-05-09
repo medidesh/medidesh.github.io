@@ -49,7 +49,9 @@ export default function DownloadSection() {
                     
                     <div className="relative z-10 rotate-[-5deg] lg:rotate-[-5deg] translate-y-12 lg:translate-y-24">
                         <PhoneMockup showNotch={false} frameColor="bg-[#064e3b]" className="shadow-[0px_0px_50px_rgba(0,0,0,0.5)]">
-                            <img src="/assets/playstore_preview.png" alt="Medidesh App" className="w-full h-full object-cover object-top" loading="lazy" />
+                            <div className="w-full h-full relative rounded-[2.5rem] overflow-hidden">
+                                <img src="/assets/playstore_preview.png" alt="Medidesh App" className="w-full h-full object-cover object-top" loading="lazy" />
+                            </div>
                         </PhoneMockup>
                     </div>
                 </div>

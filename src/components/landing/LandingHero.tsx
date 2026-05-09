@@ -209,15 +209,7 @@ export default function LandingHero() {
                 </div>
             </div>
 
-            <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoId="qU-1J53j4zE" />
-            
-        </section>
-
-                    </motion.div>
-                </div>
-            </div>
-
-            <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoId="qU-1J53j4zE" />
+            <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoUrl="https://www.youtube.com/embed/qU-1J53j4zE" />
             
         </section>
     );

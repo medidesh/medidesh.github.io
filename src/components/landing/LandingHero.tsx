@@ -138,10 +138,10 @@ export default function LandingHero() {
                         {/* Floating elements — visible mostly on desktop/tablet, hidden on very small screens to avoid clutter */}
 
                         {/* Top Left Pill */}
-                        <div className="absolute left-0 lg:left-12 top-10 z-30 hidden md:block animate-float" style={{ animationDelay: "0.5s" }}>
+                        <div className="absolute -left-4 lg:left-12 top-6 lg:top-10 z-30 animate-float md:scale-100 scale-75 origin-right" style={{ animationDelay: "0.5s" }}>
                             <div className="relative -rotate-3">
-                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-none translate-x-1.5 translate-y-1.5"></div>
-                                <div className="relative bg-[#9fff40] border-[2.5px] border-slate-900 rounded-none px-4 py-2 flex items-center gap-2">
+                                <div className="absolute inset-0 bg-white border-[2px] border-slate-900 rounded-none translate-x-1 translate-y-1"></div>
+                                <div className="relative bg-[#9fff40] border-[2px] border-slate-900 rounded-none px-4 py-2 flex items-center gap-2">
                                     <CurrencyCircleDollar weight="fill" size={20} className="text-slate-900" />
                                     <span className="font-black text-sm text-slate-900">{t.floating.pill}</span>
                                 </div>
@@ -149,23 +149,23 @@ export default function LandingHero() {
                         </div>
 
                         {/* Bottom Left Card */}
-                        <div className="absolute left-0 lg:left-0 bottom-10 z-30 hidden md:block animate-float" style={{ animationDelay: "1s" }}>
+                        <div className="absolute -left-10 lg:left-0 bottom-6 lg:bottom-10 z-30 animate-float md:scale-100 scale-75 origin-right" style={{ animationDelay: "1s" }}>
                             <div className="relative w-48 -rotate-6">
-                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-2 translate-y-2"></div>
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-1.5 translate-y-1.5"></div>
                                 <div className="relative bg-white border-[2.5px] border-slate-900 rounded-xl p-5 text-left">
-                                    <div className="w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center mb-4">
-                                        <Wallet weight="fill" size={24} className="text-medidesh-teal-400" />
+                                    <div className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center mb-3">
+                                        <Wallet weight="fill" size={20} className="text-medidesh-teal-400" />
                                     </div>
-                                    <p className="text-sm font-semibold text-slate-500 mb-1">{t.floating.spendTitle}</p>
-                                    <p className="text-2xl font-black text-slate-900">{t.floating.spendValue}</p>
+                                    <p className="text-[11px] font-semibold text-slate-500 mb-0.5">{t.floating.spendTitle}</p>
+                                    <p className="text-xl font-black text-slate-900">{t.floating.spendValue}</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Top Right Card (Photo/Graph) */}
-                        <div className="absolute right-0 lg:right-12 top-0 z-30 hidden md:block animate-float" style={{ animationDelay: "1.5s" }}>
+                        {/* Top Right Card (Photo/Graph) - Keep smaller on mobile */}
+                        <div className="absolute -right-6 lg:right-12 top-0 z-30 animate-float md:scale-100 scale-[0.6] origin-left" style={{ animationDelay: "1.5s" }}>
                             <div className="relative w-36 rotate-6">
-                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-2 translate-y-2"></div>
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-1.5 translate-y-1.5"></div>
                                 <div className="relative bg-white border-[2.5px] border-slate-900 rounded-xl p-1 overflow-hidden">
                                     <img src="/assets/pharmacist.png" alt="Pharmacist" className="w-full h-36 object-cover rounded-lg bg-slate-100" />
                                 </div>
@@ -173,21 +173,21 @@ export default function LandingHero() {
                         </div>
 
                         {/* Bottom Right Card (Comparison) */}
-                        <div className="absolute right-0 lg:right-0 bottom-16 z-30 hidden md:block animate-float" style={{ animationDelay: "2s" }}>
+                        <div className="absolute -right-12 lg:right-0 bottom-12 lg:bottom-16 z-30 animate-float md:scale-100 scale-75 origin-left" style={{ animationDelay: "2s" }}>
                             <div className="relative w-56 rotate-2">
-                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-2 translate-y-2"></div>
+                                <div className="absolute inset-0 bg-white border-[2.5px] border-slate-900 rounded-xl translate-x-1.5 translate-y-1.5"></div>
                                 <div className="relative bg-white border-[2.5px] border-slate-900 rounded-xl p-5 text-left">
                                     <p className="font-black text-sm text-slate-900 mb-4">{t.floating.compTitle}</p>
                                     <div className="space-y-3">
                                         <div className="flex items-center gap-2">
                                             <span className="text-xs font-semibold text-slate-500 w-16">{t.floating.thisMonth}</span>
-                                            <div className="flex-1 h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                                            <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
                                                 <div className="h-full bg-medidesh-teal-400 w-[70%]"></div>
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <span className="text-xs font-semibold text-slate-500 w-16">{t.floating.lastMonth}</span>
-                                            <div className="flex-1 h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                                            <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
                                                 <div className="h-full bg-slate-800 w-[50%]"></div>
                                             </div>
                                         </div>

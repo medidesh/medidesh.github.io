@@ -183,7 +183,7 @@ export default function ProblemSolution() {
                         {/* Mockup */}
                         <div className="relative z-10">
                             <PhoneMockup className="shadow-2xl">
-                                <img src="/assets/mobile_app.png" alt="Inventory Search" className="w-full h-full object-cover object-top rounded-[2.5rem]" />
+                                <img src="/assets/app_screenshots/global_inventory.PNG" alt="Inventory Search" className="w-full h-full object-cover object-top rounded-[2.5rem]" />
                             </PhoneMockup>
 
                             {/* Floating Pharmaceutical Logos */}

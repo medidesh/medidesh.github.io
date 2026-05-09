@@ -6,19 +6,19 @@ import { CheckCircle, ArrowRight, AppWindow, ShieldCheck } from "@phosphor-icons
 
 export default function AuthCallbackPage() {
     const [countdown, setCountdown] = useState(3);
+    const [isRedirecting, setIsRedirecting] = useState(false);
     const [deepLink, setDeepLink] = useState("medidesh://auth/callback");
 
     useEffect(() => {
-        // Capture hash and construct deep link
         const hash = window.location.hash;
         const targetLink = `medidesh://auth/callback${hash}`;
         setDeepLink(targetLink);
 
-        // Countdown logic
         const timer = setInterval(() => {
             setCountdown((prev) => {
                 if (prev <= 1) {
                     clearInterval(timer);
+                    setIsRedirecting(true);
                     window.location.replace(targetLink);
                     return 0;
                 }
@@ -39,104 +39,99 @@ export default function AuthCallbackPage() {
 
             <div className="max-w-md w-full relative z-10">
                 <motion.div 
-                    initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, cubicBezier: [0.16, 1, 0.3, 1] }}
-                    className="bg-white/80 backdrop-blur-xl border border-white shadow-[0_32px_64px_-16px_rgba(46,139,87,0.1)] rounded-[2.5rem] p-10 md:p-14 text-center overflow-hidden relative"
+                    className="bg-white border border-slate-100 shadow-[0_32px_64px_-16px_rgba(46,139,87,0.1)] rounded-[2.5rem] p-10 md:p-14 text-center overflow-hidden relative"
                 >
                     {/* Top Accent Line */}
                     <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-medidesh-teal-300 via-medidesh-teal-500 to-medidesh-teal-300" />
 
-                    {/* Success Animation */}
-                    <div className="mb-10 relative flex justify-center">
+                    {/* Success Icon */}
+                    <div className="mb-10 flex justify-center">
                         <motion.div
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ delay: 0.3, type: "spring", stiffness: 200, damping: 15 }}
-                            className="w-28 h-28 bg-medidesh-teal-50 rounded-full flex items-center justify-center relative"
+                            className="w-24 h-24 bg-medidesh-teal-50 rounded-full flex items-center justify-center relative"
                         >
-                            <CheckCircle size={64} weight="fill" className="text-medidesh-teal-500 z-10" />
-                            
-                            {/* Success Rings */}
+                            <CheckCircle size={56} weight="fill" className="text-medidesh-teal-500 z-10" />
                             <motion.div 
                                 animate={{ scale: [1, 1.4], opacity: [0.5, 0] }}
                                 transition={{ duration: 1.5, repeat: Infinity }}
                                 className="absolute inset-0 rounded-full border-2 border-medidesh-teal-500/30"
                             />
-                            <motion.div 
-                                animate={{ scale: [1, 1.8], opacity: [0.3, 0] }}
-                                transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }}
-                                className="absolute inset-0 rounded-full border-2 border-medidesh-teal-500/10"
-                            />
                         </motion.div>
                     </div>
 
-                    {/* Content */}
+                    {/* Main Content */}
                     <div className="space-y-4 mb-10">
-                        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 font-sans tracking-tight">
-                            লগইন সফল হয়েছে!
+                        <h1 className="text-3xl font-bold text-slate-900 font-sans tracking-tight">
+                            সফলভাবে লগইন হয়েছে
                         </h1>
-                        <p className="text-slate-500 text-lg leading-relaxed font-medium font-sans">
-                            আপনাকে সরাসরি <span className="text-medidesh-teal-600 font-bold">মেডিদেশ অ্যাপে</span> ফিরিয়ে নেওয়া হচ্ছে।
+                        <p className="text-slate-500 text-lg leading-relaxed font-sans">
+                            আপনাকে সরাসরি মেডিদেশ অ্যাপে <br /> ফিরিয়ে নেওয়া হচ্ছে
                         </p>
                     </div>
 
-                    {/* Redirect Countdown Indicator */}
-                    <div className="mb-12 flex flex-col items-center">
-                        <div className="relative w-20 h-20 flex items-center justify-center mb-4">
-                            <svg className="w-full h-full -rotate-90">
-                                <circle
-                                    cx="40" cy="40" r="36"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="4"
-                                    className="text-slate-100"
-                                />
-                                <motion.circle
-                                    cx="40" cy="40" r="36"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="4"
-                                    strokeDasharray="226.2"
-                                    initial={{ strokeDashoffset: 0 }}
-                                    animate={{ strokeDashoffset: (226.2 * countdown) / 3 }}
-                                    className="text-medidesh-teal-500"
-                                />
-                            </svg>
-                            <span className="absolute text-2xl font-black text-slate-700">{countdown}</span>
-                        </div>
-                        <span className="text-[11px] font-black uppercase tracking-[0.3em] text-slate-400 font-sans">
-                            সেকেন্ডের মধ্যে রিডাইরেক্ট
-                        </span>
+                    {/* Proper Countdown Text */}
+                    <div className="mb-12 min-h-[40px] flex items-center justify-center">
+                        <AnimatePresence mode="wait">
+                            {!isRedirecting ? (
+                                <motion.div
+                                    key="countdown"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    className="flex items-center gap-2 text-slate-400 font-sans font-bold"
+                                >
+                                    <span>রিডাইরেক্ট করা হচ্ছে:</span>
+                                    <span className="text-medidesh-teal-600 text-xl w-6">{countdown}</span>
+                                    <span>সেকেন্ড</span>
+                                </motion.div>
+                            ) : (
+                                <motion.div
+                                    key="redirecting"
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className="text-medidesh-teal-600 font-sans font-black tracking-wide flex items-center gap-2"
+                                >
+                                    <div className="w-2 h-2 bg-medidesh-teal-600 rounded-full animate-bounce" />
+                                    <span>অ্যাপ ওপেন হচ্ছে...</span>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
 
                     {/* Action Button */}
                     <div className="pt-8 border-t border-slate-100">
                         <a 
                             href={deepLink}
-                            className="w-full inline-flex items-center justify-center gap-3 px-8 py-5 bg-medidesh-teal-600 text-white font-bold rounded-2xl hover:bg-medidesh-teal-700 transition-all shadow-[0_12px_24px_-8px_rgba(46,139,87,0.4)] hover:-translate-y-1 active:scale-[0.98] group"
+                            className="w-full inline-flex items-center justify-center gap-3 px-8 py-5 bg-medidesh-teal-600 text-white font-bold rounded-2xl hover:bg-medidesh-teal-700 transition-all shadow-[0_12px_24px_-8px_rgba(46,139,87,0.4)] active:scale-[0.98] group"
                         >
                             <AppWindow size={24} weight="fill" />
-                            <span className="font-sans text-lg">সরাসরি অ্যাপ ওপেন করুন</span>
+                            <span className="font-sans text-lg">সরাসরি অ্যাপে যান</span>
                             <ArrowRight size={20} weight="bold" className="group-hover:translate-x-1 transition-transform" />
                         </a>
-                        <p className="mt-6 text-sm text-slate-400 font-sans">
-                            স্বয়ংক্রিয়ভাবে রিডাইরেক্ট না হলে উপরের বাটনে ক্লিক করুন
+                        <p className="mt-6 text-sm text-slate-400 font-sans leading-relaxed px-4">
+                            যদি স্বয়ংক্রিয়ভাবে অ্যাপ ওপেন না হয়, তবে উপরের বাটনে ক্লিক করুন
                         </p>
                     </div>
                 </motion.div>
 
-                {/* Secure Badge */}
+                {/* Footer Attribution */}
                 <motion.div 
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className="mt-10 flex items-center justify-center gap-3 text-slate-400"
+                    className="mt-10 flex flex-col items-center gap-2"
                 >
-                    <ShieldCheck size={20} weight="fill" />
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">
-                        মেডিদেশ সিকিউর অথেন্টিকেশন গেটওয়ে
-                    </span>
+                    <div className="flex items-center gap-2 text-slate-400">
+                        <ShieldCheck size={18} weight="fill" />
+                        <span className="text-[10px] font-black uppercase tracking-[0.1em]">
+                            মেডিদেশ সিকিউর গেটওয়ে
+                        </span>
+                    </div>
                 </motion.div>
             </div>
         </main>

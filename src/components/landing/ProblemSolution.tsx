@@ -27,7 +27,7 @@ const T = {
                 { text: " আপনার স্টকে যুক্ত করুন মাত্র ", hl: false },
                 { text: "এক ক্লিকেই।", hl: true, color: "text-amber-500" },
                 { text: " হাজার হাজার ওষুধের ডেটাবেস থেকে ", hl: false },
-                { text: "সঠিক দাম ও জেনেরিক নাম", hl: true, color: "text-medidesh-teal-600" },
+                { text: "প্রয়োজনীয় তথ্য", hl: true, color: "text-medidesh-teal-600" },
                 { text: " সহ ওষুধ খুঁজুন। নতুন ওষুধ মার্কেটে আসামাত্রই ", hl: false },
                 { text: "অটোমেটিক আপডেট", hl: true, color: "text-rose-500" },
                 { text: " পাবেন।", hl: false },
@@ -56,7 +56,7 @@ const T = {
                 { text: "one click.", hl: true, color: "text-amber-500" },
                 { text: " Find medicines instantly from a ", hl: false },
                 { text: "massive pre-loaded database", hl: true, color: "text-medidesh-teal-600" },
-                { text: " with accurate prices and details. Get ", hl: false },
+                { text: " with all necessary information. Get ", hl: false },
                 { text: "automatic updates", hl: true, color: "text-rose-500" },
                 { text: " as soon as new medicines hit the market.", hl: false },
             ]

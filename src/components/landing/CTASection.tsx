@@ -1,6 +1,5 @@
 "use client";
 
-import { WhatsappLogo, Envelope, Phone, Headset, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { WhatsappLogo, Envelope, Phone, Headset, ArrowRight, MapPin } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/lib/i18n";
 

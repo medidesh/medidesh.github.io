@@ -94,13 +94,13 @@ export default function FeaturesSection() {
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16 max-w-7xl mx-auto">
                     
                     {/* Left Column Features */}
-                    <div className="w-full lg:w-1/3 space-y-6 flex flex-col items-start lg:items-end order-2 lg:order-1">
+                    <div className="w-full lg:w-1/3 space-y-8 flex flex-col items-start lg:items-end order-2 lg:order-1">
                         {leftFeatures.map((feature, idx) => {
                             const isActive = activeIndex === idx;
                             return (
                                 <div 
                                     key={idx} 
-                                    className={`w-full flex gap-4 lg:flex-row-reverse items-start text-left lg:text-right group cursor-pointer transition-all duration-300 p-4 border border-transparent hover:border-slate-200 hover:bg-white rounded-none ${isActive ? 'opacity-100 scale-105 bg-white border-slate-200 shadow-sm z-20' : 'opacity-60 hover:opacity-100'}`}
+                                    className={`flex gap-4 lg:flex-row-reverse items-start text-left lg:text-right group cursor-pointer transition-all duration-300 ${isActive ? 'opacity-100 scale-105' : 'opacity-60 hover:opacity-100'}`}
                                     onClick={() => setActiveIndex(idx)}
                                 >
                                     <div className={`w-12 h-12 shrink-0 border-2 rounded-none flex items-center justify-center transition-colors shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]
@@ -110,7 +110,7 @@ export default function FeaturesSection() {
                                     </div>
                                     <div>
                                         <h3 className={`font-black text-[16px] mb-1 transition-colors ${isActive ? 'text-medidesh-teal-600' : 'text-slate-900'}`}>{feature.title}</h3>
-                                        <p className="text-[13px] text-slate-600 leading-relaxed font-medium">{feature.desc}</p>
+                                        <p className="text-[13px] text-slate-600 leading-relaxed font-medium max-w-[220px] lg:max-w-none">{feature.desc}</p>
                                     </div>
                                 </div>
                             );
@@ -139,14 +139,14 @@ export default function FeaturesSection() {
                     </div>
 
                     {/* Right Column Features */}
-                    <div className="w-full lg:w-1/3 space-y-6 flex flex-col items-start order-3">
+                    <div className="w-full lg:w-1/3 space-y-8 flex flex-col items-start order-3">
                         {rightFeatures.map((feature, idx) => {
                             const globalIdx = idx + 6;
                             const isActive = activeIndex === globalIdx;
                             return (
                                 <div 
                                     key={globalIdx} 
-                                    className={`w-full flex gap-4 items-start text-left group cursor-pointer transition-all duration-300 p-4 border border-transparent hover:border-slate-200 hover:bg-white rounded-none ${isActive ? 'opacity-100 scale-105 bg-white border-slate-200 shadow-sm z-20' : 'opacity-60 hover:opacity-100'}`}
+                                    className={`flex gap-4 items-start text-left group cursor-pointer transition-all duration-300 ${isActive ? 'opacity-100 scale-105' : 'opacity-60 hover:opacity-100'}`}
                                     onClick={() => setActiveIndex(globalIdx)}
                                 >
                                     <div className={`w-12 h-12 shrink-0 border-2 rounded-none flex items-center justify-center transition-colors shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]
@@ -156,7 +156,7 @@ export default function FeaturesSection() {
                                     </div>
                                     <div>
                                         <h3 className={`font-black text-[16px] mb-1 transition-colors ${isActive ? 'text-medidesh-teal-600' : 'text-slate-900'}`}>{feature.title}</h3>
-                                        <p className="text-[13px] text-slate-600 leading-relaxed font-medium">{feature.desc}</p>
+                                        <p className="text-[13px] text-slate-600 leading-relaxed font-medium max-w-[220px] lg:max-w-none">{feature.desc}</p>
                                     </div>
                                 </div>
                             );

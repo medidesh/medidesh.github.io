@@ -60,15 +60,17 @@ export default function AuthCallbackPage() {
                     )}
                 </div>
 
-                {/* Direct Action Button */}
-                <a 
-                    href={deepLink}
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-medidesh-teal-600 text-white font-bold rounded-xl hover:bg-medidesh-teal-700 transition-colors shadow-sm active:scale-[0.98] mb-6"
-                >
-                    <AppWindow size={20} weight="fill" />
-                    <span>সরাসরি অ্যাপে যান</span>
-                    <ArrowRight size={18} weight="bold" />
-                </a>
+                {/* Optimized Direct Action Button */}
+                <div className="px-2">
+                    <a 
+                        href={deepLink}
+                        className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 bg-medidesh-teal-600 text-white font-bold rounded-xl hover:bg-medidesh-teal-700 transition-all shadow-md hover:shadow-lg active:scale-95 touch-manipulation mb-6"
+                    >
+                        <AppWindow size={24} weight="fill" className="shrink-0" />
+                        <span className="font-sans text-lg whitespace-nowrap">সরাসরি অ্যাপে যান</span>
+                        <ArrowRight size={20} weight="bold" className="shrink-0" />
+                    </a>
+                </div>
                 
                 <p className="text-xs text-slate-400 leading-normal">
                     যদি স্বয়ংক্রিয়ভাবে অ্যাপ ওপেন না হয়, <br /> তবে উপরের বাটনে ক্লিক করুন

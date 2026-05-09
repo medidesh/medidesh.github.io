@@ -10,8 +10,9 @@ const T = {
         heading: "আপনার ব্যবসার জন্য সেরা প্ল্যান বেছে নিন",
         sub: "সবগুলো প্ল্যানে ফ্রি ট্রায়াল সুবিধা রয়েছে। যেকোনো সময় আপগ্রেড বা ডাউনগ্রেড করুন।",
         monthly: "মাসিক",
-        yearly: "বার্ষিক",
+        yearly: "বার্ষিক (২ মাস ফ্রি)",
         monthUnit: "/মাস",
+        yearUnit: "/বছর",
         getStarted: "শুরু করুন",
         popular: "সবচেয়ে জনপ্রিয়",
         plans: [
@@ -33,7 +34,7 @@ const T = {
             {
                 name: "মেঘনা",
                 price: "৳৩৯৯",
-                yearlyPrice: "৳২৯৯",
+                yearlyPrice: "৳৩,৯৯০",
                 description: "বড় পরিসরের জন্য পূর্ণাঙ্গ সমাধান।",
                 features: [
                     "সবকিছু পদ্মা প্ল্যানে আছে",
@@ -48,8 +49,8 @@ const T = {
             },
             {
                 name: "যমুনা",
-                price: "৳৫৯৯",
-                yearlyPrice: "৳৪৯৯",
+                price: "৳৯৯৯",
+                yearlyPrice: "৳৯,৯৯০",
                 description: "চেইন ফার্মেসি ও এন্টারপ্রাইজ গ্রাহকদের জন্য।",
                 features: [
                     "সবকিছু মেঘনা প্ল্যানে আছে",
@@ -73,8 +74,9 @@ const T = {
         heading: "Choose the best plan for your business",
         sub: "All plans include a free trial. Upgrade or downgrade anytime.",
         monthly: "Monthly",
-        yearly: "Yearly",
+        yearly: "Yearly (2 Months Free)",
         monthUnit: "/mo",
+        yearUnit: "/yr",
         getStarted: "Get Started",
         popular: "Most Popular",
         plans: [
@@ -96,7 +98,7 @@ const T = {
             {
                 name: "Meghna",
                 price: "৳399",
-                yearlyPrice: "৳299",
+                yearlyPrice: "৳3,990",
                 description: "Complete solution for larger operations.",
                 features: [
                     "Everything in Padma plan",
@@ -111,8 +113,8 @@ const T = {
             },
             {
                 name: "Jamuna",
-                price: "৳599",
-                yearlyPrice: "৳499",
+                price: "৳999",
+                yearlyPrice: "৳9,990",
                 description: "For chain pharmacies & enterprise customers.",
                 features: [
                     "Everything in Meghna plan",
@@ -175,7 +177,9 @@ export default function PricingSection() {
                             <div className="mb-8">
                                 <span className={`text-4xl lg:text-5xl font-black tracking-tighter text-slate-900`}>{isYearly ? plan.yearlyPrice : plan.price}</span>
                                 {plan.price !== "Free" && plan.price !== "বিনামূল্যে" && (
-                                    <span className={`text-sm font-bold ml-1 ${plan.highlight ? "text-slate-500" : "text-slate-400"}`}>{t.monthUnit}</span>
+                                    <span className={`text-sm font-bold ml-1 ${plan.highlight ? "text-slate-500" : "text-slate-400"}`}>
+                                        {isYearly ? t.yearUnit : t.monthUnit}
+                                    </span>
                                 )}
                             </div>
                             <ul className="space-y-4 mb-8 flex-1">
@@ -204,31 +208,39 @@ export default function PricingSection() {
 
                 <div className="max-w-xl mx-auto mt-16 flex flex-col items-center">
                     <p className="text-[12px] text-slate-400 font-bold uppercase tracking-widest mb-4">{t.payment.title}</p>
-                    <div className="flex flex-wrap items-center justify-center gap-4">
+                    <div className="flex flex-wrap items-center justify-center gap-8">
                         {/* bKash */}
-                        <div className="h-10 px-4 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
-                            <span className="font-bold text-[#E2136E] text-[17px] tracking-tight">bKash</span>
+                        <div className="flex flex-col items-center gap-1 group">
+                            <div className="w-16 h-10 bg-white border border-slate-100 rounded-none flex items-center justify-center shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
+                                <span className="font-black text-[#E2136E] text-[18px] tracking-tighter uppercase italic">bkash</span>
+                            </div>
                         </div>
                         {/* Nagad */}
-                        <div className="h-10 px-4 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
-                            <span className="font-black text-[#ED1C24] text-[15px] tracking-tight">nagad</span>
+                        <div className="flex flex-col items-center gap-1 group">
+                            <div className="w-16 h-10 bg-white border border-slate-100 rounded-none flex items-center justify-center shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
+                                <span className="font-black text-[#F7941D] text-[16px] tracking-tighter uppercase italic">nagad</span>
+                            </div>
                         </div>
                         {/* Rocket */}
-                        <div className="h-10 px-4 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
-                            <img src="/assets/payment/rocket.png" alt="Rocket" className="h-5 object-contain" />
+                        <div className="flex flex-col items-center gap-1 group">
+                            <div className="w-16 h-10 bg-white border border-slate-100 rounded-none flex items-center justify-center shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
+                                <span className="font-black text-[#8C3494] text-[16px] tracking-tighter uppercase italic">rocket</span>
+                            </div>
                         </div>
                         {/* Mastercard */}
-                        <div className="h-10 px-4 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow gap-1">
-                            <div className="flex">
-                                <div className="w-5 h-5 rounded-full bg-[#EB001B] mix-blend-multiply opacity-90"></div>
-                                <div className="w-5 h-5 rounded-full bg-[#F79E1B] mix-blend-multiply -ml-2 opacity-90"></div>
+                        <div className="flex flex-col items-center gap-1 group">
+                            <div className="w-16 h-10 bg-white border border-slate-100 rounded-none flex items-center justify-center shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 gap-0.5">
+                                <div className="flex">
+                                    <div className="w-3.5 h-3.5 rounded-full bg-[#EB001B] mix-blend-multiply opacity-90"></div>
+                                    <div className="w-3.5 h-3.5 rounded-full bg-[#F79E1B] mix-blend-multiply -ml-1.5 opacity-90"></div>
+                                </div>
                             </div>
-                            <span className="font-bold text-slate-800 text-[13px] italic ml-1">mastercard</span>
                         </div>
                         {/* Bank Transfer */}
-                        <div className="h-10 px-4 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm hover:shadow-md transition-shadow gap-2">
-                            <img src="/assets/payment/bank.png" alt="Bank" className="h-5 object-contain opacity-80" />
-                            <span className="font-bold text-slate-600 text-[13px]">Bank Transfer</span>
+                        <div className="flex flex-col items-center gap-1 group">
+                            <div className="w-16 h-10 bg-white border border-slate-100 rounded-none flex items-center justify-center shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
+                                <span className="font-black text-slate-400 text-[10px] uppercase text-center leading-none">Bank<br/>Transfer</span>
+                            </div>
                         </div>
                     </div>
                 </div>

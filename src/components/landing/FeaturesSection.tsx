@@ -123,7 +123,7 @@ export default function FeaturesSection() {
                             {/* Abstract glow */}
                             <div className="absolute inset-0 bg-medidesh-teal-400/20 rounded-full blur-[60px] transition-all duration-500"></div>
                             
-                            <PhoneMockup showNotch={false} frameColor="bg-slate-900" className="relative z-10 shadow-2xl transition-all duration-500">
+                            <PhoneMockup showNotch={false} frameColor="bg-white" className="relative z-10 shadow-2xl transition-all duration-500">
                                 <div className="w-full h-full relative rounded-[2.5rem] overflow-hidden">
                                     {list.map((feature, i) => (
                                         <img 

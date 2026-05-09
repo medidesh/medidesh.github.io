@@ -60,7 +60,7 @@ export default function CTASection() {
 
                     <div className="grid sm:grid-cols-3 gap-4 w-full max-w-3xl mb-12">
                         <a href="https://wa.me/8801608844017" target="_blank" rel="noopener noreferrer"
-                            className="flex flex-col items-center gap-3 bg-slate-50 p-6 rounded-2xl transition-all hover:-translate-y-1 hover:bg-green-50 hover:shadow-sm group">
+                            className="flex flex-col items-center gap-3 bg-slate-50 p-6 rounded-none transition-all hover:-translate-y-1 hover:bg-green-50 hover:shadow-sm group">
                             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
                                 <WhatsappLogo weight="fill" size={24} className="text-green-500 group-hover:scale-110 transition-transform" />
                             </div>
@@ -71,7 +71,7 @@ export default function CTASection() {
                         </a>
 
                         <a href={`mailto:${t.email}`}
-                            className="flex flex-col items-center gap-3 bg-slate-50 p-6 rounded-2xl transition-all hover:-translate-y-1 hover:bg-medidesh-teal-50 hover:shadow-sm group">
+                            className="flex flex-col items-center gap-3 bg-slate-50 p-6 rounded-none transition-all hover:-translate-y-1 hover:bg-medidesh-teal-50 hover:shadow-sm group">
                             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
                                 <Envelope weight="fill" size={24} className="text-medidesh-teal-500 group-hover:scale-110 transition-transform" />
                             </div>
@@ -82,7 +82,7 @@ export default function CTASection() {
                         </a>
 
                         <a href={`tel:${t.phone.replace(/[-\s]/g, "")}`}
-                            className="flex flex-col items-center gap-3 bg-slate-50 p-6 rounded-2xl transition-all hover:-translate-y-1 hover:bg-blue-50 hover:shadow-sm group">
+                            className="flex flex-col items-center gap-3 bg-slate-50 p-6 rounded-none transition-all hover:-translate-y-1 hover:bg-blue-50 hover:shadow-sm group">
                             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
                                 <Phone weight="fill" size={24} className="text-blue-500 group-hover:scale-110 transition-transform" />
                             </div>

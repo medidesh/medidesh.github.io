@@ -11,15 +11,20 @@ const T = {
     },
 };
 
-const PHARMACIES = [
+const PHARMACIES_ROW_1 = [
     { name: "Lazz Pharma", font: "font-sans font-black tracking-tighter" },
     { name: "Bismillah", font: "font-serif italic font-bold" },
     { name: "Mayer Doa", font: "font-sans font-extrabold uppercase tracking-widest" },
     { name: "Sikder Medical", font: "font-mono font-bold" },
     { name: "Al-Madina", font: "font-sans font-black" },
+];
+
+const PHARMACIES_ROW_2 = [
     { name: "Popular", font: "font-serif font-black uppercase" },
     { name: "Khidmat", font: "font-sans font-extrabold italic" },
     { name: "Standard", font: "font-mono font-black tracking-tighter" },
+    { name: "Care Pharma", font: "font-sans font-black tracking-tight" },
+    { name: "Unity Health", font: "font-serif font-bold italic" },
 ];
 
 export default function TrustedBySection() {
@@ -27,7 +32,7 @@ export default function TrustedBySection() {
     const t = T[lang];
 
     return (
-        <section className="bg-black py-16 lg:py-24 border-y border-white/5">
+        <section className="bg-black py-16 lg:py-24 border-y border-white/5 overflow-hidden">
             <div className="container mx-auto px-5 lg:px-10">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
                     {/* Left Text */}
@@ -37,15 +42,29 @@ export default function TrustedBySection() {
                         </h2>
                     </div>
 
-                    {/* Right Logos Grid */}
-                    <div className="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-10 items-center opacity-70">
-                        {PHARMACIES.map((pharmacy, i) => (
-                            <div key={i} className="flex items-center justify-center lg:justify-start">
-                                <span className={`text-xl lg:text-2xl text-white whitespace-nowrap ${pharmacy.font}`}>
-                                    {pharmacy.name}
-                                </span>
+                    {/* Right Marquee Rows */}
+                    <div className="w-full lg:w-1/2 flex flex-col gap-8">
+                        {/* Row 1: Right to Left */}
+                        <div className="relative flex overflow-x-hidden">
+                            <div className="flex items-center whitespace-nowrap animate-marquee">
+                                {[...PHARMACIES_ROW_1, ...PHARMACIES_ROW_1, ...PHARMACIES_ROW_1].map((p, i) => (
+                                    <span key={i} className={`text-xl lg:text-2xl text-white/70 mx-8 ${p.font}`}>
+                                        {p.name}
+                                    </span>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Row 2: Left to Right */}
+                        <div className="relative flex overflow-x-hidden">
+                            <div className="flex items-center whitespace-nowrap animate-marquee-reverse">
+                                {[...PHARMACIES_ROW_2, ...PHARMACIES_ROW_2, ...PHARMACIES_ROW_2].map((p, i) => (
+                                    <span key={i} className={`text-xl lg:text-2xl text-white/70 mx-8 ${p.font}`}>
+                                        {p.name}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

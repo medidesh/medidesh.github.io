@@ -96,13 +96,13 @@ export default function LandingHero() {
                     >
                         {/* Primary CTA — solid with rounded corners */}
                         <a href="#download"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px rounded-xl shadow-lg shadow-medidesh-teal-500/20">
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px rounded-none shadow-lg shadow-medidesh-teal-500/20">
                             <span>{t.downloadBtn}</span>
                         </a>
                         
                         {/* Secondary CTA — bordered with rounded corners */}
                         <button onClick={() => setIsVideoOpen(true)}
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-medidesh-teal-600 border-2 border-medidesh-teal-600 px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px hover:bg-medidesh-teal-50 rounded-xl">
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-medidesh-teal-600 border-2 border-medidesh-teal-600 px-8 py-3.5 font-bold text-sm transition-all hover:-translate-y-px hover:bg-medidesh-teal-50 rounded-none">
                             <Play weight="fill" size={16} />
                             <span>{t.tutorialBtn}</span>
                         </button>

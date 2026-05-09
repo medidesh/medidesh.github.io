@@ -79,7 +79,7 @@ export default function DownloadSection() {
                                 onClick={(e) => handleClick(platform, e)}
                                 target={!platform.comingSoon ? "_blank" : undefined}
                                 rel={!platform.comingSoon ? "noopener noreferrer" : undefined}
-                                className="flex items-center gap-3 px-6 py-3 bg-black hover:bg-zinc-900 transition-colors rounded-lg min-w-[170px]"
+                                className="flex items-center gap-3 px-6 py-3 bg-black hover:bg-zinc-900 transition-colors rounded-none min-w-[170px]"
                             >
                                 <platform.icon weight="fill" size={32} className="text-white" />
                                 <div className="text-left text-white">

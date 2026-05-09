@@ -104,11 +104,11 @@ export default function LandingHeader() {
                     </nav>
 
                     <div className="hidden md:flex items-center gap-2 shrink-0">
-                        <button onClick={toggleLang} className="h-8 px-3 rounded-full flex items-center gap-1.5 border border-slate-200 hover:border-slate-300 bg-white text-slate-600 hover:text-slate-900 text-xs font-bold transition-all">
+                        <button onClick={toggleLang} className="h-8 px-3 rounded-none flex items-center gap-1.5 border border-slate-200 hover:border-slate-300 bg-white text-slate-600 hover:text-slate-900 text-xs font-bold transition-all">
                             <Globe size={13} weight="bold" />
                             <span>{lang === "bn" ? "EN" : "বাং"}</span>
                         </button>
-                        <a href="#download" className="ml-1.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-5 py-2 rounded-full font-bold text-[13px] transition-all hover:-translate-y-px">
+                        <a href="#download" className="ml-1.5 bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white px-5 py-2 rounded-none font-bold text-[13px] transition-all hover:-translate-y-px">
                             {lang === "bn" ? "ডাউনলোড" : "Get Started"}
                         </a>
                     </div>
@@ -137,10 +137,10 @@ export default function LandingHeader() {
                     ))}
                 </nav>
                 <div className="px-5 py-4 border-t border-slate-100 flex flex-col gap-2.5">
-                    <button onClick={toggleLang} className="w-full flex items-center justify-center gap-2 px-5 py-3 font-semibold text-sm border border-slate-200 rounded-xl text-slate-700">
+                    <button onClick={toggleLang} className="w-full flex items-center justify-center gap-2 px-5 py-3 font-semibold text-sm border border-slate-200 rounded-none text-slate-700">
                         <Globe size={16} /> {lang === "bn" ? "English" : "বাংলা"}
                     </button>
-                    <a href="#download" onClick={() => setIsMobileMenuOpen(false)} className="w-full text-center bg-slate-900 text-white font-bold py-3.5 rounded-xl">
+                    <a href="#download" onClick={() => setIsMobileMenuOpen(false)} className="w-full text-center bg-slate-900 text-white font-bold py-3.5 rounded-none">
                         {lang === "bn" ? "অ্যাপ ডাউনলোড করুন" : "Get Started"}
                     </a>
                 </div>

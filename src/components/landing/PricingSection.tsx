@@ -145,14 +145,14 @@ export default function PricingSection() {
                     <h2 className="text-4xl sm:text-5xl lg:text-[48px] font-black text-slate-900 mb-6 leading-[1.1] tracking-[-0.03em]">{t.heading}</h2>
                     <p className="text-slate-500 text-lg leading-relaxed mb-8">{t.sub}</p>
 
-                    <div className="inline-flex items-center bg-slate-100 p-1 rounded-full border border-slate-200">
+                    <div className="inline-flex items-center bg-slate-100 p-1 rounded-none border border-slate-200">
                         <button
                             onClick={() => setIsYearly(false)}
-                            className={`px-6 py-2.5 text-[13px] font-bold transition-all rounded-full ${!isYearly ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"}`}
+                            className={`px-6 py-2.5 text-[13px] font-bold transition-all rounded-none ${!isYearly ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"}`}
                         >{t.monthly}</button>
                         <button
                             onClick={() => setIsYearly(true)}
-                            className={`px-6 py-2.5 text-[13px] font-bold transition-all rounded-full ${isYearly ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"}`}
+                            className={`px-6 py-2.5 text-[13px] font-bold transition-all rounded-none ${isYearly ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"}`}
                         >{t.yearly}</button>
                     </div>
                 </div>
@@ -189,7 +189,7 @@ export default function PricingSection() {
                                 ))}
                             </ul>
                             <a href={plan.href} target="_blank" rel="noopener noreferrer"
-                                className={`w-full text-center py-3.5 font-bold text-[14px] transition-all hover:-translate-y-px flex items-center justify-center gap-2 rounded-full ${
+                                className={`w-full text-center py-3.5 font-bold text-[14px] transition-all hover:-translate-y-px flex items-center justify-center gap-2 rounded-none ${
                                     plan.highlight
                                         ? "bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white shadow-lg shadow-medidesh-teal-500/30"
                                         : "bg-slate-900 hover:bg-slate-800 text-white"

@@ -12,7 +12,7 @@ const T = {
         productLabel: "প্রোডাক্ট",
         companyLabel: "কোম্পানি",
         downloadLabel: "ডাউনলোড করুন",
-        downloadSub: "অ্যান্ড্রয়েড ও কম্পিউটারে ব্যবহার করুন — অফলাইনেও পূর্ণ কার্যকর।",
+        downloadSub: "অ্যান্ড্রয়েড ও কম্পিউটারে ব্যবহার করুন — আপনার ফার্মেসির জন্য পূর্ণাঙ্গ সলিউশন।",
         copyright: "সর্বস্বত্ব সংরক্ষিত।",
         product: [
             { label: "ফিচারসমূহ", href: "/#features" },
@@ -20,8 +20,6 @@ const T = {
             { label: "ডাউনলোড", href: "/#download" },
         ],
         company: [
-            { label: "আমাদের সম্পর্কে", href: "/about" },
-            { label: "মেডিদেশ স্টোর", href: "/store" },
             { label: "যোগাযোগ", href: "/#cta" },
             { label: "গোপনীয়তা নীতি", href: "/privacy" },
             { label: "শর্তাবলী", href: "/terms" },
@@ -32,7 +30,7 @@ const T = {
         productLabel: "Product",
         companyLabel: "Company",
         downloadLabel: "Download",
-        downloadSub: "Use on Android and computer — fully functional even offline.",
+        downloadSub: "Use on Android and computer — a complete solution for your pharmacy.",
         copyright: "All rights reserved.",
         product: [
             { label: "Features", href: "/#features" },
@@ -40,8 +38,6 @@ const T = {
             { label: "Download", href: "/#download" },
         ],
         company: [
-            { label: "About Us", href: "/about" },
-            { label: "Medidesh Store", href: "/store" },
             { label: "Contact", href: "/#cta" },
             { label: "Privacy Policy", href: "/privacy" },
             { label: "Terms & Conditions", href: "/terms" },

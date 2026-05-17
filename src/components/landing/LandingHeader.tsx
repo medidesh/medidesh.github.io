@@ -13,8 +13,6 @@ export default function LandingHeader() {
     const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
     const isHome = pathname === "/";
-    const isAbout = pathname.includes("/about");
-    const isStore = pathname.includes("/store");
     const { lang, toggleLang } = useLanguage();
 
     interface NavLink { bn: string; en: string; href: string; }
@@ -28,25 +26,13 @@ export default function LandingHeader() {
         { bn: "যোগাযোগ", en: "Contact", href: isHome ? "#cta" : "/#cta" },
     ];
 
-    const aboutLinks: NavLink[] = [
-        { bn: "লক্ষ্য", en: "Vision", href: "#hero" },
-        { bn: "আমাদের গল্প", en: "Story", href: "#mission" },
-        { bn: "আমাদের দল", en: "Team", href: "#team" },
-        { bn: "শুভাকাঙ্ক্ষী", en: "Supporters", href: "#supporters" },
-        { bn: "উপদেষ্টা", en: "Advisors", href: "#advisors" },
-        { bn: "যোগাযোগ", en: "Contact", href: "#cta" },
-    ];
-
-    const storeLinks: NavLink[] = [];
-    const navLinks = isStore ? storeLinks : isAbout ? aboutLinks : homeLinks;
+    const navLinks = homeLinks;
 
 
 
     useEffect(() => {
         setMounted(true);
-        const homeSections = ["hero", "solutions", "features", "download", "pricing", "faq", "cta"];
-        const aboutSections = ["hero", "mission", "team", "supporters", "advisors", "cta"];
-        const sections = isStore ? [] : isAbout ? aboutSections : homeSections;
+        const sections = ["hero", "solutions", "features", "download", "pricing", "faq", "cta"];
 
         const handleScroll = () => setIsScrolled(window.scrollY > 10);
         window.addEventListener("scroll", handleScroll, { passive: true });
@@ -59,10 +45,9 @@ export default function LandingHeader() {
         sections.forEach((id) => { const el = document.getElementById(id); if (el) observer.observe(el); });
 
         return () => { window.removeEventListener("scroll", handleScroll); observer.disconnect(); };
-    }, [isHome, isAbout]);
+    }, [isHome]);
 
     const isActive = (link: NavLink) => {
-        if (link.href === "/about") return isAbout;
         const id = link.href.replace(/^\/?#/, "").replace("/#", "");
         return activeSection === id;
     };

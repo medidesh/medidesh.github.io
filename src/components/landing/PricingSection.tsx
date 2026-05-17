@@ -34,8 +34,8 @@ const T = {
             },
             {
                 name: "মেঘনা",
-                price: "৳৩৯৯",
-                yearlyPrice: "৳৩,৯৯০",
+                price: "৳২৯৯",
+                yearlyPrice: "৳২,৯৯০",
                 description: "মাঝারি বা বড় ফার্মেসির জন্য সব সুবিধা এক জায়গায়।",
                 features: [
                     "১টি ফার্মেসি",
@@ -51,8 +51,8 @@ const T = {
             },
             {
                 name: "যমুনা",
-                price: "৳৮৯৯",
-                yearlyPrice: "৳৮,৯৯০",
+                price: "৳৭৯৯",
+                yearlyPrice: "৳৭,৯৯০",
                 description: "বড় চেইন ফার্মেসি ও দ্রুততম সাপোর্টের জন্য।",
                 features: [
                     "১টি ফার্মেসি",
@@ -100,8 +100,8 @@ const T = {
             },
             {
                 name: "Meghna",
-                price: "৳399",
-                yearlyPrice: "৳3,990",
+                price: "৳299",
+                yearlyPrice: "৳2,990",
                 description: "All features in one place for medium/large pharmacies.",
                 features: [
                     "1 Pharmacy",
@@ -117,8 +117,8 @@ const T = {
             },
             {
                 name: "Jamuna",
-                price: "৳899",
-                yearlyPrice: "৳8,990",
+                price: "৳799",
+                yearlyPrice: "৳7,990",
                 description: "For large chain pharmacies and fastest support.",
                 features: [
                     "1 Pharmacy",

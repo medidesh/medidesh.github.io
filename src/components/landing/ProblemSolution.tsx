@@ -23,13 +23,13 @@ const T = {
             heading2: "ইনভেন্টরি রেডি",
             segments: [
                 { text: "ওষুধ এন্ট্রি করার ঝামেলা থেকে মুক্তি! ", hl: false },
-                { text: "যেকোনো সাধারণ ও ব্র্যান্ডের ওষুধ", hl: true, color: "text-blue-600" },
+                { text: "যেকোনো সাধারণ ও ব্র্যান্ডের ওষুধ", hl: true, color: "text-medidesh-teal-600 font-bold" },
                 { text: " আপনার স্টকে যুক্ত করুন মাত্র ", hl: false },
-                { text: "এক ক্লিকেই।", hl: true, color: "text-amber-500" },
+                { text: "এক ক্লিকেই।", hl: true, color: "text-medidesh-teal-600 font-bold" },
                 { text: " হাজার হাজার ওষুধের ডেটাবেস থেকে ", hl: false },
-                { text: "প্রয়োজনীয় তথ্য", hl: true, color: "text-medidesh-teal-600" },
+                { text: "প্রয়োজনীয় তথ্য", hl: true, color: "text-medidesh-teal-600 font-bold" },
                 { text: " সহ ওষুধ খুঁজুন। নতুন ওষুধ মার্কেটে আসামাত্রই ", hl: false },
-                { text: "অটোমেটিক আপডেট", hl: true, color: "text-rose-500" },
+                { text: "অটোমেটিক আপডেট", hl: true, color: "text-medidesh-teal-600 font-bold" },
                 { text: " পাবেন।", hl: false },
             ]
         }
@@ -51,13 +51,13 @@ const T = {
             heading2: "Inventory Ready",
             segments: [
                 { text: "Freedom from the hassle of manual data entry! ", hl: false },
-                { text: "Add any generic or brand medicine", hl: true, color: "text-blue-600" },
+                { text: "Add any generic or brand medicine", hl: true, color: "text-medidesh-teal-600 font-bold" },
                 { text: " in Bangladesh to your stock with ", hl: false },
-                { text: "one click.", hl: true, color: "text-amber-500" },
+                { text: "one click.", hl: true, color: "text-medidesh-teal-600 font-bold" },
                 { text: " Find medicines instantly from a ", hl: false },
-                { text: "massive pre-loaded database", hl: true, color: "text-medidesh-teal-600" },
+                { text: "massive pre-loaded database", hl: true, color: "text-medidesh-teal-600 font-bold" },
                 { text: " with all necessary information. Get ", hl: false },
-                { text: "automatic updates", hl: true, color: "text-rose-500" },
+                { text: "automatic updates", hl: true, color: "text-medidesh-teal-600 font-bold" },
                 { text: " as soon as new medicines hit the market.", hl: false },
             ]
         }
@@ -121,7 +121,7 @@ export default function ProblemSolution() {
 
     return (
         <section id="features-showcase" className="py-20 lg:py-32 bg-white overflow-hidden">
-            <div className="container mx-auto px-5 lg:px-10 flex flex-col gap-24 lg:gap-40">
+            <div className="container mx-auto px-5 lg:px-10 flex flex-col gap-20 lg:gap-32">
                 
                 {/* Row 1: Text Left, Hardware Composition Right (Solutions) */}
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">

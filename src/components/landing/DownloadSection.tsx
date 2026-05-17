@@ -41,15 +41,15 @@ export default function DownloadSection() {
     };
 
     return (
-        <section id="download" className="bg-medidesh-teal-500 relative overflow-hidden pt-16 lg:pt-24 pb-0 lg:pb-0 px-5 lg:px-10">
+        <section id="download" className="bg-slate-900 relative overflow-hidden pt-16 lg:pt-24 pb-0 lg:pb-0 px-5 lg:px-10">
             <div className="container mx-auto max-w-6xl relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20">
                 {/* Left Side: Phone */}
                 <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-start pt-10 lg:pt-0">
-                    <SparkleLines className="absolute -top-10 lg:-top-16 left-0 lg:left-10 w-24 h-24 text-medidesh-teal-200 -rotate-12 z-0" />
+                    <SparkleLines className="absolute -top-10 lg:-top-16 left-0 lg:left-10 w-24 h-24 text-slate-700 -rotate-12 z-0" />
                     
                     <div className="relative z-10 rotate-[-5deg] lg:rotate-[-5deg] translate-y-12 lg:translate-y-24">
-                        <PhoneMockup showNotch={false} frameColor="bg-[#064e3b]" className="shadow-[0px_0px_50px_rgba(0,0,0,0.5)]">
-                            <div className="w-full h-full relative rounded-[2.5rem] overflow-hidden">
+                        <PhoneMockup showNotch={false} frameColor="bg-white" variant="android" className="shadow-[0px_0px_50px_rgba(0,0,0,0.5)]">
+                            <div className="w-full h-full relative overflow-hidden">
                                 <img src="/assets/playstore_preview.png" alt="Medidesh App" className="w-full h-full object-cover object-top" loading="lazy" />
                             </div>
                         </PhoneMockup>
@@ -72,18 +72,18 @@ export default function DownloadSection() {
                                 onClick={(e) => handleClick(platform, e)}
                                 target={!platform.comingSoon ? "_blank" : undefined}
                                 rel={!platform.comingSoon ? "noopener noreferrer" : undefined}
-                                className="flex items-center gap-3 px-6 py-3 bg-black hover:bg-zinc-900 transition-colors rounded-none min-w-[170px]"
+                                className="flex items-center gap-3 px-6 py-3.5 bg-[#9fff40] hover:bg-[#8cee36] transition-colors rounded-none min-w-[170px] shadow-[4px_4px_0px_0px_rgba(255,255,255,0.15)]"
                             >
-                                <platform.icon weight="fill" size={32} className="text-white" />
-                                <div className="text-left text-white">
-                                    <p className="text-[9px] uppercase tracking-wider font-semibold opacity-80 leading-none mb-1">{platform.sub}</p>
-                                    <p className="font-medium text-base leading-none">{platform.name}</p>
+                                <platform.icon weight="fill" size={32} className="text-slate-900" />
+                                <div className="text-left text-slate-900">
+                                    <p className="text-[9px] uppercase tracking-wider font-bold opacity-90 leading-none mb-1">{platform.sub}</p>
+                                    <p className="font-black text-base leading-none">{platform.name}</p>
                                 </div>
                             </a>
                         ))}
                         
                         {/* Loopy arrow pointing to buttons */}
-                        <div className="absolute -bottom-24 right-10 lg:-right-10 w-32 h-32 text-medidesh-teal-200 hidden sm:block">
+                        <div className="absolute -bottom-24 right-10 lg:-right-10 w-32 h-32 text-[#9fff40] opacity-40 hidden sm:block">
                             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full transform scale-x-[-1] -rotate-45">
                                 <path d="M10 10C20 60 50 120 80 50C90 20 60 10 40 40C20 80 120 100 180 60" stroke="currentColor" strokeWidth="4" strokeLinecap="round" fill="none"/>
                                 <path d="M170 50L185 58L175 70" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>

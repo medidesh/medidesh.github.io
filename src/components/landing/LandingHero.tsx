@@ -58,7 +58,7 @@ export default function LandingHero() {
     };
 
     return (
-        <section id="hero" className="relative pt-24 pb-0 lg:pt-32 lg:pb-0 bg-[#fafafa] overflow-hidden text-center border-b border-slate-200">
+        <section id="hero" className="relative pt-28 pb-0 lg:pt-36 lg:pb-0 bg-[#fafafa] overflow-hidden text-center border-b border-slate-200">
             {/* Zubaz-style hand-drawn arrows */}
             <ArrowDoodle className="absolute left-4 lg:left-24 top-24 lg:top-32 w-32 lg:w-48 text-slate-900 hidden sm:block pointer-events-none" />
             <SparkleLines className="absolute right-8 lg:right-32 top-32 lg:top-40 w-16 lg:w-20 text-slate-900 hidden sm:block pointer-events-none" />
@@ -200,7 +200,7 @@ export default function LandingHero() {
                 </div>
             </div>
 
-            <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoUrl="https://www.youtube.com/embed/qU-1J53j4zE" />
+            <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} videoUrl="https://www.youtube.com/embed/J0ukP78ItCc" />
             
         </section>
     );

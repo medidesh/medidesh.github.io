@@ -1,12 +1,5 @@
-import type { Metadata } from "next";
-import AboutContent from "./AboutContent";
+import { permanentRedirect } from "next/navigation";
 
-export const metadata: Metadata = {
-    title: "About Us | Medidesh",
-    description:
-        "Meet the team behind Medidesh — built to digitize every pharmacy in Bangladesh.",
-};
-
-export default function AboutPage() {
-    return <AboutContent />;
+export default function AboutRedirectPage() {
+    permanentRedirect("/");
 }

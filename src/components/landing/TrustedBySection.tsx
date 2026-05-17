@@ -12,19 +12,24 @@ const T = {
 };
 
 const PHARMACIES_ROW_1 = [
-    { name: "Lazz Pharma", font: "font-sans font-black tracking-tighter" },
-    { name: "Bismillah", font: "font-serif italic font-bold" },
-    { name: "Mayer Doa", font: "font-sans font-extrabold uppercase tracking-widest" },
-    { name: "Sikder Medical", font: "font-mono font-bold" },
-    { name: "Al-Madina", font: "font-sans font-black" },
+    { name: "Shuvo pharmacy", font: "font-sans font-black tracking-tighter" },
+    { name: "J.K. Raisa medical hall", font: "font-serif italic font-bold" },
+    { name: "Ayra Medicine Corner", font: "font-sans font-extrabold uppercase tracking-widest" },
+    { name: "Medi Pharmacy", font: "font-mono font-bold" },
+    { name: "Agroni medical hall", font: "font-sans font-black" },
+    { name: "Rayhan Pharmacy", font: "font-serif font-black uppercase" },
+    { name: "BOSHONTO PHARMACY", font: "font-sans font-extrabold italic" },
+    { name: "Medidesh Pharmacy", font: "font-mono font-black tracking-tighter" },
 ];
 
 const PHARMACIES_ROW_2 = [
-    { name: "Popular", font: "font-serif font-black uppercase" },
-    { name: "Khidmat", font: "font-sans font-extrabold italic" },
-    { name: "Standard", font: "font-mono font-black tracking-tighter" },
-    { name: "Care Pharma", font: "font-sans font-black tracking-tight" },
-    { name: "Unity Health", font: "font-serif font-bold italic" },
+    { name: "The City Pharmacy", font: "font-sans font-black tracking-tight" },
+    { name: "Dr. Abdullah Eye Care Center", font: "font-serif font-bold italic" },
+    { name: "khandokar medicine corner", font: "font-sans font-black tracking-tighter" },
+    { name: "Boro Pharmacy Limited", font: "font-serif italic font-bold" },
+    { name: "marjahan madic", font: "font-sans font-extrabold uppercase tracking-widest" },
+    { name: "Nur medical hall", font: "font-mono font-bold" },
+    { name: "M/S Adorsho Pharmacy", font: "font-sans font-black" },
 ];
 
 export default function TrustedBySection() {
@@ -32,7 +37,7 @@ export default function TrustedBySection() {
     const t = T[lang];
 
     return (
-        <section className="bg-black py-16 lg:py-24 border-y border-white/5 overflow-hidden">
+        <section className="bg-black py-12 lg:py-16 border-y border-white/5 overflow-hidden">
             <div className="container mx-auto px-5 lg:px-10">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
                     {/* Left Text */}

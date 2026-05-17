@@ -28,10 +28,24 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         // Run once on mount to initialize language from storage or auto-detect
         const initializeLanguage = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get("lang") as Lang | null;
             const stored = localStorage.getItem("lang") as Lang | null;
-            if (stored === "bn" || stored === "en") {
-                setLang(stored);
-                applyLang(stored);
+            
+            const initialLang = (urlLang === "bn" || urlLang === "en") ? urlLang : stored;
+
+            if (initialLang === "bn" || initialLang === "en") {
+                setLang(initialLang);
+                applyLang(initialLang);
+                
+                if (urlLang !== initialLang) {
+                    const url = new URL(window.location.href);
+                    url.searchParams.set("lang", initialLang);
+                    window.history.replaceState({}, '', url);
+                }
+                if (stored !== initialLang) {
+                    localStorage.setItem("lang", initialLang);
+                }
                 return;
             }
             
@@ -43,6 +57,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
             setLang(detected);
             applyLang(detected);
             localStorage.setItem("lang", detected);
+            
+            const url = new URL(window.location.href);
+            url.searchParams.set("lang", detected);
+            window.history.replaceState({}, '', url);
         };
 
         initializeLanguage();
@@ -65,6 +83,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         setLang(next);
         applyLang(next);
         localStorage.setItem("lang", next);
+        
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", next);
+        window.history.replaceState({}, '', url);
     };
 
     // Prevent hydration flashes for nested text conditionally if needed,

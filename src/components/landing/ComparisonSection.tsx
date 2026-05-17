@@ -7,7 +7,6 @@ const rows = {
     bn: [
         { feature: "স্মার্ট ইনভেন্টরি ম্যানেজমেন্ট",     manual: false, medidesh: true, others: true  },
         { feature: "Android মোবাইল অ্যাপ",                manual: false, medidesh: true, others: false },
-        { feature: "অফলাইনে সম্পূর্ণ কার্যকর",            manual: true,  medidesh: true, others: false },
         { feature: "স্বয়ংক্রিয় ডেটা ব্যাকআপ",            manual: false, medidesh: true, others: true  },
         { feature: "লো-স্টক ও মেয়াদোত্তীর্ণ সতর্কতা",   manual: false, medidesh: true, others: false },
         { feature: "বিনামূল্যে শুরু করা যায়",              manual: false, medidesh: true, others: false },
@@ -17,7 +16,6 @@ const rows = {
     en: [
         { feature: "Smart Inventory Management",    manual: false, medidesh: true, others: true  },
         { feature: "Android Mobile App",            manual: false, medidesh: true, others: false },
-        { feature: "Fully functional offline",      manual: true,  medidesh: true, others: false },
         { feature: "Automatic data backup",         manual: false, medidesh: true, others: true  },
         { feature: "Low-stock & expiry alerts",     manual: false, medidesh: true, others: false },
         { feature: "Start for free",                manual: false, medidesh: true, others: false },
@@ -37,7 +35,7 @@ export default function ComparisonSection() {
     const list = rows[lang];
 
     return (
-        <section id="comparison" className="py-20 lg:py-28 bg-slate-50 border-t border-slate-100">
+        <section id="comparison" className="py-20 lg:py-32 bg-slate-50 border-t border-slate-100">
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="max-w-2xl mx-auto text-center mb-12">
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm">

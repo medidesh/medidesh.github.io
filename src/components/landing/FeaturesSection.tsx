@@ -52,7 +52,7 @@ const features = {
         { icon: Scroll, title: "Credit Ledger", desc: "Customer and supplier balances tracked automatically.", img: featureImages[8] },
         { icon: ChartBar, title: "Sales Analytics", desc: "Download daily, weekly, monthly reports in PDF.", img: featureImages[9] },
         { icon: ArrowUUpLeft, title: "Easy Returns", desc: "Handle product returns and exchanges in seconds.", img: featureImages[10] },
-        { icon: DeviceMobile, title: "Mobile App", desc: "Full POS on Android — works offline too.", img: featureImages[11] },
+        { icon: DeviceMobile, title: "Mobile App", desc: "Full POS on Android for your pharmacy.", img: featureImages[11] },
     ],
 };
 

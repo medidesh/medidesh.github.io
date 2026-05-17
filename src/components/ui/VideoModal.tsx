@@ -35,7 +35,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProp
     return (
         <AnimatePresence>
             {isOpen && (
-                <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+                <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-10">
                     {/* Dark Backdrop with Blur */}
                     <motion.div 
                         initial={{ opacity: 0 }}
@@ -45,24 +45,25 @@ export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProp
                         className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm"
                     />
 
+                    {/* Close Button — Positioned outside of Video Box at Top Right */}
+                    <motion.button 
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        onClick={onClose}
+                        className="absolute top-4 right-4 sm:top-8 sm:right-8 z-[10000] flex items-center justify-center p-3 sm:p-4 rounded-full bg-slate-900/80 hover:bg-white hover:text-black text-white backdrop-blur border border-white/20 transition-all duration-300 shadow-2xl group"
+                    >
+                        <X size={24} weight="bold" className="group-hover:rotate-90 transition-transform duration-300" />
+                    </motion.button>
+
                     {/* Modal Content */}
                     <motion.div 
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        className="relative w-full max-w-5xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl ring-1 ring-white/10"
+                        className="relative w-full max-w-5xl aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 z-50"
                     >
-                        {/* Close Button — Positioned at the TOP of the UI, Outside of Video Box */}
-                        <div className="absolute inset-x-0 top-0 flex justify-end p-6 lg:p-10 pointer-events-none">
-                            <button 
-                                onClick={onClose}
-                                className="pointer-events-auto flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900/80 hover:bg-white hover:text-black text-white backdrop-blur border border-white/20 transition-all duration-300 shadow-2xl group"
-                            >
-                                <span className="text-sm font-black uppercase tracking-widest hidden sm:inline">Close</span>
-                                <X size={24} weight="bold" className="group-hover:rotate-90 transition-transform duration-300" />
-                            </button>
-                        </div>
 
                         {/* YouTube Iframe */}
                         <iframe 

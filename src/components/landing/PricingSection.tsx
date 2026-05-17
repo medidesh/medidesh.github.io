@@ -196,16 +196,7 @@ export default function PricingSection() {
                                     </li>
                                 ))}
                             </ul>
-                            <a href={plan.href} target="_blank" rel="noopener noreferrer"
-                                className={`w-full text-center py-3.5 font-bold text-[14px] transition-all hover:-translate-y-px flex items-center justify-center gap-2 rounded-none ${
-                                    plan.highlight
-                                        ? "bg-medidesh-teal-500 hover:bg-medidesh-teal-600 text-white shadow-lg shadow-medidesh-teal-500/30"
-                                        : "bg-slate-900 hover:bg-slate-800 text-white"
-                                }`}
-                            >
-                                {t.getStarted}
-                                <ArrowRight size={14} weight="bold" />
-                            </a>
+                            {/* Button removed */}
                         </div>
                     ))}
                 </div>

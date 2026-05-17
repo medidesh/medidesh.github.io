@@ -211,40 +211,35 @@ export default function PricingSection() {
                 </div>
 
                 <div className="max-w-xl mx-auto mt-16 flex flex-col items-center">
-                    <p className="text-[12px] text-slate-400 font-bold uppercase tracking-widest mb-4">{t.payment.title}</p>
-                    <div className="flex flex-wrap items-center justify-center gap-8">
+                    <p className="text-[12px] text-slate-400 font-bold uppercase tracking-widest mb-6">{t.payment.title}</p>
+                    <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10 opacity-90 hover:opacity-100 transition-opacity duration-300">
                         {/* bKash */}
-                        <div className="flex flex-col items-center gap-1 group">
-                            <div className="w-16 h-10 bg-white border border-slate-100 rounded-none flex items-center justify-center shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
-                                <span className="font-black text-[#E2136E] text-[18px] tracking-tighter uppercase italic">bkash</span>
-                            </div>
-                        </div>
+                        <img 
+                            src="/assets/payment/bkash.png" 
+                            alt="bKash" 
+                            className="h-8 md:h-10 w-auto object-contain transition-all hover:scale-105 duration-300"
+                        />
                         {/* Nagad */}
-                        <div className="flex flex-col items-center gap-1 group">
-                            <div className="w-16 h-10 bg-white border border-slate-100 rounded-none flex items-center justify-center shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
-                                <span className="font-black text-[#F7941D] text-[16px] tracking-tighter uppercase italic">nagad</span>
-                            </div>
-                        </div>
+                        <img 
+                            src="/assets/payment/nagad.png" 
+                            alt="Nagad" 
+                            className="h-8 md:h-10 w-auto object-contain transition-all hover:scale-105 duration-300"
+                        />
                         {/* Rocket */}
-                        <div className="flex flex-col items-center gap-1 group">
-                            <div className="w-16 h-10 bg-white border border-slate-100 rounded-none flex items-center justify-center shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
-                                <span className="font-black text-[#8C3494] text-[16px] tracking-tighter uppercase italic">rocket</span>
-                            </div>
-                        </div>
+                        <img 
+                            src="/assets/payment/rocket.png" 
+                            alt="Rocket" 
+                            className="h-8 md:h-10 w-auto object-contain transition-all hover:scale-105 duration-300"
+                        />
                         {/* Mastercard */}
-                        <div className="flex flex-col items-center gap-1 group">
-                            <div className="w-16 h-10 bg-white border border-slate-100 rounded-none flex items-center justify-center shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 gap-0.5">
-                                <div className="flex">
-                                    <div className="w-3.5 h-3.5 rounded-full bg-[#EB001B] mix-blend-multiply opacity-90"></div>
-                                    <div className="w-3.5 h-3.5 rounded-full bg-[#F79E1B] mix-blend-multiply -ml-1.5 opacity-90"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <img 
+                            src="/assets/payment/mastercard.png" 
+                            alt="Mastercard" 
+                            className="h-6 md:h-8 w-auto object-contain transition-all hover:scale-105 duration-300"
+                        />
                         {/* Bank Transfer */}
-                        <div className="flex flex-col items-center gap-1 group">
-                            <div className="w-16 h-10 bg-white border border-slate-100 rounded-none flex items-center justify-center shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
-                                <span className="font-black text-slate-400 text-[10px] uppercase text-center leading-none">Bank<br/>Transfer</span>
-                            </div>
+                        <div className="flex items-center justify-center transition-all hover:scale-105 duration-300">
+                            <span className="font-black text-slate-400 text-[10px] md:text-[11px] uppercase text-center leading-none tracking-wider">Bank<br/>Transfer</span>
                         </div>
                     </div>
                 </div>

@@ -68,7 +68,7 @@ const T = {
             },
         ],
         payment: {
-            title: "পেমেন্ট সিস্টেম",
+            title: "আমরা যেসব মাধ্যমে পেমেন্ট গ্রহণ করি",
         },
     },
     en: {
@@ -134,7 +134,7 @@ const T = {
             },
         ],
         payment: {
-            title: "Payment Methods",
+            title: "We accept all major payment methods",
         },
     },
 };
